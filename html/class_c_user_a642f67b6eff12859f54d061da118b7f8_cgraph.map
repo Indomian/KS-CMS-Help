@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="CError::__toString" alt="" coords="225,32,359,61"/>
+<area shape="rect" id="node9" href="$class_c_admin_module_managment.html#aeeb76432d095288ac056df22cca56d16" title="CAdminModuleManagment::get_instance" alt="" coords="149,85,435,115"/>
+<area shape="rect" id="node11" href="$class_c_base_user.html#a7f5b929d293d0e8844805d342402311a" title="CBaseUser::GetGroups" alt="" coords="207,139,377,168"/>
+<area shape="rect" id="node15" href="$class_c_user.html#a082405d89acd6835c3a7c7a08a7adbab" title="logout" alt="" coords="261,192,323,221"/>
+<area shape="rect" id="node17" href="$class_c_user.html#a04319249ee2785318535b92beb1aad82" title="OnAfterLogin" alt="" coords="240,245,344,275"/>
+<area shape="rect" id="node5" href="$class_c_error.html#a2e783519d7ccbc12dfdd265f2f9c1b91" title="CError::_error_form" alt="" coords="485,5,629,35"/>
+<area shape="rect" id="node7" href="$class_c_error.html#aff849052098521fd979745f8e50af269" title="CError::GetErrorText" alt="" coords="483,59,632,88"/>
+<area shape="rect" id="node13" href="$class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a" title="CBaseUser::ID" alt="" coords="500,139,615,168"/>
+<area shape="rect" id="node19" href="$class_c_object.html#abe38f51985100039a9291bad69727ab4" title="CObject::Update" alt="" coords="495,245,620,275"/>
+<area shape="rect" id="node21" href="$class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="681,245,833,275"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="125,5,360,35"/>
+<area shape="rect" id="node5" href="$class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="GetSitePath" alt="" coords="193,59,292,88"/>
+<area shape="rect" id="node7" href="$class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="GetTitle" alt="" coords="208,112,277,141"/>
+<area shape="rect" id="node9" href="$class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="IncludeTreeFile" alt="" coords="187,165,299,195"/>
+<area shape="rect" id="node11" href="$class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb" title="IsDefault" alt="" coords="204,219,281,248"/>
+<area shape="rect" id="node13" href="$class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89" title="module" alt="" coords="208,272,277,301"/>
+</map>

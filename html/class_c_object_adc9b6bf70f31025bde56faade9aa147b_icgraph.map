@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf" title="CCommonElement::GetRecord" alt="" coords="175,5,391,35"/>
+<area shape="rect" id="node7" href="$class_c_object.html#a4fa0d7986c30256de3613650c539d744" title="GetTableFields" alt="" coords="227,59,339,88"/>
+<area shape="rect" id="node9" href="$class_c_object.html#ad3fe79cedf46828ee79a230dfdce2e16" title="Save" alt="" coords="256,112,309,141"/>
+<area shape="rect" id="node17" href="$class_c_fields_object.html#ae963e93a528e72e62076ce24f35af3aa" title="CFieldsObject::Save" alt="" coords="209,165,356,195"/>
+<area shape="rect" id="node19" href="$class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="229,219,336,248"/>
+<area shape="rect" id="node5" href="$class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonElement::GetById" alt="" coords="441,5,641,35"/>
+<area shape="rect" id="node11" href="$class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="463,59,620,88"/>
+<area shape="rect" id="node13" href="$class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="452,112,631,141"/>
+<area shape="rect" id="node15" href="$class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="464,165,619,195"/>
+</map>

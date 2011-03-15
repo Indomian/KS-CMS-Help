@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a" title="CBaseUser::ID" alt="" coords="172,5,287,35"/>
+<area shape="rect" id="node5" href="$class_c_user.html#a6af3f53fe52c4549e5bc16078c95031d" title="IsLogin" alt="" coords="196,59,263,88"/>
+<area shape="rect" id="node7" href="$class_c_object.html#abe38f51985100039a9291bad69727ab4" title="CObject::Update" alt="" coords="167,112,292,141"/>
+<area shape="rect" id="node9" href="$class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="343,112,495,141"/>
+</map>

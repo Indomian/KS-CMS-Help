@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CRestorable.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CRestorable.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_restorable_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a><a class="code" href="class_8_c_restorable_8php.html#aa2751051afe353ae55a548bdc2a59679">00014</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00019"></a>00019 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CFieldsObject.php&#39;</span>;
+<a name="l00020"></a>00020  
+<a name="l00021"></a><a class="code" href="class_c_restorable.html">00021</a> <span class="keyword">class </span><a class="code" href="class_c_restorable.html">CRestorable</a> <span class="keyword">extends</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>
+<a name="l00022"></a>00022 {
+<a name="l00029"></a><a class="code" href="class_c_restorable.html#a3819dc4e3a5f8dd3e5a72af495faa897">00029</a>         <span class="keyword">protected</span> function <a class="code" href="class_c_restorable.html#a3819dc4e3a5f8dd3e5a72af495faa897">ParseFilter</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00030"></a>00030         {
+<a name="l00031"></a>00031                 $bAddField=<span class="keyword">false</span>;
+<a name="l00032"></a>00032                 <span class="keywordflow">foreach</span>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a> as $key=&gt;$item)
+<a name="l00033"></a>00033                 {
+<a name="l00034"></a>00034                         <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#^([&gt;&lt;!~=]|&gt;=|&lt;=|-&gt;|)?([\w_\.\-]+)#i&#39;</span>,$key,$matches))
+<a name="l00035"></a>00035                         {
+<a name="l00036"></a>00036                                 <span class="keywordflow">if</span>(strpos($key,<span class="charliteral">&#39;\.&#39;</span>)&gt;0)
+<a name="l00037"></a>00037                                 {
+<a name="l00038"></a>00038                                         $field=substr($key,strpos($matches[2],<span class="charliteral">&#39;\.&#39;</span>));
+<a name="l00039"></a>00039                                 }
+<a name="l00040"></a>00040                                 <span class="keywordflow">else</span>
+<a name="l00041"></a>00041                                 {
+<a name="l00042"></a>00042                                         $field=$matches[2];
+<a name="l00043"></a>00043                                 }
+<a name="l00044"></a>00044                                 <span class="keywordflow">if</span>($field==<span class="stringliteral">&#39;deleted&#39;</span>) 
+<a name="l00045"></a>00045                                 {
+<a name="l00046"></a>00046                                         $bAddField=<span class="keyword">true</span>;
+<a name="l00047"></a>00047                                         <span class="keywordflow">break</span>;
+<a name="l00048"></a>00048                                 }
+<a name="l00049"></a>00049                         }
+<a name="l00050"></a>00050                 }
+<a name="l00051"></a>00051                 <span class="keywordflow">return</span> $bAddField;
+<a name="l00052"></a>00052         }
+<a name="l00053"></a>00053         
+<a name="l00062"></a><a class="code" href="class_c_restorable.html#a02eb65f070f3b1429edd59c1331a86c4">00062</a>         function <a class="code" href="class_c_restorable.html#a02eb65f070f3b1429edd59c1331a86c4">Save</a>($prefix=<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=<span class="keyword">false</span>)
+<a name="l00063"></a>00063         {
+<a name="l00064"></a>00064                 <span class="keywordflow">if</span>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>===<span class="keyword">false</span>) <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$_POST;
+<a name="l00065"></a>00065                 <span class="keywordflow">try</span>
+<a name="l00066"></a>00066                 {
+<a name="l00067"></a>00067                         <span class="keywordflow">return</span> <a class="code" href="class_c_restorable.html#a02eb65f070f3b1429edd59c1331a86c4">parent::Save</a>($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00068"></a>00068                 }       
+<a name="l00069"></a>00069                 <span class="keywordflow">catch</span>(<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00070"></a>00070                 {
+<a name="l00071"></a>00071                         <span class="keywordflow">if</span>($e-&gt;getCode()==KS_ERROR_MAIN_ALREADY_EXISTS)
+<a name="l00072"></a>00072                         {
+<a name="l00073"></a>00073                                 <a class="code" href="class_c_base_list.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=$this-&gt;<a class="code" href="class_c_files_object.html#af5478d45bb4c7400c7830413a486a92b">GetRecordFromPost</a>($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00074"></a>00074                                 <span class="keywordflow">foreach</span>($this-&gt;check_fields as $field)
+<a name="l00075"></a>00075                                 {
+<a name="l00076"></a>00076                                         <a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[$field]=<a class="code" href="class_c_base_list.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>[$field];
+<a name="l00077"></a>00077                                 }
+<a name="l00078"></a>00078                                 unset(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00079"></a>00079                                 <a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[<span class="stringliteral">&#39;&gt;deleted&#39;</span>]=0;
+<a name="l00080"></a>00080                                 $arRecord=$this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00081"></a>00081                                 <span class="keywordflow">if</span>(is_array($arRecord)&amp;&amp;$arRecord[<span class="stringliteral">&#39;id&#39;</span>]&gt;0)
+<a name="l00082"></a>00082                                 {
+<a name="l00083"></a>00083                                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;CATSUBCAT_COMMON_IN_BASKET&#39;</span>,<a class="code" href="class_8_c_main_8php.html#a34ff43a3f2df6e0165192e6c3f6aea1c">KS_ERROR_MAIN_ALREADY_EXISTS</a>);
+<a name="l00084"></a>00084                                 }
+<a name="l00085"></a>00085                         }
+<a name="l00086"></a>00086                         <span class="keywordflow">throw</span> $e;
+<a name="l00087"></a>00087                 }
+<a name="l00088"></a>00088         }
+<a name="l00092"></a><a class="code" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356">00092</a>         function <a class="code" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356">RestoreItems</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00093"></a>00093         {
+<a name="l00094"></a>00094                 <span class="keywordflow">if</span>(!$this-&gt;<a class="code" href="class_c_restorable.html#a3819dc4e3a5f8dd3e5a72af495faa897">ParseFilter</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>))
+<a name="l00095"></a>00095                         <a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[<span class="stringliteral">&#39;&gt;deleted&#39;</span>]=<span class="charliteral">&#39;0&#39;</span>;
+<a name="l00096"></a>00096                 $arItems=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00097"></a>00097                 <span class="keywordflow">if</span>(is_array($arItems)&amp;&amp;count($arItems)&gt;0)
+<a name="l00098"></a>00098                 {
+<a name="l00099"></a>00099                         $arIds=array();
+<a name="l00100"></a>00100                         <span class="keywordflow">foreach</span>($arItems as $key=&gt;$item)
+<a name="l00101"></a>00101                         {
+<a name="l00102"></a>00102                                 $arIds[]=$item[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00103"></a>00103                         }
+<a name="l00104"></a>00104                         <span class="keywordflow">if</span>(count($arIds)&gt;0)
+<a name="l00105"></a>00105                                 <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_c_object.html#abe38f51985100039a9291bad69727ab4">Update</a>($arIds,array(<span class="stringliteral">&#39;deleted&#39;</span>=&gt;0));
+<a name="l00106"></a>00106                 }
+<a name="l00107"></a>00107                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00108"></a>00108         }
+<a name="l00114"></a><a class="code" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7">00114</a>         function <a class="code" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7">DeleteItems</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00115"></a>00115         {
+<a name="l00116"></a>00116                 <span class="keywordflow">if</span>(!$this-&gt;<a class="code" href="class_c_restorable.html#a3819dc4e3a5f8dd3e5a72af495faa897">ParseFilter</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>))
+<a name="l00117"></a>00117                         <a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[<span class="stringliteral">&#39;&gt;deleted&#39;</span>]=<span class="stringliteral">&quot;-1&quot;</span>;
+<a name="l00118"></a>00118                 $arItems=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00119"></a>00119                 <span class="keywordflow">if</span>(is_array($arItems)&amp;&amp;count($arItems)&gt;0)
+<a name="l00120"></a>00120                 {
+<a name="l00121"></a>00121                         <span class="keywordflow">foreach</span>($arItems as $key=&gt;$item)
+<a name="l00122"></a>00122                         {
+<a name="l00123"></a>00123                                 <span class="keywordflow">if</span>($item[<span class="stringliteral">&#39;deleted&#39;</span>]==0)
+<a name="l00124"></a>00124                                 {
+<a name="l00125"></a>00125                                         $this-&gt;<a class="code" href="class_c_object.html#abe38f51985100039a9291bad69727ab4">Update</a>($item[<span class="stringliteral">&#39;id&#39;</span>],array(<span class="stringliteral">&#39;deleted&#39;</span>=&gt;time()));
+<a name="l00126"></a>00126                                 }
+<a name="l00127"></a>00127                                 <span class="keywordflow">if</span>($item[<span class="stringliteral">&#39;deleted&#39;</span>]&gt;0)
+<a name="l00128"></a>00128                                 {
+<a name="l00129"></a>00129                                         <a class="code" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7">parent::DeleteItems</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$item[<span class="stringliteral">&#39;id&#39;</span>],<span class="stringliteral">&#39;&gt;deleted&#39;</span>=&gt;<span class="charliteral">&#39;0&#39;</span>));
+<a name="l00130"></a>00130                                 }
+<a name="l00131"></a>00131                         }
+<a name="l00132"></a>00132                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00133"></a>00133                 }
+<a name="l00134"></a>00134                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00135"></a>00135         }
+<a name="l00136"></a>00136         
+<a name="l00140"></a><a class="code" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4">00140</a>         function <a class="code" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4">DeleteToBasket</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00141"></a>00141         {
+<a name="l00142"></a>00142                 $arItems=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00143"></a>00143                 <span class="keywordflow">if</span>(is_array($arItems)&amp;&amp;count($arItems)&gt;0)
+<a name="l00144"></a>00144                 {
+<a name="l00145"></a>00145                         <span class="keywordflow">foreach</span>($arItems as $key=&gt;$item)
+<a name="l00146"></a>00146                         {
+<a name="l00147"></a>00147                                 $this-&gt;<a class="code" href="class_c_object.html#abe38f51985100039a9291bad69727ab4">Update</a>($item[<span class="stringliteral">&#39;id&#39;</span>],array(<span class="stringliteral">&#39;deleted&#39;</span>=&gt;time()));
+<a name="l00148"></a>00148                         }
+<a name="l00149"></a>00149                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00150"></a>00150                 }
+<a name="l00151"></a>00151                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00152"></a>00152         }
+<a name="l00153"></a>00153 }
+<a name="l00154"></a>00154 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:19. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

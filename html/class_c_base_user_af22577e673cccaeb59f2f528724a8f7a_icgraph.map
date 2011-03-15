@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_base_user.html#a7f5b929d293d0e8844805d342402311a" title="GetGroups" alt="" coords="128,112,219,141"/>
+<area shape="rect" id="node11" href="$class_c_user.html#af87039fa88bf7f9c75ab84e861e8b032" title="CUser::IsAdmin" alt="" coords="313,165,433,195"/>
+<area shape="rect" id="node14" href="$class_c_user.html#a39c631b045052241e951f7cac0bd2a2e" title="CUser::WriteUserVars" alt="" coords="95,216,252,245"/>
+<area shape="rect" id="node5" href="$class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="303,5,444,35"/>
+<area shape="rect" id="node7" href="$class_c_base_user.html#a743977d780615c7decdfc4da64b44c42" title="GetLevel" alt="" coords="335,59,412,88"/>
+<area shape="rect" id="node9" href="$class_c_user.html#a1498194c22c2f32c3973f36e94d9bb6e" title="CUser::is_admin" alt="" coords="311,112,436,141"/>
+</map>

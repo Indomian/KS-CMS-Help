@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classsqlite3i.html#abac3984f645d8abb10af7ee222795ced" title="sqlite3i::query" alt="" coords="167,112,276,141"/>
+<area shape="rect" id="node7" href="$classmysql.html#abac3984f645d8abb10af7ee222795ced" title="mysql::query" alt="" coords="169,272,273,301"/>
+<area shape="rect" id="node5" href="$classsqlite3i.html#a3773aafc62bbe690bf66a84e8368ef06" title="sqlite3i::super_query" alt="" coords="335,5,489,35"/>
+<area shape="rect" id="node9" href="$classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="mysql::AddColumn" alt="" coords="341,112,483,141"/>
+<area shape="rect" id="node11" href="$classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="mysql::AddTable" alt="" coords="349,165,475,195"/>
+<area shape="rect" id="node13" href="$classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="mysql::connect" alt="" coords="353,219,471,248"/>
+<area shape="rect" id="node16" href="$classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="mysql::DeleteColumn" alt="" coords="333,272,491,301"/>
+<area shape="rect" id="node18" href="$classmysql.html#a4afaae705eb9639715c9f0d386383164" title="mysql::DeleteTables" alt="" coords="568,351,717,380"/>
+<area shape="rect" id="node20" href="$classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="mysql::DescribeColumn" alt="" coords="325,480,499,509"/>
+<area shape="rect" id="node22" href="$classmysql.html#a18939e10851c114b310e6995056a9a69" title="mysql::UpdateColumn" alt="" coords="561,455,724,484"/>
+<area shape="rect" id="node24" href="$classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="mysql::UpdateColumnType" alt="" coords="547,533,739,563"/>
+<area shape="rect" id="node26" href="$classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="mysql::GetTableFields" alt="" coords="333,533,491,563"/>
+<area shape="rect" id="node28" href="$classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="mysql::ListTables" alt="" coords="348,376,476,405"/>
+<area shape="rect" id="node31" href="$classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="mysql::RenameTable" alt="" coords="336,59,488,88"/>
+</map>

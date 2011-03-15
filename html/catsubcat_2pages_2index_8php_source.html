@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/catsubcat/pages/index.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/catsubcat/pages/index.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="catsubcat_2pages_2index_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00013"></a><a class="code" href="catsubcat_2pages_2index_8php.html#aa2751051afe353ae55a548bdc2a59679">00013</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CModuleAdmin.php&#39;</span>;
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="class_ccatsubcat_a_iindex.html">00017</a> <span class="keyword">class </span><a class="code" href="class_ccatsubcat_a_iindex.html">CcatsubcatAIindex</a> <span class="keyword">extends</span> <a class="code" href="class_c_module_admin.html">CModuleAdmin</a>
+<a name="l00018"></a>00018 {
+<a name="l00019"></a><a class="code" href="class_ccatsubcat_a_iindex.html#acf7ad6a435e1f6695fdf0f742f402405">00019</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>;
+<a name="l00020"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a9771e08a1ad584ad9f358cf39ff56dc4">00020</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#a9771e08a1ad584ad9f358cf39ff56dc4">$obElement</a>;
+<a name="l00021"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a9a78941051be8868207d1092a198d249">00021</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#a9a78941051be8868207d1092a198d249">$obEditable</a>;
+<a name="l00022"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a09270d537c831036ac90e6a63dbf0947">00022</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#a09270d537c831036ac90e6a63dbf0947">$iCurSection</a>;
+<a name="l00023"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">00023</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>;
+<a name="l00024"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a7b14efceeea16ca4b1531a76e362137b">00024</a>         <span class="keyword">private</span> <a class="code" href="class_ccatsubcat_a_iindex.html#a7b14efceeea16ca4b1531a76e362137b">$access_level</a>;
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a57fa3780d880f20a25a6d63b6c1a4f50">00026</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#a57fa3780d880f20a25a6d63b6c1a4f50">__construct</a>(<a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">$module</a>=<span class="stringliteral">&#39;catsubcat&#39;</span>,&amp;<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,&amp;$parent)
+<a name="l00027"></a>00027         {
+<a name="l00028"></a>00028                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>;
+<a name="l00029"></a>00029                 <a class="code" href="class_ccatsubcat_a_iindex.html#a57fa3780d880f20a25a6d63b6c1a4f50">parent::__construct</a>(<a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">$module</a>,<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,$parent);
+<a name="l00030"></a>00030                 $this-&gt;obCategory=<span class="keyword">new</span> <a class="code" href="class_c_category.html">CCategory</a>();
+<a name="l00031"></a>00031                 $this-&gt;obElement=<span class="keyword">new</span> <a class="code" href="class_c_element.html">CElement</a>();
+<a name="l00032"></a>00032                 $this-&gt;obUser=$USER;
+<a name="l00033"></a>00033                 $this-&gt;access_level=10;
+<a name="l00034"></a>00034         }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a9f844d1903ac46357c85e3f23d2299d3">00036</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#a9f844d1903ac46357c85e3f23d2299d3">EditForm</a>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=<span class="keyword">false</span>)
+<a name="l00037"></a>00037         {
+<a name="l00038"></a>00038                 $arDefaults=array();
+<a name="l00039"></a>00039                 <span class="keywordflow">if</span> (class_exists(<span class="stringliteral">&#39;CFields&#39;</span>))
+<a name="l00040"></a>00040                 {
+<a name="l00041"></a>00041                         $obFields=<span class="keyword">new</span> <a class="code" href="class_c_fields.html">CFields</a>();
+<a name="l00042"></a>00042                         <span class="keywordflow">if</span>(<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=$obFields-&gt;GetList(Array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),Array(<span class="stringliteral">&#39;module&#39;</span>=&gt;$this-&gt;module,<span class="stringliteral">&#39;type&#39;</span>=&gt;$this-&gt;obEditable-&gt;sTable)))
+<a name="l00043"></a>00043                         {
+<a name="l00044"></a>00044                                 <span class="keywordflow">foreach</span>(<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a> as $item)
+<a name="l00045"></a>00045                                 {
+<a name="l00046"></a>00046                                         $arDefaults[<span class="stringliteral">&#39;ext_&#39;</span>.$item[<span class="stringliteral">&#39;title&#39;</span>]]=$item[<span class="stringliteral">&#39;default&#39;</span>];
+<a name="l00047"></a>00047                                 }
+<a name="l00048"></a>00048                                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;addFields&#39;</span>,<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>);
+<a name="l00049"></a>00049                         }
+<a name="l00050"></a>00050                 }
+<a name="l00051"></a>00051                 <span class="keywordflow">if</span>(!<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>)
+<a name="l00052"></a>00052                 {
+<a name="l00053"></a>00053                         <span class="comment">//Создание новой записи</span>
+<a name="l00054"></a>00054                         <span class="keywordflow">if</span>(<a class="code" href="class_ccatsubcat_a_iindex.html#a7b14efceeea16ca4b1531a76e362137b">$access_level</a>==3) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_CREATE&quot;</span>);
+<a name="l00055"></a>00055                         $arData=$this-&gt;obEditable-&gt;GetList(array(<span class="stringliteral">&#39;orderation&#39;</span>=&gt;<span class="stringliteral">&#39;desc&#39;</span>),array(<span class="stringliteral">&#39;parent_id&#39;</span>=&gt;$ithis-&gt;CurSection),array(1),array(<span class="stringliteral">&#39;orderation&#39;</span>));
+<a name="l00056"></a>00056                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$arDefaults;
+<a name="l00057"></a>00057                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;orderation&#39;</span>]=intval($arData[0][<span class="stringliteral">&#39;orderation&#39;</span>])+10;
+<a name="l00058"></a>00058                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;type&#39;</span>]=<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>;
+<a name="l00059"></a>00059                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;id&#39;</span>]=-1;
+<a name="l00060"></a>00060                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00061"></a>00061                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;parent_id&#39;</span>]=$this-&gt;iCurSection;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063                 }
+<a name="l00064"></a>00064                 <span class="keywordflow">if</span>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>) $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;data&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00065"></a>00065                 <span class="comment">// Мы что-то редактируем...</span>
+<a name="l00066"></a>00066                 <span class="comment">//Получаем данные о текущем разделе</span>
+<a name="l00067"></a>00067                 <span class="keywordflow">if</span>($arSectionRes=$this-&gt;obCategory-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$this-&gt;iCurSection)))
+<a name="l00068"></a>00068                 {
+<a name="l00069"></a>00069                         <span class="comment">//Получаем список родителей</span>
+<a name="l00070"></a>00070                         $obTree=$this-&gt;obCategory-&gt;GetParents($arSectionRes[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00071"></a>00071                         <span class="comment">//Получаем адрес модуля</span>
+<a name="l00072"></a>00072                         $root_path=$this-&gt;obModules-&gt;GetSitePath($this-&gt;module);
+<a name="l00073"></a>00073                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;navChain&#39;</span>,$obTree-&gt;GetNavChain($root_path));
+<a name="l00074"></a>00074                         <span class="comment">//Если есть модуль навигации, делаем список типов навигации и выводим создание нового пункта в меню</span>
+<a name="l00075"></a>00075                         <span class="keywordflow">if</span>($this-&gt;obModules-&gt;IsModule(<span class="stringliteral">&#39;navigation&#39;</span>))
+<a name="l00076"></a>00076                         {
+<a name="l00077"></a>00077                                 include_once MODULES_DIR.<span class="stringliteral">&#39;/navigation/libs/class.CNav.php&#39;</span>;
+<a name="l00078"></a>00078                                 $oType=<span class="keyword">new</span> <a class="code" href="class_c_nav_types.html">CNavTypes</a>();
+<a name="l00079"></a>00079                                 $oElement=<span class="keyword">new</span> <a class="code" href="class_c_nav_element.html">CNavElement</a>();
+<a name="l00080"></a>00080                                 $arMenu[<span class="stringliteral">&#39;types&#39;</span>]=$oType-&gt;GetList(array(<span class="stringliteral">&#39;name&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;active&#39;</span>=&gt;1));
+<a name="l00081"></a>00081                                 $arMenu[<span class="stringliteral">&#39;ITEMS&#39;</span>]=$oElement-&gt;GetList(array(<span class="stringliteral">&#39;orderation&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;type_id&#39;</span>=&gt;$arMenu[<span class="stringliteral">&#39;types&#39;</span>][0][<span class="stringliteral">&#39;id&#39;</span>],<span class="stringliteral">&#39;parent_id&#39;</span>=&gt;<span class="charliteral">&#39;0&#39;</span>));
+<a name="l00082"></a>00082                                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;menu&#39;</span>,$arMenu);
+<a name="l00083"></a>00083                         }
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085                         <span class="comment">/* Получаем дерево для перемещения элемента в другие разделы */</span>
+<a name="l00086"></a>00086                         $removing_leafs = array();
+<a name="l00087"></a>00087                         <span class="keywordflow">if</span> (<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;type&#39;</span>] == <span class="stringliteral">&quot;cat&quot;</span>)
+<a name="l00088"></a>00088                                 $removing_leafs = $this-&gt;obCategory-&gt;GetChildrenIds(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;id&#39;</span>], <span class="keyword">false</span>);
+<a name="l00089"></a>00089                         $tree_to_move_to = $this-&gt;obCategory-&gt;GetExpandedTree();
+<a name="l00090"></a>00090                         <span class="keywordflow">foreach</span> ($tree_to_move_to as $tree_leaf_key =&gt; $tree_leaf)
+<a name="l00091"></a>00091                                 <span class="keywordflow">if</span> ((<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;type&#39;</span>] == <span class="stringliteral">&quot;cat&quot;</span> &amp;&amp; <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;id&#39;</span>] == $tree_leaf[<span class="stringliteral">&#39;id&#39;</span>]) || in_array($tree_leaf[<span class="stringliteral">&#39;id&#39;</span>], $removing_leafs))
+<a name="l00092"></a>00092                                         unset($tree_to_move_to[$tree_leaf_key]);
+<a name="l00093"></a>00093                                 <span class="keywordflow">else</span>
+<a name="l00094"></a>00094                                 {
+<a name="l00095"></a>00095                                         $space = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00096"></a>00096                                         <span class="keywordflow">if</span> ($tree_leaf[<span class="stringliteral">&#39;level&#39;</span>])
+<a name="l00097"></a>00097                                                 <span class="keywordflow">for</span>($i = 1; $i &lt;= (5 * $tree_leaf[<span class="stringliteral">&#39;level&#39;</span>]); $i++)
+<a name="l00098"></a>00098                                                         $space .= <span class="stringliteral">&quot;&amp;nbsp;&quot;</span>;
+<a name="l00099"></a>00099                                         $tree_to_move_to[$tree_leaf_key][<span class="stringliteral">&#39;list_title&#39;</span>] = $space . $tree_leaf[<span class="stringliteral">&#39;title&#39;</span>];
+<a name="l00100"></a>00100                                 }
+<a name="l00101"></a>00101                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;tree_to_move_to&#39;</span>, $tree_to_move_to);
+<a name="l00102"></a>00102                         <span class="keywordflow">return</span> <span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00103"></a>00103                 }
+<a name="l00104"></a>00104                 <span class="keywordflow">else</span>
+<a name="l00105"></a>00105                 {
+<a name="l00106"></a>00106                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;SYSTEM_SECTION_NOT_FOUND&#39;</span>);
+<a name="l00107"></a>00107                         <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00108"></a>00108                 }
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110 
+<a name="l00111"></a><a class="code" href="class_ccatsubcat_a_iindex.html#aad5b28ebdb74bf4e6abd80fda9477920">00111</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#aad5b28ebdb74bf4e6abd80fda9477920">GetDataFromPost</a>($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>)
+<a name="l00112"></a>00112         {
+<a name="l00113"></a>00113                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=array();
+<a name="l00114"></a>00114                 <span class="comment">//$arFields=$this-&gt;obBanners-&gt;GetBannersFields();</span>
+<a name="l00115"></a>00115                 <span class="comment">//$arFields=$this-&gt;obBanners-&gt;GetFields();</span>
+<a name="l00116"></a>00116                 <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=$this-&gt;obBanners-&gt;GetBannerFields();
+<a name="l00117"></a>00117                 <span class="keywordflow">foreach</span>(<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a> as $sField)
+<a name="l00118"></a>00118                 {
+<a name="l00119"></a>00119                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[$sField]=<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[$prefix.$sField];
+<a name="l00120"></a>00120                 }
+<a name="l00121"></a>00121                 <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00122"></a>00122         }
+<a name="l00126"></a><a class="code" href="class_ccatsubcat_a_iindex.html#aebdc2dc2f7bd911f2be617599bcf8ae4">00126</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#aebdc2dc2f7bd911f2be617599bcf8ae4">Save</a>($id)
+<a name="l00127"></a>00127         {
+<a name="l00128"></a>00128                 global <a class="code" href="smilies_8php.html#a17f6eca81ab87d6a14c25002c2d946e8">$KS_URL</a>;
+<a name="l00129"></a>00129                 $this-&gt;obEditable-&gt;AddCheckField(<span class="stringliteral">&#39;text_ident&#39;</span>);
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131                 <span class="comment">/* Добавление проверки на существование данного индентификатора &quot;внутри&quot; определенного раздела */</span>
+<a name="l00132"></a>00132                 $this-&gt;obEditable-&gt;AddCheckField(<span class="stringliteral">&#39;parent_id&#39;</span>);
+<a name="l00133"></a>00133                 $this-&gt;obEditable-&gt;AddAutoField(<span class="stringliteral">&#39;id&#39;</span>);
+<a name="l00134"></a>00134                 $this-&gt;obEditable-&gt;AddFileField(<span class="stringliteral">&#39;img&#39;</span>);
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136                 <span class="comment">/* Проверка прав доступа на редактирование */</span>
+<a name="l00137"></a>00137                 <span class="keywordflow">if</span> (($this-&gt;access_level == 3) &amp;&amp; ($_REQUEST[<span class="stringliteral">&#39;CSC_id&#39;</span>] == -1))
+<a name="l00138"></a>00138                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_CREATE&quot;</span>);
+<a name="l00139"></a>00139                 <span class="comment">/* Выполним проверку входных данных и попытаемся сохранить запись */</span>
+<a name="l00140"></a>00140                 <span class="keywordflow">try</span>
+<a name="l00141"></a>00141                 {
+<a name="l00142"></a>00142                         $iError=0;
+<a name="l00143"></a>00143                         <span class="comment">/* Проверка заголовка записи */</span>
+<a name="l00144"></a>00144                         <span class="keywordflow">if</span> ($_POST[<span class="stringliteral">&#39;CSC_title&#39;</span>] == <span class="stringliteral">&quot;&quot;</span>)
+<a name="l00145"></a>00145                                 $iError+=$this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&quot;CATSUBCAT_ENTER_NAME&quot;</span>);
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147                         <span class="comment">/* Проверка текстового идентификатора */</span>
+<a name="l00148"></a>00148                         <span class="keywordflow">if</span> ($_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>] == <span class="stringliteral">&quot;&quot;</span> &amp;&amp; $_POST[<span class="stringliteral">&#39;CSC_id&#39;</span>] != 0)
+<a name="l00149"></a>00149                         {
+<a name="l00150"></a>00150                                 $_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>] = <a class="code" href="main_2libs_2functions_8php.html#a585f6e587f4220a9d23d55fb8654a733">Translit</a>($_POST[<span class="stringliteral">&#39;CSC_title&#39;</span>]);
+<a name="l00151"></a>00151                                 <span class="keywordflow">if</span> ($_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>] == <span class="stringliteral">&quot;&quot;</span>)
+<a name="l00152"></a>00152                                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_NOT_IDENT&quot;</span>);
+<a name="l00153"></a>00153                         }
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155                         <span class="keywordflow">if</span> ($_POST[<span class="stringliteral">&#39;CSC_id&#39;</span>] == 0)
+<a name="l00156"></a>00156                         {
+<a name="l00157"></a>00157                                 unset($_POST[<span class="stringliteral">&#39;CSC_parent_id&#39;</span>]);
+<a name="l00158"></a>00158                                 unset($_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>]);
+<a name="l00159"></a>00159                         }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161                         $children_ids = $this-&gt;obCategory-&gt;GetChildrenIds($_POST[<span class="stringliteral">&#39;CSC_id&#39;</span>], 0);
+<a name="l00162"></a>00162                         <span class="keywordflow">if</span> (in_array($_POST[<span class="stringliteral">&#39;CSC_parent_id&#39;</span>], $children_ids))
+<a name="l00163"></a>00163                                 unset($_POST[<span class="stringliteral">&#39;CSC_parent_id&#39;</span>]);
+<a name="l00164"></a>00164                         <span class="comment">//Проверяем дату/время</span>
+<a name="l00165"></a>00165                         <span class="keywordflow">if</span>($_POST[<span class="stringliteral">&#39;CSC_date_add&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00166"></a>00166                                 $_POST[<span class="stringliteral">&#39;CSC_date_add&#39;</span>]=strtotime($_POST[<span class="stringliteral">&#39;CSC_date_add&#39;</span>]);
+<a name="l00167"></a>00167                         <span class="keywordflow">else</span>
+<a name="l00168"></a>00168                                 unset($_POST[<span class="stringliteral">&#39;CSC_date_add&#39;</span>]);
+<a name="l00169"></a>00169                         <span class="comment">/* Сохранение/обновление записи */</span>
+<a name="l00170"></a>00170                         <span class="keywordflow">if</span>($iError&gt;0) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_data_error.html">CDataError</a>(<span class="stringliteral">&#39;CATSUBCAT_FIELDS_ERROR&#39;</span>);
+<a name="l00171"></a>00171                         $id=$this-&gt;obEditable-&gt;Save(<span class="stringliteral">&quot;CSC_&quot;</span>, $_POST);
+<a name="l00172"></a>00172                         <span class="keywordflow">if</span>($id===<span class="keyword">false</span>)
+<a name="l00173"></a>00173                         {
+<a name="l00174"></a>00174                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;CATSUBCAT_SAVE_ERROR&#39;</span>);
+<a name="l00175"></a>00175                         }
+<a name="l00176"></a>00176                         <span class="keywordflow">else</span>
+<a name="l00177"></a>00177                         {
+<a name="l00178"></a>00178                                 <span class="comment">//Операции выполняемые после сохранения записи в базе данных</span>
+<a name="l00179"></a>00179                                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = $this-&gt;obEditable-&gt;GetById($id);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181                                 <span class="keywordflow">if</span> ($this-&gt;obModules-&gt;IsModule(<span class="stringliteral">&quot;navigation&quot;</span>) &amp;&amp; $_POST[<span class="stringliteral">&#39;CM_add&#39;</span>] == 1)
+<a name="l00182"></a>00182                                 {
+<a name="l00183"></a>00183                                         $_POST[<span class="stringliteral">&#39;CM_link&#39;</span>] = <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;URL&#39;</span>];
+<a name="l00184"></a>00184                                         include_once MODULES_DIR . <span class="stringliteral">&quot;/navigation/libs/class.CNav.php&quot;</span>;
+<a name="l00185"></a>00185                                         $oElement = <span class="keyword">new</span> <a class="code" href="class_c_nav_element.html">CNavElement</a>();
+<a name="l00186"></a>00186                                         $oElement-&gt;AddAutoField(<span class="stringliteral">&#39;id&#39;</span>);
+<a name="l00187"></a>00187                                         $oElement-&gt;AddFileField(<span class="stringliteral">&#39;img&#39;</span>);
+<a name="l00188"></a>00188                                         $oElement-&gt;Save(<span class="stringliteral">&#39;CM_&#39;</span>, $_POST);
+<a name="l00189"></a>00189                                 }
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191                                 <span class="comment">/* Работа с модулем поиска */</span>
+<a name="l00192"></a>00192                                 <span class="keywordflow">if</span> ($this-&gt;obModules-&gt;IsActive(<span class="stringliteral">&quot;search&quot;</span>))
+<a name="l00193"></a>00193                                 {
+<a name="l00194"></a>00194                                         <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>=<span class="keyword">new</span> CSearch();
+<a name="l00195"></a>00195                                         <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>-&gt;Index(<a class="code" href="class_ccatsubcat_a_iindex.html#a9a78941051be8868207d1092a198d249">$obEditable</a>,$id,<span class="stringliteral">&#39;catsubcat&#39;</span>);
+<a name="l00196"></a>00196                                 }
+<a name="l00197"></a>00197                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_SAVE_OK&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00198"></a>00198                                 <span class="keywordflow">if</span>(!array_key_exists(<span class="stringliteral">&#39;update&#39;</span>,$_REQUEST))
+<a name="l00199"></a>00199                                 {
+<a name="l00200"></a>00200                                         <span class="keywordflow">if</span>(<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>==<span class="stringliteral">&#39;cat&#39;</span>) $KS_URL-&gt;Set(<span class="stringliteral">&#39;CSC_catid&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;parent_id&#39;</span>]);
+<a name="l00201"></a>00201                                         CUrlParser::Redirect(<span class="stringliteral">&quot;admin.php?&quot;</span>.$KS_URL-&gt;GetUrl(Array(<span class="stringliteral">&#39;ACTION&#39;</span>,<span class="stringliteral">&#39;type&#39;</span>,<span class="stringliteral">&#39;CSC_id&#39;</span>)));
+<a name="l00202"></a>00202                                 }
+<a name="l00203"></a>00203                                 <span class="keywordflow">else</span>
+<a name="l00204"></a>00204                                 {
+<a name="l00205"></a>00205                                         <span class="keywordflow">if</span>(<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>==<span class="stringliteral">&#39;cat&#39;</span>) $sAdd=<span class="stringliteral">&#39;&amp;CSC_catid=&#39;</span>.$id;
+<a name="l00206"></a>00206                                         <span class="keywordflow">if</span>(<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>==<span class="stringliteral">&#39;elm&#39;</span>) $sAdd=<span class="stringliteral">&#39;&amp;CSC_id=&#39;</span>.$id.<span class="stringliteral">&#39;&amp;CSC_catid=&#39;</span>.intval($_POST[<span class="stringliteral">&#39;CSC_parent_id&#39;</span>]);
+<a name="l00207"></a>00207                                         CUrlParser::Redirect(<span class="stringliteral">&quot;admin.php?&quot;</span>.$KS_URL-&gt;GetUrl(<span class="stringliteral">&#39;ACTION&#39;</span>,<span class="stringliteral">&#39;CSC_id&#39;</span>,<span class="stringliteral">&#39;CSC_catid&#39;</span>).<span class="stringliteral">&#39;&amp;ACTION=edit&#39;</span>.$sAdd);
+<a name="l00208"></a>00208                                 }
+<a name="l00209"></a>00209                         }
+<a name="l00210"></a>00210                 }
+<a name="l00211"></a>00211                 <span class="keywordflow">catch</span> (<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00212"></a>00212                 {
+<a name="l00213"></a>00213                         <span class="keywordflow">if</span>($e-&gt;GetCode()==<a class="code" href="class_8_c_main_8php.html#a34ff43a3f2df6e0165192e6c3f6aea1c">KS_ERROR_MAIN_ALREADY_EXISTS</a> &amp;&amp; $_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>] != <span class="stringliteral">&#39;&#39;</span>)
+<a name="l00214"></a>00214                         {
+<a name="l00215"></a>00215                                 $arData=<a class="code" href="class_ccatsubcat_a_iindex.html#a9a78941051be8868207d1092a198d249">$obEditable</a>-&gt;GetRecord(
+<a name="l00216"></a>00216                                         array(
+<a name="l00217"></a>00217                                                 <span class="stringliteral">&#39;parent_id&#39;</span>=&gt;$_POST[<span class="stringliteral">&#39;CSC_parent_id&#39;</span>],
+<a name="l00218"></a>00218                                                 <span class="stringliteral">&#39;text_ident&#39;</span>=&gt;$_POST[<span class="stringliteral">&#39;CSC_text_ident&#39;</span>],
+<a name="l00219"></a>00219                                                 <span class="stringliteral">&#39;&gt;deleted&#39;</span>=&gt;0,
+<a name="l00220"></a>00220                                         ));
+<a name="l00221"></a>00221                                 <span class="keywordflow">if</span>(is_array($arData))
+<a name="l00222"></a>00222                                 {
+<a name="l00223"></a>00223                                         $e=<span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;CATSUBCAT_DUBLICATE_BASKET&quot;</span>,<a class="code" href="class_8_c_main_8php.html#a34ff43a3f2df6e0165192e6c3f6aea1c">KS_ERROR_MAIN_ALREADY_EXISTS</a>);
+<a name="l00224"></a>00224                                 }
+<a name="l00225"></a>00225                         }
+<a name="l00226"></a>00226                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;last_error&#39;</span>,$e);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228                         <a class="code" href="smilies_8php.html#a1673d65aef62b44fdcf92a7ab6392c49">$showList</a>=<span class="keyword">false</span>;
+<a name="l00229"></a>00229                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$this-&gt;obEditable-&gt;GetRecordFromPost(<span class="stringliteral">&#39;CSC_&#39;</span>,$_POST);
+<a name="l00230"></a>00230                         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_ccatsubcat_a_iindex.html#a9f844d1903ac46357c85e3f23d2299d3">EditForm</a>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00231"></a>00231                 }
+<a name="l00232"></a>00232         }
+<a name="l00233"></a>00233 
+<a name="l00237"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a2a7f82c625b00a53f710b2ed305248d2">00237</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#a2a7f82c625b00a53f710b2ed305248d2">Table</a>()
+<a name="l00238"></a>00238         {
+<a name="l00239"></a>00239                 <span class="comment">//Получаем данные о текущем разделе</span>
+<a name="l00240"></a>00240                 <span class="keywordflow">if</span>($arSectionRes=$this-&gt;obCategory-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$this-&gt;iCurSection)))
+<a name="l00241"></a>00241                 {
+<a name="l00242"></a>00242                         <span class="comment">//Получаем список родителей</span>
+<a name="l00243"></a>00243                         $obTree[$arSectionRes[<span class="stringliteral">&#39;id&#39;</span>]]=$this-&gt;obCategory-&gt;GetParents($arSectionRes[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00244"></a>00244                         <span class="comment">//Получаем адрес модуля</span>
+<a name="l00245"></a>00245                         $root_path = $this-&gt;obModules-&gt;GetSitePath(<span class="stringliteral">&#39;catsubcat&#39;</span>);
+<a name="l00246"></a>00246                         <span class="comment">// Получаем полный список элементов и разделов</span>
+<a name="l00247"></a>00247                         $arFilter=array();
+<a name="l00251"></a>00251                         <span class="keywordflow">if</span> (class_exists(<span class="stringliteral">&#39;CFilterFrame&#39;</span>))
+<a name="l00252"></a>00252                         {
+<a name="l00253"></a>00253                                 $obFilter=<span class="keyword">new</span> <a class="code" href="class_c_filter_frame.html">CFilterFrame</a>();
+<a name="l00254"></a>00254                                 $obFilter-&gt;AddField(array(<span class="stringliteral">&#39;FIELD&#39;</span>=&gt;<span class="stringliteral">&#39;title&#39;</span>,<span class="stringliteral">&#39;METHOD&#39;</span>=&gt;<span class="charliteral">&#39;~&#39;</span>));
+<a name="l00255"></a>00255                                 $obFilter-&gt;AddField(array(<span class="stringliteral">&#39;FIELD&#39;</span>=&gt;<span class="stringliteral">&#39;text_ident&#39;</span>,<span class="stringliteral">&#39;METHOD&#39;</span>=&gt;<span class="charliteral">&#39;~&#39;</span>));
+<a name="l00256"></a>00256                                 $obFilter-&gt;AddField(array(
+<a name="l00257"></a>00257                                         <span class="stringliteral">&#39;FIELD&#39;</span>=&gt;<span class="stringliteral">&#39;active&#39;</span>,
+<a name="l00258"></a>00258                                         <span class="stringliteral">&#39;TYPE&#39;</span>=&gt;<span class="stringliteral">&#39;SELECT&#39;</span>,
+<a name="l00259"></a>00259                                         <span class="stringliteral">&#39;VALUES&#39;</span>=&gt;array(
+<a name="l00260"></a>00260                                                 <span class="stringliteral">&#39;&#39;</span>=&gt;<span class="stringliteral">&#39;Любой&#39;</span>,
+<a name="l00261"></a>00261                                                 <span class="charliteral">&#39;1&#39;</span>=&gt;<span class="stringliteral">&#39;Активен&#39;</span>,
+<a name="l00262"></a>00262                                                 <span class="charliteral">&#39;0&#39;</span>=&gt;<span class="stringliteral">&#39;Неактивен&#39;</span>),
+<a name="l00263"></a>00263                                 ));
+<a name="l00264"></a>00264                                 $obFilter-&gt;AddField(array(<span class="stringliteral">&#39;FIELD&#39;</span>=&gt;<span class="stringliteral">&#39;date_edit&#39;</span>,<span class="stringliteral">&#39;TYPE&#39;</span>=&gt;<span class="stringliteral">&#39;DATE&#39;</span>,<span class="stringliteral">&#39;METHOD&#39;</span>=&gt;<span class="stringliteral">&#39;&lt;&gt;&#39;</span>));
+<a name="l00265"></a>00265                                 $obFilter-&gt;AddField(array(<span class="stringliteral">&#39;FIELD&#39;</span>=&gt;<span class="stringliteral">&#39;date_add&#39;</span>,<span class="stringliteral">&#39;TYPE&#39;</span>=&gt;<span class="stringliteral">&#39;DATE&#39;</span>,<span class="stringliteral">&#39;METHOD&#39;</span>=&gt;<span class="stringliteral">&#39;&lt;&gt;&#39;</span>));
+<a name="l00266"></a>00266                                 $arFilter=$obFilter-&gt;GetFilter();
+<a name="l00267"></a>00267                                 $obFilter-&gt;SetSmartyFilter(<span class="stringliteral">&#39;filter&#39;</span>);
+<a name="l00268"></a>00268                                 $arTitles=array(
+<a name="l00269"></a>00269                                         <span class="stringliteral">&#39;title&#39;</span>=&gt;<span class="stringliteral">&#39;Название&#39;</span>,
+<a name="l00270"></a>00270                                         <span class="stringliteral">&#39;text_ident&#39;</span>=&gt;<span class="stringliteral">&#39;Текстовый идентификатор&#39;</span>,
+<a name="l00271"></a>00271                                         <span class="stringliteral">&#39;active&#39;</span>=&gt;<span class="stringliteral">&#39;Активность&#39;</span>,
+<a name="l00272"></a>00272                                         <span class="stringliteral">&#39;date_edit&#39;</span>=&gt;<span class="stringliteral">&#39;Дата редактирования&#39;</span>,
+<a name="l00273"></a>00273                                         <span class="stringliteral">&#39;date_add&#39;</span>=&gt;<span class="stringliteral">&#39;Дата добавления&#39;</span>);
+<a name="l00274"></a>00274                                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;ftitles&#39;</span>,$arTitles);
+<a name="l00275"></a>00275                         }
+<a name="l00276"></a>00276                         $arFilter[<span class="stringliteral">&#39;parent_id&#39;</span>]=$arSectionRes[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00277"></a>00277                         <span class="comment">//Определяем количество элементов на странице</span>
+<a name="l00278"></a>00278                         $iElCount=intval($_REQUEST[<span class="charliteral">&#39;n&#39;</span>]);
+<a name="l00279"></a>00279                         $iElCount=($iElCount&lt;10)?10:$iElCount;
+<a name="l00280"></a>00280                         $iPage=(intval($_REQUEST[<span class="stringliteral">&#39;p1&#39;</span>])&lt;1)?1:intval($_REQUEST[<span class="stringliteral">&#39;p1&#39;</span>]);
+<a name="l00281"></a>00281                         <a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>=Array(<span class="stringliteral">&#39;id&#39;</span>,<span class="stringliteral">&#39;title&#39;</span>,<span class="stringliteral">&#39;text_ident&#39;</span>,<span class="stringliteral">&#39;date_add&#39;</span>,<span class="stringliteral">&#39;date_edit&#39;</span>,<span class="stringliteral">&#39;orderation&#39;</span>,<span class="stringliteral">&#39;active&#39;</span>,<span class="stringliteral">&#39;views_count&#39;</span>);
+<a name="l00282"></a>00282                         <span class="comment">//Определяем порядок сортировки записей</span>
+<a name="l00283"></a>00283                         list(<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>,$sOrderDir)=$this-&gt;<a class="code" href="class_c_module_admin.html#a3160f20700c1e4015c4d5ef90de6c890">InitSort</a>(<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>,$_REQUEST[<span class="stringliteral">&#39;order&#39;</span>],$_REQUEST[<span class="stringliteral">&#39;dir&#39;</span>]);
+<a name="l00284"></a>00284                         <a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>=($sOrderDir==<span class="stringliteral">&#39;desc&#39;</span>)?<span class="stringliteral">&#39;asc&#39;</span>:<span class="stringliteral">&#39;desc&#39;</span>;
+<a name="l00285"></a>00285                         $arSort=array(<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=&gt;$sOrderDir);
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287                         <a class="code" href="_8tree_8php.html#a06872fc847b4ba143198c5f962fc6a83">$arTables</a>=array(
+<a name="l00288"></a>00288                                 <span class="stringliteral">&#39;element&#39;</span>=&gt;$this-&gt;obElement,
+<a name="l00289"></a>00289                                 <span class="stringliteral">&#39;category&#39;</span>=&gt;$this-&gt;obCategory
+<a name="l00290"></a>00290                         );
+<a name="l00291"></a>00291                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=<a class="code" href="catsubcat_2libs_2functions_8php.html#aa27c41688f2aa7f0b82bc914783d2910">GetAllList</a>($arSort,$arFilter,Array($iElCount*($iPage-1),$iElCount),<a class="code" href="_8tree_8php.html#a06872fc847b4ba143198c5f962fc6a83">$arTables</a>);
+<a name="l00292"></a>00292 
+<a name="l00293"></a>00293                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;SECTION&#39;</span>] = $arSectionRes;
+<a name="l00294"></a>00294                         <span class="comment">/* Перебрасываем главную страницу к файлам и формируем полную ссылку */</span>
+<a name="l00295"></a>00295                         $mainItem = <span class="keyword">false</span>;
+<a name="l00296"></a>00296                         $side_length = 20;
+<a name="l00297"></a>00297                         <span class="keywordflow">if</span> (count(<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>]))
+<a name="l00298"></a>00298                         {
+<a name="l00299"></a>00299                                 <span class="keywordflow">foreach</span> (<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>] as $arKey =&gt; $arValue)
+<a name="l00300"></a>00300                                 {
+<a name="l00301"></a>00301                                         <span class="keywordflow">if</span>(!array_key_exists($arValue[<span class="stringliteral">&#39;parent_id&#39;</span>],$obTree))
+<a name="l00302"></a>00302                                         {
+<a name="l00303"></a>00303                                                 $obTree[$arValue[<span class="stringliteral">&#39;parent_id&#39;</span>]]=<a class="code" href="class_ccatsubcat_a_iindex.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>-&gt;GetParents($arValue[<span class="stringliteral">&#39;parent_id&#39;</span>]);
+<a name="l00304"></a>00304                                         }
+<a name="l00305"></a>00305                                         $full_path=$obTree[$arValue[<span class="stringliteral">&#39;parent_id&#39;</span>]]-&gt;GetFullPath($root_path);
+<a name="l00306"></a>00306                                         <span class="comment">/* Добавляем в массив полный путь к странице и его сокращённый вид для отображения в подсказке */</span>
+<a name="l00307"></a>00307                                         <span class="keywordflow">if</span> ($arValue[<span class="stringliteral">&#39;TYPE&#39;</span>] === <span class="stringliteral">&#39;cat&#39;</span>)
+<a name="l00308"></a>00308                                         {
+<a name="l00309"></a>00309                                                 $full_url = $this-&gt;obModules-&gt;GetConfigVar(<span class="stringliteral">&#39;main&#39;</span>,<span class="stringliteral">&#39;home_url&#39;</span>).$full_path.($arValue[<span class="stringliteral">&#39;text_ident&#39;</span>] != <span class="stringliteral">&quot;&quot;</span> ? $arValue[<span class="stringliteral">&#39;text_ident&#39;</span>] . <span class="stringliteral">&quot;/&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00310"></a>00310                                         }
+<a name="l00311"></a>00311                                         <span class="keywordflow">else</span>
+<a name="l00312"></a>00312                                         {
+<a name="l00313"></a>00313                                                 $full_url = $this-&gt;obModules-&gt;GetConfigVar(<span class="stringliteral">&#39;main&#39;</span>,<span class="stringliteral">&#39;home_url&#39;</span>).$full_path.$arValue[<span class="stringliteral">&#39;text_ident&#39;</span>] . <span class="stringliteral">&quot;.html&quot;</span>;
+<a name="l00314"></a>00314                                         }
+<a name="l00315"></a>00315                                         $arValue[<span class="stringliteral">&#39;full_url&#39;</span>] = $full_url;
+<a name="l00316"></a>00316                                         $arValue[<span class="stringliteral">&#39;short_url&#39;</span>] = <a class="code" href="main_2libs_2functions_8php.html#aca5a55fe4a5598bc10bc7250d24404a3">ShorterUrl</a>($full_url);
+<a name="l00317"></a>00317                                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>][$arKey] = $arValue;
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319                                         <span class="keywordflow">if</span> ($arValue[<span class="stringliteral">&#39;id&#39;</span>] == 0 &amp;&amp; $arValue[<span class="stringliteral">&#39;TYPE&#39;</span>] === <span class="stringliteral">&#39;cat&#39;</span>)
+<a name="l00320"></a>00320                                         {
+<a name="l00321"></a>00321                                                 <span class="comment">/* Запоминаем главную страницу */</span>
+<a name="l00322"></a>00322                                                 $mainItem = $arValue;
+<a name="l00323"></a>00323                                                 $mainItem[<span class="stringliteral">&#39;TYPE&#39;</span>] = <span class="stringliteral">&#39;cat&#39;</span>;
+<a name="l00324"></a>00324                                                 unset(<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>][$arKey]);
+<a name="l00325"></a>00325                                         }
+<a name="l00326"></a>00326                                 }
+<a name="l00327"></a>00327                                 $is_cat_now = <span class="keyword">true</span>;
+<a name="l00328"></a>00328                                 $newItems = array();
+<a name="l00329"></a>00329                                 <span class="keywordflow">foreach</span> (<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>] as $arKey =&gt; $arValue)
+<a name="l00330"></a>00330                                 {
+<a name="l00331"></a>00331                                         <span class="keywordflow">if</span> ($arValue[<span class="stringliteral">&#39;TYPE&#39;</span>] === <span class="stringliteral">&#39;elm&#39;</span>)
+<a name="l00332"></a>00332                                                 $is_cat_now = <span class="keyword">false</span>;
+<a name="l00333"></a>00333                                         <span class="keywordflow">if</span> (!$is_cat_now &amp;&amp; $mainItem)
+<a name="l00334"></a>00334                                         {
+<a name="l00335"></a>00335                                                 $newItems[] = $mainItem;
+<a name="l00336"></a>00336                                                 $mainItem = <span class="keyword">false</span>;
+<a name="l00337"></a>00337                                         }
+<a name="l00338"></a>00338                                         $newItems[] = $arValue;
+<a name="l00339"></a>00339                                 }
+<a name="l00340"></a>00340                                 <span class="keywordflow">if</span> ($mainItem)
+<a name="l00341"></a>00341                                         $newItems[] = $mainItem;
+<a name="l00342"></a>00342                                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;ITEMS&#39;</span>] = $newItems;
+<a name="l00343"></a>00343                         }
+<a name="l00344"></a>00344 
+<a name="l00345"></a>00345                         <span class="comment">//Подготавливаем постраничный вывод</span>
+<a name="l00349"></a>00349 <span class="comment"></span>                        $pages=array();
+<a name="l00350"></a>00350                         $pages[<span class="stringliteral">&#39;TOTAL&#39;</span>]=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;TOTAL&#39;</span>];
+<a name="l00351"></a>00351                         $pages[<span class="stringliteral">&#39;num&#39;</span>]=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;PAGES&#39;</span>];
+<a name="l00352"></a>00352                         $pages[<span class="stringliteral">&#39;active&#39;</span>]=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;CURRENT_PAGE&#39;</span>];
+<a name="l00353"></a>00353                         <span class="keywordflow">if</span> ($pages[<span class="stringliteral">&#39;active&#39;</span>]==0)
+<a name="l00354"></a>00354                                 $pages[<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00355"></a>00355                         <span class="keywordflow">for</span>($i=1;$i&lt;=$pages[<span class="stringliteral">&#39;num&#39;</span>];$i++)
+<a name="l00356"></a>00356                         {
+<a name="l00357"></a>00357                                 $pages[<span class="stringliteral">&#39;pages&#39;</span>][$i]=$i;
+<a name="l00358"></a>00358                         }
+<a name="l00359"></a>00359                         $pages[<span class="stringliteral">&#39;index&#39;</span>]=1;
+<a name="l00360"></a>00360                         $pages[<span class="stringliteral">&#39;visible&#39;</span>]=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;IN_PAGE&#39;</span>];
+<a name="l00361"></a>00361 
+<a name="l00362"></a>00362                         <span class="comment">/* Получаем дерево для перемещения разделов и элементов в другие разделы */</span>
+<a name="l00363"></a>00363                         $tree_to_move_to = $this-&gt;obCategory-&gt;GetExpandedTree();
+<a name="l00364"></a>00364                         <span class="keywordflow">foreach</span> ($tree_to_move_to as $tree_leaf_key =&gt; $tree_leaf)
+<a name="l00365"></a>00365                                 <span class="keywordflow">if</span> ($tree_leaf[<span class="stringliteral">&#39;id&#39;</span>] == <a class="code" href="class_ccatsubcat_a_iindex.html#a09270d537c831036ac90e6a63dbf0947">$iCurSection</a>)
+<a name="l00366"></a>00366                                         unset($tree_to_move_to[$tree_leaf_key]);
+<a name="l00367"></a>00367                                 <span class="keywordflow">else</span>
+<a name="l00368"></a>00368                                 {
+<a name="l00369"></a>00369                                         $space = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00370"></a>00370                                         <span class="keywordflow">if</span> ($tree_leaf[<span class="stringliteral">&#39;level&#39;</span>])
+<a name="l00371"></a>00371                                                 <span class="keywordflow">for</span>($i = 1; $i &lt;= (5 * $tree_leaf[<span class="stringliteral">&#39;level&#39;</span>]); $i++)
+<a name="l00372"></a>00372                                                         $space .= <span class="stringliteral">&quot;&amp;nbsp;&quot;</span>;
+<a name="l00373"></a>00373                                         $tree_to_move_to[$tree_leaf_key][<span class="stringliteral">&#39;list_title&#39;</span>] = $space . $tree_leaf[<span class="stringliteral">&#39;title&#39;</span>];
+<a name="l00374"></a>00374                                 }
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376                         <span class="comment">// Передаем данные смарти</span>
+<a name="l00377"></a>00377                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;num_visible&#39;</span>,$iElCount);
+<a name="l00378"></a>00378                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;dataList&#39;</span>,<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>);
+<a name="l00379"></a>00379                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;navChain&#39;</span>,$obTree[$arSectionRes[<span class="stringliteral">&#39;id&#39;</span>]]-&gt;GetNavChain($root_path));
+<a name="l00380"></a>00380                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;pages&#39;</span>,$pages);
+<a name="l00381"></a>00381                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;order&#39;</span>,Array(<span class="stringliteral">&#39;newdir&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>,<span class="stringliteral">&#39;curdir&#39;</span>=&gt;$sOrderDir,<span class="stringliteral">&#39;field&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>));
+<a name="l00382"></a>00382                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;tree_to_move_to&#39;</span>, $tree_to_move_to);
+<a name="l00383"></a>00383                         <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00384"></a>00384                 }
+<a name="l00385"></a>00385                 <span class="keywordflow">else</span>
+<a name="l00386"></a>00386                 {
+<a name="l00387"></a>00387                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;SYSTEM_SECTION_NOT_FOUND&#39;</span>);
+<a name="l00388"></a>00388                         <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00389"></a>00389                 }
+<a name="l00390"></a>00390         }
+<a name="l00391"></a>00391 
+<a name="l00395"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a490761499d521f2ef78ecc19c4605384">00395</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#a490761499d521f2ef78ecc19c4605384">CommonActions</a>()
+<a name="l00396"></a>00396         {
+<a name="l00397"></a>00397                 $arElements=$_POST[<span class="stringliteral">&#39;sel&#39;</span>][<span class="stringliteral">&#39;elm&#39;</span>];
+<a name="l00398"></a>00398                 $arSections=$_POST[<span class="stringliteral">&#39;sel&#39;</span>][<span class="stringliteral">&#39;cat&#39;</span>];
+<a name="l00399"></a>00399                 <a class="code" href="class_c_module_admin.html#a15615e6b8222dd924a623731c972387c">$sAction</a>=<span class="stringliteral">&#39;common&#39;</span>;
+<a name="l00400"></a>00400                 <span class="keywordflow">if</span> (array_key_exists(<span class="stringliteral">&#39;comact&#39;</span>,$_POST))
+<a name="l00401"></a>00401                 {
+<a name="l00402"></a>00402                         <span class="comment">// Установка общей активности для выделенных элементов</span>
+<a name="l00403"></a>00403                         $this-&gt;obCategory-&gt;Update($arSections,Array(<span class="stringliteral">&#39;active&#39;</span>=&gt;<span class="charliteral">&#39;1&#39;</span>));
+<a name="l00404"></a>00404                         $this-&gt;obElement-&gt;Update($arElements,Array(<span class="stringliteral">&#39;active&#39;</span>=&gt;<span class="charliteral">&#39;1&#39;</span>));
+<a name="l00405"></a>00405                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_ACTIVATE_DONE&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00406"></a>00406                 }
+<a name="l00407"></a>00407                 elseif (array_key_exists(<span class="stringliteral">&#39;comdea&#39;</span>,$_POST))
+<a name="l00408"></a>00408                 {
+<a name="l00409"></a>00409                         <span class="comment">//Снятие общей активности для элементов</span>
+<a name="l00410"></a>00410                         $this-&gt;obCategory-&gt;Update($arSections,Array(<span class="stringliteral">&#39;active&#39;</span>=&gt;<span class="charliteral">&#39;0&#39;</span>));
+<a name="l00411"></a>00411                         $this-&gt;obElement-&gt;Update($arElements,Array(<span class="stringliteral">&#39;active&#39;</span>=&gt;<span class="charliteral">&#39;0&#39;</span>));
+<a name="l00412"></a>00412                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_DEACTIVATE_DONE&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00413"></a>00413                 }
+<a name="l00414"></a>00414                 elseif (array_key_exists(<span class="stringliteral">&#39;comdel&#39;</span>,$_POST))
+<a name="l00415"></a>00415                 {
+<a name="l00416"></a>00416                         <span class="comment">// Удаление выделенных элементов</span>
+<a name="l00417"></a>00417                         <span class="keywordflow">if</span>(is_array($arSections)&amp;&amp;count($arSections)&gt;0)
+<a name="l00418"></a>00418                         {
+<a name="l00419"></a>00419                                 <span class="keywordflow">foreach</span>($arSections as $i)
+<a name="l00420"></a>00420                                 {
+<a name="l00421"></a>00421                                         <span class="keywordflow">if</span>($i==0)
+<a name="l00422"></a>00422                                         {
+<a name="l00423"></a>00423                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOT_DELETE_MAIN&#39;</span>);
+<a name="l00424"></a>00424                                                 <span class="keywordflow">continue</span>;
+<a name="l00425"></a>00425                                         }
+<a name="l00426"></a>00426                                         $arData=$this-&gt;obCategory-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$i));
+<a name="l00427"></a>00427                                         <span class="keywordflow">if</span>(($i==$arData[<span class="stringliteral">&#39;parent_id&#39;</span>])&amp;&amp;($i==0)) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_DELETE_MAIN&quot;</span>);
+<a name="l00428"></a>00428                                         <span class="keywordflow">if</span>($this-&gt;obModules-&gt;IsActive(<span class="stringliteral">&#39;search&#39;</span>))
+<a name="l00429"></a>00429                                         {
+<a name="l00430"></a>00430                                                 <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>=<span class="keyword">new</span> CSearch();
+<a name="l00431"></a>00431                                                 <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>-&gt;Delete(<span class="stringliteral">&#39;catsubcat&#39;</span>,$this-&gt;obCategory-&gt;GenHash($arData));
+<a name="l00432"></a>00432                                         }
+<a name="l00433"></a>00433                                         <span class="keywordflow">if</span>($this-&gt;obCategory-&gt;Delete($i))
+<a name="l00434"></a>00434                                         {
+<a name="l00435"></a>00435                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_DELETE_OK&#39;</span>,$arData[<span class="stringliteral">&#39;title&#39;</span>],<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00436"></a>00436                                         }
+<a name="l00437"></a>00437                                         <span class="keywordflow">else</span>
+<a name="l00438"></a>00438                                         {
+<a name="l00439"></a>00439                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_DELETE_BAD&#39;</span>,$arData[<span class="stringliteral">&#39;title&#39;</span>],<a class="code" href="class_8_c_module_managment_8php.html#a095b4ba3e6626676f54b6ee2f9774955">NOTIFY_WARNING</a>);
+<a name="l00440"></a>00440                                         }
+<a name="l00441"></a>00441                                 }
+<a name="l00442"></a>00442                         }
+<a name="l00443"></a>00443                         $this-&gt;obElement-&gt;DeleteByIds($arElements);
+<a name="l00444"></a>00444                 }
+<a name="l00445"></a>00445                 elseif (array_key_exists(<span class="stringliteral">&#39;commove&#39;</span>, $_POST))
+<a name="l00446"></a>00446                 {
+<a name="l00447"></a>00447                         <span class="comment">/* Перемещение выделенных элементов */</span>
+<a name="l00448"></a>00448                         <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;move_selected_to&#39;</span>]))
+<a name="l00449"></a>00449                         {
+<a name="l00450"></a>00450                                 <span class="comment">/* Получаем id раздела, куда перемещаем элементы */</span>
+<a name="l00451"></a>00451                                 $move_selected_to = intval($_POST[<span class="stringliteral">&#39;move_selected_to&#39;</span>]);
+<a name="l00452"></a>00452 
+<a name="l00453"></a>00453                                 <span class="comment">/* Проверяем существование раздела */</span>
+<a name="l00454"></a>00454                                 $destination_item = $this-&gt;obCategory-&gt;GetRecord(array(<span class="stringliteral">&quot;id&quot;</span> =&gt; $move_selected_to));
+<a name="l00455"></a>00455                                 <span class="keywordflow">if</span> (is_array($destination_item) &amp;&amp; count($destination_item))
+<a name="l00456"></a>00456                                 {
+<a name="l00457"></a>00457                                         <span class="comment">/* Нужно проверить все перемещаемые разделы */</span>
+<a name="l00458"></a>00458                                         <span class="keywordflow">if</span> (is_array($arSections) &amp;&amp; count($arSections))
+<a name="l00459"></a>00459                                                 <span class="keywordflow">foreach</span> ($arSections as $section_key =&gt; $section_id)
+<a name="l00460"></a>00460                                                 {
+<a name="l00461"></a>00461                                                         <span class="comment">/* Смотрим, не является ли раздел главным (его нельзя перемещать), а также, не пытаемся ли мы переместиться в себя */</span>
+<a name="l00462"></a>00462                                                         <span class="keywordflow">if</span> ($section_id == 0 || $section_id == $move_selected_to)
+<a name="l00463"></a>00463                                                         {
+<a name="l00464"></a>00464                                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOT_MOVE_MAIN&#39;</span>);
+<a name="l00465"></a>00465                                                                 unset($arSections[$section_key]);
+<a name="l00466"></a>00466                                                         }
+<a name="l00467"></a>00467                                                         $children_ids = $this-&gt;obCategory-&gt;GetChildrenIds($section_id, <span class="keyword">false</span>);
+<a name="l00468"></a>00468                                                         <span class="keywordflow">if</span> (in_array($move_selected_to, $children_ids))
+<a name="l00469"></a>00469                                                                 unset($arSections[$section_key]);
+<a name="l00470"></a>00470                                                 }
+<a name="l00471"></a>00471                                         $this-&gt;obCategory-&gt;Update($arSections, array(<span class="stringliteral">&#39;parent_id&#39;</span> =&gt; $move_selected_to));
+<a name="l00472"></a>00472                                         $this-&gt;obElement-&gt;Update($arElements, array(<span class="stringliteral">&#39;parent_id&#39;</span> =&gt; $move_selected_to));
+<a name="l00473"></a>00473                                 }
+<a name="l00474"></a>00474                         }
+<a name="l00475"></a>00475                 }
+<a name="l00476"></a>00476         }
+<a name="l00477"></a>00477 
+<a name="l00478"></a><a class="code" href="class_ccatsubcat_a_iindex.html#a13e94df3b35eb8d54c12d9f67dad4841">00478</a>         function <a class="code" href="class_ccatsubcat_a_iindex.html#a13e94df3b35eb8d54c12d9f67dad4841">Run</a>()
+<a name="l00479"></a>00479         {
+<a name="l00480"></a>00480                 global <a class="code" href="smilies_8php.html#a17f6eca81ab87d6a14c25002c2d946e8">$KS_URL</a>;
+<a name="l00481"></a>00481                 <span class="comment">//Проверка прав доступа</span>
+<a name="l00482"></a>00482                 $this-&gt;access_level = $this-&gt;obUser-&gt;GetLevel($this-&gt;module);
+<a name="l00483"></a>00483                 <span class="keywordflow">if</span>($this-&gt;access_level&gt;3)
+<a name="l00484"></a>00484                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_MANAGE&quot;</span>);
+<a name="l00485"></a>00485                 $this-&gt;iCurSection=(intval($_REQUEST[<span class="stringliteral">&#39;CSC_catid&#39;</span>])&lt;0)?0:intval($_REQUEST[<span class="stringliteral">&#39;CSC_catid&#39;</span>]);
+<a name="l00486"></a>00486                 <a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=$_REQUEST[<span class="stringliteral">&#39;ACTION&#39;</span>];
+<a name="l00487"></a>00487 
+<a name="l00488"></a>00488                 <span class="comment">/* Получение типа данных (категория или элемент) */</span>
+<a name="l00489"></a>00489                 <a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a> = $_REQUEST[<span class="stringliteral">&#39;type&#39;</span>];
+<a name="l00490"></a>00490 
+<a name="l00491"></a>00491                 <span class="comment">/* Определение идентификатора записи */</span>
+<a name="l00492"></a>00492                 $iId = (<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>==<span class="stringliteral">&#39;cat&#39;</span>) ? intval($_REQUEST[<span class="stringliteral">&#39;CSC_catid&#39;</span>]) : intval($_REQUEST[<span class="stringliteral">&#39;CSC_id&#39;</span>]);
+<a name="l00493"></a>00493                 <span class="comment">// Обработка действий множественного выбора</span>
+<a name="l00494"></a>00494                 <span class="keywordflow">if</span>(array_key_exists(<span class="stringliteral">&#39;ACTION&#39;</span>,$_POST)&amp;&amp;($_POST[<span class="stringliteral">&#39;ACTION&#39;</span>]==<span class="stringliteral">&#39;common&#39;</span>))
+<a name="l00495"></a>00495                 {
+<a name="l00496"></a>00496                         $this-&gt;<a class="code" href="class_ccatsubcat_a_iindex.html#a490761499d521f2ef78ecc19c4605384">CommonActions</a>();
+<a name="l00497"></a>00497                 }
+<a name="l00498"></a>00498 
+<a name="l00499"></a>00499                 $id=intval($_REQUEST[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00500"></a>00500                 <span class="keywordflow">if</span> (<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a> == <span class="stringliteral">&quot;cat&quot;</span>)
+<a name="l00501"></a>00501                         $this-&gt;obEditable = $this-&gt;obCategory;
+<a name="l00502"></a>00502                 elseif (<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a> == <span class="stringliteral">&quot;elm&quot;</span>)
+<a name="l00503"></a>00503                         $this-&gt;obEditable = $this-&gt;obElement;
+<a name="l00504"></a>00504                 $this-&gt;page=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00505"></a>00505                 <span class="keywordflow">switch</span>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>)
+<a name="l00506"></a>00506                 {
+<a name="l00507"></a>00507                         <span class="keywordflow">case</span> <span class="stringliteral">&quot;edit&quot;</span>:
+<a name="l00508"></a>00508                                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$this-&gt;obEditable-&gt;GetById($iId);
+<a name="l00509"></a>00509                                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[<span class="stringliteral">&#39;type&#39;</span>]=<a class="code" href="class_ccatsubcat_a_iindex.html#a26573108665ccadaeebd9a3e2db4339d">$sType</a>;
+<a name="l00510"></a>00510                         <span class="keywordflow">case</span> <span class="stringliteral">&quot;new&quot;</span>:
+<a name="l00511"></a>00511                                 <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=$this-&gt;<a class="code" href="class_ccatsubcat_a_iindex.html#a9f844d1903ac46357c85e3f23d2299d3">EditForm</a>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00512"></a>00512                         <span class="keywordflow">break</span>;
+<a name="l00513"></a>00513                         <span class="keywordflow">case</span> <span class="stringliteral">&quot;save&quot;</span>:
+<a name="l00514"></a>00514                                 <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=$this-&gt;<a class="code" href="class_ccatsubcat_a_iindex.html#aebdc2dc2f7bd911f2be617599bcf8ae4">Save</a>($id);
+<a name="l00515"></a>00515                         <span class="keywordflow">break</span>;
+<a name="l00516"></a>00516                         <span class="keywordflow">case</span> <span class="stringliteral">&quot;delete&quot;</span>:
+<a name="l00517"></a>00517                                 <span class="keywordflow">if</span>($arData=$this-&gt;obEditable-&gt;GetById($iId))
+<a name="l00518"></a>00518                                 {
+<a name="l00519"></a>00519                                         <span class="keywordflow">if</span>(($iId==$arData[<span class="stringliteral">&#39;parent_id&#39;</span>])&amp;&amp;($iId==0)) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_DELETE_MAIN&quot;</span>);
+<a name="l00520"></a>00520                                         <span class="keywordflow">if</span>($this-&gt;obModules-&gt;IsActive(<span class="stringliteral">&#39;search&#39;</span>))
+<a name="l00521"></a>00521                                         {
+<a name="l00522"></a>00522                                                 <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>=<span class="keyword">new</span> CSearch();
+<a name="l00523"></a>00523                                                 <a class="code" href="tags_2save_8php.html#a407e1498c82f0b716ce7b7fedcdd9274">$obSearch</a>-&gt;Delete(<span class="stringliteral">&#39;catsubcat&#39;</span>,$this-&gt;obEditable-&gt;GenHash($arData));
+<a name="l00524"></a>00524                                         }
+<a name="l00525"></a>00525                                         <span class="keywordflow">if</span>($this-&gt;obEditable-&gt;Delete($iId))
+<a name="l00526"></a>00526                                         {
+<a name="l00527"></a>00527                                                 $KS_URL-&gt;Set(<span class="stringliteral">&#39;CSC_catid&#39;</span>,$arData[<span class="stringliteral">&#39;parent_id&#39;</span>]);
+<a name="l00528"></a>00528                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_DELETE_OK&#39;</span>,$arData[<span class="stringliteral">&#39;title&#39;</span>],<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00529"></a>00529                                                 CUrlParser::Redirect(<span class="stringliteral">&quot;admin.php?&quot;</span>.$KS_URL-&gt;GetUrl(Array(<span class="stringliteral">&#39;ACTION&#39;</span>)));
+<a name="l00530"></a>00530                                         }
+<a name="l00531"></a>00531                                         <span class="keywordflow">else</span>
+<a name="l00532"></a>00532                                         {
+<a name="l00533"></a>00533                                                 $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOTIFY_DELETE_BAD&#39;</span>,$arData[<span class="stringliteral">&#39;title&#39;</span>],<a class="code" href="class_8_c_module_managment_8php.html#a095b4ba3e6626676f54b6ee2f9774955">NOTIFY_WARNING</a>);
+<a name="l00534"></a>00534                                         }
+<a name="l00535"></a>00535                                 }
+<a name="l00536"></a>00536                                 <span class="keywordflow">else</span>
+<a name="l00537"></a>00537                                 {
+<a name="l00538"></a>00538                                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;CATSUBCAT_NOT_FOUND&#39;</span>);
+<a name="l00539"></a>00539                                 }
+<a name="l00540"></a>00540                         <span class="keywordflow">default</span>:
+<a name="l00541"></a>00541                                 <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=$this-&gt;<a class="code" href="class_ccatsubcat_a_iindex.html#a2a7f82c625b00a53f710b2ed305248d2">Table</a>();
+<a name="l00542"></a>00542                 }
+<a name="l00543"></a>00543                 <span class="keywordflow">if</span>($_GET[<span class="stringliteral">&#39;mode&#39;</span>]==<span class="stringliteral">&#39;small&#39;</span>)
+<a name="l00544"></a>00544                 {
+<a name="l00545"></a>00545                         echo <a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;get_template_vars(<span class="stringliteral">&#39;last_error&#39;</span>);
+<a name="l00546"></a>00546                         <a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/catsubcat&#39;</span>.<a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>.<span class="stringliteral">&#39;.tpl&#39;</span>);
+<a name="l00547"></a>00547                         die();
+<a name="l00548"></a>00548                 }
+<a name="l00549"></a>00549                 <span class="keywordflow">return</span> <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>;
+<a name="l00550"></a>00550         }
+<a name="l00551"></a>00551 }
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

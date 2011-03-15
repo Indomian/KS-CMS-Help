@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="188,5,329,35"/>
+<area shape="rect" id="node5" href="$class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="141,59,376,88"/>
+<area shape="rect" id="node7" href="$class_cmain_a_imodules.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CmainAImodules::Run" alt="" coords="179,112,339,141"/>
+<area shape="rect" id="node9" href="$class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Cguestbook2AIcategories::Save" alt="" coords="147,165,371,195"/>
+<area shape="rect" id="node13" href="$function_8_pic_8php.html#ad37d9875a58f53120af02a026b9c42a9" title="smarty_function_Pic" alt="" coords="184,219,333,248"/>
+<area shape="rect" id="node11" href="$class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="424,165,640,195"/>
+</map>

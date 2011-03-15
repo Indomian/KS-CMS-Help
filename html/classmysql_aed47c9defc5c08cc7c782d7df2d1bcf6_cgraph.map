@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="128,85,187,115"/>
+<area shape="rect" id="node5" href="$class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="253,5,419,35"/>
+<area shape="rect" id="node8" href="$class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="235,59,437,88"/>
+<area shape="rect" id="node10" href="$classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="300,112,372,141"/>
+<area shape="rect" id="node12" href="$classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="299,165,373,195"/>
+</map>

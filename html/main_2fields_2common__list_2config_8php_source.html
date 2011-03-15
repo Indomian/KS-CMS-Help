@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/common_list/config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/common_list/config.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="main_2fields_2common__list_2config_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00013"></a>00013 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="main_2fields_2common__list_2config_8php.html#a2e80845d9211e1db902f0de7436132bc">00015</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#a2e80845d9211e1db902f0de7436132bc">$arLists</a>=array();
+<a name="l00016"></a>00016 <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="stringliteral">&#39;/main/fields/common_list/values.php&#39;</span>))
+<a name="l00017"></a>00017         include_once(MODULES_DIR.<span class="stringliteral">&#39;/main/fields/common_list/values.php&#39;</span>);
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="comment">//Сохраняем имя всех параметров       </span>
+<a name="l00020"></a><a class="code" href="main_2fields_2common__list_2config_8php.html#ab2b1d380bc89b3e45fed989fe8be637b">00020</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#ab2b1d380bc89b3e45fed989fe8be637b">$sFieldName</a>=$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;ext_&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>];
+<a name="l00021"></a>00021 <span class="comment">//Определяем значение</span>
+<a name="l00022"></a><a class="code" href="main_2fields_2common__list_2config_8php.html#a900dc8584cc19c4b92c9b4bd060c8c90">00022</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#a900dc8584cc19c4b92c9b4bd060c8c90">$arDefaultValue</a>=explode(<span class="charliteral">&#39;&gt;&#39;</span>,$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;default&#39;</span>]);
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">00024</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=<span class="stringliteral">&#39;&lt;table class=&quot;layout&quot;&gt;&lt;tr&gt;&lt;td width=&quot;30%&quot;&gt;Количество одновременных значений (1 - выпадающий список, больше - список множественного выбора): &lt;/td&gt;&#39;</span> .
+<a name="l00025"></a>00025                 <span class="stringliteral">&#39;&lt;td width=&quot;70%&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;form_input&quot; &#39;</span> .
+<a name="l00026"></a>00026                 <span class="stringliteral">&#39;name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; &#39;</span> .
+<a name="l00027"></a>00027                 <span class="stringliteral">&#39;value=&quot;&#39;</span>.intval($params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_1&#39;</span>]).<span class="stringliteral">&#39;&quot; &#39;</span> .
+<a name="l00028"></a>00028                 <span class="stringliteral">&#39;id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+<a name="l00029"></a>00029                 <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Название списка значений: &lt;/td&gt;&#39;</span> .
+<a name="l00030"></a>00030                 <span class="stringliteral">&#39;&lt;td&gt;&#39;</span> .
+<a name="l00031"></a>00031                         <span class="stringliteral">&#39;&lt;input type=&quot;text&quot; name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot; id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot; value=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_2&#39;</span>].<span class="stringliteral">&#39;&quot;/&gt;&#39;</span>.
+<a name="l00032"></a>00032                         <span class="stringliteral">&#39;&amp;lt;&amp;lt;&#39;</span>.
+<a name="l00033"></a>00033                         <span class="stringliteral">&#39;&lt;select class=&quot;form_input&quot; name=&quot;list_name&quot; id=&quot;list_name&quot;&gt;&#39;</span>.
+<a name="l00034"></a>00034                                 <span class="stringliteral">&#39;&lt;option value=&quot;&quot;&gt;Создать новый&lt;/option&gt;&#39;</span>;
+<a name="l00035"></a>00035                                 <span class="keywordflow">foreach</span>(<a class="code" href="main_2fields_2common__list_2config_8php.html#a2e80845d9211e1db902f0de7436132bc">$arLists</a> as $key=&gt;$arValue)
+<a name="l00036"></a>00036                                 {
+<a name="l00037"></a>00037                                         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;option value=&quot;&#39;</span>.$key.<span class="stringliteral">&#39;&quot;&gt;&#39;</span>.$key.<span class="stringliteral">&#39;&lt;/option&gt;&#39;</span>;
+<a name="l00038"></a>00038                                         <span class="keywordflow">if</span> ($key==$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_2&#39;</span>])
+<a name="l00039"></a>00039                                         {
+<a name="l00040"></a>00040                                                 <span class="keywordflow">foreach</span>($arValue as $skey=&gt;<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)
+<a name="l00041"></a>00041                                                 {
+<a name="l00042"></a>00042                                                         <span class="keywordflow">if</span>(is_array(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>))
+<a name="l00043"></a>00043                                                         {       
+<a name="l00044"></a>00044                                                                 <span class="keywordflow">foreach</span>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a> as $sskey=&gt;$svalue)
+<a name="l00045"></a>00045                                                                 {
+<a name="l00046"></a>00046                                                                         $sValues.=$skey.<span class="charliteral">&#39;:&#39;</span>.$sskey.<span class="charliteral">&#39;=&#39;</span>.$svalue.<span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00047"></a>00047                                                                 }
+<a name="l00048"></a>00048                                                         }
+<a name="l00049"></a>00049                                                         <span class="keywordflow">else</span>
+<a name="l00050"></a>00050                                                         {
+<a name="l00051"></a>00051                                                                 $sValues.=$skey.<span class="charliteral">&#39;=&#39;</span>.<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>.<span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00052"></a>00052                                                         }
+<a name="l00053"></a>00053                                                 }
+<a name="l00054"></a>00054                                                 <a class="code" href="common__list_2show_8php.html#a35e6f693ba9c8f6107e967f982b77d95">$arValues</a>=$arValue;
+<a name="l00055"></a>00055                                         }
+<a name="l00056"></a>00056                                         <span class="keywordflow">if</span>(is_array($arValue))
+<a name="l00057"></a>00057                                         {
+<a name="l00058"></a>00058                                                 <span class="keywordflow">foreach</span>($arValue as $skey=&gt;$svalue)
+<a name="l00059"></a>00059                                                 {
+<a name="l00060"></a>00060                                                         <span class="keywordflow">if</span>(is_array($svalue))
+<a name="l00061"></a>00061                                                         {       
+<a name="l00062"></a>00062                                                                 <span class="keywordflow">foreach</span>($svalue as $sskey=&gt;$ssvalue)
+<a name="l00063"></a>00063                                                                 {
+<a name="l00064"></a>00064                                                                         $arSValues[$key].=$skey.<span class="charliteral">&#39;:&#39;</span>.$sskey.<span class="charliteral">&#39;=&#39;</span>.$ssvalue.<span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00065"></a>00065                                                                 }
+<a name="l00066"></a>00066                                                         }
+<a name="l00067"></a>00067                                                         <span class="keywordflow">else</span>
+<a name="l00068"></a>00068                                                         {
+<a name="l00069"></a>00069                                                                 $arSValues[$key].=$skey.<span class="charliteral">&#39;=&#39;</span>.$svalue.<span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00070"></a>00070                                                         }
+<a name="l00071"></a>00071                                                 }
+<a name="l00072"></a>00072                                         }
+<a name="l00073"></a>00073                                 }
+<a name="l00074"></a>00074   <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;/select&gt;&#39;</span>;
+<a name="l00075"></a>00075   <span class="keywordflow">if</span>(count($arSValues)&gt;0)
+<a name="l00076"></a>00076   {
+<a name="l00077"></a>00077         <span class="keywordflow">foreach</span>($arSValues as $key=&gt;<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)
+<a name="l00078"></a>00078         {       
+<a name="l00079"></a>00079                 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;span id=&quot;arval_&#39;</span>.$key.<span class="stringliteral">&#39;&quot; style=&quot;display:none;&quot;&gt;&#39;</span>.<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>.<span class="stringliteral">&#39;&lt;/span&gt;&#39;</span>;
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081   }
+<a name="l00082"></a>00082   <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;/td&gt;&lt;/tr&gt;&#39;</span>.
+<a name="l00083"></a>00083                 <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Список значений (новое значение с новой строки, если требуется задать значение и подпись к нему необходимо соблюдать следующий синтаксис &amp;lt;значение&amp;gt;=&amp;lt;подпись&amp;gt;): &lt;/td&gt;&#39;</span> .
+<a name="l00084"></a>00084                 <span class="stringliteral">&#39;&lt;td&gt;&lt;textarea class=&quot;form_input&quot; style=&quot;width:100%;height:200px;&quot; &#39;</span> .
+<a name="l00085"></a>00085                 <span class="stringliteral">&#39;name=&quot;values&quot;&#39;</span>.
+<a name="l00086"></a>00086                 <span class="stringliteral">&#39;id=&quot;values&quot;&gt;&#39;</span>.$sValues.<span class="stringliteral">&#39;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+<a name="l00087"></a>00087                 <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Значение по умолчанию: &lt;/td&gt;&lt;td&gt;&#39;</span> .
+<a name="l00088"></a>00088                 <span class="stringliteral">&#39;&lt;fieldset id=&quot;common&#39;</span>.$sFieldName.<span class="stringliteral">&#39;&quot;&gt;&#39;</span> .
+<a name="l00089"></a>00089                 <span class="stringliteral">&#39;&lt;legend&gt;Значения&lt;/legend&gt;&#39;</span>;
+<a name="l00090"></a>00090 <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_1&#39;</span>]&gt;1)
+<a name="l00091"></a>00091 {
+<a name="l00092"></a>00092         <a class="code" href="common__list_2savedef_8php.html#abc2e643e3267a256108630eae56a7b4d">$sType</a>=<span class="stringliteral">&#39;checkbox&#39;</span>;
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 <span class="keywordflow">else</span>
+<a name="l00095"></a>00095 {
+<a name="l00096"></a>00096         <a class="code" href="common__list_2savedef_8php.html#abc2e643e3267a256108630eae56a7b4d">$sType</a>=<span class="stringliteral">&#39;radio&#39;</span>;
+<a name="l00097"></a>00097 }
+<a name="l00098"></a>00098 <span class="keywordflow">foreach</span>(<a class="code" href="common__list_2show_8php.html#a35e6f693ba9c8f6107e967f982b77d95">$arValues</a> as $key=&gt;$item)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100         <span class="keywordflow">if</span>(is_array($item))
+<a name="l00101"></a>00101         {
+<a name="l00102"></a>00102                 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;fieldset id=&quot;set_&#39;</span>.$key.<span class="stringliteral">&#39;&quot;&gt;&lt;legend&gt;&#39;</span>.$key.<span class="stringliteral">&#39;&lt;/legend&gt;&#39;</span>;
+<a name="l00103"></a>00103                 <span class="keywordflow">foreach</span>($item as $skey=&gt;$sitem)
+<a name="l00104"></a>00104                 {
+<a name="l00105"></a>00105                         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;label&gt;&lt;input type=&quot;&#39;</span>.$sType.<span class="stringliteral">&#39;&quot; name=&quot;&#39;</span>.<a class="code" href="main_2fields_2common__list_2config_8php.html#ab2b1d380bc89b3e45fed989fe8be637b">$sFieldName</a>.<span class="stringliteral">&#39;[]&quot; value=&quot;&#39;</span>.$key.<span class="charliteral">&#39;:&#39;</span>.$skey.<span class="charliteral">&#39;&quot;&#39;</span>.(in_array($key.<span class="charliteral">&#39;:&#39;</span>.$skey,<a class="code" href="main_2fields_2common__list_2config_8php.html#a900dc8584cc19c4b92c9b4bd060c8c90">$arDefaultValue</a>)?<span class="stringliteral">&#39; checked=&quot;checked&quot;&#39;</span>:<span class="stringliteral">&#39;&#39;</span>).<span class="stringliteral">&#39;&gt; &#39;</span>.$sitem.<span class="stringliteral">&#39;&lt;/label&gt;&lt;br/&gt;&#39;</span>;
+<a name="l00106"></a>00106                 }
+<a name="l00107"></a>00107                 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;/fieldset&gt;&#39;</span>;
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109         <span class="keywordflow">else</span>
+<a name="l00110"></a>00110         {
+<a name="l00111"></a>00111                 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;label&gt;&lt;input type=&quot;&#39;</span>.$sType.<span class="stringliteral">&#39;&quot; name=&quot;&#39;</span>.<a class="code" href="main_2fields_2common__list_2config_8php.html#ab2b1d380bc89b3e45fed989fe8be637b">$sFieldName</a>.<span class="stringliteral">&#39;[]&quot; value=&quot;&#39;</span>.$key.<span class="charliteral">&#39;&quot;&#39;</span>.(in_array($key,<a class="code" href="main_2fields_2common__list_2config_8php.html#a900dc8584cc19c4b92c9b4bd060c8c90">$arDefaultValue</a>)?<span class="stringliteral">&#39; checked=&quot;checked&quot;&#39;</span>:<span class="stringliteral">&#39;&#39;</span>).<span class="stringliteral">&#39;&gt; &#39;</span>.$item.<span class="stringliteral">&#39;&lt;/label&gt;&lt;br/&gt;&#39;</span>;      
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113 }
+<a name="l00114"></a>00114 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;/fieldset&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+<a name="l00115"></a>00115                 <span class="stringliteral">&#39;&lt;/table&gt;&#39;</span>.
+<a name="l00116"></a>00116                 <span class="stringliteral">&#39;&lt;script type=&quot;text/javascript&quot;&gt;$(document).ready(function(){&#39;</span> .
+<a name="l00117"></a>00117                         <span class="stringliteral">&#39;$(&quot;#values&quot;).keyup(function(event){&#39;</span> .
+<a name="l00118"></a>00118                                         <span class="stringliteral">&#39;this.lastInput++;&#39;</span>.
+<a name="l00119"></a>00119                                         <span class="stringliteral">&#39;if(this.lastInput&gt;5)&#39;</span>.
+<a name="l00120"></a>00120                                         <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00121"></a>00121                                                 <span class="stringliteral">&#39;this.lastInput=0;&#39;</span> .
+<a name="l00122"></a>00122                                                 <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot;).change();&#39;</span>.
+<a name="l00123"></a>00123                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00124"></a>00124                         <span class="stringliteral">&#39;});&#39;</span> .
+<a name="l00125"></a>00125                         <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).keyup(function(event){&#39;</span>.
+<a name="l00126"></a>00126                                 <span class="stringliteral">&#39;var val=parseInt(this.value);&#39;</span> .
+<a name="l00127"></a>00127                                 <span class="stringliteral">&#39;if(val&gt;0)&#39;</span> .
+<a name="l00128"></a>00128                                 <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00129"></a>00129                                         <span class="stringliteral">&#39;if(val==1)&#39;</span> .
+<a name="l00130"></a>00130                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00131"></a>00131                                                 <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;ext_&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&#39;&quot;).attr(&quot;multiple&quot;,false).attr(&quot;size&quot;,&quot;1&quot;);&#39;</span>.
+<a name="l00132"></a>00132                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00133"></a>00133                                         <span class="stringliteral">&#39;else&#39;</span>.
+<a name="l00134"></a>00134                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00135"></a>00135                                                 <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;ext_&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&#39;&quot;).attr(&quot;multiple&quot;,true).attr(&quot;size&quot;,&quot;3&quot;);&#39;</span>.
+<a name="l00136"></a>00136                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00137"></a>00137                                 <span class="charliteral">&#39;}&#39;</span> .
+<a name="l00138"></a>00138                         <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00139"></a>00139                         <span class="stringliteral">&#39;$(&quot;#list_name&quot;).change(function(event){</span>
+<a name="l00140"></a>00140 <span class="stringliteral">                                $(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot;).val(this.value);</span>
+<a name="l00141"></a>00141 <span class="stringliteral">                                $(&quot;#values&quot;).val($(&quot;#arval_&quot;+this.value).html());&#39;</span> .
+<a name="l00142"></a>00142                                 <span class="stringliteral">&#39;$(&quot;#values&quot;).change();&#39;</span>.
+<a name="l00143"></a>00143                         <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00144"></a>00144                         <span class="stringliteral">&#39;$(&quot;#values&quot;).change(function(event){&#39;</span> .
+<a name="l00145"></a>00145                                         <span class="stringliteral">&#39;try&#39;</span> .
+<a name="l00146"></a>00146                                         <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00147"></a>00147                                                 <span class="stringliteral">&#39;var arData=this.value.split(&quot;\n&quot;);&#39;</span>.
+<a name="l00148"></a>00148                                                 <span class="stringliteral">&#39;var val=parseInt($(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).val());&#39;</span>.
+<a name="l00149"></a>00149                                                 <span class="stringliteral">&#39;var sType=&quot;radio&quot;;&#39;</span>.
+<a name="l00150"></a>00150                                                 <span class="stringliteral">&#39;if(val&gt;0)&#39;</span> .
+<a name="l00151"></a>00151                                                 <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00152"></a>00152                                                         <span class="stringliteral">&#39;if(val==1)&#39;</span> .
+<a name="l00153"></a>00153                                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00154"></a>00154                                                                 <span class="stringliteral">&#39;sType=&quot;radio&quot;;&#39;</span>.
+<a name="l00155"></a>00155                                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00156"></a>00156                                                         <span class="stringliteral">&#39;else&#39;</span>.
+<a name="l00157"></a>00157                                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00158"></a>00158                                                                 <span class="stringliteral">&#39;sType=&quot;checkbox&quot;;&#39;</span>.
+<a name="l00159"></a>00159                                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00160"></a>00160                                                 <span class="charliteral">&#39;}&#39;</span> .
+<a name="l00161"></a>00161                                                 <span class="stringliteral">&#39;if(arData &amp;&amp; arData.length&gt;0)&#39;</span> .
+<a name="l00162"></a>00162                                                 <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00163"></a>00163                                                         <span class="stringliteral">&#39;var obSelect=$(&quot;#common&#39;</span>.$sFieldName.<span class="stringliteral">&#39;&quot;);&#39;</span>.
+<a name="l00164"></a>00164                                                         <span class="stringliteral">&#39;obSelect.empty();&#39;</span>.
+<a name="l00165"></a>00165                                                         <span class="stringliteral">&#39;for(var i=0;i&lt;arData.length;i++)&#39;</span> .
+<a name="l00166"></a>00166                                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00167"></a>00167                                                                 <span class="stringliteral">&#39;var row=arData[i].split(&quot;=&quot;);&#39;</span>.
+<a name="l00168"></a>00168                                                                 <span class="stringliteral">&#39;if(row &amp;&amp; row.length&gt;1)&#39;</span>.
+<a name="l00169"></a>00169                                                                 <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00170"></a>00170                                                                         <span class="stringliteral">&#39;var subrow=row[0].split(&quot;:&quot;);&#39;</span> .
+<a name="l00171"></a>00171                                                                         <span class="stringliteral">&#39;if(subrow &amp;&amp; subrow.length&gt;1)&#39;</span> .
+<a name="l00172"></a>00172                                                                         <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00173"></a>00173                                                                                 <span class="stringliteral">&#39;var group=$(&quot;#set_&quot;+subrow[0].replace(&quot; &quot;,&quot;_&quot;));&#39;</span> .
+<a name="l00174"></a>00174                                                                                 <span class="stringliteral">&#39;if(group.length&gt;0)&#39;</span> .
+<a name="l00175"></a>00175                                                                                 <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00176"></a>00176                                                                                         <span class="stringliteral">&#39;group.append(&quot;&lt;label&gt;&lt;input type=\&quot;&quot;+sType+&quot;\&quot; name=\&quot;&#39;</span>.$sFieldName.<span class="stringliteral">&#39;[]\&quot; value=\&quot;&quot;+row[0]+&quot;:&quot;+subrow[1]+&quot;\&quot;&gt;&quot;+row[1]+&quot;&lt;/label&gt;&lt;br/&gt;&quot;);&#39;</span>.
+<a name="l00177"></a>00177                                                                                 <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00178"></a>00178                                                                                 <span class="stringliteral">&#39;else&#39;</span> .
+<a name="l00179"></a>00179                                                                                 <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00180"></a>00180                                                                                         <span class="stringliteral">&#39;obSelect.append(&quot;&lt;fieldset id=\&quot;set_&quot;+subrow[0].replace(&quot; &quot;,&quot;_&quot;)+&quot;\&quot;&gt;&lt;legend&gt;&quot;+subrow[0]+&quot;&lt;/legend&gt;&lt;/fieldset&gt;&quot;);&#39;</span> .
+<a name="l00181"></a>00181                                                                                         <span class="stringliteral">&#39;$(&quot;#set_&quot;+subrow[0].replace(&quot; &quot;,&quot;_&quot;)).append(&quot;&lt;label&gt;&lt;input type=\&quot;&quot;+sType+&quot;\&quot; name=\&quot;&#39;</span>.$sFieldName.<span class="stringliteral">&#39;[]\&quot; value=\&quot;&quot;+row[0]+&quot;:&quot;+subrow[1]+&quot;\&quot;&gt;&quot;+row[1]+&quot;&lt;/label&gt;&lt;br/&gt;&quot;);&#39;</span>.
+<a name="l00182"></a>00182                                                                                 <span class="charliteral">&#39;}&#39;</span>.                                                                    
+<a name="l00183"></a>00183                                                                         <span class="charliteral">&#39;}&#39;</span> .
+<a name="l00184"></a>00184                                                                         <span class="stringliteral">&#39;else&#39;</span> .
+<a name="l00185"></a>00185                                                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00186"></a>00186                                                                                 <span class="stringliteral">&#39;obSelect.append(&quot;&lt;label&gt;&lt;input type=\&quot;&quot;+sType+&quot;\&quot; name=\&quot;&#39;</span>.$sFieldName.<span class="stringliteral">&#39;[]\&quot; value=\&quot;&quot;+row[0]+&quot;\&quot;&gt;&quot;+row[1]+&quot;&lt;/label&gt;&lt;br/&gt;&quot;);&#39;</span>.
+<a name="l00187"></a>00187                                                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00188"></a>00188                                                                 <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00189"></a>00189                                                                 <span class="stringliteral">&#39;else &#39;</span>.
+<a name="l00190"></a>00190                                                                         <span class="stringliteral">&#39;obSelect.append(&quot;&lt;label&gt;&lt;input type=\&quot;&quot;+sType+&quot;\&quot; name=\&quot;&#39;</span>.$sFieldName.<span class="stringliteral">&#39;\&quot; value=\&quot;&quot;+arData[i]+&quot;\&quot;&gt;&quot;+arData[i]+&quot;&lt;/label&gt;&lt;br/&gt;&quot;);&#39;</span>.
+<a name="l00191"></a>00191                                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00192"></a>00192                                                 <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00193"></a>00193                                         <span class="charliteral">&#39;}&#39;</span> .
+<a name="l00194"></a>00194                                         <span class="stringliteral">&#39;catch(e)&#39;</span> .
+<a name="l00195"></a>00195                                         <span class="charliteral">&#39;{&#39;</span> .
+<a name="l00196"></a>00196                                                 <span class="stringliteral">&#39;alert(e);&#39;</span>.
+<a name="l00197"></a>00197                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00198"></a>00198                         <span class="stringliteral">&#39;});});&#39;</span>.
+<a name="l00199"></a>00199                 <span class="stringliteral">&#39;&lt;/script&gt;&#39;</span>;
+<a name="l00200"></a>00200 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

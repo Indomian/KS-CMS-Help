@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CEventsHandler</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a>  </div>
+  <div class="headertitle">
+<h1>Класс CEventsHandler</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CEventsHandler" --><!-- doxytag: inherits="CBaseObject" -->
+<p>Базовые классы:<a class="el" href="class_c_base_object.html">CBaseObject</a>.</p>
+<div class="dynheader">
+Граф связей класса CEventsHandler:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_events_handler__coll__graph.png" border="0" usemap="#_c_events_handler_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_events_handler_coll__map" id="_c_events_handler_coll__map">
+<area shape="rect" id="node2" href="class_c_base_object.html" title="CBaseObject" alt="" coords="15,5,119,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a523e867dbde639f405a0a002342d8f5d">__construct</a> ($config_file, $return_type= 'overall')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a9e5b99f6339426496d66bb73c078cf05">AddEvent</a> ($module, $event, $handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#aebec4ed0bff13b50f71198a903d1f683">GetLastEventModule</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a39717c695a573087072b2682a790d2cd">GetLastEvent</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#abde4cf11bbf498878a634a80cd5c8b4a">GetLastResult</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a3fa8ea2a7b1ca8a78d5a83cadeea7852">SetMode</a> ($mode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a010980da56c14a7246491baf8a0a9217">PushMode</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a00e1bc94eacdb7374d5a075d8ec18628">PopMode</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a9244d11ea60c6bc478f7dc0ceab5d02f">HasHandler</a> ($module, $event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a94e0d109f12220905591f0b344bda8fd">Execute</a> ($moduleName, $onEvent, &amp;$hParams=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a172e14e421518194c0f232bdc2bd0b9c">LoadFromFile</a> ($filename=&quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#af1ca2a65a82164db492d9fa865389aa4">SaveToFile</a> ($filename=&quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a9a8fd200f775b3a2671354468dcc96eb">AddStaticEvent</a> ($module, $event, $arParams)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#ae6059ea82d657151d1d5b4f5c5ef9177">$config_file</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a1bcec9bbd34255927faaf155bf3a940a">$events</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a6e8cd923cf7b2e54fce8444387210ea6">$actual_module</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a8df96a3c2577a10dcec93412d3f9f739">$actual_event</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a496cfb57972da9532fe933ca7db6815e">$actual_result</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a7796dad0ff3ac813d513290c9900a763">$return_type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_events_handler.html#a6ead9e8a6bc51df0712bc401c049c4d1">$arModeStack</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="class_c_events_handler.html">CEventsHandler</a> - класс, предназначенный для вызова обработчиков событий</p>
+<p>Добавлен метод для работы с файлом событий, установка и удаление обработчиков событий</p>
+<dl class="author"><dt><b>Автор:</b></dt><dd>north-e &lt;<a href="mailto:pushkov@kolosstudio.ru">pushkov@kolosstudio.ru</a>&gt;, blade39 &lt;<a href="mailto:blade39@kolosstudio.ru">blade39@kolosstudio.ru</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Версия:</b></dt><dd>1.1 </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>03.03.2009 </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00028">28</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a523e867dbde639f405a0a002342d8f5d"></a><!-- doxytag: member="CEventsHandler::__construct" ref="a523e867dbde639f405a0a002342d8f5d" args="($config_file, $return_type= 'overall')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>config_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>return_type</em> = <code>'overall'</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор объекта класса, осуществляет подключение файла с конфигурационным массивом устанавливает значения полей по умолчанию</p>
+<p>Конфигурационный массив должен быть с именем $KS_EVENTS</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$config_file Конфигурационный файл событий, содержащий массив с именами файлов и функций, выполняющих соответствующие действия для каждого модуля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$return_type Определяет вид ответа метода <a class="el" href="class_c_events_handler.html#a94e0d109f12220905591f0b344bda8fd">CEventsHandler::Execute()</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00099">99</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_events_handler_a523e867dbde639f405a0a002342d8f5d_cgraph.png" border="0" usemap="#class_c_events_handler_a523e867dbde639f405a0a002342d8f5d_cgraph" alt=""/></div>
+<map name="class_c_events_handler_a523e867dbde639f405a0a002342d8f5d_cgraph" id="class_c_events_handler_a523e867dbde639f405a0a002342d8f5d_cgraph">
+<area shape="rect" id="node3" href="class_c_events_handler.html#a172e14e421518194c0f232bdc2bd0b9c" title="LoadFromFile" alt="" coords="151,5,255,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a9e5b99f6339426496d66bb73c078cf05"></a><!-- doxytag: member="CEventsHandler::AddEvent" ref="a9e5b99f6339426496d66bb73c078cf05" args="($module, $event, $handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddEvent </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>handler</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод добавляет событие в дерево событий </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00118">118</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9a8fd200f775b3a2671354468dcc96eb"></a><!-- doxytag: member="CEventsHandler::AddStaticEvent" ref="a9a8fd200f775b3a2671354468dcc96eb" args="($module, $event, $arParams)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddStaticEvent </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arParams</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00441">441</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a94e0d109f12220905591f0b344bda8fd"></a><!-- doxytag: member="CEventsHandler::Execute" ref="a94e0d109f12220905591f0b344bda8fd" args="($moduleName, $onEvent, &amp;$hParams=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Execute </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>moduleName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>onEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>hParams</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод, выполняющий указанные в конфигурационном массиве действия для данного модуля по установленному событию</p>
+<p>Тип ответа определяется полем <a class="el" href="class_c_events_handler.html#a7796dad0ff3ac813d513290c9900a763">CEventsHandler::$return_type</a></p>
+<p>Добавлена настройка обработчика bOnce - если установлено в true то после выполнения обработчик будет удален из списка Добавлена переменная обработчика $arParams - содержит дополнительные данные которые надо передать функции обработчику Добавлена поддержка сложного обработчика</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$moduleName Имя (идентификатор) модуля, для которого будут выполняться обработчики события </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$onEvent Возникшее событие, которое следует обработать </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>&amp;$hParams Ссылка на параметры, которые необходимо передать обработчикам </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>mixed </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00240">240</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a39717c695a573087072b2682a790d2cd"></a><!-- doxytag: member="CEventsHandler::GetLastEvent" ref="a39717c695a573087072b2682a790d2cd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetLastEvent </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод, возвращающий имя последнего события, по которому выполнялись обработчики </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00137">137</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aebec4ed0bff13b50f71198a903d1f683"></a><!-- doxytag: member="CEventsHandler::GetLastEventModule" ref="aebec4ed0bff13b50f71198a903d1f683" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetLastEventModule </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод, возвращающий имя модуля, для которого возникло последнее событие </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00127">127</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abde4cf11bbf498878a634a80cd5c8b4a"></a><!-- doxytag: member="CEventsHandler::GetLastResult" ref="abde4cf11bbf498878a634a80cd5c8b4a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetLastResult </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод, возвращающий результат обработки последнего события </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00147">147</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9244d11ea60c6bc478f7dc0ceab5d02f"></a><!-- doxytag: member="CEventsHandler::HasHandler" ref="a9244d11ea60c6bc478f7dc0ceab5d02f" args="($module, $event)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HasHandler </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>event</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод проверяет наличие обработчика для указанного модуля и события В целом проверяется реальное наличие обработчика (т.е. возможность его вызвать), а не только его регистрация в файле обработчиков </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00174">174</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a172e14e421518194c0f232bdc2bd0b9c"></a><!-- doxytag: member="CEventsHandler::LoadFromFile" ref="a172e14e421518194c0f232bdc2bd0b9c" args="($filename=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>filename</em> = <code>&quot;&quot;</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет загрузку списка событий из файла </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00365">365</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_events_handler_a172e14e421518194c0f232bdc2bd0b9c_icgraph.png" border="0" usemap="#class_c_events_handler_a172e14e421518194c0f232bdc2bd0b9c_icgraph" alt=""/></div>
+<map name="class_c_events_handler_a172e14e421518194c0f232bdc2bd0b9c_icgraph" id="class_c_events_handler_a172e14e421518194c0f232bdc2bd0b9c_icgraph">
+<area shape="rect" id="node3" href="class_c_events_handler.html#a523e867dbde639f405a0a002342d8f5d" title="__construct" alt="" coords="160,5,256,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a00e1bc94eacdb7374d5a075d8ec18628"></a><!-- doxytag: member="CEventsHandler::PopMode" ref="a00e1bc94eacdb7374d5a075d8ec18628" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PopMode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00164">164</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a010980da56c14a7246491baf8a0a9217"></a><!-- doxytag: member="CEventsHandler::PushMode" ref="a010980da56c14a7246491baf8a0a9217" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PushMode </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00159">159</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af1ca2a65a82164db492d9fa865389aa4"></a><!-- doxytag: member="CEventsHandler::SaveToFile" ref="af1ca2a65a82164db492d9fa865389aa4" args="($filename=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SaveToFile </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>filename</em> = <code>&quot;&quot;</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет сохранение обработчиков событий в файл </p>
+<dl class="author"><dt><b>Автор:</b></dt><dd>blade39 &lt;<a href="mailto:blade39@kolosstudio.ru">blade39@kolosstudio.ru</a>&gt; </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00388">388</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3fa8ea2a7b1ca8a78d5a83cadeea7852"></a><!-- doxytag: member="CEventsHandler::SetMode" ref="a3fa8ea2a7b1ca8a78d5a83cadeea7852" args="($mode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetMode </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>mode</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00154">154</a></p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="a8df96a3c2577a10dcec93412d3f9f739"></a><!-- doxytag: member="CEventsHandler::$actual_event" ref="a8df96a3c2577a10dcec93412d3f9f739" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$actual_event<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00080">80</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6e8cd923cf7b2e54fce8444387210ea6"></a><!-- doxytag: member="CEventsHandler::$actual_module" ref="a6e8cd923cf7b2e54fce8444387210ea6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$actual_module<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00073">73</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a496cfb57972da9532fe933ca7db6815e"></a><!-- doxytag: member="CEventsHandler::$actual_result" ref="a496cfb57972da9532fe933ca7db6815e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$actual_result<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6ead9e8a6bc51df0712bc401c049c4d1"></a><!-- doxytag: member="CEventsHandler::$arModeStack" ref="a6ead9e8a6bc51df0712bc401c049c4d1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arModeStack<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00066">66</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae6059ea82d657151d1d5b4f5c5ef9177"></a><!-- doxytag: member="CEventsHandler::$config_file" ref="ae6059ea82d657151d1d5b4f5c5ef9177" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$config_file<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1bcec9bbd34255927faaf155bf3a940a"></a><!-- doxytag: member="CEventsHandler::$events" ref="a1bcec9bbd34255927faaf155bf3a940a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$events<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7796dad0ff3ac813d513290c9900a763"></a><!-- doxytag: member="CEventsHandler::$return_type" ref="a7796dad0ff3ac813d513290c9900a763" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$return_type<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a> строка <a class="el" href="class_8_c_events_handler_8php_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_events_handler_8php_source.html">class.CEventsHandler.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:24. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

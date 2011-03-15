@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/main/fields/radiogroup/config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/main/fields/radiogroup/config.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="main_2fields_2radiogroup_2config_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>(!defined('KS_ENGINE'))&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2radiogroup_2config_8php.html#a97d60f28fafa2d53ff31d39abfafd0ac">$sResult</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">else&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2radiogroup_2config_8php.html#a6e5164cb6ef1e10bb4b228f278b99737">$sType</a> = 'radio'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2radiogroup_2config_8php.html#aa32ac727447c559eca81d813b1494d2d">$arVal</a> = explode('&gt;',$params['value'])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2radiogroup_2config_8php.html#a35e6f693ba9c8f6107e967f982b77d95">$arValues</a> = explode(&quot;\n&quot;,$params['field']['option_2'])</td></tr>
+</table>
+<hr/><h2>Переменные</h2>
+<a class="anchor" id="aa32ac727447c559eca81d813b1494d2d"></a><!-- doxytag: member="config.php::$arVal" ref="aa32ac727447c559eca81d813b1494d2d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arVal = explode('&gt;',$params['value'])</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a35e6f693ba9c8f6107e967f982b77d95"></a><!-- doxytag: member="config.php::$arValues" ref="a35e6f693ba9c8f6107e967f982b77d95" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arValues = explode(&quot;\n&quot;,$params['field']['option_2'])</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a97d60f28fafa2d53ff31d39abfafd0ac"></a><!-- doxytag: member="config.php::$sResult" ref="a97d60f28fafa2d53ff31d39abfafd0ac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a> (is_array($arValues)&amp;&amp;count($arValues)&gt;0) $sResult</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><pre class="fragment"><span class="stringliteral">&#39;&lt;table class=&quot;layout&quot;&gt;&lt;tr&gt;&lt;td width=&quot;30%&quot;&gt;Количество одновременных значений (1 - радио кнопки, больше - кнопки выбора): &lt;/td&gt;&#39;</span> .
+                <span class="stringliteral">&#39;&lt;td width=&quot;70%&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;form_input&quot; &#39;</span> .
+                <span class="stringliteral">&#39;name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; &#39;</span> .
+                <span class="stringliteral">&#39;value=&quot;&#39;</span>.intval($params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_1&#39;</span>]).<span class="stringliteral">&#39;&quot; &#39;</span> .
+                <span class="stringliteral">&#39;id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+                <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Список значений (новое значение с новой строки, если требуется задать значение и подпись к нему необходимо соблюдать следующий синтаксис &amp;lt;значение&amp;gt;=&amp;lt;подпись&amp;gt;): &lt;/td&gt;&lt;td&gt;&lt;textarea class=&quot;form_input&quot; &#39;</span> .
+                <span class="stringliteral">&#39;name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot; &#39;</span>.
+                <span class="stringliteral">&#39;id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot;&gt;&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_2&#39;</span>].<span class="stringliteral">&#39;&lt;/textarea&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+                <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Значение по умолчанию: &lt;/td&gt;&lt;td id=&quot;listValues&quot;&gt;&#39;</span>
+</pre></div>
+<p>См. определение в файле <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6e5164cb6ef1e10bb4b228f278b99737"></a><!-- doxytag: member="config.php::$sType" ref="a6e5164cb6ef1e10bb4b228f278b99737" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">else $sType = 'radio'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2radiogroup_2config_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

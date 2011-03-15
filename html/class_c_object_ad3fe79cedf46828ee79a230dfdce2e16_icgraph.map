@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="120,5,277,35"/>
+<area shape="rect" id="node5" href="$class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="109,59,288,88"/>
+<area shape="rect" id="node7" href="$class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="121,112,276,141"/>
+</map>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/main/libs/smarty/plugins/outputfilter.trimwhitespace.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/main/libs/smarty/plugins/outputfilter.trimwhitespace.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="outputfilter_8trimwhitespace_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smarty.html">Smarty</a></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="outputfilter_8trimwhitespace_8php.html#a1f7967a12d5c4b2ae528abef4adbcc91">smarty_outputfilter_trimwhitespace</a> ($source, &amp;$smarty)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="outputfilter_8trimwhitespace_8php.html#aea32cf24bdab2c408833e216befd89a9">smarty_outputfilter_trimwhitespace_replace</a> ($search_str, $replace, &amp;$subject)</td></tr>
+</table>
+<hr/><h2>Функции</h2>
+<a class="anchor" id="a1f7967a12d5c4b2ae528abef4adbcc91"></a><!-- doxytag: member="outputfilter.trimwhitespace.php::smarty_outputfilter_trimwhitespace" ref="a1f7967a12d5c4b2ae528abef4adbcc91" args="($source, &amp;$smarty)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">smarty_outputfilter_trimwhitespace </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>smarty</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="class_smarty.html">Smarty</a> trimwhitespace outputfilter plugin</p>
+<p>File: <a class="el" href="outputfilter_8trimwhitespace_8php.html">outputfilter.trimwhitespace.php</a><br/>
+ Type: outputfilter<br/>
+ Name: trimwhitespace<br/>
+ Date: Jan 25, 2003<br/>
+ Purpose: trim leading white space and blank lines from template source after it gets interpreted, cleaning up code and saving bandwidth. Does not affect &lt;</p>
+<pre>&gt;</pre><p> and &lt;SCRIPT&gt;&lt;/SCRIPT&gt; blocks.<br/>
+ Install: Drop into the plugin directory, call <code>$smarty-&gt;load_filter('output','trimwhitespace');</code> from application. </p>
+<dl class="author"><dt><b>Автор:</b></dt><dd>Monte Ohrt &lt;monte at="" ohrt="" dot="" com&gt;=""&gt; </dd>
+<dd>
+Contributions from Lars Noschinski &lt;<a href="mailto:lars@usenet.noschinski.de">lars@usenet.noschinski.de</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Версия:</b></dt><dd>1.3 </dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_smarty.html">Smarty</a></em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="outputfilter_8trimwhitespace_8php_source.html">outputfilter.trimwhitespace.php</a> строка <a class="el" href="outputfilter_8trimwhitespace_8php_source.html#l00028">28</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="outputfilter_8trimwhitespace_8php_a1f7967a12d5c4b2ae528abef4adbcc91_cgraph.png" border="0" usemap="#outputfilter_8trimwhitespace_8php_a1f7967a12d5c4b2ae528abef4adbcc91_cgraph" alt=""/></div>
+<map name="outputfilter_8trimwhitespace_8php_a1f7967a12d5c4b2ae528abef4adbcc91_cgraph" id="outputfilter_8trimwhitespace_8php_a1f7967a12d5c4b2ae528abef4adbcc91_cgraph">
+<area shape="rect" id="node3" href="outputfilter_8trimwhitespace_8php.html#aea32cf24bdab2c408833e216befd89a9" title="smarty_outputfilter_trimwhitespace_replace" alt="" coords="303,5,604,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aea32cf24bdab2c408833e216befd89a9"></a><!-- doxytag: member="outputfilter.trimwhitespace.php::smarty_outputfilter_trimwhitespace_replace" ref="aea32cf24bdab2c408833e216befd89a9" args="($search_str, $replace, &amp;$subject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">smarty_outputfilter_trimwhitespace_replace </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>search_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>replace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>subject</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="outputfilter_8trimwhitespace_8php_source.html">outputfilter.trimwhitespace.php</a> строка <a class="el" href="outputfilter_8trimwhitespace_8php_source.html#l00064">64</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="outputfilter_8trimwhitespace_8php_aea32cf24bdab2c408833e216befd89a9_icgraph.png" border="0" usemap="#outputfilter_8trimwhitespace_8php_aea32cf24bdab2c408833e216befd89a9_icgraph" alt=""/></div>
+<map name="outputfilter_8trimwhitespace_8php_aea32cf24bdab2c408833e216befd89a9_icgraph" id="outputfilter_8trimwhitespace_8php_aea32cf24bdab2c408833e216befd89a9_icgraph">
+<area shape="rect" id="node3" href="outputfilter_8trimwhitespace_8php.html#a1f7967a12d5c4b2ae528abef4adbcc91" title="smarty_outputfilter_trimwhitespace" alt="" coords="357,5,605,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:22. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

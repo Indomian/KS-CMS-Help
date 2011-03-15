@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CAccess.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CAccess.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_access_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * CMS-local</span>
+<a name="l00004"></a>00004 <span class="comment"> * </span>
+<a name="l00005"></a>00005 <span class="comment"> * Created on 19.11.2008</span>
+<a name="l00006"></a>00006 <span class="comment"> *</span>
+<a name="l00007"></a>00007 <span class="comment"> * Developed by blade39</span>
+<a name="l00008"></a>00008 <span class="comment"> * </span>
+<a name="l00009"></a>00009 <span class="comment"> */</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keywordflow">if</span>(!defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>)){  die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="comment">//==================== Блок констант для уровней доступа ==============================</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="class_8_c_access_8php.html#a61adaa9cf14d5e80f59c64a971c004b3">00015</a> define(<span class="stringliteral">&#39;KS_ACCESS_FULL&#39;</span>,0);
+<a name="l00016"></a><a class="code" href="class_8_c_access_8php.html#aaa0474cfa2b806cb074424b91eb85323">00016</a> define(<span class="stringliteral">&#39;KS_ACCESS_DENIED&#39;</span>,10);
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="comment">//==================== Блок инклудов требуемых библиотек ==============================</span>
+<a name="l00019"></a>00019 include_once(MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CFieldsObject.php&#39;</span>);  
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="comment">//==================== Блок классов и исполняемого кода  ==============================</span>
+<a name="l00026"></a><a class="code" href="class_c_base_access.html">00026</a> <span class="comment"></span><span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_c_base_access.html">CBaseAccess</a> <span class="keyword">extends</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>
+<a name="l00027"></a>00027 {
+<a name="l00034"></a>00034         <span class="keyword">abstract</span> function <a class="code" href="class_c_base_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">Set</a>($group_id,<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$level);
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00041"></a><a class="code" href="class_c_modules_access.html">00041</a> <span class="keyword">class </span><a class="code" href="class_c_modules_access.html">CModulesAccess</a> <span class="keyword">extends</span> <a class="code" href="class_c_base_access.html">CBaseAccess</a>
+<a name="l00042"></a>00042 {
+<a name="l00043"></a><a class="code" href="class_c_modules_access.html#ada959ea544ccb97467410e5153627977">00043</a>         function <a class="code" href="class_c_modules_access.html#ada959ea544ccb97467410e5153627977">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&#39;usergroups_levels&#39;</span>)
+<a name="l00044"></a>00044         {
+<a name="l00045"></a>00045                 <a class="code" href="class_c_modules_access.html#ada959ea544ccb97467410e5153627977">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00046"></a>00046                 $this-&gt;arFields=array(<span class="stringliteral">&#39;id&#39;</span>,<span class="stringliteral">&#39;group_id&#39;</span>,<span class="stringliteral">&#39;module&#39;</span>,<span class="stringliteral">&#39;level&#39;</span>);
+<a name="l00047"></a>00047         }
+<a name="l00048"></a>00048         
+<a name="l00049"></a><a class="code" href="class_c_modules_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">00049</a>         function <a class="code" href="class_c_modules_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">Set</a>($group_id,<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$level)
+<a name="l00050"></a>00050         {
+<a name="l00051"></a>00051                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00052"></a>00052                 <span class="keywordflow">if</span>($res=$this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(array(<span class="stringliteral">&#39;group_id&#39;</span>=&gt;$group_id,<span class="stringliteral">&#39;module&#39;</span>=&gt;<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>)))
+<a name="l00053"></a>00053                 {
+<a name="l00054"></a>00054                         $ks_db-&gt;query(<span class="stringliteral">&quot;UPDATE &quot;</span>.PREFIX.$this-&gt;sTable.<span class="stringliteral">&quot; SET level=&#39;&quot;</span>.intval($level).<span class="stringliteral">&quot;&#39; WHERE id=&#39;&quot;</span>.$res[<span class="stringliteral">&#39;id&#39;</span>].<span class="stringliteral">&quot;&#39;&quot;</span>);
+<a name="l00055"></a>00055                 }
+<a name="l00056"></a>00056                 <span class="keywordflow">else</span>
+<a name="l00057"></a>00057                 {
+<a name="l00058"></a>00058                         $ks_db-&gt;query(<span class="stringliteral">&quot;INSERT INTO &quot;</span>.PREFIX.$this-&gt;sTable.<span class="stringliteral">&quot;(group_id,module,level) VALUES (&#39;$group_id&#39;,&#39;$module&#39;,&#39;$level&#39;)&quot;</span>);
+<a name="l00059"></a>00059                 }
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061         
+<a name="l00062"></a><a class="code" href="class_c_modules_access.html#ad92a22dd909a1677de6d1bfdc5d59b3c">00062</a>         function <a class="code" href="class_c_modules_access.html#ad92a22dd909a1677de6d1bfdc5d59b3c">GetList</a>(<a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a>=<span class="keyword">false</span>,<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>=<span class="keyword">false</span>,$arLimit=<span class="keyword">false</span>,$arSelect=<span class="keyword">false</span>,$arGroupBy=<span class="keyword">false</span>)
+<a name="l00063"></a>00063         {
+<a name="l00064"></a>00064                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00065"></a>00065                 $sWhere=$this-&gt;<a class="code" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">_GenWhere</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00066"></a>00066                 <span class="keywordflow">if</span>($res=$ks_db-&gt;query(<span class="stringliteral">&quot;SELECT * FROM &quot;</span>.$this-&gt;_GenFrom().$sWhere))
+<a name="l00067"></a>00067                 {
+<a name="l00068"></a>00068                         $i=0;
+<a name="l00069"></a>00069                         <span class="keywordflow">while</span>($arRow=$ks_db-&gt;get_row($res))
+<a name="l00070"></a>00070                         {
+<a name="l00071"></a>00071                                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[$arRow[<span class="stringliteral">&#39;module&#39;</span>]]=$arRow;
+<a name="l00072"></a>00072                                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[$i++]=$arRow;
+<a name="l00073"></a>00073                         }
+<a name="l00074"></a>00074                         <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00075"></a>00075                 }
+<a name="l00076"></a>00076                 <span class="keywordflow">else</span>
+<a name="l00077"></a>00077                 {
+<a name="l00078"></a>00078                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00079"></a>00079                 }
+<a name="l00080"></a>00080                 
+<a name="l00081"></a>00081         }
+<a name="l00082"></a>00082 }
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty.html#a0c3ac497dbe0e595d4f2a85f1168a219" title="_fetch_resource_info" alt="" coords="157,112,312,141"/>
+<area shape="rect" id="node5" href="$class_smarty.html#a3fd3782e935db8cbac33da3d735df988" title="_parse_resource_name" alt="" coords="361,32,532,61"/>
+<area shape="rect" id="node11" href="$class_smarty.html#a5aca16bc6189ba04a7f0a807ca08ff71" title="_read_file" alt="" coords="405,85,488,115"/>
+<area shape="rect" id="node13" href="$core_8is__secure_8php.html#a2240f07846b86da447f045254b33df5b" title="smarty_core_is_secure" alt="" coords="363,139,531,168"/>
+<area shape="rect" id="node15" href="$class_smarty.html#aa4f8246510406271300bee84f9e1bce3" title="trigger_error" alt="" coords="396,192,497,221"/>
+<area shape="rect" id="node7" href="$core_8get__include__path_8php.html#a0420062b2f204568487415679c070101" title="smarty_core_get_include_path" alt="" coords="595,5,813,35"/>
+<area shape="rect" id="node9" href="$core_8load__resource__plugin_8php.html#a8dc87f80f6684ee3585f869b18fb2d31" title="smarty_core_load_resource_plugin" alt="" coords="583,59,825,88"/>
+</map>

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/install/js/tiny_mce/plugins/typograf/typograf.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/install/js/tiny_mce/plugins/typograf/typograf.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="typograf_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?
+<a name="l00002"></a>00002         
+<a name="l00003"></a><a class="code" href="typograf_8php.html#a91fb4c4de9cf4d18a61a70b497e0079c">00003</a>         define(<span class="stringliteral">&quot;MCETYPOGRAF_ENGINES&quot;</span>, dirname (__FILE__) . <span class="stringliteral">&quot;/../../../engines&quot;</span>);
+<a name="l00004"></a>00004         header(<span class="stringliteral">&quot;Content-type: text/plain; charset=utf-8&quot;</span>);
+<a name="l00005"></a>00005         mb_internal_encoding(<span class="stringliteral">&quot;UTF-8&quot;</span>);
+<a name="l00006"></a>00006         setLocale(LC_ALL,                       <span class="stringliteral">&quot;ru_RU.UTF-8&quot;</span>, <span class="stringliteral">&quot;Russian.UTF-8&quot;</span>, <span class="stringliteral">&quot;ru_RU&quot;</span>, <span class="stringliteral">&quot;Russian&quot;</span>);
+<a name="l00007"></a>00007         setLocale(LC_NUMERIC,   <span class="stringliteral">&quot;C&quot;</span>, <span class="stringliteral">&quot;en_US.UTF-8&quot;</span>, <span class="stringliteral">&quot;en_US&quot;</span>, <span class="stringliteral">&quot;English&quot;</span>);
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00010"></a>00010         <span class="comment">//   Getting params                                                                                                                                                //</span>
+<a name="l00011"></a>00011         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00012"></a>00012         
+<a name="l00013"></a><a class="code" href="typograf_8php.html#aa108d9d91e700ac530401dd363b0723b">00013</a>         <a class="code" href="typograf_8php.html#aa108d9d91e700ac530401dd363b0723b">$xml</a> = simplexml_load_file(<span class="stringliteral">&quot;php://input&quot;</span>, <span class="stringliteral">&quot;SimpleXMLElement&quot;</span>, LIBXML_NOCDATA); <span class="comment">// Ignore CDATA sections — make them as usual text,  returned text is always in UTF-8</span>
+<a name="l00014"></a>00014         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00015"></a>00015         <span class="comment">//   Prepearing replaces for non-typographic areas - Lebedev&#39;s typograf can&#39;t do it by itself ;)                                                                                                                //</span>
+<a name="l00016"></a>00016         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00017"></a>00017         
+<a name="l00018"></a><a class="code" href="typograf_8php.html#a99c668c59ad650ca9b31ad5313dc5720">00018</a>         <a class="code" href="typograf_8php.html#a99c668c59ad650ca9b31ad5313dc5720">$patterns</a> = array();
+<a name="l00019"></a><a class="code" href="typograf_8php.html#a16cc1aa0c6fe132ddda02503747e8703">00019</a>         <a class="code" href="typograf_8php.html#a16cc1aa0c6fe132ddda02503747e8703">$replaces</a> = array();
+<a name="l00020"></a><a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">00020</a>         <a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a> = preg_split(<span class="stringliteral">&#39;%(&lt;code.*?&gt;.*?&lt;/code&gt;)%si&#39;</span>, trim(<a class="code" href="typograf_8php.html#aa108d9d91e700ac530401dd363b0723b">$xml</a>-&gt;text), -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+<a name="l00021"></a>00021         <span class="keywordflow">for</span> ($i = 0, <a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a> = count(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>); $i &lt; <a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>; $i++) {
+<a name="l00022"></a>00022                 
+<a name="l00023"></a>00023                 <span class="keywordflow">if</span> (mb_substr(mb_strtolower(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>[$i]), 0, 5) == <span class="stringliteral">&quot;&lt;code&quot;</span>) {
+<a name="l00024"></a>00024                         
+<a name="l00025"></a>00025                         <a class="code" href="typograf_8php.html#a99c668c59ad650ca9b31ad5313dc5720">$patterns</a>[$i] = <span class="stringliteral">&quot;{mceTypograf-replaced-{$i}}&quot;</span>;
+<a name="l00026"></a>00026                         <a class="code" href="typograf_8php.html#a16cc1aa0c6fe132ddda02503747e8703">$replaces</a>[$i] = <a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>[$i];
+<a name="l00027"></a>00027                         <a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>[$i] = <a class="code" href="typograf_8php.html#a99c668c59ad650ca9b31ad5313dc5720">$patterns</a>[$i];
+<a name="l00028"></a>00028                         
+<a name="l00029"></a>00029                 }
+<a name="l00030"></a>00030                 
+<a name="l00031"></a>00031         }
+<a name="l00032"></a>00032         
+<a name="l00033"></a>00033         <a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a> = implode(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>);
+<a name="l00034"></a>00034 <span class="comment">//      file_put_contents(&#39;text.txt&#39;,$text);</span>
+<a name="l00035"></a>00035 <span class="comment">//      echo $text;</span>
+<a name="l00036"></a>00036         
+<a name="l00037"></a>00037         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00038"></a>00038         <span class="comment">//   Typographing                                                                                                                                                  //</span>
+<a name="l00039"></a>00039         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00040"></a>00040         
+<a name="l00041"></a>00041         <span class="keywordflow">if</span> (<a class="code" href="typograf_8php.html#aa108d9d91e700ac530401dd363b0723b">$xml</a>-&gt;type == <span class="stringliteral">&quot;spearance&quot;</span>) {
+<a name="l00042"></a>00042                 
+<a name="l00043"></a>00043                 $params = array();
+<a name="l00044"></a>00044                 $params[] = <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot; ?&gt;&quot;</span>;
+<a name="l00045"></a>00045                 $params[] = <span class="stringliteral">&quot;&lt;preferences&gt;&quot;</span>;
+<a name="l00046"></a>00046                 $params[] = <span class="stringliteral">&quot;   &lt;tags delete=&#39;0&#39;&gt;1&lt;/tags&gt;&quot;</span>; <span class="comment">// Теги</span>
+<a name="l00047"></a>00047                 $params[] = <span class="stringliteral">&quot;   &lt;paragraph insert=&#39;0&#39;&gt;&quot;</span>; <span class="comment">// Абзацы</span>
+<a name="l00048"></a>00048                 $params[] = <span class="stringliteral">&quot;           &lt;start&gt;&lt;![CDATA[&lt;p&gt;]]&gt;&lt;/start&gt;&quot;</span>;
+<a name="l00049"></a>00049                 $params[] = <span class="stringliteral">&quot;           &lt;end&gt;&lt;![CDATA[&lt;/p&gt;]]&gt;&lt;/end&gt;&quot;</span>;
+<a name="l00050"></a>00050                 $params[] = <span class="stringliteral">&quot;   &lt;/paragraph&gt;&quot;</span>;
+<a name="l00051"></a>00051                 $params[] = <span class="stringliteral">&quot;   &lt;newline insert=&#39;0&#39;&gt;&lt;![CDATA[&lt;br /&gt;]]&gt;&lt;/newline&gt;&quot;</span>; <span class="comment">// Переводы строк</span>
+<a name="l00052"></a>00052                 $params[] = <span class="stringliteral">&quot;   &lt;cmsNewLine valid=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// Переводы строк &lt;p&gt;&amp;nbsp;&lt;/p&gt;</span>
+<a name="l00053"></a>00053                 $params[] = <span class="stringliteral">&quot;   &lt;dos-text delete=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// DOS текст</span>
+<a name="l00054"></a>00054                 $params[] = <span class="stringliteral">&quot;   &lt;nowraped insert=&#39;1&#39; nonbsp=&#39;0&#39; length=&#39;0&#39;&gt;&quot;</span>; <span class="comment">// Неразрывные конструкции</span>
+<a name="l00055"></a>00055                 $params[] = <span class="stringliteral">&quot;           &lt;start&gt;&lt;![CDATA[&lt;nobr&gt;]]&gt;&lt;/start&gt;&quot;</span>;
+<a name="l00056"></a>00056                 $params[] = <span class="stringliteral">&quot;           &lt;end&gt;&lt;![CDATA[&lt;/nobr&gt;]]&gt;&lt;/end&gt;&quot;</span>;
+<a name="l00057"></a>00057                 $params[] = <span class="stringliteral">&quot;   &lt;/nowraped&gt;&quot;</span>;
+<a name="l00058"></a>00058                 $params[] = <span class="stringliteral">&quot;   &lt;hanging-punct insert=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// Висячая пунктуация</span>
+<a name="l00059"></a>00059                 $params[] = <span class="stringliteral">&quot;   &lt;hanging-line delete=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// Удалять висячие слова</span>
+<a name="l00060"></a>00060                 $params[] = <span class="stringliteral">&quot;   &lt;minus-sign&gt;&lt;![CDATA[&amp;ndash;]]&gt;&lt;/minus-sign&gt;&quot;</span>; <span class="comment">// Символ минус</span>
+<a name="l00061"></a>00061                 $params[] = <span class="stringliteral">&quot;   &lt;hyphen insert=&#39;0&#39; length=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// Переносы</span>
+<a name="l00062"></a>00062                 $params[] = <span class="stringliteral">&quot;   &lt;acronym insert=&#39;1&#39;&gt;&lt;/acronym&gt;&quot;</span>; <span class="comment">// Акронимы</span>
+<a name="l00063"></a>00063                 $params[] = <span class="stringliteral">&quot;   &lt;symbols type=&#39;0&#39; /&gt;&quot;</span>; <span class="comment">// Вывод символов 0 - буквами 1 - числами</span>
+<a name="l00064"></a>00064                 $params[] = <span class="stringliteral">&quot;   &lt;link target=&#39;&#39; class=&#39;&#39; /&gt;&quot;</span>; <span class="comment">// Параметры ссылок</span>
+<a name="l00065"></a>00065                 $params[] = <span class="stringliteral">&quot;&lt;/preferences&gt;&quot;</span>;
+<a name="l00066"></a>00066                 $params = implode(<span class="stringliteral">&quot;&quot;</span>, $params);
+<a name="l00067"></a>00067                 
+<a name="l00068"></a>00068                 function post($host, $script, <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>) { 
+<a name="l00069"></a>00069                         
+<a name="l00070"></a>00070                         $fp = fsockopen($host,80,$errno, $errstr, 30 );  
+<a name="l00071"></a>00071                         
+<a name="l00072"></a>00072                         <span class="keywordflow">if</span> ($fp) { 
+<a name="l00073"></a>00073                                 
+<a name="l00074"></a>00074                                 fputs($fp, <span class="stringliteral">&quot;POST $script HTTP/1.1\n&quot;</span>);  
+<a name="l00075"></a>00075                                 fputs($fp, <span class="stringliteral">&quot;Host: $host\n&quot;</span>);  
+<a name="l00076"></a>00076                                 fputs($fp, <span class="stringliteral">&quot;Content-type: application/x-www-form-urlencoded\n&quot;</span>);  
+<a name="l00077"></a>00077                                 fputs($fp, <span class="stringliteral">&quot;Content-length: &quot;</span> . strlen(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>) . <span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00078"></a>00078                                 fputs($fp, <span class="stringliteral">&quot;User-Agent: PHP Script\n&quot;</span>);  
+<a name="l00079"></a>00079                                 fputs($fp, <span class="stringliteral">&quot;Connection: close\n\n&quot;</span>);  
+<a name="l00080"></a>00080                                 fputs($fp, <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);  
+<a name="l00081"></a>00081                                 <span class="keywordflow">while</span>(fgets($fp,2048) != <span class="stringliteral">&quot;\r\n&quot;</span> &amp;&amp; !feof($fp));
+<a name="l00082"></a>00082                                 unset($buf);
+<a name="l00083"></a>00083                                 <span class="keywordflow">while</span>(!feof($fp)) $buf .= fread($fp,2048);
+<a name="l00084"></a>00084                                 fclose($fp); 
+<a name="l00085"></a>00085                                 
+<a name="l00086"></a>00086                         } <span class="keywordflow">else</span> {
+<a name="l00087"></a>00087                                 
+<a name="l00088"></a>00088                                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;Server not responding&quot;</span>; 
+<a name="l00089"></a>00089                                 
+<a name="l00090"></a>00090                         }
+<a name="l00091"></a>00091                         
+<a name="l00092"></a>00092                         <span class="keywordflow">return</span> $buf; 
+<a name="l00093"></a>00093                         
+<a name="l00094"></a>00094                 }
+<a name="l00095"></a>00095                 
+<a name="l00096"></a>00096                 $result = post(<span class="stringliteral">&quot;typograf.ru&quot;</span>, <span class="stringliteral">&quot;/webservice/&quot;</span>, <span class="stringliteral">&quot;chr=utf-8&amp;text=&quot;</span> . urlencode(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>) . <span class="stringliteral">&#39;&amp;xml=&#39;</span> . urlencode($params));
+<a name="l00097"></a>00097                 
+<a name="l00098"></a>00098         } elseif (<a class="code" href="typograf_8php.html#aa108d9d91e700ac530401dd363b0723b">$xml</a>-&gt;type == <span class="stringliteral">&quot;jare&quot;</span>) {
+<a name="l00099"></a>00099                 
+<a name="l00100"></a>00100                 set_include_path(get_include_path() . PATH_SEPARATOR . <a class="code" href="typograf_8php.html#a91fb4c4de9cf4d18a61a70b497e0079c">MCETYPOGRAF_ENGINES</a>);
+<a name="l00101"></a>00101                 require(<span class="stringliteral">&quot;Jare/Typograph.php&quot;</span>);
+<a name="l00102"></a>00102                 
+<a name="l00103"></a>00103                 $jareTypo = <span class="keyword">new</span> Jare_Typograph(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>);
+<a name="l00104"></a>00104                 $jareTypo-&gt;getTof(<span class="stringliteral">&quot;etc&quot;</span>)-&gt;disableBaseParam(<span class="stringliteral">&quot;paragraphs&quot;</span>)-&gt;disableParsing(<span class="keyword">true</span>);
+<a name="l00105"></a>00105                 $result = $jareTypo-&gt;parse($jareTypo-&gt;getBaseTofsNames());
+<a name="l00106"></a>00106                 
+<a name="l00107"></a>00107         } <span class="keywordflow">else</span> {
+<a name="l00108"></a>00108                 
+<a name="l00109"></a>00109                 <span class="comment">// 1 — mixedEntities  — буквенными и числовыми кодами (для универсального кода. Совместимо со всеми основыми новыми и старыми браузерами)</span>
+<a name="l00110"></a>00110                 <span class="comment">// 2 — xmlEntities            — только буквенными кодами (хорошо для XML, плохо для старых браузеров)</span>
+<a name="l00111"></a>00111                 <span class="comment">// 3 — htmlEntities          — только числовыми кодами (кому-то нужно. Плохо для старых браузеров)</span>
+<a name="l00112"></a>00112                 <span class="comment">// 4 — noEntities                     — готовыми символами (символы выдаются в том виде, в каком их видит в результате читатель)</span>
+<a name="l00113"></a>00113                 
+<a name="l00114"></a>00114                 require(<a class="code" href="typograf_8php.html#a91fb4c4de9cf4d18a61a70b497e0079c">MCETYPOGRAF_ENGINES</a> . <span class="stringliteral">&quot;/remotetypograf.php&quot;</span>);
+<a name="l00115"></a>00115                 
+<a name="l00116"></a>00116                 $remoteTypograf = <span class="keyword">new</span> RemoteTypograf ();
+<a name="l00117"></a>00117                 $remoteTypograf-&gt;htmlEntities();
+<a name="l00118"></a>00118                 $remoteTypograf-&gt;br(<span class="keyword">false</span>);
+<a name="l00119"></a>00119                 $remoteTypograf-&gt;p(<span class="keyword">false</span>);
+<a name="l00120"></a>00120                 $remoteTypograf-&gt;nobr(3);
+<a name="l00121"></a>00121                 
+<a name="l00122"></a>00122                 $result = $remoteTypograf-&gt;processText(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>);
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124         
+<a name="l00125"></a>00125         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00126"></a>00126         <span class="comment">//   Reverting non-typographic areas                                                                                                                               //</span>
+<a name="l00127"></a>00127         <span class="comment">// ----------------------------------------------------------------------------------------------------------------------------------------------------------------//</span>
+<a name="l00128"></a>00128         
+<a name="l00129"></a>00129         print str_replace(<a class="code" href="typograf_8php.html#a99c668c59ad650ca9b31ad5313dc5720">$patterns</a>, <a class="code" href="typograf_8php.html#a16cc1aa0c6fe132ddda02503747e8703">$replaces</a>, $result);
+<a name="l00130"></a>00130         
+<a name="l00131"></a>00131 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

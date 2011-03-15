@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/interfaces/libs/simple_bb_code.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/interfaces/libs/simple_bb_code.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="simple__bb__code_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00024"></a><a class="code" href="class_simple___b_b___code.html">00024</a> <span class="keyword">class </span><a class="code" href="class_simple___b_b___code.html">Simple_BB_Code</a>{
+<a name="l00025"></a>00025         <span class="comment">//General Tags</span>
+<a name="l00026"></a><a class="code" href="class_simple___b_b___code.html#a475a6a63b85186663d34151bcbd21590">00026</a>         var <a class="code" href="class_simple___b_b___code.html#a475a6a63b85186663d34151bcbd21590">$tags</a> = array(
+<a name="l00027"></a>00027                 <span class="charliteral">&#39;b&#39;</span> =&gt; <span class="stringliteral">&#39;strong&#39;</span>,
+<a name="l00028"></a>00028                 <span class="charliteral">&#39;i&#39;</span> =&gt; <span class="stringliteral">&#39;em&#39;</span>,
+<a name="l00029"></a>00029                 <span class="charliteral">&#39;u&#39;</span> =&gt; <span class="stringliteral">&#39;span style=&quot;text-decoration:underline&quot;&#39;</span>,
+<a name="l00030"></a>00030                 <span class="stringliteral">&#39;quote&#39;</span> =&gt; <span class="stringliteral">&#39;blockquote class=&quot;forum_quote&quot;&gt;&lt;b&gt;Автор писал(а):&lt;/b&gt;&lt;/br&#39;</span>,
+<a name="l00031"></a>00031                 <span class="stringliteral">&#39;code&#39;</span>=&gt;<span class="stringliteral">&#39;pre class=&quot;text_code&quot;&#39;</span>,
+<a name="l00032"></a>00032                 <span class="charliteral">&#39;s&#39;</span> =&gt; <span class="stringliteral">&#39;span style=&quot;text-decoration: line-through&quot;&#39;</span>, 
+<a name="l00033"></a>00033                 <span class="stringliteral">&#39;list&#39;</span> =&gt; <span class="stringliteral">&#39;ul&#39;</span>,
+<a name="l00034"></a>00034                 <span class="charliteral">&#39;\*&#39;</span> =&gt; <span class="stringliteral">&#39;li&#39;</span>,
+<a name="l00035"></a>00035                 <span class="stringliteral">&#39;chevideo&#39;</span>=&gt;<span class="stringliteral">&#39;embed src=&quot;/video/player.swf&quot; width=&quot;470&quot; height=&quot;320&quot; bgcolor=&quot;000000&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; flashvars=&quot;config=/video/includes/getData.php&amp;vid=$1&quot;&#39;</span>,
+<a name="l00036"></a>00036                 <span class="stringliteral">&#39;youtubevideo&#39;</span>=&gt;<span class="stringliteral">&#39;embed src=&quot;http://www.youtube.com/v/$1&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;470&quot; height=&quot;320&quot;&#39;</span>);
+<a name="l00037"></a>00037         <span class="comment">//Tags that must be mapped to diffierent parts</span>
+<a name="l00038"></a><a class="code" href="class_simple___b_b___code.html#a34e67ed57c92b5b20f3c78cdea7f7e21">00038</a>         var <a class="code" href="class_simple___b_b___code.html#a34e67ed57c92b5b20f3c78cdea7f7e21">$mapped</a> = array(<span class="stringliteral">&#39;url&#39;</span> =&gt; array(<span class="charliteral">&#39;a&#39;</span>,<span class="stringliteral">&#39;href&#39;</span>,<span class="keyword">true</span>),<span class="stringliteral">&#39;img&#39;</span> =&gt; array(<span class="stringliteral">&#39;img&#39;</span>,<span class="stringliteral">&#39;src&#39;</span>,<span class="keyword">false</span>));
+<a name="l00039"></a>00039         <span class="comment">//Tags with atributes</span>
+<a name="l00040"></a><a class="code" href="class_simple___b_b___code.html#ac60dd1b0eaaff34dd6faab4baa3ee326">00040</a>         var <a class="code" href="class_simple___b_b___code.html#ac60dd1b0eaaff34dd6faab4baa3ee326">$tags_with_att</a> = array(<span class="stringliteral">&#39;color&#39;</span> =&gt; array(<span class="stringliteral">&#39;font&#39;</span>,<span class="stringliteral">&#39;color&#39;</span>),<span class="stringliteral">&#39;size&#39;</span> =&gt; array(<span class="stringliteral">&#39;font&#39;</span>,<span class="stringliteral">&#39;size&#39;</span>),<span class="stringliteral">&#39;url&#39;</span> =&gt; array(<span class="charliteral">&#39;a&#39;</span>,<span class="stringliteral">&#39;href&#39;</span>));
+<a name="l00041"></a>00041         <span class="comment">//Gotta have smilies</span>
+<a name="l00042"></a><a class="code" href="class_simple___b_b___code.html#ad8fe942be4b45fc4fa4d709737e99ef2">00042</a>         var <a class="code" href="class_simple___b_b___code.html#ad8fe942be4b45fc4fa4d709737e99ef2">$smilies</a> = array();
+<a name="l00043"></a>00043         <span class="comment">//Config Variables</span>
+<a name="l00044"></a>00044         <span class="comment">//Convert new line charactes to linebreaks?</span>
+<a name="l00045"></a><a class="code" href="class_simple___b_b___code.html#ac82846ef460bb21c45f641feea7a2df6">00045</a>         var <a class="code" href="class_simple___b_b___code.html#ac82846ef460bb21c45f641feea7a2df6">$convert_newlines</a> = <span class="keyword">true</span>;
+<a name="l00046"></a>00046         <span class="comment">//Parse For smilies?</span>
+<a name="l00047"></a><a class="code" href="class_simple___b_b___code.html#a52f491c29cb715d2819554f651712ea1">00047</a>         var <a class="code" href="class_simple___b_b___code.html#a52f491c29cb715d2819554f651712ea1">$parse_smilies</a> = <span class="keyword">true</span>;
+<a name="l00048"></a>00048         <span class="comment">//auto link urls(http and ftp), and email addresses?</span>
+<a name="l00049"></a><a class="code" href="class_simple___b_b___code.html#a4c1295e6cd9397311be89ebd0254df11">00049</a>         var <a class="code" href="class_simple___b_b___code.html#a4c1295e6cd9397311be89ebd0254df11">$auto_links</a> = <span class="keyword">false</span>;
+<a name="l00050"></a>00050         <span class="comment">//Internal Storage</span>
+<a name="l00051"></a><a class="code" href="class_simple___b_b___code.html#ab644cddc92f48f9d33fe59e882fdf058">00051</a>         var <a class="code" href="class_simple___b_b___code.html#ab644cddc92f48f9d33fe59e882fdf058">$_code</a> = <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00052"></a><a class="code" href="class_simple___b_b___code.html#a441b2ce849c7a7dc127867e66ff6e5b7">00052</a>         function <a class="code" href="class_simple___b_b___code.html#a441b2ce849c7a7dc127867e66ff6e5b7">Simple_BB_Code</a>($new=<span class="keyword">true</span>,$parse=<span class="keyword">true</span>,$links=<span class="keyword">true</span>){
+<a name="l00053"></a>00053                 $this-&gt;convert_newlines = $new;
+<a name="l00054"></a>00054                 $this-&gt;parse_smilies = $parse;
+<a name="l00055"></a>00055                 $this-&gt;auto_links = $links;
+<a name="l00056"></a>00056         }
+<a name="l00057"></a><a class="code" href="class_simple___b_b___code.html#ad79efea202d19638d901d9154ca8e6db">00057</a>         function <a class="code" href="class_simple___b_b___code.html#ad79efea202d19638d901d9154ca8e6db">parse</a>($code){
+<a name="l00058"></a>00058                 $this-&gt;_code = $code;
+<a name="l00059"></a>00059                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#a63db258290fe3f0de66ff24f3efc5933">_strip_html</a>();
+<a name="l00060"></a>00060                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#ad0d79660f133086ef8e31121e2c4180f">_parse_tags</a>();
+<a name="l00061"></a>00061                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#a860a33aa502307eb3ef6110c2fa7f89f">_parse_mapped</a>();
+<a name="l00062"></a>00062                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#a6d8a060a07d58e5285bcd266e567c403">_parse_tags_with_att</a>();
+<a name="l00063"></a>00063                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#aff66b4b90b0b3b536b5de44665583cae">_parse_smilies</a>();
+<a name="l00064"></a>00064                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#adaa013c447343c5e6daa1d5075dc8ac0">_parse_links</a>();
+<a name="l00065"></a>00065                 $this-&gt;<a class="code" href="class_simple___b_b___code.html#ad0a84402ce85f3a316c65e045cdd72a2">_convert_nl</a>();
+<a name="l00066"></a>00066                 <span class="keywordflow">return</span> $this-&gt;_code;
+<a name="l00067"></a>00067         }
+<a name="l00068"></a><a class="code" href="class_simple___b_b___code.html#a63db258290fe3f0de66ff24f3efc5933">00068</a>         function <a class="code" href="class_simple___b_b___code.html#a63db258290fe3f0de66ff24f3efc5933">_strip_html</a>(){
+<a name="l00069"></a>00069                 $this-&gt;_code = strip_tags($this-&gt;_code);
+<a name="l00070"></a>00070         }
+<a name="l00071"></a><a class="code" href="class_simple___b_b___code.html#ad0a84402ce85f3a316c65e045cdd72a2">00071</a>         function <a class="code" href="class_simple___b_b___code.html#ad0a84402ce85f3a316c65e045cdd72a2">_convert_nl</a>(){
+<a name="l00072"></a>00072                 <span class="keywordflow">if</span>($this-&gt;convert_newlines){
+<a name="l00073"></a>00073                         $this-&gt;_code = nl2br($this-&gt;_code);
+<a name="l00074"></a>00074                 }
+<a name="l00075"></a>00075         }
+<a name="l00076"></a><a class="code" href="class_simple___b_b___code.html#ad0d79660f133086ef8e31121e2c4180f">00076</a>         function <a class="code" href="class_simple___b_b___code.html#ad0d79660f133086ef8e31121e2c4180f">_parse_tags</a>(){
+<a name="l00077"></a>00077                 <span class="keywordflow">foreach</span>($this-&gt;tags as $old=&gt;$new){
+<a name="l00078"></a>00078                         $ex = explode(<span class="charliteral">&#39; &#39;</span>,$new);
+<a name="l00079"></a>00079                         $this-&gt;_code = preg_replace(<span class="stringliteral">&#39;/\[&#39;</span>.$old.<span class="stringliteral">&#39;\](.+?)\[\/&#39;</span>.$old.<span class="stringliteral">&#39;\]/is&#39;</span>,<span class="charliteral">&#39;&lt;&#39;</span>.$new.<span class="stringliteral">&#39;&gt;$1&lt;/&#39;</span>.$ex[0].<span class="charliteral">&#39;&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00080"></a>00080                 }
+<a name="l00081"></a>00081         }
+<a name="l00082"></a><a class="code" href="class_simple___b_b___code.html#a860a33aa502307eb3ef6110c2fa7f89f">00082</a>         function <a class="code" href="class_simple___b_b___code.html#a860a33aa502307eb3ef6110c2fa7f89f">_parse_mapped</a>(){
+<a name="l00083"></a>00083                 <span class="keywordflow">foreach</span>($this-&gt;mapped as $tag=&gt;<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>){
+<a name="l00084"></a>00084                         $reg = <span class="stringliteral">&#39;/\[&#39;</span>.$tag.<span class="stringliteral">&#39;\](.+?)\[\/&#39;</span>.$tag.<span class="stringliteral">&#39;\]/is&#39;</span>;
+<a name="l00085"></a>00085                         <span class="keywordflow">if</span>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[2]){
+<a name="l00086"></a>00086                                 $this-&gt;_code = preg_replace($reg,<span class="charliteral">&#39;&lt;&#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[0].<span class="charliteral">&#39; &#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[1].<span class="stringliteral">&#39;=&quot;$1&quot;&gt;$1&lt;/&#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[0].<span class="charliteral">&#39;&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00087"></a>00087                         }
+<a name="l00088"></a>00088                         <span class="keywordflow">else</span>{
+<a name="l00089"></a>00089                                 $this-&gt;_code = preg_replace($reg,<span class="charliteral">&#39;&lt;&#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[0].<span class="charliteral">&#39; &#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[1].<span class="stringliteral">&#39;=&quot;$1&quot;&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00090"></a>00090                         }
+<a name="l00091"></a>00091                 }
+<a name="l00092"></a>00092         }
+<a name="l00093"></a><a class="code" href="class_simple___b_b___code.html#a6d8a060a07d58e5285bcd266e567c403">00093</a>         function <a class="code" href="class_simple___b_b___code.html#a6d8a060a07d58e5285bcd266e567c403">_parse_tags_with_att</a>(){
+<a name="l00094"></a>00094                 <span class="keywordflow">foreach</span>($this-&gt;tags_with_att as $tag=&gt;<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>){
+<a name="l00095"></a>00095                         $this-&gt;_code = preg_replace(<span class="stringliteral">&#39;/\[&#39;</span>.$tag.<span class="stringliteral">&#39;=(.+?)\](.+?)\[\/&#39;</span>.$tag.<span class="stringliteral">&#39;\]/is&#39;</span>,<span class="charliteral">&#39;&lt;&#39;</span>.$data[0].<span class="charliteral">&#39; &#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[1].<span class="stringliteral">&#39;=&quot;$1&quot;&gt;$2&lt;/&#39;</span>.<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[0].<span class="charliteral">&#39;&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00096"></a>00096                 }
+<a name="l00097"></a>00097         }
+<a name="l00098"></a><a class="code" href="class_simple___b_b___code.html#aff66b4b90b0b3b536b5de44665583cae">00098</a>         function <a class="code" href="class_simple___b_b___code.html#aff66b4b90b0b3b536b5de44665583cae">_parse_smilies</a>(){
+<a name="l00099"></a>00099                 <span class="keywordflow">if</span>($this-&gt;parse_smilies){
+<a name="l00100"></a>00100                         <span class="keywordflow">foreach</span>($this-&gt;smilies as $s=&gt;$im){
+<a name="l00101"></a>00101                                 $this-&gt;_code = str_replace($s,<span class="stringliteral">&#39;&lt;img src=&quot;&#39;</span>.$im.<span class="stringliteral">&#39;&quot;&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00102"></a>00102                         }
+<a name="l00103"></a>00103                 }
+<a name="l00104"></a>00104         }
+<a name="l00105"></a><a class="code" href="class_simple___b_b___code.html#adaa013c447343c5e6daa1d5075dc8ac0">00105</a>         function <a class="code" href="class_simple___b_b___code.html#adaa013c447343c5e6daa1d5075dc8ac0">_parse_links</a>(){
+<a name="l00106"></a>00106                 <span class="keywordflow">if</span>($this-&gt;auto_links){
+<a name="l00107"></a>00107                         $this-&gt;_code = preg_replace(<span class="stringliteral">&#39;/([^&quot;])(http:\/\/|ftp:\/\/)([^\s,]*)/i&#39;</span>,<span class="stringliteral">&#39;$1&lt;a href=&quot;$2$3&quot;&gt;$2$3&lt;/a&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00108"></a>00108                         $this-&gt;_code = preg_replace(<span class="stringliteral">&#39;/([^&quot;])([A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4})/i&#39;</span>,<span class="stringliteral">&#39;$1&lt;a href=&quot;mailto:$2&quot;&gt;$2&lt;/a&gt;&#39;</span>,$this-&gt;_code);
+<a name="l00109"></a>00109                 }
+<a name="l00110"></a>00110         }
+<a name="l00111"></a><a class="code" href="class_simple___b_b___code.html#a63f02ad23eec98e3182e7dcb2aefc87e">00111</a>         function <a class="code" href="class_simple___b_b___code.html#a63f02ad23eec98e3182e7dcb2aefc87e">addTag</a>($old,$new){
+<a name="l00112"></a>00112                 $this-&gt;tags[$old] = $new;
+<a name="l00113"></a>00113         }
+<a name="l00114"></a><a class="code" href="class_simple___b_b___code.html#adf1fe89f77102383071852cc3c36e992">00114</a>         function <a class="code" href="class_simple___b_b___code.html#adf1fe89f77102383071852cc3c36e992">addMapped</a>($bb,$html,$att,$end=<span class="keyword">true</span>){
+<a name="l00115"></a>00115                 $this-&gt;mapped[$bb] = array($html,$att,$end);
+<a name="l00116"></a>00116         }
+<a name="l00117"></a><a class="code" href="class_simple___b_b___code.html#af86f2176fff3b3f2640d9238602233be">00117</a>         function <a class="code" href="class_simple___b_b___code.html#af86f2176fff3b3f2640d9238602233be">addTagWithAttribute</a>($bb,$html,$att){
+<a name="l00118"></a>00118                 $this-&gt;tags_with_att[$bb] = array($html,$att);
+<a name="l00119"></a>00119         }
+<a name="l00120"></a><a class="code" href="class_simple___b_b___code.html#a3150aaa76c1befd7673e1f5e516a8223">00120</a>         function <a class="code" href="class_simple___b_b___code.html#a3150aaa76c1befd7673e1f5e516a8223">addSmiley</a>($code,$src){
+<a name="l00121"></a>00121                 $this-&gt;smilies[$code] = $src;
+<a name="l00122"></a>00122         }
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

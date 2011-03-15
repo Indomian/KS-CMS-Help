@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CUsersCommon.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CUsersCommon.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_users_common_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 <span class="comment">/*</span>
+<a name="l00003"></a>00003 <span class="comment"> * CMS-remote</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created on 05.11.2008</span>
+<a name="l00006"></a>00006 <span class="comment"> *</span>
+<a name="l00007"></a>00007 <span class="comment"> * Developed by blade39</span>
+<a name="l00008"></a>00008 <span class="comment"> *</span>
+<a name="l00009"></a>00009 <span class="comment"> */</span>
+<a name="l00010"></a><a class="code" href="class_8_c_users_common_8php.html#aa2751051afe353ae55a548bdc2a59679">00010</a> <span class="keywordflow">if</span>(!defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>)){  die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 include_once(MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CAccess.php&#39;</span>);
+<a name="l00013"></a>00013 
+<a name="l00018"></a><a class="code" href="class_c_users_common.html">00018</a> <span class="keyword">class </span><a class="code" href="class_c_users_common.html">CUsersCommon</a> <span class="keyword">extends</span> <a class="code" href="class_c_base_access.html">CBaseAccess</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a><a class="code" href="class_c_users_common.html#ac926549b713e71c5f5fd63999cebfb8c">00020</a>         var <a class="code" href="class_c_users_common.html#ac926549b713e71c5f5fd63999cebfb8c">$num_rows</a>;
+<a name="l00021"></a><a class="code" href="class_c_users_common.html#a878d989791a56fc8695e648281410e05">00021</a>         var <a class="code" href="class_c_users_common.html#a878d989791a56fc8695e648281410e05">$sFieldsModule</a>;
+<a name="l00025"></a><a class="code" href="class_c_users_common.html#a27b23d57ddb297323e817bcba4903a06">00025</a>         var <a class="code" href="class_c_users_common.html#a27b23d57ddb297323e817bcba4903a06">$sLinksTable</a>;
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="class_c_users_common.html#aa3c8d1f4935bda61f61cd69132b2771f">00027</a>         function <a class="code" href="class_c_users_common.html#aa3c8d1f4935bda61f61cd69132b2771f">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&quot;usergroups&quot;</span>)
+<a name="l00028"></a>00028         {
+<a name="l00029"></a>00029                 <a class="code" href="class_c_users_common.html#aa3c8d1f4935bda61f61cd69132b2771f">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00030"></a>00030                 <span class="keywordflow">if</span>($this-&gt;sFieldsModule==<span class="stringliteral">&#39;&#39;</span>) $this-&gt;sFieldsModule=<span class="stringliteral">&#39;users&#39;</span>;
+<a name="l00031"></a>00031                 $this-&gt;sUploadPath=<span class="stringliteral">&#39;users/&#39;</span>;
+<a name="l00032"></a>00032                 $this-&gt;sLinksTable=<span class="stringliteral">&#39;users_grouplinks&#39;</span>;
+<a name="l00033"></a>00033                 <span class="comment">//Подгружаем пользовательские поля</span>
+<a name="l00034"></a>00034                 <span class="keywordflow">if</span> (class_exists(<a class="code" href="class_c_fields.html">CFields</a>))
+<a name="l00035"></a>00035                 {
+<a name="l00036"></a>00036                         $this-&gt;bFields=<span class="keyword">true</span>;
+<a name="l00037"></a>00037                         $obFields=<span class="keyword">new</span> <a class="code" href="class_c_fields.html">CFields</a>();
+<a name="l00038"></a>00038                         $this-&gt;arUserFields=$obFields-&gt;GetFields($this-&gt;sFieldsModule,$this-&gt;sTable);
+<a name="l00039"></a>00039                         <span class="keywordflow">foreach</span>($this-&gt;arUserFields as $item)
+<a name="l00040"></a>00040                         {
+<a name="l00041"></a>00041                                 $this-&gt;arFields[]=<span class="stringliteral">&#39;ext_&#39;</span>.$item[<span class="stringliteral">&#39;title&#39;</span>];
+<a name="l00042"></a>00042                         }
+<a name="l00043"></a>00043                 }
+<a name="l00044"></a>00044         }
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="class_c_users_common.html#a8d1f5b439e2cec62af77a8aab50c3d12">00046</a>         function <a class="code" href="class_c_users_common.html#a8d1f5b439e2cec62af77a8aab50c3d12">GetNum</a>()
+<a name="l00047"></a>00047         {
+<a name="l00048"></a>00048                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00049"></a>00049                 <span class="keywordflow">if</span>($this-&gt;num_rows==0)
+<a name="l00050"></a>00050                 {
+<a name="l00051"></a>00051                         $res=$ks_db-&gt;query(<span class="stringliteral">&#39;SELECT count(id) as cnt FROM &#39;</span>.PREFIX.$this-&gt;sTable);
+<a name="l00052"></a>00052                         $res=$ks_db-&gt;get_row($res);
+<a name="l00053"></a>00053                         $this-&gt;num_rows=$res[<span class="stringliteral">&#39;cnt&#39;</span>];
+<a name="l00054"></a>00054                 }
+<a name="l00055"></a>00055                 <span class="keywordflow">return</span> $this-&gt;num_rows;
+<a name="l00056"></a>00056         }
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="class_c_users_common.html#a0c2f95dfeb16d0b687d2205d1d037e89">00058</a>         function <a class="code" href="class_c_users_common.html#a0c2f95dfeb16d0b687d2205d1d037e89">Set</a>($group_id,<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$level)
+<a name="l00059"></a>00059         {
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 }
+<a name="l00063"></a>00063 
+<a name="l00068"></a><a class="code" href="class_c_base_user.html">00068</a> <span class="keyword">class </span><a class="code" href="class_c_base_user.html">CBaseUser</a> <span class="keyword">extends</span> <a class="code" href="class_c_users_common.html">CUsersCommon</a>
+<a name="l00069"></a>00069 {
+<a name="l00070"></a><a class="code" href="class_c_base_user.html#ae8f10063cc1adfdfa4c89223d790dd67">00070</a>         var <a class="code" href="class_c_base_user.html#ae8f10063cc1adfdfa4c89223d790dd67">$groups_list</a>;
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 
+<a name="l00078"></a><a class="code" href="class_c_base_user.html#ab8aaad16003464d452c3ea25230d8d21">00078</a>         <span class="keyword">protected</span> <a class="code" href="class_c_base_user.html#ab8aaad16003464d452c3ea25230d8d21">$arInGroups</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="class_c_base_user.html#aabf688f3938941b74144f6a8cf2e1940">00080</a>         <span class="keyword">protected</span> <a class="code" href="class_c_base_user.html#aabf688f3938941b74144f6a8cf2e1940">$arAccessLevels</a>;              
+<a name="l00082"></a><a class="code" href="class_c_base_user.html#a8542cc97e4bb2efa5e4b35f77a96a6e9">00082</a>         function <a class="code" href="class_c_base_user.html#a8542cc97e4bb2efa5e4b35f77a96a6e9">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&#39;users&#39;</span>)
+<a name="l00083"></a>00083         {
+<a name="l00084"></a>00084                 <a class="code" href="class_c_base_user.html#a8542cc97e4bb2efa5e4b35f77a96a6e9">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00085"></a>00085         }
+<a name="l00097"></a><a class="code" href="class_c_base_user.html#a7f5b929d293d0e8844805d342402311a">00097</a>         function <a class="code" href="class_c_base_user.html#a7f5b929d293d0e8844805d342402311a">GetGroups</a>($user_id = 0)
+<a name="l00098"></a>00098         {
+<a name="l00099"></a>00099                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101                 <span class="comment">/* Если неоткуда взять id, тогда выходим */</span>
+<a name="l00102"></a>00102                 <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a">ID</a>()==0 &amp;&amp; $user_id == 0)
+<a name="l00103"></a>00103                         <span class="keywordflow">return</span> array(0);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105                 <span class="comment">/* Если указан id пользователя, то работаем по нему */</span>
+<a name="l00106"></a>00106                 $possible_user_id = intval($user_id);
+<a name="l00107"></a>00107                 <span class="keywordflow">if</span> ($possible_user_id &gt; 0)
+<a name="l00108"></a>00108                         $id = $possible_user_id;
+<a name="l00109"></a>00109                 <span class="keywordflow">else</span>
+<a name="l00110"></a>00110                         $id = $this-&gt;<a class="code" href="class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a">ID</a>();
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112                 <span class="keywordflow">if</span> ($this-&gt;arInGroups == <span class="keyword">false</span>)
+<a name="l00113"></a>00113                 {
+<a name="l00114"></a>00114                         $time = time();
+<a name="l00115"></a>00115                         $query = <span class="stringliteral">&quot;SELECT * FROM &quot;</span> . PREFIX . $this-&gt;sLinksTable . <span class="stringliteral">&quot; &quot;</span> .
+<a name="l00116"></a>00116                                         <span class="stringliteral">&quot;WHERE user_id=&#39;&quot;</span> . $id . <span class="stringliteral">&quot;&#39; &quot;</span> .
+<a name="l00117"></a>00117                                         <span class="stringliteral">&quot;AND ((date_end&gt;=&#39;&quot;</span> . $time . <span class="stringliteral">&quot;&#39;) OR (date_end=&#39;0&#39;))&quot;</span> .
+<a name="l00118"></a>00118                                         <span class="stringliteral">&quot;AND ((date_start&lt;=&#39;&quot;</span> . $time . <span class="stringliteral">&quot;&#39;) OR (date_start=&#39;0&#39;)) ORDER BY group_id ASC&quot;</span>;
+<a name="l00119"></a>00119                         $rGroups = $ks_db-&gt;query($query);
+<a name="l00120"></a>00120                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a> = array(0);
+<a name="l00121"></a>00121                         <span class="keywordflow">while</span> ($arRow = $ks_db-&gt;get_row($rGroups))
+<a name="l00122"></a>00122                                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[] = $arRow[<span class="stringliteral">&#39;group_id&#39;</span>];
+<a name="l00123"></a>00123                         $this-&gt;arInGroups = <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00124"></a>00124                 }
+<a name="l00125"></a>00125                 <span class="keywordflow">else</span>
+<a name="l00126"></a>00126                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=$this-&gt;arInGroups;
+<a name="l00127"></a>00127                 <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a">00130</a>         function <a class="code" href="class_c_base_user.html#af22577e673cccaeb59f2f528724a8f7a">ID</a>()
+<a name="l00131"></a>00131         {
+<a name="l00132"></a>00132                 <span class="keywordflow">return</span> $this-&gt;userdata[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134 
+<a name="l00135"></a><a class="code" href="class_c_base_user.html#a974e7b0a2770cb893518931770410dc1">00135</a>         function <a class="code" href="class_c_base_user.html#a974e7b0a2770cb893518931770410dc1">Email</a>()
+<a name="l00136"></a>00136         {
+<a name="l00137"></a>00137                 <span class="keywordflow">return</span> $this-&gt;userdata[<span class="stringliteral">&#39;email&#39;</span>];
+<a name="l00138"></a>00138         }
+<a name="l00139"></a>00139 
+<a name="l00146"></a><a class="code" href="class_c_base_user.html#ae2e13e102761c1ddd3caba67093aeaee">00146</a>         function <a class="code" href="class_c_base_user.html#ae2e13e102761c1ddd3caba67093aeaee">GetAllGroups</a>($id)
+<a name="l00147"></a>00147         {
+<a name="l00148"></a>00148                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00149"></a>00149                 $query=<span class="stringliteral">&quot;SELECT * FROM &quot;</span>.PREFIX.$this-&gt;sLinksTable.<span class="stringliteral">&quot; &quot;</span> .
+<a name="l00150"></a>00150                                 <span class="stringliteral">&quot;WHERE user_id=&#39;&quot;</span>.$id.<span class="stringliteral">&quot;&#39; ORDER BY group_id ASC&quot;</span>;
+<a name="l00151"></a>00151                 $rGroups=$ks_db-&gt;query($query);
+<a name="l00152"></a>00152                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=array();
+<a name="l00153"></a>00153                 <span class="keywordflow">while</span>($arRow=$ks_db-&gt;get_row($rGroups))
+<a name="l00154"></a>00154                 {
+<a name="l00155"></a>00155                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[$arRow[<span class="stringliteral">&#39;group_id&#39;</span>]]=$arRow;
+<a name="l00156"></a>00156                 }
+<a name="l00157"></a>00157                 <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00158"></a>00158         }
+<a name="l00159"></a>00159 
+<a name="l00165"></a><a class="code" href="class_c_base_user.html#a743977d780615c7decdfc4da64b44c42">00165</a>         function <a class="code" href="class_c_base_user.html#a743977d780615c7decdfc4da64b44c42">GetLevel</a>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>)
+<a name="l00166"></a>00166         {
+<a name="l00167"></a>00167                 <a class="code" href="interfaces_2install_2install_8php.html#a86ef15b6dd39b492a8b2af4cf8a3fd38">$obAccess</a>=<span class="keyword">new</span> <a class="code" href="class_c_modules_access.html">CModulesAccess</a>();
+<a name="l00168"></a>00168                 $arGroups=$this-&gt;<a class="code" href="class_c_base_user.html#a7f5b929d293d0e8844805d342402311a">GetGroups</a>();
+<a name="l00169"></a>00169                 $level=10;
+<a name="l00170"></a>00170                 <span class="keywordflow">if</span>(array_key_exists(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$this-&gt;arAccessLevels))
+<a name="l00171"></a>00171                 {
+<a name="l00172"></a>00172                         $res=$this-&gt;arAccessLevels[<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>];
+<a name="l00173"></a>00173                 }
+<a name="l00174"></a>00174                 elseif($res=<a class="code" href="interfaces_2install_2install_8php.html#a86ef15b6dd39b492a8b2af4cf8a3fd38">$obAccess</a>-&gt;GetList(array(<span class="stringliteral">&#39;group_id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;module&#39;</span>=&gt;<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>)))
+<a name="l00175"></a>00175                 {
+<a name="l00176"></a>00176                         $this-&gt;arAccessLevels[<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>]=$res;
+<a name="l00177"></a>00177                 }
+<a name="l00178"></a>00178                 <span class="keywordflow">else</span>
+<a name="l00179"></a>00179                 {
+<a name="l00180"></a>00180                         <span class="keywordflow">return</span> $level;
+<a name="l00181"></a>00181                 }
+<a name="l00182"></a>00182                 <span class="keywordflow">foreach</span>($res as $key=&gt;<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)
+<a name="l00183"></a>00183                 {
+<a name="l00184"></a>00184                         <span class="comment">//Проверяем принадлежит ли пользователь найденой группе, если да то смотрим больше ли текущий</span>
+<a name="l00185"></a>00185                         <span class="comment">//уровень чем текущий, если больше - считаем его текущим.</span>
+<a name="l00186"></a>00186                         <span class="keywordflow">if</span>((in_array(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;group_id&#39;</span>],$arGroups))&amp;&amp;($level&gt;<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;level&#39;</span>]))
+<a name="l00187"></a>00187                         {
+<a name="l00188"></a>00188                                 $level=<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;level&#39;</span>];
+<a name="l00189"></a>00189                         }
+<a name="l00190"></a>00190                 }
+<a name="l00191"></a>00191                 <span class="keywordflow">return</span> $level;
+<a name="l00192"></a>00192         }
+<a name="l00193"></a>00193 
+<a name="l00198"></a><a class="code" href="class_c_base_user.html#a14360964ddf146b85146d416ef49516c">00198</a>         function <a class="code" href="class_c_base_user.html#a14360964ddf146b85146d416ef49516c">SetAllUserGroups</a>($iUserID,$arGroups)
+<a name="l00199"></a>00199         {
+<a name="l00200"></a>00200                 <span class="keywordflow">if</span>(!is_array($arGroups)) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_data_error.html">CDataError</a>(<span class="stringliteral">&#39;SYSTEM_ARRAY_REQUIRED&#39;</span>);
+<a name="l00201"></a>00201                 <span class="keywordflow">if</span>($arUser=$this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$iUserID)))
+<a name="l00202"></a>00202                 {
+<a name="l00203"></a>00203                         $query=<span class="stringliteral">&quot;DELETE FROM &quot;</span>.PREFIX.$this-&gt;sLinksTable.<span class="stringliteral">&quot; WHERE user_id=&#39;&quot;</span>.$arUser[<span class="stringliteral">&#39;id&#39;</span>].<span class="stringliteral">&quot;&#39;&quot;</span>;
+<a name="l00204"></a>00204                         $this-&gt;obDB-&gt;query($query);
+<a name="l00205"></a>00205                         $query=<span class="stringliteral">&quot;INSERT INTO &quot;</span> . PREFIX.$this-&gt;sLinksTable.<span class="stringliteral">&quot; (user_id, group_id, date_start, date_end) VALUES &quot;</span>;
+<a name="l00206"></a>00206                         <span class="keywordflow">foreach</span>($arGroups as $group)
+<a name="l00207"></a>00207                         {
+<a name="l00208"></a>00208                                 <span class="keywordflow">if</span>(is_numeric($group))
+<a name="l00209"></a>00209                                 {
+<a name="l00210"></a>00210                                         $query.=<span class="stringliteral">&quot;(&#39;&quot;</span>.$arUser[<span class="stringliteral">&#39;id&#39;</span>].<span class="stringliteral">&quot;&#39;,&#39;&quot;</span>.$group.<span class="stringliteral">&quot;&#39;,&#39;0&#39;, &#39;0&#39;)&quot;</span>;
+<a name="l00211"></a>00211                                 }
+<a name="l00212"></a>00212                                 elseif(is_array($group))
+<a name="l00213"></a>00213                                 {
+<a name="l00214"></a>00214                                         $query.=<span class="stringliteral">&quot;(&#39;&quot;</span>.$arUser[<span class="stringliteral">&#39;id&#39;</span>].<span class="stringliteral">&quot;&#39;,&#39;&quot;</span>.$group[<span class="stringliteral">&#39;id&#39;</span>].<span class="stringliteral">&quot;&#39;,&#39;&quot;</span>.$group[<span class="stringliteral">&#39;date_from&#39;</span>].<span class="stringliteral">&quot;&#39;, &#39;&quot;</span>.$group[<span class="stringliteral">&#39;date_to&#39;</span>].<span class="stringliteral">&quot;&#39;)&quot;</span>;
+<a name="l00215"></a>00215                                 }
+<a name="l00216"></a>00216                         }
+<a name="l00217"></a>00217                         $this-&gt;obDB-&gt;query($query);
+<a name="l00218"></a>00218                 }
+<a name="l00219"></a>00219         }
+<a name="l00220"></a>00220 }
+<a name="l00221"></a>00221 
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:19. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

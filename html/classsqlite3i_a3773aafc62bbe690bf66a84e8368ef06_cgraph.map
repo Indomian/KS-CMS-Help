@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classsqlite3i.html#a8912ab1ccbe72992feb5460d856f7b8f" title="free" alt="" coords="161,5,207,35"/>
+<area shape="rect" id="node5" href="$classsqlite3i.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="327,44,399,73"/>
+<area shape="rect" id="node7" href="$classsqlite3i.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="155,136,213,165"/>
+<area shape="rect" id="node9" href="$classsqlite3i.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="327,97,399,127"/>
+<area shape="rect" id="node11" href="$classsqlite3i.html#a1814efe9f8a5b7b27765e4001479dcf1" title="display_error" alt="" coords="512,124,616,153"/>
+<area shape="rect" id="node14" href="$class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="261,201,464,231"/>
+<area shape="rect" id="node17" href="$classsqlite3i.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="325,255,400,284"/>
+</map>

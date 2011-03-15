@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CError</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-attribs">Поля данных</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a>  </div>
+  <div class="headertitle">
+<h1>Класс CError</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CError" -->
+<p>Производные классы:<a class="el" href="class_c_access_error.html">CAccessError</a>, <a class="el" href="class_c_critical_error.html">CCriticalError</a>, <a class="el" href="class_c_data_error.html">CDataError</a>, <a class="el" href="class_c_d_b_error.html">CDBError</a>, <a class="el" href="class_c_file_error.html">CFileError</a>, <a class="el" href="class_c_h_t_t_p_error.html">CHTTPError</a>, <a class="el" href="class_c_module_error.html">CModuleError</a> и <a class="el" href="class_c_user_error.html">CUserError</a>.</p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a6efbf68da809d4a46b7b4040bf5748bf">__construct</a> ($message=&quot;&quot;, $code=0, $text='')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#aff849052098521fd979745f8e50af269">GetErrorText</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a2e783519d7ccbc12dfdd265f2f9c1b91">_error_form</a> ($message, $code)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a8a894fc70a6123837ca8e192c732cdec">PhpErrorHandler</a> ($errno, $errstr, $errfile, $errline)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#aeba2ab722cedda53dbb7ec1a59f45550">$error</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a7fd3c70aeb6a8d02598723d66f1f0890">$error_text</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_error.html#a4aa697a5a9476a454d90070fd66e6098">$errorTpl</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="class_c_error.html">CError</a> наследуется от системного класса Exception и предназначен для обработки разнообразных исключений. Фактически в нем регистрируется вывод исключений в определенном стиле. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00017">17</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a6efbf68da809d4a46b7b4040bf5748bf"></a><!-- doxytag: member="CError::__construct" ref="a6efbf68da809d4a46b7b4040bf5748bf" args="($message=&quot;&quot;, $code=0, $text='')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>message</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>code</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>text</em> = <code>''</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор класса, создает новое исключение. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_d_b_error.html#aa7a78a91b20859a1c59bbc55d778d61a">CDBError</a>, <a class="el" href="class_c_file_error.html#a2a70442454fd66e983bcad0f27e3fd4a">CFileError</a>, <a class="el" href="class_c_module_error.html#a2a70442454fd66e983bcad0f27e3fd4a">CModuleError</a>, <a class="el" href="class_c_access_error.html#a2a70442454fd66e983bcad0f27e3fd4a">CAccessError</a>, <a class="el" href="class_c_user_error.html#a2a70442454fd66e983bcad0f27e3fd4a">CUserError</a> и <a class="el" href="class_c_data_error.html#a1bbb83d12a56a9aa8a6168ccaeb4e9c2">CDataError</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a7516ca30af0db3cdbf9a7739b48ce91d"></a><!-- doxytag: member="CError::__toString" ref="a7516ca30af0db3cdbf9a7739b48ce91d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__toString </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Магический метод выполняющий преобразование объекта ошибки в строку при выводе. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_critical_error.html#a7516ca30af0db3cdbf9a7739b48ce91d">CCriticalError</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00038">38</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_cgraph.png" border="0" usemap="#class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_cgraph" alt=""/></div>
+<map name="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_cgraph" id="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_cgraph">
+<area shape="rect" id="node3" href="class_c_error.html#a2e783519d7ccbc12dfdd265f2f9c1b91" title="_error_form" alt="" coords="144,5,240,35"/><area shape="rect" id="node5" href="class_c_error.html#aff849052098521fd979745f8e50af269" title="GetErrorText" alt="" coords="141,59,243,88"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_icgraph.png" border="0" usemap="#class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_icgraph" alt=""/></div>
+<map name="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_icgraph" id="class_c_error_a7516ca30af0db3cdbf9a7739b48ce91d_icgraph">
+<area shape="rect" id="node3" href="class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="188,5,329,35"/><area shape="rect" id="node5" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="141,59,376,88"/><area shape="rect" id="node7" href="class_cmain_a_imodules.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CmainAImodules::Run" alt="" coords="179,112,339,141"/><area shape="rect" id="node9" href="class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Cguestbook2AIcategories::Save" alt="" coords="147,165,371,195"/><area shape="rect" id="node13" href="function_8_pic_8php.html#ad37d9875a58f53120af02a026b9c42a9" title="smarty_function_Pic" alt="" coords="184,219,333,248"/><area shape="rect" id="node11" href="class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="424,165,640,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e783519d7ccbc12dfdd265f2f9c1b91"></a><!-- doxytag: member="CError::_error_form" ref="a2e783519d7ccbc12dfdd265f2f9c1b91" args="($message, $code)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_error_form </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>code</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод оформляет вывод ошибки в рамку, используется в административном разделе. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00096">96</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_error_a2e783519d7ccbc12dfdd265f2f9c1b91_icgraph.png" border="0" usemap="#class_c_error_a2e783519d7ccbc12dfdd265f2f9c1b91_icgraph" alt=""/></div>
+<map name="class_c_error_a2e783519d7ccbc12dfdd265f2f9c1b91_icgraph" id="class_c_error_a2e783519d7ccbc12dfdd265f2f9c1b91_icgraph">
+<area shape="rect" id="node3" href="class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="__toString" alt="" coords="153,112,239,141"/><area shape="rect" id="node5" href="class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="335,5,476,35"/><area shape="rect" id="node7" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="288,59,523,88"/><area shape="rect" id="node9" href="class_cmain_a_imodules.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CmainAImodules::Run" alt="" coords="325,112,485,141"/><area shape="rect" id="node11" href="class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Cguestbook2AIcategories::Save" alt="" coords="293,165,517,195"/><area shape="rect" id="node15" href="function_8_pic_8php.html#ad37d9875a58f53120af02a026b9c42a9" title="smarty_function_Pic" alt="" coords="331,219,480,248"/><area shape="rect" id="node13" href="class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="571,165,787,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aff849052098521fd979745f8e50af269"></a><!-- doxytag: member="CError::GetErrorText" ref="aff849052098521fd979745f8e50af269" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetErrorText </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00075">75</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_error_aff849052098521fd979745f8e50af269_icgraph.png" border="0" usemap="#class_c_error_aff849052098521fd979745f8e50af269_icgraph" alt=""/></div>
+<map name="class_c_error_aff849052098521fd979745f8e50af269_icgraph" id="class_c_error_aff849052098521fd979745f8e50af269_icgraph">
+<area shape="rect" id="node3" href="class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="__toString" alt="" coords="156,112,241,141"/><area shape="rect" id="node5" href="class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="337,5,479,35"/><area shape="rect" id="node7" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="291,59,525,88"/><area shape="rect" id="node9" href="class_cmain_a_imodules.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CmainAImodules::Run" alt="" coords="328,112,488,141"/><area shape="rect" id="node11" href="class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Cguestbook2AIcategories::Save" alt="" coords="296,165,520,195"/><area shape="rect" id="node15" href="function_8_pic_8php.html#ad37d9875a58f53120af02a026b9c42a9" title="smarty_function_Pic" alt="" coords="333,219,483,248"/><area shape="rect" id="node13" href="class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="573,165,789,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a894fc70a6123837ca8e192c732cdec"></a><!-- doxytag: member="CError::PhpErrorHandler" ref="a8a894fc70a6123837ca8e192c732cdec" args="($errno, $errstr, $errfile, $errline)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static PhpErrorHandler </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>errno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>errstr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>errfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>errline</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Статический метод, используется для обработки обычных ошибок пхп </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00120">120</a></p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="aeba2ab722cedda53dbb7ec1a59f45550"></a><!-- doxytag: member="CError::$error" ref="aeba2ab722cedda53dbb7ec1a59f45550" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$error</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7fd3c70aeb6a8d02598723d66f1f0890"></a><!-- doxytag: member="CError::$error_text" ref="a7fd3c70aeb6a8d02598723d66f1f0890" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$error_text</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4aa697a5a9476a454d90070fd66e6098"></a><!-- doxytag: member="CError::$errorTpl" ref="a4aa697a5a9476a454d90070fd66e6098" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$errorTpl<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Шаблон вывода ошибки </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a> строка <a class="el" href="class_8_c_error_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_error_8php_source.html">class.CError.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:24. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

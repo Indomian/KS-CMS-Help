@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CModuleAdmin.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CModuleAdmin.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_module_admin_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a><a class="code" href="class_8_c_module_admin_8php.html#aa2751051afe353ae55a548bdc2a59679">00014</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CMain.php&#39;</span>;
+<a name="l00017"></a>00017 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CConfigParser.php&#39;</span>;
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="class_c_module_admin.html">00019</a> <span class="keyword">class </span><a class="code" href="class_c_module_admin.html">CModuleAdmin</a> <span class="keyword">extends</span> <a class="code" href="class_c_base_a_p_i.html">CBaseAPI</a>
+<a name="l00020"></a>00020 {
+<a name="l00021"></a><a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">00021</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">$module</a>;
+<a name="l00022"></a><a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">00022</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>;
+<a name="l00023"></a><a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">00023</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>;
+<a name="l00024"></a><a class="code" href="class_c_module_admin.html#a35ac0cc877f542d0dbed23846b93f507">00024</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#a35ac0cc877f542d0dbed23846b93f507">$obModules</a>;
+<a name="l00025"></a><a class="code" href="class_c_module_admin.html#a5ed65e85294f010198c5bf523d7df077">00025</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#a5ed65e85294f010198c5bf523d7df077">$obUser</a>;
+<a name="l00026"></a><a class="code" href="class_c_module_admin.html#a15615e6b8222dd924a623731c972387c">00026</a>         <span class="keyword">protected</span> <a class="code" href="class_c_module_admin.html#a15615e6b8222dd924a623731c972387c">$sAction</a>;
+<a name="l00027"></a>00027                 
+<a name="l00028"></a><a class="code" href="class_c_module_admin.html#ae4d064645cb29abdcae40fb8cdee98fd">00028</a>         function <a class="code" href="class_c_module_admin.html#ae4d064645cb29abdcae40fb8cdee98fd">__construct</a>(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>,&amp;<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,&amp;$parent)
+<a name="l00029"></a>00029         {
+<a name="l00030"></a>00030                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>;
+<a name="l00031"></a>00031                 $this-&gt;module=<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>;
+<a name="l00032"></a>00032                 $this-&gt;smarty=<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>;
+<a name="l00033"></a>00033                 $this-&gt;obModules=$parent;
+<a name="l00034"></a>00034                 $this-&gt;sAction=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00035"></a>00035                 $this-&gt;obUser=&amp;$USER;
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037         
+<a name="l00045"></a><a class="code" href="class_c_module_admin.html#a3160f20700c1e4015c4d5ef90de6c890">00045</a>         function <a class="code" href="class_c_module_admin.html#a3160f20700c1e4015c4d5ef90de6c890">InitSort</a>(<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>,&amp;$sortField,&amp;$sortDir)
+<a name="l00046"></a>00046         {
+<a name="l00047"></a>00047                 <span class="comment">// Обработка порядка вывода элементов</span>
+<a name="l00048"></a>00048                 <span class="keywordflow">if</span>($sortField!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00049"></a>00049                         <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=(in_array($sortField,<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>))?$sortField:<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>[0];
+<a name="l00050"></a>00050                 elseif($_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_by&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00051"></a>00051                         <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=$_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_by&#39;</span>];
+<a name="l00052"></a>00052                 <span class="keywordflow">else</span>
+<a name="l00053"></a>00053                         <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=$this-&gt;obModules-&gt;GetConfigVar($this-&gt;module,<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_by&#39;</span>);
+<a name="l00054"></a>00054                 <span class="comment">//Направление сортировки</span>
+<a name="l00055"></a>00055                 <span class="keywordflow">if</span>($sortDir!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00056"></a>00056                         <span class="keywordflow">if</span>($sortDir==<span class="stringliteral">&#39;asc&#39;</span>)     $sOrderDir=<span class="stringliteral">&#39;asc&#39;</span>;
+<a name="l00057"></a>00057                         <span class="keywordflow">else</span> $sOrderDir=<span class="stringliteral">&#39;desc&#39;</span>;
+<a name="l00058"></a>00058                 <span class="keywordflow">else</span>
+<a name="l00059"></a>00059                         <span class="keywordflow">if</span>($_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_dir&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>)      $sOrderDir=$_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_dir&#39;</span>];
+<a name="l00060"></a>00060                         <span class="keywordflow">else</span> $OrderDir=$this-&gt;obModules-&gt;GetConfigVar($this-&gt;module,<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_dir&#39;</span>);
+<a name="l00061"></a>00061                 <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=(in_array(<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>,<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>))?<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>:<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>[0];
+<a name="l00062"></a>00062                 <span class="comment">//Сохраняем сортировку в сессию</span>
+<a name="l00063"></a>00063                 $_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_by&#39;</span>]=<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>;
+<a name="l00064"></a>00064                 $_SESSION[$this-&gt;module][<span class="stringliteral">&#39;admin_sort_&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;_dir&#39;</span>]=$sOrderDir;
+<a name="l00065"></a>00065                 <span class="keywordflow">return</span> array(<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>,$sOrderDir);
+<a name="l00066"></a>00066         }
+<a name="l00067"></a>00067         
+<a name="l00071"></a><a class="code" href="class_c_module_admin.html#ae0f4c20663f5bf516d705edf68a26c50">00071</a>         <span class="keyword">protected</span> function <a class="code" href="class_c_module_admin.html#ae0f4c20663f5bf516d705edf68a26c50">ParseAction</a>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>)
+<a name="l00072"></a>00072         {
+<a name="l00073"></a>00073                 <span class="keywordflow">if</span>($this-&gt;sAction==<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00074"></a>00074                 {
+<a name="l00075"></a>00075                         <span class="keywordflow">if</span>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;&#39;</span>) <a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=$_REQUEST[<span class="stringliteral">&#39;action&#39;</span>];
+<a name="l00076"></a>00076                         $this-&gt;sAction=<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>;
+<a name="l00077"></a>00077                 }
+<a name="l00078"></a>00078         }
+<a name="l00079"></a>00079         
+<a name="l00084"></a><a class="code" href="class_c_module_admin.html#a18bc255f71236e323f4cd8bc3bed92ce">00084</a>         function <a class="code" href="class_c_module_admin.html#a18bc255f71236e323f4cd8bc3bed92ce">Run</a>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00085"></a>00085         {               
+<a name="l00086"></a>00086                 <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00087"></a>00087         }
+<a name="l00088"></a>00088 }
+<a name="l00089"></a>00089 
+<a name="l00093"></a><a class="code" href="class_c_admin_table.html">00093</a> <span class="keyword">class </span><a class="code" href="class_c_admin_table.html">CAdminTable</a> <span class="keyword">extends</span> <a class="code" href="class_c_module_admin.html">CModuleAdmin</a>
+<a name="l00094"></a>00094 {
+<a name="l00095"></a><a class="code" href="class_c_admin_table.html#a2a3dd2b24eb87dd0c5b07320d9870651">00095</a>         <span class="keyword">protected</span> <a class="code" href="class_c_admin_table.html#a2a3dd2b24eb87dd0c5b07320d9870651">$arColumns</a>; 
+<a name="l00096"></a><a class="code" href="class_c_admin_table.html#a2349d90cb5bd7d38310df6c72fb22660">00096</a>         <span class="keyword">protected</span> <a class="code" href="class_c_admin_table.html#a2349d90cb5bd7d38310df6c72fb22660">$obConfigParser</a>; 
+<a name="l00097"></a><a class="code" href="class_c_admin_table.html#a28908f75b43e5f3533cc4725e7b16afa">00097</a>         <span class="keyword">protected</span> <a class="code" href="class_c_admin_table.html#a28908f75b43e5f3533cc4725e7b16afa">$sTableName</a>;  
+<a name="l00099"></a><a class="code" href="class_c_admin_table.html#ae4d064645cb29abdcae40fb8cdee98fd">00099</a>         function <a class="code" href="class_c_admin_table.html#ae4d064645cb29abdcae40fb8cdee98fd">__construct</a>(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>,&amp;<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,&amp;$parent)
+<a name="l00100"></a>00100         {
+<a name="l00101"></a>00101                 <a class="code" href="class_c_admin_table.html#ae4d064645cb29abdcae40fb8cdee98fd">parent::__construct</a>(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>,<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,$parent);
+<a name="l00102"></a>00102                 $this-&gt;arColumns=array();
+<a name="l00103"></a>00103                 $this-&gt;obConfigParser=<span class="keyword">new</span> <a class="code" href="class_c_config_parser.html">CConfigParser</a>(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>);
+<a name="l00104"></a>00104                 $this-&gt;obConfigParser-&gt;LoadConfig();
+<a name="l00105"></a>00105         }
+<a name="l00106"></a>00106         
+<a name="l00110"></a><a class="code" href="class_c_admin_table.html#afbc45bdc0ac63cd9678e34997250b466">00110</a>         <span class="keyword">protected</span> function <a class="code" href="class_c_admin_table.html#afbc45bdc0ac63cd9678e34997250b466">PrepareColumns</a>()
+<a name="l00111"></a>00111         {
+<a name="l00112"></a>00112                 $arCols=$this-&gt;obModules-&gt;GetConfigVar($this-&gt;module,<span class="stringliteral">&#39;table&#39;</span>.$this-&gt;sTableName);
+<a name="l00113"></a>00113                 <span class="keywordflow">foreach</span>($this-&gt;arColumns as $key=&gt;$arColumn)
+<a name="l00114"></a>00114                 {
+<a name="l00115"></a>00115                         <span class="keywordflow">if</span>($arCols[$key]!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00116"></a>00116                                 $this-&gt;arColumns[$key][<span class="stringliteral">&#39;show&#39;</span>]=intval($arCols[$key]);
+<a name="l00117"></a>00117                         <span class="keywordflow">else</span>
+<a name="l00118"></a>00118                                 $this-&gt;arColumns[$key][<span class="stringliteral">&#39;show&#39;</span>]=intval($arColumn[<span class="stringliteral">&#39;default&#39;</span>]);
+<a name="l00119"></a>00119                 }
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121         
+<a name="l00125"></a><a class="code" href="class_c_admin_table.html#a2a7f82c625b00a53f710b2ed305248d2">00125</a>         function <a class="code" href="class_c_admin_table.html#a2a7f82c625b00a53f710b2ed305248d2">Table</a>()
+<a name="l00126"></a>00126         {
+<a name="l00127"></a>00127                 $this-&gt;<a class="code" href="class_c_admin_table.html#afbc45bdc0ac63cd9678e34997250b466">PrepareColumns</a>();
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129         
+<a name="l00133"></a><a class="code" href="class_c_admin_table.html#a18bc255f71236e323f4cd8bc3bed92ce">00133</a>         function <a class="code" href="class_c_admin_table.html#a18bc255f71236e323f4cd8bc3bed92ce">Run</a>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00134"></a>00134         {
+<a name="l00135"></a>00135                 global <a class="code" href="smilies_8php.html#a17f6eca81ab87d6a14c25002c2d946e8">$KS_URL</a>;
+<a name="l00136"></a>00136                 $this-&gt;<a class="code" href="class_c_module_admin.html#ae0f4c20663f5bf516d705edf68a26c50">ParseAction</a>(<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>);
+<a name="l00137"></a>00137                 <span class="keywordflow">switch</span>($this-&gt;sAction)
+<a name="l00138"></a>00138                 {
+<a name="l00139"></a>00139                         <span class="keywordflow">case</span> <span class="stringliteral">&#39;confcols&#39;</span>:
+<a name="l00140"></a>00140                                 <span class="comment">//Выполняем конфигурацию колонок</span>
+<a name="l00141"></a>00141                                 $this-&gt;<a class="code" href="class_c_admin_table.html#afbc45bdc0ac63cd9678e34997250b466">PrepareColumns</a>();
+<a name="l00142"></a>00142                                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;columns&#39;</span>,$this-&gt;arColumns);
+<a name="l00143"></a>00143                                 $this-&gt;obModules-&gt;AddChainItem(<span class="stringliteral">&#39;title_config_columns&#39;</span>,$KS_URL-&gt;Url());
+<a name="l00144"></a>00144                                 <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;confcols&#39;</span>;
+<a name="l00145"></a>00145                         <span class="keywordflow">break</span>;                  
+<a name="l00146"></a>00146                         <span class="keywordflow">case</span> <span class="stringliteral">&#39;savecols&#39;</span>:
+<a name="l00147"></a>00147                                 <span class="keywordflow">if</span>($_SERVER[<span class="stringliteral">&#39;REQUEST_METHOD&#39;</span>]==<span class="stringliteral">&#39;POST&#39;</span> &amp;&amp; !array_key_exists(<span class="stringliteral">&#39;cancel&#39;</span>,$_POST))
+<a name="l00148"></a>00148                                 {
+<a name="l00149"></a>00149                                         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=array();
+<a name="l00150"></a>00150                                         <span class="keywordflow">foreach</span>($this-&gt;arColumns as $key=&gt;$arColumn)
+<a name="l00151"></a>00151                                         {
+<a name="l00152"></a>00152                                                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[$key]=intval($_POST[<span class="stringliteral">&#39;show&#39;</span>][$key]);
+<a name="l00153"></a>00153                                         }
+<a name="l00154"></a>00154                                         $this-&gt;obConfigParser-&gt;Set(<span class="stringliteral">&#39;table&#39;</span>.$this-&gt;sTableName,<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>);
+<a name="l00155"></a>00155                                         $this-&gt;obConfigParser-&gt;WriteConfig();
+<a name="l00156"></a>00156                                 }
+<a name="l00157"></a>00157                                 $KS_URL-&gt;redirect($KS_URL-&gt;Url(array(<span class="stringliteral">&#39;action&#39;</span>)));
+<a name="l00158"></a>00158                         <span class="keywordflow">break</span>;
+<a name="l00159"></a>00159                         <span class="keywordflow">default</span>:
+<a name="l00160"></a>00160                                 <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<a class="code" href="class_c_admin_table.html#a18bc255f71236e323f4cd8bc3bed92ce">parent::Run</a>();
+<a name="l00161"></a>00161                 }
+<a name="l00162"></a>00162                 <span class="keywordflow">return</span> <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>;
+<a name="l00163"></a>00163         }        
+<a name="l00164"></a>00164 }
+<a name="l00165"></a>00165 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:19. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

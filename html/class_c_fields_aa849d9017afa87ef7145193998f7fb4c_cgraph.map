@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_object.html#adc9b6bf70f31025bde56faade9aa147b" title="CObject::_GetTableFields" alt="" coords="125,5,301,35"/>
+<area shape="rect" id="node5" href="$class_c_object.html#a2e932b1c5285b386f7f795703ac79479" title="CObject::GetFieldsList" alt="" coords="373,296,533,325"/>
+<area shape="rect" id="node7" href="$class_c_fields.html#a36d856314995863577f6ef134fc9ffbf" title="GetRecord" alt="" coords="169,59,257,88"/>
+<area shape="rect" id="node13" href="$class_c_object.html#af5478d45bb4c7400c7830413a486a92b" title="CObject::GetRecordFromPost" alt="" coords="111,163,316,192"/>
+<area shape="rect" id="node15" href="$class_c_fields.html#a9a707d458ee1278fc539bb2877208bd6" title="GetTypes" alt="" coords="173,216,253,245"/>
+<area shape="rect" id="node17" href="$class_c_fields.html#a3eb04d127cab06d44fae0adc3c3cd380" title="MoveField" alt="" coords="172,269,255,299"/>
+<area shape="rect" id="node20" href="$class_c_fields.html#ab37c701826fa7631d974ea6479bd9404" title="RenameField" alt="" coords="163,323,264,352"/>
+<area shape="rect" id="node23" href="$class_c_fields.html#af3b68b057e381e512de47446f3ce740c" title="UpdateDefault" alt="" coords="156,376,271,405"/>
+<area shape="rect" id="node9" href="$class_c_object.html#a5cd30b0fb664883d694689c7152d3d3f" title="CObject::_GenFilterHash" alt="" coords="365,59,541,88"/>
+<area shape="rect" id="node11" href="$class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="591,59,743,88"/>
+</map>

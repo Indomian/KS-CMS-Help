@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/functions.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/functions.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="main_2libs_2functions_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00019"></a><a class="code" href="main_2libs_2functions_8php.html#acd580329ab330d6b52fa305bf4f5a9b0">00019</a> function <a class="code" href="main_2libs_2functions_8php.html#acd580329ab330d6b52fa305bf4f5a9b0">win2utf</a>($s)    {
+<a name="l00020"></a>00020    <span class="keywordflow">for</span>($i=0, <a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>=strlen($s); $i&lt;<a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>; $i++)    {
+<a name="l00021"></a>00021        $c=ord($s[$i]);
+<a name="l00022"></a>00022        <span class="keywordflow">if</span> ($c&lt;=127) {<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr($c); <span class="keywordflow">continue</span>; }
+<a name="l00023"></a>00023        <span class="keywordflow">if</span> ($c&gt;=192 &amp;&amp; $c&lt;=207)    {<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr($c-48); <span class="keywordflow">continue</span>; }
+<a name="l00024"></a>00024        <span class="keywordflow">if</span> ($c&gt;=208 &amp;&amp; $c&lt;=239) {<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr($c-48); <span class="keywordflow">continue</span>; }
+<a name="l00025"></a>00025        <span class="keywordflow">if</span> ($c&gt;=240 &amp;&amp; $c&lt;=255) {<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr($c-112); <span class="keywordflow">continue</span>; }
+<a name="l00026"></a>00026        <span class="keywordflow">if</span> ($c==184) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(209); <span class="keywordflow">continue</span>; };
+<a name="l00027"></a>00027             <span class="keywordflow">if</span> ($c==168) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr(129);  <span class="keywordflow">continue</span>; };
+<a name="l00028"></a>00028             <span class="keywordflow">if</span> ($c==184) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(145); <span class="keywordflow">continue</span>; }; #ё
+<a name="l00029"></a>00029             <span class="keywordflow">if</span> ($c==168) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr(129); <span class="keywordflow">continue</span>; }; #Ё
+<a name="l00030"></a>00030             <span class="keywordflow">if</span> ($c==179) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(150); <span class="keywordflow">continue</span>; }; #і
+<a name="l00031"></a>00031             <span class="keywordflow">if</span> ($c==178) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr(134); <span class="keywordflow">continue</span>; }; #І
+<a name="l00032"></a>00032             <span class="keywordflow">if</span> ($c==191) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(151); <span class="keywordflow">continue</span>; }; #ї
+<a name="l00033"></a>00033             <span class="keywordflow">if</span> ($c==175) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr(135); <span class="keywordflow">continue</span>; }; #ї
+<a name="l00034"></a>00034             <span class="keywordflow">if</span> ($c==186) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(148); <span class="keywordflow">continue</span>; }; #є
+<a name="l00035"></a>00035             <span class="keywordflow">if</span> ($c==170) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(208).chr(132); <span class="keywordflow">continue</span>; }; #Є
+<a name="l00036"></a>00036             <span class="keywordflow">if</span> ($c==180) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(210).chr(145); <span class="keywordflow">continue</span>; }; #ґ
+<a name="l00037"></a>00037             <span class="keywordflow">if</span> ($c==165) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(210).chr(144); <span class="keywordflow">continue</span>; }; #Ґ
+<a name="l00038"></a>00038             <span class="keywordflow">if</span> ($c==184) { <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>.=chr(209).chr(145); <span class="keywordflow">continue</span>; }; #Ґ
+<a name="l00039"></a>00039    }
+<a name="l00040"></a>00040    <span class="keywordflow">return</span> <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>;
+<a name="l00041"></a>00041 }
+<a name="l00042"></a>00042 
+<a name="l00047"></a><a class="code" href="main_2libs_2functions_8php.html#a2e984fa108c19e528237285c7a30b77c">00047</a> function <a class="code" href="main_2libs_2functions_8php.html#a2e984fa108c19e528237285c7a30b77c">dec2any</a>( $num, $base=62, $index=<span class="keyword">false</span> ) {
+<a name="l00048"></a>00048     <span class="keywordflow">if</span> (! $base ) {
+<a name="l00049"></a>00049         $base = strlen( $index );
+<a name="l00050"></a>00050     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (! $index ) {
+<a name="l00051"></a>00051         $index = substr( <span class="stringliteral">&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span> ,0 ,$base );
+<a name="l00052"></a>00052     }
+<a name="l00053"></a>00053     $out = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00054"></a>00054     <span class="keywordflow">for</span> ( <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> = floor( log10( $num ) / log10( $base ) ); <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> &gt;= 0; <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>-- ) {
+<a name="l00055"></a>00055         <a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a> = floor( $num / pow( $base, <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> ) );
+<a name="l00056"></a>00056         $out = $out . substr( $index, <a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a>, 1 );
+<a name="l00057"></a>00057         $num = $num - ( <a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a> * pow( $base, <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> ) );
+<a name="l00058"></a>00058     }
+<a name="l00059"></a>00059     <span class="keywordflow">return</span> $out;
+<a name="l00060"></a>00060 }
+<a name="l00061"></a>00061 
+<a name="l00062"></a><a class="code" href="main_2libs_2functions_8php.html#a7839ed62f30e45188a8e196322f8c7f7">00062</a> function <a class="code" href="main_2libs_2functions_8php.html#a7839ed62f30e45188a8e196322f8c7f7">hex2bin</a>($num)
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064         $arBins=array(
+<a name="l00065"></a>00065                 <span class="charliteral">&#39;0&#39;</span>=&gt;<span class="stringliteral">&#39;0000&#39;</span>,
+<a name="l00066"></a>00066                 <span class="charliteral">&#39;1&#39;</span>=&gt;<span class="stringliteral">&#39;0001&#39;</span>,
+<a name="l00067"></a>00067                 <span class="charliteral">&#39;2&#39;</span>=&gt;<span class="stringliteral">&#39;0010&#39;</span>,
+<a name="l00068"></a>00068                 <span class="charliteral">&#39;3&#39;</span>=&gt;<span class="stringliteral">&#39;0011&#39;</span>,
+<a name="l00069"></a>00069                 <span class="charliteral">&#39;4&#39;</span>=&gt;<span class="stringliteral">&#39;0100&#39;</span>,
+<a name="l00070"></a>00070                 <span class="charliteral">&#39;5&#39;</span>=&gt;<span class="stringliteral">&#39;0101&#39;</span>,
+<a name="l00071"></a>00071                 <span class="charliteral">&#39;6&#39;</span>=&gt;<span class="stringliteral">&#39;0110&#39;</span>,
+<a name="l00072"></a>00072                 <span class="charliteral">&#39;7&#39;</span>=&gt;<span class="stringliteral">&#39;0111&#39;</span>,
+<a name="l00073"></a>00073                 <span class="charliteral">&#39;8&#39;</span>=&gt;<span class="stringliteral">&#39;1000&#39;</span>,
+<a name="l00074"></a>00074                 <span class="charliteral">&#39;9&#39;</span>=&gt;<span class="stringliteral">&#39;1001&#39;</span>,
+<a name="l00075"></a>00075                 <span class="charliteral">&#39;a&#39;</span>=&gt;<span class="stringliteral">&#39;1010&#39;</span>,
+<a name="l00076"></a>00076                 <span class="charliteral">&#39;b&#39;</span>=&gt;<span class="stringliteral">&#39;1011&#39;</span>,
+<a name="l00077"></a>00077                 <span class="charliteral">&#39;c&#39;</span>=&gt;<span class="stringliteral">&#39;1100&#39;</span>,
+<a name="l00078"></a>00078                 <span class="charliteral">&#39;d&#39;</span>=&gt;<span class="stringliteral">&#39;1101&#39;</span>,
+<a name="l00079"></a>00079                 <span class="charliteral">&#39;e&#39;</span>=&gt;<span class="stringliteral">&#39;1110&#39;</span>,
+<a name="l00080"></a>00080                 <span class="charliteral">&#39;f&#39;</span>=&gt;<span class="stringliteral">&#39;1111&#39;</span>,
+<a name="l00081"></a>00081         );
+<a name="l00082"></a>00082         $len = strlen( $num ) - 1;
+<a name="l00083"></a>00083     <span class="keywordflow">for</span> ( <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> = 0; <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> &lt;= $len; <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>++ )
+<a name="l00084"></a>00084         $out = $out.$arBins[substr($num,<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>,1 )];
+<a name="l00085"></a>00085         <span class="keywordflow">return</span> $out;
+<a name="l00086"></a>00086 }
+<a name="l00087"></a>00087 
+<a name="l00088"></a><a class="code" href="main_2libs_2functions_8php.html#aa55583b90aa430ca9c0cf37d101dff32">00088</a> function <a class="code" href="main_2libs_2functions_8php.html#aa55583b90aa430ca9c0cf37d101dff32">any2dec</a>( $num, $base=62, $index=<span class="keyword">false</span> ) {
+<a name="l00089"></a>00089     <span class="keywordflow">if</span> (! $base ) {
+<a name="l00090"></a>00090         $base = strlen( $index );
+<a name="l00091"></a>00091     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (! $index ) {
+<a name="l00092"></a>00092         $index = substr( <span class="stringliteral">&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>, 0, $base );
+<a name="l00093"></a>00093     }
+<a name="l00094"></a>00094     $out = 0;
+<a name="l00095"></a>00095     $len = strlen( $num ) - 1;
+<a name="l00096"></a>00096     <span class="keywordflow">for</span> ( <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> = 0; <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> &lt;= $len; <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>++ ) {
+<a name="l00097"></a>00097         $out = $out + strpos( $index, substr( $num, <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>, 1 ) ) * pow( $base, $len - <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> );
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099     <span class="keywordflow">return</span> $out;
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00102"></a><a class="code" href="main_2libs_2functions_8php.html#a1034ab8a578954c2c356ca37cb93dd8d">00102</a> function <a class="code" href="main_2libs_2functions_8php.html#a1034ab8a578954c2c356ca37cb93dd8d">pre_print</a>($variable)
+<a name="l00103"></a>00103 {
+<a name="l00104"></a>00104         echo <span class="stringliteral">&quot;&lt;pre&gt;&quot;</span>;
+<a name="l00105"></a>00105         print_r($variable);
+<a name="l00106"></a>00106         echo <span class="stringliteral">&quot;&lt;/pre&gt;&quot;</span>;
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00112"></a><a class="code" href="main_2libs_2functions_8php.html#a3df0106a6be3130312158d3e2f657f82">00112</a> function <a class="code" href="main_2libs_2functions_8php.html#a3df0106a6be3130312158d3e2f657f82">debugStop</a>($var)
+<a name="l00113"></a>00113 {
+<a name="l00114"></a>00114         <a class="code" href="main_2libs_2functions_8php.html#a1034ab8a578954c2c356ca37cb93dd8d">pre_print</a>($var);
+<a name="l00115"></a>00115         die();
+<a name="l00116"></a>00116 }
+<a name="l00117"></a>00117 
+<a name="l00127"></a><a class="code" href="main_2libs_2functions_8php.html#a37c1f8ffa434546ff2eb9e65ad650280">00127</a> function <a class="code" href="main_2libs_2functions_8php.html#a37c1f8ffa434546ff2eb9e65ad650280">hsv2rgb</a>($h,$s=<span class="keyword">false</span>,$v=<span class="keyword">false</span>)
+<a name="l00128"></a>00128 {
+<a name="l00129"></a>00129         <span class="keywordflow">if</span>(is_array($h))
+<a name="l00130"></a>00130         {
+<a name="l00131"></a>00131                 $s=$h[1];
+<a name="l00132"></a>00132                 $v=$h[2];
+<a name="l00133"></a>00133                 $h=$h[0];
+<a name="l00134"></a>00134         }
+<a name="l00135"></a>00135         $hi = floor($h/60)%6;
+<a name="l00136"></a>00136     $f = ($h/60) - floor($h/60);
+<a name="l00137"></a>00137     $p = $v * (1 - $s);
+<a name="l00138"></a>00138     $q = $v * (1 - ($f*$s));
+<a name="l00139"></a>00139     <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> = $v * (1 - ((1 - $f) * $s));
+<a name="l00140"></a>00140     <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=array(
+<a name="l00141"></a>00141         array(<span class="charliteral">&#39;r&#39;</span>=&gt;$v, <span class="charliteral">&#39;g&#39;</span>=&gt;<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>, <span class="charliteral">&#39;b&#39;</span>=&gt;$p),
+<a name="l00142"></a>00142         array(<span class="charliteral">&#39;r&#39;</span>=&gt;$q, <span class="charliteral">&#39;g&#39;</span>=&gt;$v, <span class="charliteral">&#39;b&#39;</span>=&gt;$p),
+<a name="l00143"></a>00143         array(<span class="charliteral">&#39;r&#39;</span>=&gt;$p, <span class="charliteral">&#39;g&#39;</span>=&gt;$v, <span class="charliteral">&#39;b&#39;</span>=&gt;<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>),
+<a name="l00144"></a>00144         array(<span class="charliteral">&#39;r&#39;</span>=&gt;$p, <span class="charliteral">&#39;g&#39;</span>=&gt;$q, <span class="charliteral">&#39;b&#39;</span>=&gt;$v),
+<a name="l00145"></a>00145         array(<span class="charliteral">&#39;r&#39;</span>=&gt;<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>, <span class="charliteral">&#39;g&#39;</span>=&gt;$p, <span class="charliteral">&#39;b&#39;</span>=&gt;$v),
+<a name="l00146"></a>00146         array(<span class="charliteral">&#39;r&#39;</span>=&gt;$v, <span class="charliteral">&#39;g&#39;</span>=&gt;$p, <span class="charliteral">&#39;b&#39;</span>=&gt;$q)
+<a name="l00147"></a>00147     );
+<a name="l00148"></a>00148     <span class="keywordflow">return</span> $arResult[$hi];
+<a name="l00149"></a>00149 }
+<a name="l00150"></a>00150 
+<a name="l00154"></a><a class="code" href="main_2libs_2functions_8php.html#a475903a91ef01993d527ae2981acf191">00154</a> function <a class="code" href="main_2libs_2functions_8php.html#a475903a91ef01993d527ae2981acf191">html2rgb</a>($html)
+<a name="l00155"></a>00155 {
+<a name="l00156"></a>00156         <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#\#?([0-9a-f]{2,2})([0-9a-f]{2,2})([0-9a-f]{2,2})#i&#39;</span>,$html,$matches))
+<a name="l00157"></a>00157         {
+<a name="l00158"></a>00158                 $r=hexdec($matches[1])/65536;
+<a name="l00159"></a>00159                 $g=hexdec($matches[2])/65536;
+<a name="l00160"></a>00160                 $b=hexdec($matches[3])/65536;
+<a name="l00161"></a>00161         }
+<a name="l00162"></a>00162         <span class="keywordflow">else</span>
+<a name="l00163"></a>00163         {
+<a name="l00164"></a>00164                 $r=0;$g=0;$b=0;
+<a name="l00165"></a>00165         }
+<a name="l00166"></a>00166         <span class="keywordflow">return</span> array(<span class="charliteral">&#39;r&#39;</span>=&gt;$r,<span class="charliteral">&#39;g&#39;</span>=&gt;$g,<span class="charliteral">&#39;b&#39;</span>=&gt;$b);
+<a name="l00167"></a>00167 }
+<a name="l00168"></a>00168 
+<a name="l00178"></a><a class="code" href="main_2libs_2functions_8php.html#ad6edc0207fac1a6825d9d0a1fabe2af5">00178</a> function <a class="code" href="main_2libs_2functions_8php.html#ad6edc0207fac1a6825d9d0a1fabe2af5">rgb2hsv</a>($r,$g=<span class="keyword">false</span>,$b=<span class="keyword">false</span>)
+<a name="l00179"></a>00179 {
+<a name="l00180"></a>00180         <span class="keywordflow">if</span>(!is_array($r)&amp;&amp;is_string($r)&amp;&amp;($g===<span class="keyword">false</span>))
+<a name="l00181"></a>00181         {
+<a name="l00182"></a>00182                 <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#\#?([0-9a-f]{2,2})([0-9a-f]{2,2})([0-9a-f]{2,2})#i&#39;</span>,$r,$matches))
+<a name="l00183"></a>00183                 {
+<a name="l00184"></a>00184                         $r=hexdec($matches[1])/65536;
+<a name="l00185"></a>00185                         $g=hexdec($matches[2])/65536;
+<a name="l00186"></a>00186                         $b=hexdec($matches[3])/65536;
+<a name="l00187"></a>00187                 }
+<a name="l00188"></a>00188                 <span class="keywordflow">else</span>
+<a name="l00189"></a>00189                 {
+<a name="l00190"></a>00190                         <span class="keywordflow">return</span> array(0,0,0);
+<a name="l00191"></a>00191                 }
+<a name="l00192"></a>00192         }
+<a name="l00193"></a>00193         elseif(is_array($r))
+<a name="l00194"></a>00194         {
+<a name="l00195"></a>00195                 $g=$r[1];
+<a name="l00196"></a>00196                 $b=$r[2];
+<a name="l00197"></a>00197                 $r=$r[0];
+<a name="l00198"></a>00198         }
+<a name="l00199"></a>00199         $maxc = max($r, $g, $b);
+<a name="l00200"></a>00200     $minc = min($r, $g, $b);
+<a name="l00201"></a>00201     $colorMap =array(
+<a name="l00202"></a>00202         $r=&gt;<span class="charliteral">&#39;r&#39;</span>,
+<a name="l00203"></a>00203         $g=&gt;<span class="charliteral">&#39;g&#39;</span>,
+<a name="l00204"></a>00204         $b=&gt;<span class="charliteral">&#39;b&#39;</span>,
+<a name="l00205"></a>00205     );
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207     <span class="keywordflow">if</span>((($maxc==$minc)&amp;&amp;$maxc==$r)||
+<a name="l00208"></a>00208         (($maxc==$minc)&amp;&amp;$maxc==$g)||
+<a name="l00209"></a>00209         (($maxc==$minc)&amp;&amp;$maxc==$b))
+<a name="l00210"></a>00210         $h = 0;
+<a name="l00211"></a>00211     elseif($maxc == $r)
+<a name="l00212"></a>00212         $h = 60 * (($g - $b) / ($maxc - $minc)) % 360;
+<a name="l00213"></a>00213     elseif($maxc == $g)
+<a name="l00214"></a>00214         $h = 60 * (($b - $r) / ($maxc - $minc)) + 120;
+<a name="l00215"></a>00215     elseif($maxc == $b)
+<a name="l00216"></a>00216         $h = 60 * (($r - $g) / ($maxc - $minc)) + 240;
+<a name="l00217"></a>00217     $v = $maxc;
+<a name="l00218"></a>00218     <span class="keywordflow">if</span> ($maxc == 0)
+<a name="l00219"></a>00219         $s = 0;
+<a name="l00220"></a>00220     <span class="keywordflow">else</span>
+<a name="l00221"></a>00221         $s = 1 - ($minc / $maxc);
+<a name="l00222"></a>00222     <span class="keywordflow">return</span> array($h, $s, $v);
+<a name="l00223"></a>00223 }
+<a name="l00224"></a>00224 
+<a name="l00228"></a><a class="code" href="main_2libs_2functions_8php.html#ac2b7c310e2a49bd2b0054f17b4e4bfd4">00228</a> function <a class="code" href="main_2libs_2functions_8php.html#ac2b7c310e2a49bd2b0054f17b4e4bfd4">IsEmail</a>($email)
+<a name="l00229"></a>00229 {
+<a name="l00230"></a>00230         <span class="keywordflow">return</span> preg_match(<span class="stringliteral">&#39;#^[a-z\.0-9\-_]+@[a-z0-9\-_]+\.[a-z]+$#i&#39;</span>,$email);
+<a name="l00231"></a>00231 }
+<a name="l00232"></a>00232 
+<a name="l00236"></a><a class="code" href="main_2libs_2functions_8php.html#a8a3a98c94b873b91319473f1b39a4d33">00236</a> function <a class="code" href="main_2libs_2functions_8php.html#a8a3a98c94b873b91319473f1b39a4d33">IsUrl</a>($url, $with_http = <span class="keyword">true</span>){
+<a name="l00237"></a>00237         $http = ($with_http) ? <span class="stringliteral">&quot;http:\/\/&quot;</span> : <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00238"></a>00238         <span class="keywordflow">return</span> preg_match(<span class="stringliteral">&quot;#^&quot;</span>.$http.<span class="stringliteral">&quot;(\w+\.){1,}(\w){2,}#mi&quot;</span>, $url);
+<a name="l00239"></a>00239 }
+<a name="l00240"></a>00240 
+<a name="l00244"></a><a class="code" href="main_2libs_2functions_8php.html#ab5ef7d7e024d5a5675019e691cb40214">00244</a> function <a class="code" href="main_2libs_2functions_8php.html#ab5ef7d7e024d5a5675019e691cb40214">IsTextIdent</a>($str)
+<a name="l00245"></a>00245 {
+<a name="l00246"></a>00246         <span class="keywordflow">return</span> preg_match(<span class="stringliteral">&#39;#^[a-z0-9\-_]+$#i&#39;</span>,$str);
+<a name="l00247"></a>00247 }
+<a name="l00248"></a>00248 
+<a name="l00249"></a><a class="code" href="main_2libs_2functions_8php.html#a1de74f950ddc8f2a25a8a2dc21050ebb">00249</a> function <a class="code" href="main_2libs_2functions_8php.html#a1de74f950ddc8f2a25a8a2dc21050ebb">IsIp</a>($ip){
+<a name="l00250"></a>00250         <span class="comment">//проверим длину и вхождение посторонних символов</span>
+<a name="l00251"></a>00251         <span class="keywordflow">if</span>(strlen($ip)&lt;7 || preg_match(<span class="stringliteral">&quot;#[^0-9\.]+#mi&quot;</span>,$ip))<span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00252"></a>00252         <span class="comment">//разобьем на части</span>
+<a name="l00253"></a>00253         $ip = explode(<span class="charliteral">&#39;.&#39;</span>, $ip);
+<a name="l00254"></a>00254         <span class="comment">//проверим сколько кусков получилось</span>
+<a name="l00255"></a>00255         <span class="keywordflow">if</span>(count($ip)&lt;4)<span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00256"></a>00256         <span class="keywordflow">if</span>(in_array(<span class="stringliteral">&#39;&#39;</span>,$ip))<span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00257"></a>00257         <span class="comment">//проверим значения(IPv6 не рассматриваем)</span>
+<a name="l00258"></a>00258         <span class="keywordflow">if</span>($ip[0] == 0 || $ip[0] &gt;= 255 || $ip[3] == 0 || $ip[3] &gt;= 255 || $ip[1] &gt;= 255 || $ip[2] &gt;= 255) <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00259"></a>00259         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00260"></a>00260 }
+<a name="l00261"></a>00261 
+<a name="l00265"></a><a class="code" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce">00265</a> function <a class="code" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce">OutputVar</a>($var, <a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>, $tabs_count = 0)
+<a name="l00266"></a>00266 {
+<a name="l00267"></a>00267         $tabs = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00268"></a>00268         $tabs_count = intval($tabs_count);
+<a name="l00269"></a>00269         <span class="keywordflow">if</span> ($tabs_count &gt; 0)
+<a name="l00270"></a>00270                 $tabs = str_repeat(<span class="stringliteral">&quot;\t&quot;</span>, $tabs_count);
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272         <span class="keywordflow">if</span> (!is_array(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>))
+<a name="l00273"></a>00273                 <span class="keywordflow">return</span> $tabs . <span class="stringliteral">&quot;&#39;&quot;</span> . $var . <span class="stringliteral">&quot;&#39; =&gt; \&quot;&quot;</span> . <a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a> . <span class="stringliteral">&quot;\&quot;&quot;</span>;
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> = $tabs . <span class="stringliteral">&quot;&#39;&quot;</span> . $var . <span class="stringliteral">&quot;&#39; =&gt; array\n&quot;</span>;
+<a name="l00276"></a>00276         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> .= $tabs . <span class="stringliteral">&quot;(\n&quot;</span>;
+<a name="l00277"></a>00277         <span class="keywordflow">if</span> (count(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>) &gt; 0)
+<a name="l00278"></a>00278         {
+<a name="l00279"></a>00279                 $var_number = 0;
+<a name="l00280"></a>00280                 <span class="keywordflow">foreach</span> (<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a> as $array_var =&gt; $array_value)
+<a name="l00281"></a>00281                 {
+<a name="l00282"></a>00282                         $var_number++;
+<a name="l00283"></a>00283                         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> .= <a class="code" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce">OutputVar</a>($array_var, $array_value, $tabs_count + 1);
+<a name="l00284"></a>00284                         <span class="keywordflow">if</span> ($var_number &lt; count(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>))
+<a name="l00285"></a>00285                                 <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> .= <span class="stringliteral">&quot;,&quot;</span>;
+<a name="l00286"></a>00286                         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> .= <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00287"></a>00287                 }
+<a name="l00288"></a>00288         }
+<a name="l00289"></a>00289         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a> .= $tabs . <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00290"></a>00290         <span class="keywordflow">return</span> <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a>;
+<a name="l00291"></a>00291 }
+<a name="l00292"></a>00292 
+<a name="l00299"></a><a class="code" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841">00299</a> function <a class="code" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841">SaveToFile</a>($filename,$varname,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>)
+<a name="l00300"></a>00300 {
+<a name="l00301"></a>00301         $result = <span class="stringliteral">&quot;&lt;?php\n\n&quot;</span>;
+<a name="l00302"></a>00302         $result .= <span class="stringliteral">&quot;/**\n&quot;</span>;
+<a name="l00303"></a>00303         $result .= <span class="stringliteral">&quot; * Автоматически созданный файл\n&quot;</span>;
+<a name="l00304"></a>00304         $result .= <span class="stringliteral">&quot; * Последнее изменение: &quot;</span> . date(<span class="stringliteral">&quot;d.m.Y, H:i:s&quot;</span>, time()) . <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00305"></a>00305         $result .= <span class="stringliteral">&quot; */\n\n&quot;</span>;
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307         <span class="comment">/* Запись конфигурационного массива */</span>
+<a name="l00308"></a>00308         $var_number = 0;
+<a name="l00309"></a>00309         $result .= <span class="stringliteral">&quot;$varname = array\n&quot;</span>;
+<a name="l00310"></a>00310         $result .= <span class="stringliteral">&quot;(\n&quot;</span>;
+<a name="l00311"></a>00311         <span class="keywordflow">foreach</span> (<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> as $key =&gt; <a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)
+<a name="l00312"></a>00312         {
+<a name="l00313"></a>00313                 $var_number++;
+<a name="l00314"></a>00314                 $result .= <a class="code" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce">OutputVar</a>($key, <a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>, 1);
+<a name="l00315"></a>00315                 <span class="keywordflow">if</span> ($var_number &lt; count(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>))
+<a name="l00316"></a>00316                         $result .= <span class="stringliteral">&quot;,&quot;</span>;
+<a name="l00317"></a>00317                 $result .= <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00318"></a>00318         }
+<a name="l00319"></a>00319         $result .= <span class="stringliteral">&quot;);\n&quot;</span>;
+<a name="l00320"></a>00320         $result .= <span class="stringliteral">&quot;\n?&gt;&quot;</span>;
+<a name="l00321"></a>00321         $path=dirname($filename);
+<a name="l00322"></a>00322         <span class="keywordflow">if</span>(!file_exists($path))
+<a name="l00323"></a>00323         {
+<a name="l00324"></a>00324                 <span class="keywordflow">if</span>(!@mkdir($path,0755,<span class="keyword">true</span>))
+<a name="l00325"></a>00325                 {
+<a name="l00326"></a>00326                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_DIR_CREATE_ERROR&quot;</span>,1,$path);
+<a name="l00327"></a>00327                 }
+<a name="l00328"></a>00328         }
+<a name="l00329"></a>00329         <a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> = @file_put_contents($filename, $result);
+<a name="l00330"></a>00330         <span class="keywordflow">if</span> (<a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> == 0)
+<a name="l00331"></a>00331                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_FILE_WRITE_ERROR&quot;</span>,0);
+<a name="l00332"></a>00332 }
+<a name="l00333"></a>00333 
+<a name="l00337"></a><a class="code" href="main_2libs_2functions_8php.html#a9103d1a2e8cdef9b3136b8a2a844a8ba">00337</a> function <a class="code" href="main_2libs_2functions_8php.html#a9103d1a2e8cdef9b3136b8a2a844a8ba">GetMaxMemory</a>()
+<a name="l00338"></a>00338 {
+<a name="l00339"></a>00339         $val=ini_get(<span class="stringliteral">&#39;memory_limit&#39;</span>);
+<a name="l00340"></a>00340     $val = trim($val);
+<a name="l00341"></a>00341     $last = strtolower($val[strlen($val)-1]);
+<a name="l00342"></a>00342     <span class="keywordflow">switch</span>($last) {
+<a name="l00343"></a>00343         <span class="comment">// The &#39;G&#39; modifier is available since PHP 5.1.0</span>
+<a name="l00344"></a>00344         <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:
+<a name="l00345"></a>00345             $val *= 1024;
+<a name="l00346"></a>00346         <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>:
+<a name="l00347"></a>00347             $val *= 1024;
+<a name="l00348"></a>00348         <span class="keywordflow">case</span> <span class="charliteral">&#39;k&#39;</span>:
+<a name="l00349"></a>00349             $val *= 1024;
+<a name="l00350"></a>00350     }
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352     <span class="keywordflow">return</span> $val;
+<a name="l00353"></a>00353 }
+<a name="l00354"></a>00354 
+<a name="l00358"></a><a class="code" href="main_2libs_2functions_8php.html#aca5a55fe4a5598bc10bc7250d24404a3">00358</a> function <a class="code" href="main_2libs_2functions_8php.html#aca5a55fe4a5598bc10bc7250d24404a3">ShorterUrl</a>($full_url,<a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a>=50)
+<a name="l00359"></a>00359 {
+<a name="l00360"></a>00360         $side_length=round((<a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a>-3)/2);
+<a name="l00361"></a>00361         $full_url_length = strlen($full_url);
+<a name="l00362"></a>00362         <span class="keywordflow">if</span> ($full_url_length &gt; $side_length * 2)
+<a name="l00363"></a>00363                 $short_url = substr($full_url, 0, $side_length) . <span class="stringliteral">&quot;...&quot;</span> . substr($full_url, $full_url_length - $side_length, $side_length);
+<a name="l00364"></a>00364         <span class="keywordflow">else</span>
+<a name="l00365"></a>00365                 $short_url = $full_url;
+<a name="l00366"></a>00366         <span class="keywordflow">return</span> $short_url;
+<a name="l00367"></a>00367 }
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369 
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371 
+<a name="l00380"></a><a class="code" href="main_2libs_2functions_8php.html#a8c449aed2ca799daf89210cc8c4a607b">00380</a> function <a class="code" href="main_2libs_2functions_8php.html#a8c449aed2ca799daf89210cc8c4a607b">MenuItem</a>($name,<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$href=<span class="stringliteral">&quot;&quot;</span>,$title=<span class="stringliteral">&quot;menuitem&quot;</span>,$class=<span class="stringliteral">&quot;&quot;</span>, $parent_module=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00381"></a>00381 {
+<a name="l00382"></a>00382         $res=Array();
+<a name="l00383"></a>00383         $res[$name][<span class="stringliteral">&#39;module&#39;</span>]=strtolower(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>);
+<a name="l00384"></a>00384         $res[$name][<span class="stringliteral">&#39;href&#39;</span>]=$href;
+<a name="l00385"></a>00385         $res[$name][<span class="stringliteral">&#39;title&#39;</span>]=$title;
+<a name="l00386"></a>00386         $res[$name][<span class="stringliteral">&#39;class&#39;</span>]=$class;
+<a name="l00387"></a>00387         $res[$name][<span class="stringliteral">&#39;parent_module&#39;</span>]=strtolower($parent_module);
+<a name="l00388"></a>00388         <span class="keywordflow">return</span> $res;
+<a name="l00389"></a>00389 }
+<a name="l00390"></a>00390 
+<a name="l00396"></a><a class="code" href="main_2libs_2functions_8php.html#a61334f7d4ef6c2a0e059821886a042ba">00396</a> function <a class="code" href="main_2libs_2functions_8php.html#a61334f7d4ef6c2a0e059821886a042ba">Lang</a>($mess,<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00397"></a>00397 {
+<a name="l00398"></a>00398         global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00399"></a>00399         <span class="keywordflow">if</span>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>==<span class="stringliteral">&quot;&quot;</span>) <a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>=$KS_MODULES-&gt;current;
+<a name="l00400"></a>00400         <span class="keywordflow">return</span> $mess;
+<a name="l00401"></a>00401 }
+<a name="l00402"></a>00402 
+<a name="l00410"></a><a class="code" href="main_2libs_2functions_8php.html#a585f6e587f4220a9d23d55fb8654a733">00410</a> function <a class="code" href="main_2libs_2functions_8php.html#a585f6e587f4220a9d23d55fb8654a733">Translit</a>($input, $is_filename = <span class="keyword">false</span>)
+<a name="l00411"></a>00411 {
+<a name="l00412"></a>00412         $arBad=array(
+<a name="l00413"></a>00413                 <span class="stringliteral">&quot;!&quot;</span>,
+<a name="l00414"></a>00414                 <span class="stringliteral">&quot;^&quot;</span>,
+<a name="l00415"></a>00415                 <span class="stringliteral">&quot;%&quot;</span>,
+<a name="l00416"></a>00416                 <span class="stringliteral">&quot;#&quot;</span>,
+<a name="l00417"></a>00417                 <span class="stringliteral">&quot;@&quot;</span>,
+<a name="l00418"></a>00418                 <span class="stringliteral">&quot;&amp;&quot;</span>,
+<a name="l00419"></a>00419                 <span class="stringliteral">&quot;*&quot;</span>,
+<a name="l00420"></a>00420                 <span class="stringliteral">&quot;?&quot;</span>,
+<a name="l00421"></a>00421                 <span class="stringliteral">&quot;,&quot;</span>,
+<a name="l00422"></a>00422                 <span class="stringliteral">&quot;:&quot;</span>,
+<a name="l00423"></a>00423                 <span class="stringliteral">&quot;`&quot;</span>,
+<a name="l00424"></a>00424                 <span class="stringliteral">&quot;=&quot;</span>,
+<a name="l00425"></a>00425                 <span class="stringliteral">&quot;\\&quot;</span>,
+<a name="l00426"></a>00426                 <span class="stringliteral">&quot;/&quot;</span>,
+<a name="l00427"></a>00427                 <span class="stringliteral">&quot;&gt;&quot;</span>,
+<a name="l00428"></a>00428                 <span class="stringliteral">&quot;&lt;&quot;</span>,
+<a name="l00429"></a>00429                 <span class="stringliteral">&quot;|&quot;</span>,
+<a name="l00430"></a>00430                 <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00431"></a>00431         );
+<a name="l00432"></a>00432         $arLetters=Array(<span class="stringliteral">&quot;а&quot;</span>=&gt;<span class="stringliteral">&quot;a&quot;</span>,
+<a name="l00433"></a>00433                                          <span class="stringliteral">&quot;б&quot;</span>=&gt;<span class="stringliteral">&quot;b&quot;</span>,
+<a name="l00434"></a>00434                                          <span class="stringliteral">&quot;в&quot;</span>=&gt;<span class="stringliteral">&quot;v&quot;</span>,
+<a name="l00435"></a>00435                                          <span class="stringliteral">&quot;г&quot;</span>=&gt;<span class="stringliteral">&quot;g&quot;</span>,
+<a name="l00436"></a>00436                                          <span class="stringliteral">&quot;д&quot;</span>=&gt;<span class="stringliteral">&quot;d&quot;</span>,
+<a name="l00437"></a>00437                                          <span class="stringliteral">&quot;е&quot;</span>=&gt;<span class="stringliteral">&quot;e&quot;</span>,
+<a name="l00438"></a>00438                                          <span class="stringliteral">&quot;ё&quot;</span>=&gt;<span class="stringliteral">&quot;yo&quot;</span>,
+<a name="l00439"></a>00439                                          <span class="stringliteral">&quot;ж&quot;</span>=&gt;<span class="stringliteral">&quot;zh&quot;</span>,
+<a name="l00440"></a>00440                                          <span class="stringliteral">&quot;з&quot;</span>=&gt;<span class="stringliteral">&quot;z&quot;</span>,
+<a name="l00441"></a>00441                                          <span class="stringliteral">&quot;и&quot;</span>=&gt;<span class="stringliteral">&quot;i&quot;</span>,
+<a name="l00442"></a>00442                                          <span class="stringliteral">&quot;й&quot;</span>=&gt;<span class="stringliteral">&quot;ji&quot;</span>,
+<a name="l00443"></a>00443                                          <span class="stringliteral">&quot;к&quot;</span>=&gt;<span class="stringliteral">&quot;k&quot;</span>,
+<a name="l00444"></a>00444                                          <span class="stringliteral">&quot;л&quot;</span>=&gt;<span class="stringliteral">&quot;l&quot;</span>,
+<a name="l00445"></a>00445                                          <span class="stringliteral">&quot;м&quot;</span>=&gt;<span class="stringliteral">&quot;m&quot;</span>,
+<a name="l00446"></a>00446                                          <span class="stringliteral">&quot;н&quot;</span>=&gt;<span class="stringliteral">&quot;n&quot;</span>,
+<a name="l00447"></a>00447                                          <span class="stringliteral">&quot;о&quot;</span>=&gt;<span class="stringliteral">&quot;o&quot;</span>,
+<a name="l00448"></a>00448                                          <span class="stringliteral">&quot;п&quot;</span>=&gt;<span class="stringliteral">&quot;p&quot;</span>,
+<a name="l00449"></a>00449                                          <span class="stringliteral">&quot;р&quot;</span>=&gt;<span class="stringliteral">&quot;r&quot;</span>,
+<a name="l00450"></a>00450                                          <span class="stringliteral">&quot;с&quot;</span>=&gt;<span class="stringliteral">&quot;s&quot;</span>,
+<a name="l00451"></a>00451                                          <span class="stringliteral">&quot;т&quot;</span>=&gt;<span class="stringliteral">&quot;t&quot;</span>,
+<a name="l00452"></a>00452                                          <span class="stringliteral">&quot;у&quot;</span>=&gt;<span class="stringliteral">&quot;u&quot;</span>,
+<a name="l00453"></a>00453                                          <span class="stringliteral">&quot;ф&quot;</span>=&gt;<span class="stringliteral">&quot;f&quot;</span>,
+<a name="l00454"></a>00454                                          <span class="stringliteral">&quot;х&quot;</span>=&gt;<span class="stringliteral">&quot;h&quot;</span>,
+<a name="l00455"></a>00455                                          <span class="stringliteral">&quot;ц&quot;</span>=&gt;<span class="stringliteral">&quot;ts&quot;</span>,
+<a name="l00456"></a>00456                                          <span class="stringliteral">&quot;ч&quot;</span>=&gt;<span class="stringliteral">&quot;ch&quot;</span>,
+<a name="l00457"></a>00457                                          <span class="stringliteral">&quot;ш&quot;</span>=&gt;<span class="stringliteral">&quot;sh&quot;</span>,
+<a name="l00458"></a>00458                                          <span class="stringliteral">&quot;щ&quot;</span>=&gt;<span class="stringliteral">&quot;sch&quot;</span>,
+<a name="l00459"></a>00459                                          <span class="stringliteral">&quot;ь&quot;</span>=&gt;<span class="stringliteral">&quot;&quot;</span>,
+<a name="l00460"></a>00460                                          <span class="stringliteral">&quot;ы&quot;</span>=&gt;<span class="stringliteral">&quot;y&quot;</span>,
+<a name="l00461"></a>00461                                          <span class="stringliteral">&quot;ъ&quot;</span>=&gt;<span class="stringliteral">&quot;&quot;</span>,
+<a name="l00462"></a>00462                                          <span class="stringliteral">&quot;э&quot;</span>=&gt;<span class="stringliteral">&quot;e&quot;</span>,
+<a name="l00463"></a>00463                                          <span class="stringliteral">&quot;ю&quot;</span>=&gt;<span class="stringliteral">&quot;yu&quot;</span>,
+<a name="l00464"></a>00464                                          <span class="stringliteral">&quot;я&quot;</span>=&gt;<span class="stringliteral">&quot;ya&quot;</span>,
+<a name="l00465"></a>00465                                          <span class="stringliteral">&quot; &quot;</span>=&gt;<span class="stringliteral">&quot;_&quot;</span>,
+<a name="l00466"></a>00466                                          <span class="stringliteral">&quot;(&quot;</span>=&gt;<span class="stringliteral">&quot;_&quot;</span>,
+<a name="l00467"></a>00467                                          <span class="stringliteral">&quot;)&quot;</span>=&gt;<span class="stringliteral">&quot;_&quot;</span>);
+<a name="l00468"></a>00468         <span class="keywordflow">if</span> (!$is_filename)
+<a name="l00469"></a>00469                 $arLetters[<span class="stringliteral">&quot;.&quot;</span>] = <span class="stringliteral">&quot;_&quot;</span>;
+<a name="l00470"></a>00470         <span class="keywordflow">return</span> str_replace(array_keys($arLetters),array_values($arLetters),str_replace($arBad,<span class="stringliteral">&quot;&quot;</span>,mb_strtolower($input,<span class="stringliteral">&#39;UTF-8&#39;</span>)));
+<a name="l00471"></a>00471 }
+<a name="l00472"></a>00472 
+<a name="l00477"></a><a class="code" href="main_2libs_2functions_8php.html#a66db58ed4c3a5fa1678b88dc0a8d9c84">00477</a> function <a class="code" href="main_2libs_2functions_8php.html#a66db58ed4c3a5fa1678b88dc0a8d9c84">IsEmpty</a>($item)
+<a name="l00478"></a>00478 {
+<a name="l00479"></a>00479         <span class="keywordflow">return</span> $item==<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00480"></a>00480 }
+<a name="l00481"></a>00481 
+<a name="l00485"></a><a class="code" href="main_2libs_2functions_8php.html#a7ba5062c89f667db546f01c807413f6f">00485</a> function <a class="code" href="main_2libs_2functions_8php.html#a7ba5062c89f667db546f01c807413f6f">EscapeHTML</a>($sHtml)
+<a name="l00486"></a>00486 {
+<a name="l00487"></a>00487         <span class="keywordflow">return</span> htmlspecialchars($sHtml,ENT_QUOTES,<span class="stringliteral">&#39;utf-8&#39;</span>,<span class="keyword">true</span>);
+<a name="l00488"></a>00488 }
+<a name="l00489"></a>00489 
+<a name="l00493"></a><a class="code" href="main_2libs_2functions_8php.html#a5190c90e33f5fa962b4a7ec7ac7b0704">00493</a> function <a class="code" href="main_2libs_2functions_8php.html#a5190c90e33f5fa962b4a7ec7ac7b0704">ClearArray</a>($ar)
+<a name="l00494"></a>00494 {
+<a name="l00495"></a>00495         <span class="keywordflow">return</span> array_filter($ar,<span class="stringliteral">&#39;IsEmpty&#39;</span>);
+<a name="l00496"></a>00496 }
+<a name="l00497"></a>00497 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

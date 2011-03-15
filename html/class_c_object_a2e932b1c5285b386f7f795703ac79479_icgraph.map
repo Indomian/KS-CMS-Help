@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_object.html#ab54990bcb0ebceb8909f3303b01293cf" title="__construct" alt="" coords="193,5,289,35"/>
+<area shape="rect" id="node5" href="$class_c_fields.html#a3eb04d127cab06d44fae0adc3c3cd380" title="CFields::MoveField" alt="" coords="173,59,309,88"/>
+<area shape="rect" id="node7" href="$class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="373,137,480,167"/>
+<area shape="rect" id="node9" href="$class_c_fields.html#ab37c701826fa7631d974ea6479bd9404" title="CFields::RenameField" alt="" coords="164,163,319,192"/>
+<area shape="rect" id="node13" href="$class_c_fields.html#af3b68b057e381e512de47446f3ce740c" title="CFields::UpdateDefault" alt="" coords="159,216,324,245"/>
+</map>

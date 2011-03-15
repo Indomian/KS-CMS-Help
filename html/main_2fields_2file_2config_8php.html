@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/main/fields/file/config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/main/fields/file/config.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="main_2fields_2file_2config_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>(!defined('KS_ENGINE'))&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a> = ini_get('upload_max_filesize')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a> = strtolower(substr($max_size,-1))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a> = array(&quot;b&quot;=&gt;1, &quot;k&quot;=&gt;1024, &quot;m&quot;=&gt;1048576, &quot;g&quot;=&gt;1073741824)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> = $params['field']['option_1']</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a> = array(&quot;b&quot;, &quot;k&quot;, &quot;m&quot;, &quot;g&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>(!in_array($t, $a))&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#ac9c6ea5b1c228a884931ddc5f94fcc6d">$pos</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">while($size &gt;=1024)&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#abe0b3d169d70eace6fd953dfc091f088">$type</a> = $a[$pos]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>(($size *$m&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_2fields_2file_2config_8php.html#ac9ae0d8ec848e21b58e77c72133a5335">$sResult</a> [$type])&gt;($max_size *$m[$t]))</td></tr>
+</table>
+<hr/><h2>Переменные</h2>
+<a class="anchor" id="acebf83966ef6d7e5645a6b62ba368f9f"></a><!-- doxytag: member="config.php::$a" ref="acebf83966ef6d7e5645a6b62ba368f9f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$a = array(&quot;b&quot;, &quot;k&quot;, &quot;m&quot;, &quot;g&quot;)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0c788ee1ad50aa3f1b2c28bb7a00db49"></a><!-- doxytag: member="config.php::$m" ref="a0c788ee1ad50aa3f1b2c28bb7a00db49" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$m = array(&quot;b&quot;=&gt;1, &quot;k&quot;=&gt;1024, &quot;m&quot;=&gt;1048576, &quot;g&quot;=&gt;1073741824)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3fec414be9f76cb7ba77ed79b784de62"></a><!-- doxytag: member="config.php::$max_size" ref="a3fec414be9f76cb7ba77ed79b784de62" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$max_size = ini_get('upload_max_filesize')</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00014">14</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac9c6ea5b1c228a884931ddc5f94fcc6d"></a><!-- doxytag: member="config.php::$pos" ref="ac9c6ea5b1c228a884931ddc5f94fcc6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a> (!in_array($t, $a)) $pos = 0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af594986e4618a8d6a5d7566617f583c6"></a><!-- doxytag: member="config.php::$size" ref="af594986e4618a8d6a5d7566617f583c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$size = $params['field']['option_1']</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac9ae0d8ec848e21b58e77c72133a5335"></a><!-- doxytag: member="config.php::$sResult" ref="ac9ae0d8ec848e21b58e77c72133a5335" args="[$type])&gt;($max_size *$m[$t]))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a> (($size *$m $sResult[$type])&gt;($max_size *$m[$t]))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3d44ea1cbbc9bc72aad8436186c4866e"></a><!-- doxytag: member="config.php::$t" ref="a3d44ea1cbbc9bc72aad8436186c4866e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$t = strtolower(substr($max_size,-1))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abe0b3d169d70eace6fd953dfc091f088"></a><!-- doxytag: member="config.php::$type" ref="abe0b3d169d70eace6fd953dfc091f088" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">while ($size &gt;=1024) $type = $a[$pos]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="main_2fields_2file_2config_8php_source.html">config.php</a> строка <a class="el" href="main_2fields_2file_2config_8php_source.html#l00030">30</a></p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

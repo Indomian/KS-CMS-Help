@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/interfaces/libs/class.CPageNavigation.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/interfaces/libs/class.CPageNavigation.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_page_navigation_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a><a class="code" href="class_8_c_page_navigation_8php.html#aa2751051afe353ae55a548bdc2a59679">00002</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 include_once MODULES_DIR.<span class="stringliteral">&#39;/interfaces/libs/class.CInterface.php&#39;</span>;
+<a name="l00005"></a>00005 
+<a name="l00011"></a><a class="code" href="class_c_page_navigation.html">00011</a> <span class="keyword">class </span><a class="code" href="class_c_page_navigation.html">CPageNavigation</a> <span class="keyword">extends</span> <a class="code" href="class_c_interface.html">CInterface</a>
+<a name="l00012"></a>00012 {
+<a name="l00013"></a><a class="code" href="class_c_page_navigation.html#aa5cd8ec1f3ab17293500bb2a95f2d747">00013</a>         var <a class="code" href="class_c_page_navigation.html#aa5cd8ec1f3ab17293500bb2a95f2d747">$iPages</a>;
+<a name="l00014"></a><a class="code" href="class_c_page_navigation.html#ab34c27c8672fb4641f9bdfeef4b5ed14">00014</a>         var <a class="code" href="class_c_page_navigation.html#ab34c27c8672fb4641f9bdfeef4b5ed14">$iItems</a>;
+<a name="l00015"></a><a class="code" href="class_c_page_navigation.html#a3bb1aee6e9ed4ee7f67e2ec6d99559bf">00015</a>         var <a class="code" href="class_c_page_navigation.html#a3bb1aee6e9ed4ee7f67e2ec6d99559bf">$iVisible</a>;
+<a name="l00016"></a><a class="code" href="class_c_page_navigation.html#ac1fd66fd56f18ae49508c26c341fb03f">00016</a>         var <a class="code" href="class_c_page_navigation.html#ac1fd66fd56f18ae49508c26c341fb03f">$iCurrent</a>;
+<a name="l00017"></a><a class="code" href="class_c_page_navigation.html#af89e2c438e39a538a0da1c364eefb9f3">00017</a>         var <a class="code" href="class_c_page_navigation.html#af89e2c438e39a538a0da1c364eefb9f3">$obGeneral</a>;
+<a name="l00018"></a><a class="code" href="class_c_page_navigation.html#ada4e1fcbbbab06d1194efd6f631b827d">00018</a>         var <a class="code" href="class_c_page_navigation.html#ada4e1fcbbbab06d1194efd6f631b827d">$iPageNavNum</a>;
+<a name="l00019"></a><a class="code" href="class_c_page_navigation.html#ab5d900434f0032391024cd5c01a105bc">00019</a>         <span class="keyword">static</span> <a class="code" href="class_c_page_navigation.html#ab5d900434f0032391024cd5c01a105bc">$pageNavNum</a>;
+<a name="l00020"></a>00020 
+<a name="l00025"></a><a class="code" href="class_c_page_navigation.html#a80506e6d9332e54c9782909ac1f6d2da">00025</a>         function <a class="code" href="class_c_page_navigation.html#a80506e6d9332e54c9782909ac1f6d2da">__construct</a>(&amp;$General=NULL,$Items=<span class="keyword">false</span>,$Visible=<span class="keyword">false</span>,$Current=<span class="keyword">false</span>)
+<a name="l00026"></a>00026         {
+<a name="l00027"></a>00027                 $this-&gt;obGeneral=NULL;
+<a name="l00028"></a>00028                 $this-&gt;iItems=0;
+<a name="l00029"></a>00029                 $this-&gt;iVisible=0;
+<a name="l00030"></a>00030                 $this-&gt;iPages=0;
+<a name="l00031"></a>00031                 $this-&gt;iCurrent=0;
+<a name="l00032"></a>00032                 <a class="code" href="class_c_page_navigation.html#ab5d900434f0032391024cd5c01a105bc">CPageNavigation::$pageNavNum</a>++;
+<a name="l00033"></a>00033                 $this-&gt;iPageNavNum=<a class="code" href="class_c_page_navigation.html#ab5d900434f0032391024cd5c01a105bc">CPageNavigation::$pageNavNum</a>;
+<a name="l00034"></a>00034                 <span class="keywordflow">if</span>($General!=NULL)
+<a name="l00035"></a>00035                 {
+<a name="l00036"></a>00036                         $this-&gt;obGeneral=$General;
+<a name="l00037"></a>00037                 }
+<a name="l00038"></a>00038                 <span class="keywordflow">if</span>($Items!=<span class="keyword">false</span>)
+<a name="l00039"></a>00039                 {
+<a name="l00040"></a>00040                         $this-&gt;iItems=$Items;
+<a name="l00041"></a>00041                 }
+<a name="l00042"></a>00042                 <span class="keywordflow">if</span>($Visible!=<span class="keyword">false</span>)
+<a name="l00043"></a>00043                 {
+<a name="l00044"></a>00044                         $this-&gt;iVisible=$Visible;
+<a name="l00045"></a>00045                 }
+<a name="l00046"></a>00046                 elseif(array_key_exists(<span class="charliteral">&#39;n&#39;</span>,$_REQUEST))
+<a name="l00047"></a>00047                 {
+<a name="l00048"></a>00048                         $this-&gt;iVisible=$_REQUEST[<span class="charliteral">&#39;n&#39;</span>];
+<a name="l00049"></a>00049                 }
+<a name="l00050"></a>00050                 <span class="keywordflow">if</span>($this-&gt;iVisible&lt;1) $this-&gt;iVisible=10;
+<a name="l00051"></a>00051                 <span class="keywordflow">if</span>($Current!=<span class="keyword">false</span>)
+<a name="l00052"></a>00052                 {
+<a name="l00053"></a>00053                         $this-&gt;iCurrent=$Current-1;
+<a name="l00054"></a>00054                 }
+<a name="l00055"></a>00055                 elseif(array_key_exists(<span class="charliteral">&#39;p&#39;</span>.$this-&gt;iPageNavNum,$_REQUEST))
+<a name="l00056"></a>00056                 {
+<a name="l00057"></a>00057                         $this-&gt;iCurrent=$_REQUEST[<span class="charliteral">&#39;p&#39;</span>.$this-&gt;iPageNavNum]-1;
+<a name="l00058"></a>00058                 }
+<a name="l00059"></a>00059                 <span class="keywordflow">if</span>($this-&gt;iVisible&gt;0){
+<a name="l00060"></a>00060                         $this-&gt;iPages=ceil($this-&gt;iItems/$this-&gt;iVisible);
+<a name="l00061"></a>00061                 }
+<a name="l00062"></a>00062         }
+<a name="l00063"></a>00063 
+<a name="l00065"></a><a class="code" href="class_c_page_navigation.html#a03c79726400a1c7e94b22e71c9a3a26b">00065</a>         function <a class="code" href="class_c_page_navigation.html#a03c79726400a1c7e94b22e71c9a3a26b">GetLimits</a>($items=<span class="keyword">false</span>)
+<a name="l00066"></a>00066         {
+<a name="l00067"></a>00067                 <span class="keywordflow">if</span>(($items==<span class="keyword">false</span>)&amp;&amp;($this-&gt;obGeneral!=NULL))
+<a name="l00068"></a>00068                 {
+<a name="l00069"></a>00069                         $this-&gt;iItems=$this-&gt;obGeneral-&gt;items;
+<a name="l00070"></a>00070                 }
+<a name="l00071"></a>00071                 <span class="keywordflow">else</span>
+<a name="l00072"></a>00072                 {
+<a name="l00073"></a>00073                         $this-&gt;iItems=$items;
+<a name="l00074"></a>00074                 }
+<a name="l00075"></a>00075                 $this-&gt;iPages=ceil($this-&gt;iItems/$this-&gt;iVisible);
+<a name="l00076"></a>00076                 <span class="keywordflow">if</span>($this-&gt;iCurrent*$this-&gt;iVisible&gt;$this-&gt;iItems)
+<a name="l00077"></a>00077                 {
+<a name="l00078"></a>00078                         $this-&gt;iCurrent=0;
+<a name="l00079"></a>00079                 }
+<a name="l00080"></a>00080                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=array($this-&gt;iCurrent*$this-&gt;iVisible,$this-&gt;iVisible);
+<a name="l00081"></a>00081                 <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00082"></a>00082         }
+<a name="l00083"></a>00083 
+<a name="l00085"></a><a class="code" href="class_c_page_navigation.html#a1b562f2fd126f2d3014f785c4c419620">00085</a>         function <a class="code" href="class_c_page_navigation.html#a1b562f2fd126f2d3014f785c4c419620">GetVisible</a>()
+<a name="l00086"></a>00086         {
+<a name="l00087"></a>00087                 <span class="keywordflow">return</span> $this-&gt;iVisible;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089 
+<a name="l00091"></a><a class="code" href="class_c_page_navigation.html#a0c46e80eaddc709fcadc876461098c2e">00091</a>         function <a class="code" href="class_c_page_navigation.html#a0c46e80eaddc709fcadc876461098c2e">GetPages</a>($items=<span class="keyword">false</span>)
+<a name="l00092"></a>00092         {
+<a name="l00093"></a>00093                 <span class="keywordflow">if</span>(($items==<span class="keyword">false</span>)&amp;&amp;($this-&gt;obGeneral!=NULL))
+<a name="l00094"></a>00094                 {
+<a name="l00095"></a>00095                         $this-&gt;iItems=$this-&gt;obGeneral-&gt;items;
+<a name="l00096"></a>00096                 }
+<a name="l00097"></a>00097                 <span class="keywordflow">else</span>
+<a name="l00098"></a>00098                 {
+<a name="l00099"></a>00099                         $this-&gt;iItems=$items;
+<a name="l00100"></a>00100                 }
+<a name="l00101"></a>00101                 $this-&gt;iPages=ceil($this-&gt;iItems/$this-&gt;iVisible);
+<a name="l00102"></a>00102                 $pages=array();
+<a name="l00103"></a>00103                 $pages[<span class="stringliteral">&#39;num&#39;</span>]=$this-&gt;iPages;
+<a name="l00104"></a>00104                 $pages[<span class="stringliteral">&#39;active&#39;</span>]=$this-&gt;iCurrent+1;
+<a name="l00105"></a>00105                 $pages[<span class="stringliteral">&#39;visible&#39;</span>]=$this-&gt;iVisible;
+<a name="l00106"></a>00106                 $pages[<span class="stringliteral">&#39;TOTAL&#39;</span>]=$this-&gt;iItems;
+<a name="l00107"></a>00107                 $pages[<span class="stringliteral">&#39;index&#39;</span>]=$this-&gt;iPageNavNum;
+<a name="l00108"></a>00108                 <span class="keywordflow">if</span> ($pages[<span class="stringliteral">&#39;active&#39;</span>]==0) $pages[<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00109"></a>00109                 <span class="keywordflow">for</span>($i=1;$i&lt;=$pages[<span class="stringliteral">&#39;num&#39;</span>];$i++)
+<a name="l00110"></a>00110                 {
+<a name="l00111"></a>00111                         $pages[<span class="stringliteral">&#39;pages&#39;</span>][$i]=$i;
+<a name="l00112"></a>00112                 }
+<a name="l00113"></a>00113                 <span class="keywordflow">return</span> $pages;
+<a name="l00114"></a>00114         }
+<a name="l00115"></a>00115 }
+<a name="l00116"></a>00116 
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

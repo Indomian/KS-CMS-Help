@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CAdminModuleManagment.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CAdminModuleManagment.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_admin_module_managment_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a><a class="code" href="class_8_c_admin_module_managment_8php.html#aa2751051afe353ae55a548bdc2a59679">00002</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 include_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CModuleManagment.php&#39;</span>;
+<a name="l00005"></a>00005 
+<a name="l00019"></a><a class="code" href="class_c_admin_module_managment.html">00019</a> <span class="keyword">class </span><a class="code" href="class_c_admin_module_managment.html">CAdminModuleManagment</a> <span class="keyword">extends</span> <a class="code" href="class_c_module_managment.html">CModuleManagment</a>
+<a name="l00020"></a>00020 {
+<a name="l00022"></a><a class="code" href="class_c_admin_module_managment.html#a44b0c947ca193a7764153898f5336910">00022</a>         var <a class="code" href="class_c_admin_module_managment.html#a44b0c947ca193a7764153898f5336910" title="Массив в котором храняться пункты меню.">$menu</a>;                      
+<a name="l00023"></a><a class="code" href="class_c_admin_module_managment.html#a9ca7b4501e975b88957171cbdc894ec7">00023</a>         <span class="keyword">protected</span> <a class="code" href="class_c_admin_module_managment.html#a9ca7b4501e975b88957171cbdc894ec7">$arNavChain</a>;          
+<a name="l00024"></a><a class="code" href="class_c_admin_module_managment.html#a2c4c58e377f6c66ca38c8ea97666fc5e">00024</a>         <span class="keyword">public</span> <a class="code" href="class_c_admin_module_managment.html#a2c4c58e377f6c66ca38c8ea97666fc5e" title="Текущий модуль, определяетс по строке Get запроса.">$current</a>;                
+<a name="l00025"></a><a class="code" href="class_c_admin_module_managment.html#ac44ef4581cc40c1f5b0cc525c0142768">00025</a>         <span class="keyword">public</span> <a class="code" href="class_c_admin_module_managment.html#ac44ef4581cc40c1f5b0cc525c0142768">$currentMenu</a>;            
+<a name="l00026"></a><a class="code" href="class_c_admin_module_managment.html#af5ccfc8f46f05fc9207007b54f1d5b7a">00026</a>         <span class="keyword">private</span> <a class="code" href="class_c_admin_module_managment.html#af5ccfc8f46f05fc9207007b54f1d5b7a" title="В переменой передается имя текущего шаблона. Обычно используется после подключения определенного моду...">$localTemplate</a>;         
+<a name="l00027"></a><a class="code" href="class_c_admin_module_managment.html#a0a44e6760141442bb439b1ab1395d8ff">00027</a>         <span class="keyword">private</span> <a class="code" href="class_c_admin_module_managment.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>;                          
+<a name="l00028"></a><a class="code" href="class_c_admin_module_managment.html#ac485f0b14b789a046eb9837a6434f230">00028</a>         <span class="keyword">private</span> <a class="code" href="class_c_admin_module_managment.html#ac485f0b14b789a046eb9837a6434f230">$sMode</a>;                 
+<a name="l00029"></a><a class="code" href="class_c_admin_module_managment.html#ad9d7ce33ebb142b70e58b68052ca0ea8">00029</a>         <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="class_c_admin_module_managment.html#ad9d7ce33ebb142b70e58b68052ca0ea8">$instance</a>;
+<a name="l00030"></a>00030 
+<a name="l00033"></a><a class="code" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214">00033</a>         function <a class="code" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&#39;main_modules&#39;</span>)
+<a name="l00034"></a>00034         {
+<a name="l00035"></a>00035                 <a class="code" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037 
+<a name="l00041"></a><a class="code" href="class_c_admin_module_managment.html#a4be4055f3361d4800e16bc2e2e38cda6">00041</a>         <span class="keyword">private</span> function <a class="code" href="class_c_admin_module_managment.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a>()
+<a name="l00042"></a>00042         {
+<a name="l00043"></a>00043                 $this-&gt;menu=Array();
+<a name="l00044"></a>00044                 $this-&gt;current=<span class="stringliteral">&#39;main&#39;</span>;
+<a name="l00045"></a>00045                 $this-&gt;currentMenu=$this-&gt;current;
+<a name="l00046"></a>00046                 $this-&gt;sMode=<span class="stringliteral">&#39;full&#39;</span>;
+<a name="l00047"></a>00047                 <span class="keywordflow">if</span>($_GET[<span class="stringliteral">&#39;mode&#39;</span>]==<span class="stringliteral">&#39;small&#39;</span>)
+<a name="l00048"></a>00048                 {
+<a name="l00049"></a>00049                         $this-&gt;sMode=<span class="stringliteral">&#39;small&#39;</span>;
+<a name="l00050"></a>00050                 }
+<a name="l00051"></a>00051                 <span class="keywordflow">if</span> (array_key_exists(<span class="stringliteral">&#39;module&#39;</span>,$_GET))
+<a name="l00052"></a>00052                 {
+<a name="l00053"></a>00053                         <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389">IsModule</a>($_GET[<span class="stringliteral">&#39;module&#39;</span>]))
+<a name="l00054"></a>00054                         {
+<a name="l00055"></a>00055                                 $this-&gt;current=$_GET[<span class="stringliteral">&#39;module&#39;</span>];
+<a name="l00056"></a>00056                                 $this-&gt;currentMenu=$this-&gt;current;
+<a name="l00057"></a>00057                         }
+<a name="l00058"></a>00058                 }
+<a name="l00059"></a>00059         }
+<a name="l00060"></a>00060 
+<a name="l00066"></a><a class="code" href="class_c_admin_module_managment.html#aeeb76432d095288ac056df22cca56d16">00066</a>         <span class="keyword">static</span> function <a class="code" href="class_c_admin_module_managment.html#aeeb76432d095288ac056df22cca56d16">get_instance</a>()
+<a name="l00067"></a>00067         {
+<a name="l00068"></a>00068             <span class="keywordflow">if</span> (!self::$instance)
+<a name="l00069"></a>00069             {
+<a name="l00070"></a>00070                 self::$instance = <span class="keyword">new</span> <a class="code" href="class_c_admin_module_managment.html">CAdminModuleManagment</a>();
+<a name="l00071"></a>00071                 self::$instance-&gt;init();  <span class="comment">// init AFTER object was linked with self::$instance</span>
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073             <span class="keywordflow">return</span> self::$instance;
+<a name="l00074"></a>00074         }
+<a name="l00075"></a>00075 
+<a name="l00079"></a><a class="code" href="class_c_admin_module_managment.html#a3fa8ea2a7b1ca8a78d5a83cadeea7852">00079</a>         function <a class="code" href="class_c_admin_module_managment.html#a3fa8ea2a7b1ca8a78d5a83cadeea7852">SetMode</a>($mode)
+<a name="l00080"></a>00080         {
+<a name="l00081"></a>00081                 $this-&gt;sMode=$mode;
+<a name="l00082"></a>00082         }
+<a name="l00083"></a>00083 
+<a name="l00088"></a><a class="code" href="class_c_admin_module_managment.html#a2998a5384962e6b8fedb282dd817dec4">00088</a>         function <a class="code" href="class_c_admin_module_managment.html#a2998a5384962e6b8fedb282dd817dec4">LoadModulePage</a>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$sClassPage)
+<a name="l00089"></a>00089         {
+<a name="l00090"></a>00090                 global <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>;
+<a name="l00091"></a>00091                 <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/pages/&#39;</span>.$sClassPage.<span class="stringliteral">&#39;.php&#39;</span>))
+<a name="l00092"></a>00092                 {
+<a name="l00093"></a>00093                         include  MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/pages/&#39;</span>.$sClassPage.<span class="stringliteral">&#39;.php&#39;</span>;
+<a name="l00094"></a>00094                         $sObjectName=<span class="charliteral">&#39;C&#39;</span>.$module.<span class="stringliteral">&#39;AI&#39;</span>.$sClassPage;
+<a name="l00095"></a>00095                         <span class="keywordflow">if</span>(class_exists($sObjectName))
+<a name="l00096"></a>00096                         {
+<a name="l00097"></a>00097                                 $this-&gt;obLanguage-&gt;LoadSection(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>);
+<a name="l00098"></a>00098                                 $obModule=<span class="keyword">new</span> $sObjectName(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$smarty,$this);
+<a name="l00099"></a>00099                                 $this-&gt;page=$obModule-&gt;Run();
+<a name="l00100"></a>00100                                 $this-&gt;obLanguage-&gt;LoadSection(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.$this-&gt;page);
+<a name="l00101"></a>00101                                 <span class="keywordflow">return</span> $this-&gt;page;
+<a name="l00102"></a>00102                         }
+<a name="l00103"></a>00103                         <span class="keywordflow">else</span>
+<a name="l00104"></a>00104                         {
+<a name="l00105"></a>00105                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;MAIN_MODULE_NO_USER_PART&#39;</span>,1116,__LINE__);
+<a name="l00106"></a>00106                         }
+<a name="l00107"></a>00107                 }
+<a name="l00108"></a>00108                 <span class="keywordflow">else</span>
+<a name="l00109"></a>00109                 {
+<a name="l00110"></a>00110                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;MAIN_MODULE_NO_USER_PART&#39;</span>,1121,__LINE__);
+<a name="l00111"></a>00111                 }
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113 
+<a name="l00121"></a><a class="code" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2">00121</a>         function <a class="code" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2">AdminShowModule</a>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>)
+<a name="l00122"></a>00122         {
+<a name="l00123"></a>00123                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>,<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>;
+<a name="l00124"></a>00124                 <span class="keywordflow">if</span>($this-&gt;<a class="code" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389">IsModule</a>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>))
+<a name="l00125"></a>00125                 {
+<a name="l00126"></a>00126                         <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>=$this;
+<a name="l00127"></a>00127                         <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>=$this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(array(<span class="stringliteral">&#39;directory&#39;</span>=&gt;<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>));
+<a name="l00128"></a>00128                         $this-&gt;<a class="code" href="class_c_admin_module_managment.html#a5900a97de85b3c796e0f199b567fecb1">IncludeModule</a>(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>);
+<a name="l00129"></a>00129                         <span class="keywordflow">try</span>
+<a name="l00130"></a>00130                         {
+<a name="l00131"></a>00131                                 <a class="code" href="class_c_admin_module_managment.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00132"></a>00132                                 <span class="keywordflow">if</span>(!file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/admin.inc.php&#39;</span>))
+<a name="l00133"></a>00133                                 {
+<a name="l00134"></a>00134                                         <span class="keywordflow">if</span>(!preg_match(<span class="stringliteral">&#39;#[a-z0-9]*#&#39;</span>,$_GET[<span class="stringliteral">&#39;page&#39;</span>])) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;SYSTEM_WRONG_ADMIN_PATH&#39;</span>,1001);
+<a name="l00135"></a>00135                                         <a class="code" href="guestbook2_2main_8inc_8php.html#a7b14efceeea16ca4b1531a76e362137b">$access_level</a>=$USER-&gt;GetLevel(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>);
+<a name="l00136"></a>00136                                         <span class="keywordflow">if</span>(<a class="code" href="guestbook2_2main_8inc_8php.html#a7b14efceeea16ca4b1531a76e362137b">$access_level</a>&gt;0) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&#39;SYSTEM_NOT_ACCESS_MODULE&#39;</span>);
+<a name="l00137"></a>00137                                         <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/pages/&#39;</span>.$_GET[<span class="stringliteral">&#39;page&#39;</span>].<span class="stringliteral">&#39;.php&#39;</span>))
+<a name="l00138"></a>00138                                         {
+<a name="l00139"></a>00139                                                 $sClassPage=$_GET[<span class="stringliteral">&#39;page&#39;</span>];
+<a name="l00140"></a>00140                                         }
+<a name="l00141"></a>00141                                         elseif(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/pages/index.php&#39;</span>))
+<a name="l00142"></a>00142                                         {
+<a name="l00143"></a>00143                                                 $sClassPage=<span class="stringliteral">&#39;index&#39;</span>;
+<a name="l00144"></a>00144                                         }
+<a name="l00145"></a>00145                                         $this-&gt;<a class="code" href="class_c_admin_module_managment.html#a2998a5384962e6b8fedb282dd817dec4">LoadModulePage</a>(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>,$sClassPage);
+<a name="l00146"></a>00146                                 }
+<a name="l00147"></a>00147                                 <span class="keywordflow">else</span>
+<a name="l00148"></a>00148                                 {
+<a name="l00149"></a>00149                                         $this-&gt;obLanguage-&gt;LoadSection(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>);
+<a name="l00150"></a>00150                                         include(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.<span class="stringliteral">&#39;/admin.inc.php&#39;</span>);
+<a name="l00151"></a>00151                                         $this-&gt;page=<a class="code" href="class_c_admin_module_managment.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>;
+<a name="l00152"></a>00152                                         $this-&gt;obLanguage-&gt;LoadSection(<a class="code" href="guestbook2_2main_8inc_8php.html#a878a05528effb15bb1a14775efc6e4ee">$module</a>.$page);
+<a name="l00153"></a>00153                                 }
+<a name="l00154"></a>00154                                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00155"></a>00155                         }
+<a name="l00156"></a>00156                         <span class="keywordflow">catch</span> (<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00157"></a>00157                         {
+<a name="l00158"></a>00158                                 $smarty-&gt;assign(<span class="stringliteral">&#39;last_error&#39;</span>,$e);
+<a name="l00159"></a>00159                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00160"></a>00160                         }
+<a name="l00161"></a>00161                 }
+<a name="l00162"></a>00162                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00163"></a>00163         }
+<a name="l00164"></a>00164 
+<a name="l00169"></a><a class="code" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc">00169</a>         function <a class="code" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc">Draw</a>(&amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>)
+<a name="l00170"></a>00170         {
+<a name="l00171"></a>00171                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;navChain&#39;</span>,$this-&gt;arNavChain);
+<a name="l00172"></a>00172                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;ks_config&#39;</span>,$this-&gt;<a class="code" href="class_c_module_managment.html#aa82055fc451a5ec7867395553b7c77c8">GetConfigArray</a>(<span class="stringliteral">&#39;main&#39;</span>));
+<a name="l00173"></a>00173                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;host&#39;</span>,$_SERVER[<span class="stringliteral">&#39;HTTP_HOST&#39;</span>]);
+<a name="l00174"></a>00174                 <span class="comment">//Передаем данные о модуле в шаблон</span>
+<a name="l00175"></a>00175                 $arMenu=$this-&gt;<a class="code" href="class_c_admin_module_managment.html#acdf0a5c124ed8181286df40aa51d1998">GetMenu</a>();
+<a name="l00176"></a>00176                 <span class="keywordflow">if</span>(!array_key_exists($this-&gt;currentMenu,$arMenu)) $this-&gt;currentMenu=<span class="stringliteral">&#39;main&#39;</span>;
+<a name="l00177"></a>00177                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;module&#39;</span>,array(<span class="stringliteral">&#39;current&#39;</span>=&gt;$this-&gt;currentMenu,<span class="stringliteral">&#39;page&#39;</span>=&gt;$this-&gt;page,<span class="stringliteral">&#39;template&#39;</span>=&gt;$this-&gt;localTemplate));
+<a name="l00178"></a>00178                 <span class="keywordflow">if</span>($this-&gt;sMode==<span class="stringliteral">&#39;small&#39;</span>)
+<a name="l00179"></a>00179                 {
+<a name="l00180"></a>00180                         <span class="keywordflow">try</span>
+<a name="l00181"></a>00181                         {
+<a name="l00182"></a>00182                                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/header_ajax.tpl&#39;</span>);
+<a name="l00183"></a>00183                                 $template_to_display = <span class="stringliteral">&#39;admin/&#39;</span> . $this-&gt;current . $this-&gt;page . <span class="stringliteral">&#39;.tpl&#39;</span>;
+<a name="l00184"></a>00184                                 <span class="keywordflow">if</span>(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists($template_to_display))
+<a name="l00185"></a>00185                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display($template_to_display);
+<a name="l00186"></a>00186                                 elseif(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists(<span class="stringliteral">&#39;admin/common/&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;.tpl&#39;</span>))
+<a name="l00187"></a>00187                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/common/&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;.tpl&#39;</span>);
+<a name="l00188"></a>00188                                 <span class="keywordflow">else</span>
+<a name="l00189"></a>00189                                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;SYSTEM_PAGE_NOT_FOUND&#39;</span>,0,$this-&gt;page);
+<a name="l00190"></a>00190                                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/footer_ajax.tpl&#39;</span>);
+<a name="l00191"></a>00191                         }
+<a name="l00192"></a>00192                         <span class="keywordflow">catch</span>(<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00193"></a>00193                         {
+<a name="l00194"></a>00194                                 echo $e;
+<a name="l00195"></a>00195                         }
+<a name="l00196"></a>00196                 }
+<a name="l00197"></a>00197                 elseif($this-&gt;sMode==<span class="stringliteral">&#39;ajax&#39;</span>)
+<a name="l00198"></a>00198                 {
+<a name="l00199"></a>00199                         <span class="keywordflow">try</span>
+<a name="l00200"></a>00200                         {
+<a name="l00201"></a>00201                                 $template_to_display = <span class="stringliteral">&#39;admin/&#39;</span> . $this-&gt;current . $this-&gt;page . <span class="stringliteral">&#39;.tpl&#39;</span>;
+<a name="l00202"></a>00202                                 <span class="keywordflow">if</span>(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists($template_to_display))
+<a name="l00203"></a>00203                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display($template_to_display);
+<a name="l00204"></a>00204                                 elseif(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists(<span class="stringliteral">&#39;admin/common/ajax.tpl&#39;</span>))
+<a name="l00205"></a>00205                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/common/ajax.tpl&#39;</span>);
+<a name="l00206"></a>00206                         }
+<a name="l00207"></a>00207                         <span class="keywordflow">catch</span>(<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00208"></a>00208                         {
+<a name="l00209"></a>00209                                 echo $e-&gt;<a class="code" href="class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a>();
+<a name="l00210"></a>00210                         }
+<a name="l00211"></a>00211                 }
+<a name="l00212"></a>00212                 <span class="keywordflow">else</span>
+<a name="l00213"></a>00213                 {
+<a name="l00214"></a>00214                         <span class="comment">//Выполняем отрисовку сайта</span>
+<a name="l00215"></a>00215                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;left_menu&#39;</span>,$arMenu);
+<a name="l00216"></a>00216                         <span class="keywordflow">if</span>($this-&gt;<a class="code" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae">IsActive</a>(<span class="stringliteral">&#39;help&#39;</span>))
+<a name="l00217"></a>00217                         {
+<a name="l00218"></a>00218                                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;showHelp&#39;</span>,<span class="charliteral">&#39;Y&#39;</span>);
+<a name="l00219"></a>00219                         }
+<a name="l00220"></a>00220                         <span class="keywordflow">else</span>
+<a name="l00221"></a>00221                         {
+<a name="l00222"></a>00222                                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;helpEmail&#39;</span>,$this-&gt;<a class="code" href="class_c_module_managment.html#a144b824eb172f49e723d133daacacb75">GetConfigVar</a>(<span class="stringliteral">&#39;main&#39;</span>,<span class="stringliteral">&#39;helpEmail&#39;</span>,<span class="stringliteral">&#39;dev@kolosstudio.ru&#39;</span>));
+<a name="l00223"></a>00223                         }
+<a name="l00224"></a>00224                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;bShowTreeView&#39;</span>,$this-&gt;<a class="code" href="class_c_module_managment.html#a144b824eb172f49e723d133daacacb75">GetConfigVar</a>(<span class="stringliteral">&#39;main&#39;</span>,<span class="stringliteral">&#39;showTreeView&#39;</span>,<span class="charliteral">&#39;Y&#39;</span>));
+<a name="l00225"></a>00225                         <span class="comment">/* Определяем header для отображения */</span>
+<a name="l00226"></a>00226                         <span class="comment">// Стандартный</span>
+<a name="l00227"></a>00227                         <span class="keywordflow">if</span>(!$_REQUEST[<span class="stringliteral">&#39;disp_design&#39;</span>]) { <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/header.tpl&#39;</span>); }
+<a name="l00228"></a>00228                         <span class="comment">//  - Для всплывающего фрейма</span>
+<a name="l00229"></a>00229                         elseif($_REQUEST[<span class="stringliteral">&#39;disp_design&#39;</span>] &gt; 0) { <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/header_ajax.tpl&#39;</span>); }
+<a name="l00230"></a>00230                         <span class="keywordflow">try</span>
+<a name="l00231"></a>00231                         {
+<a name="l00232"></a>00232                                 $template_to_display = <span class="stringliteral">&#39;admin/&#39;</span> . $this-&gt;current . $this-&gt;page . <span class="stringliteral">&#39;.tpl&#39;</span>;
+<a name="l00233"></a>00233                                 <span class="keywordflow">if</span>(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists($template_to_display))
+<a name="l00234"></a>00234                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display($template_to_display);
+<a name="l00235"></a>00235                                 elseif(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;template_exists(<span class="stringliteral">&#39;admin/common/&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;.tpl&#39;</span>))
+<a name="l00236"></a>00236                                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/common/&#39;</span>.$this-&gt;page.<span class="stringliteral">&#39;.tpl&#39;</span>);
+<a name="l00237"></a>00237                                 <span class="keywordflow">else</span>
+<a name="l00238"></a>00238                                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;SYSTEM_PAGE_NOT_FOUND&#39;</span>,0,$this-&gt;page);
+<a name="l00239"></a>00239                         }
+<a name="l00240"></a>00240                         <span class="keywordflow">catch</span>(<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00241"></a>00241                         {
+<a name="l00242"></a>00242                                 echo $e;
+<a name="l00243"></a>00243                         }
+<a name="l00244"></a>00244                         <span class="comment">// Проверка какой footer подключать.</span>
+<a name="l00245"></a>00245                         <span class="comment">//  - Стандартный</span>
+<a name="l00246"></a>00246                         <span class="keywordflow">if</span>(!$_REQUEST[<span class="stringliteral">&#39;disp_design&#39;</span>]) { <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/footer.tpl&#39;</span>); }
+<a name="l00247"></a>00247                         <span class="comment">//  - Для всплывающего фрейма</span>
+<a name="l00248"></a>00248                         elseif($_REQUEST[<span class="stringliteral">&#39;disp_design&#39;</span>] &gt;0) { <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<span class="stringliteral">&#39;admin/footer_ajax.tpl&#39;</span>); }
+<a name="l00249"></a>00249                 }
+<a name="l00250"></a>00250         }
+<a name="l00251"></a>00251 
+<a name="l00264"></a><a class="code" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7">00264</a>         function <a class="code" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7">GetInstalledList</a>()
+<a name="l00265"></a>00265         {
+<a name="l00266"></a>00266                 <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;orderation&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>));
+<a name="l00267"></a>00267         }
+<a name="l00268"></a>00268 
+<a name="l00273"></a><a class="code" href="class_c_admin_module_managment.html#acc67c92c7fb83eeef5692591163bd235">00273</a>         function <a class="code" href="class_c_admin_module_managment.html#acc67c92c7fb83eeef5692591163bd235">InitModule</a>(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>)
+<a name="l00274"></a>00274         {
+<a name="l00275"></a>00275                 <span class="keywordflow">if</span>(array_key_exists(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>],$this-&gt;arModules)) <span class="keywordflow">return</span>;
+<a name="l00276"></a>00276                 <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/config.php&#39;</span>))
+<a name="l00277"></a>00277                 {
+<a name="l00278"></a>00278                         include(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/config.php&#39;</span>);
+<a name="l00279"></a>00279                         $var=<span class="stringliteral">&quot;MODULE_&quot;</span>.$arModule[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&quot;_config&quot;</span>;
+<a name="l00280"></a>00280                         <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;config&#39;</span>]=$$var;
+<a name="l00281"></a>00281                 }
+<a name="l00282"></a>00282                 <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/.access.php&#39;</span>))
+<a name="l00283"></a>00283                 {
+<a name="l00284"></a>00284                         <a class="code" href="catsubcat_2_8access_8php.html#a609e88822ac41cbbbb92a93c66c48cad">$arLevels</a>=array();
+<a name="l00285"></a>00285                         $this-&gt;obLanguage-&gt;LoadSection(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>]);
+<a name="l00286"></a>00286                         include(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/.access.php&#39;</span>);
+<a name="l00287"></a>00287                         <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;ALEVELS&#39;</span>]=<a class="code" href="catsubcat_2_8access_8php.html#a609e88822ac41cbbbb92a93c66c48cad">$arLevels</a>;
+<a name="l00288"></a>00288                 }
+<a name="l00289"></a>00289                 <span class="keywordflow">else</span>
+<a name="l00290"></a>00290                 {
+<a name="l00291"></a>00291                         <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;ALEVELS&#39;</span>]=array(<span class="charliteral">&#39;0&#39;</span>=&gt;<span class="stringliteral">&#39;Полный доступ&#39;</span>,<span class="stringliteral">&#39;10&#39;</span>=&gt;<span class="stringliteral">&#39;Доступ закрыт&#39;</span>);
+<a name="l00292"></a>00292                 }
+<a name="l00293"></a>00293                 <span class="keywordflow">if</span>(file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/admin.init.php&#39;</span>))
+<a name="l00294"></a>00294                 {
+<a name="l00295"></a>00295                         include(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/admin.init.php&#39;</span>);
+<a name="l00296"></a>00296                 }
+<a name="l00297"></a>00297                 $this-&gt;arModules[<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>]]=$arModule;
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299 
+<a name="l00300"></a><a class="code" href="class_c_admin_module_managment.html#a5900a97de85b3c796e0f199b567fecb1">00300</a>         function <a class="code" href="class_c_admin_module_managment.html#a5900a97de85b3c796e0f199b567fecb1">IncludeModule</a>(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>)
+<a name="l00301"></a>00301         {
+<a name="l00302"></a>00302                 <span class="keywordflow">if</span>(!array_key_exists(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>],$this-&gt;arModules))
+<a name="l00303"></a>00303                 {
+<a name="l00304"></a>00304                         $this-&gt;<a class="code" href="class_c_admin_module_managment.html#acc67c92c7fb83eeef5692591163bd235">InitModule</a>(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>);
+<a name="l00305"></a>00305                 }
+<a name="l00306"></a>00306         }
+<a name="l00307"></a>00307 
+<a name="l00312"></a><a class="code" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241">00312</a>         function <a class="code" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241">LinkModules</a>()
+<a name="l00313"></a>00313         {
+<a name="l00314"></a>00314                 <span class="keywordflow">if</span>(<a class="code" href="class_c_module_managment.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(<span class="keyword">false</span>,array(<span class="stringliteral">&#39;active&#39;</span>=&gt;1)))
+<a name="l00315"></a>00315                 {
+<a name="l00316"></a>00316                         <span class="keywordflow">foreach</span>(<a class="code" href="class_c_module_managment.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a> as <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>)
+<a name="l00317"></a>00317                         {
+<a name="l00318"></a>00318                                 $this-&gt;<a class="code" href="class_c_admin_module_managment.html#acc67c92c7fb83eeef5692591163bd235">InitModule</a>($arModule);
+<a name="l00319"></a>00319                         }
+<a name="l00320"></a>00320                         <span class="keywordflow">return</span> $this-&gt;arModules;
+<a name="l00321"></a>00321                 }
+<a name="l00322"></a>00322                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00323"></a>00323         }
+<a name="l00324"></a>00324 
+<a name="l00329"></a><a class="code" href="class_c_admin_module_managment.html#acdf0a5c124ed8181286df40aa51d1998">00329</a>         function <a class="code" href="class_c_admin_module_managment.html#acdf0a5c124ed8181286df40aa51d1998">GetMenu</a>()
+<a name="l00330"></a>00330         {
+<a name="l00331"></a>00331                 $bIsCurrent=<span class="keyword">false</span>;
+<a name="l00332"></a>00332                 <span class="keywordflow">foreach</span>($this-&gt;arModules as <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>)
+<a name="l00333"></a>00333                 {
+<a name="l00334"></a>00334                         <span class="keywordflow">if</span> (file_exists(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.$arModule[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/admin.menu.inc.php&#39;</span>))
+<a name="l00335"></a>00335                         {
+<a name="l00336"></a>00336                                 $this-&gt;obLanguage-&gt;LoadSection($arModule[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;_menu&#39;</span>);
+<a name="l00337"></a>00337                                 include_once(MODULES_DIR.<span class="charliteral">&#39;/&#39;</span>.$arModule[<span class="stringliteral">&#39;directory&#39;</span>].<span class="stringliteral">&#39;/admin.menu.inc.php&#39;</span>);
+<a name="l00338"></a>00338                         }
+<a name="l00339"></a>00339                 }
+<a name="l00340"></a>00340                 <span class="keywordflow">foreach</span>($this-&gt;menu as $key=&gt;$arItem)
+<a name="l00341"></a>00341                 {
+<a name="l00342"></a>00342                         <span class="keywordflow">if</span>($arItem[<span class="stringliteral">&#39;module&#39;</span>]==$this-&gt;current){
+<a name="l00343"></a>00343                                 $bIsCurrent=<span class="keyword">true</span>;
+<a name="l00344"></a>00344                                 <span class="keywordflow">break</span>;
+<a name="l00345"></a>00345                         } <span class="keywordflow">else</span> {
+<a name="l00346"></a>00346                                 <span class="comment">//проверим вдруг текущий активный пункт это подменю?</span>
+<a name="l00347"></a>00347                                 <span class="keywordflow">if</span>(!empty($arItem[<span class="stringliteral">&#39;items&#39;</span>])){
+<a name="l00348"></a>00348                                         <span class="keywordflow">foreach</span>($arItem[<span class="stringliteral">&#39;items&#39;</span>] as $arSubItem){
+<a name="l00349"></a>00349                                                 <span class="keywordflow">if</span>($arSubItem[<span class="stringliteral">&#39;module&#39;</span>]==$this-&gt;current){
+<a name="l00350"></a>00350                                                         $this-&gt;currentMenu = $arSubItem[<span class="stringliteral">&#39;parent_module&#39;</span>];
+<a name="l00351"></a>00351                                                         $bIsCurrent=<span class="keyword">true</span>;
+<a name="l00352"></a>00352                                                         <span class="keywordflow">break</span>;
+<a name="l00353"></a>00353                                                 }
+<a name="l00354"></a>00354                                         }
+<a name="l00355"></a>00355                                 }
+<a name="l00356"></a>00356                         }
+<a name="l00357"></a>00357                 }
+<a name="l00358"></a>00358                 <span class="keywordflow">if</span>(!$bIsCurrent) $this-&gt;currentMenu=<span class="stringliteral">&#39;main&#39;</span>;
+<a name="l00359"></a>00359                 <span class="keywordflow">return</span> $this-&gt;menu;
+<a name="l00360"></a>00360         }
+<a name="l00361"></a>00361 
+<a name="l00365"></a><a class="code" href="class_c_admin_module_managment.html#a17252ffd96c6483b65ab07f3f519e847">00365</a>         function <a class="code" href="class_c_admin_module_managment.html#a17252ffd96c6483b65ab07f3f519e847">GetTemplate</a>($path)
+<a name="l00366"></a>00366         {
+<a name="l00367"></a>00367                 $sTemplate=$this-&gt;<a class="code" href="class_c_module_managment.html#a36b62ef42e3642f437b291cc64bcb817">select_global_template</a>($path);
+<a name="l00368"></a>00368                 $arTemplate=explode(<span class="charliteral">&#39;:&#39;</span>,$sTemplate);
+<a name="l00369"></a>00369                 <span class="keywordflow">if</span>(is_array($arTemplate) &amp;&amp; count($arTemplate)&gt;1)
+<a name="l00370"></a>00370                 {
+<a name="l00371"></a>00371                         <span class="keywordflow">return</span> $arTemplate[0];
+<a name="l00372"></a>00372                 }
+<a name="l00373"></a>00373                 <span class="keywordflow">return</span> <span class="stringliteral">&#39;.default&#39;</span>;
+<a name="l00374"></a>00374         }
+<a name="l00375"></a>00375 
+<a name="l00379"></a><a class="code" href="class_c_admin_module_managment.html#a47715c8679dc28aa2f0a7e2251faf4de">00379</a>         function <a class="code" href="class_c_admin_module_managment.html#a47715c8679dc28aa2f0a7e2251faf4de">Save</a>($prefix=<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=<span class="stringliteral">&#39;&#39;</span>,$table=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00380"></a>00380         {
+<a name="l00381"></a>00381                 <span class="keywordflow">if</span>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>==<span class="stringliteral">&#39;&#39;</span>) <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$_POST;
+<a name="l00382"></a>00382                 <span class="keywordflow">if</span>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[$prefix.<span class="stringliteral">&#39;URL_ident&#39;</span>]==<span class="stringliteral">&#39;default&#39;</span>) <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[$prefix.<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00383"></a>00383                 <span class="keywordflow">return</span> <a class="code" href="class_c_admin_module_managment.html#a47715c8679dc28aa2f0a7e2251faf4de">parent::Save</a>($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>,$table);
+<a name="l00384"></a>00384         }
+<a name="l00385"></a>00385 
+<a name="l00391"></a><a class="code" href="class_c_admin_module_managment.html#aa83ee2f2d636fa5990d41970d417c9da">00391</a>         function <a class="code" href="class_c_admin_module_managment.html#aa83ee2f2d636fa5990d41970d417c9da">AddChainItem</a>($title,$href,$level=<span class="keyword">false</span>)
+<a name="l00392"></a>00392         {
+<a name="l00393"></a>00393                 $this-&gt;arNavChain[]=array(<span class="stringliteral">&#39;href&#39;</span>=&gt;$href,<span class="stringliteral">&#39;title&#39;</span>=&gt;$title);
+<a name="l00394"></a>00394         }
+<a name="l00395"></a>00395 
+<a name="l00407"></a><a class="code" href="class_c_admin_module_managment.html#ad631faf41948492e87b26f9990fd4d69">00407</a>         function <a class="code" href="class_c_admin_module_managment.html#ad631faf41948492e87b26f9990fd4d69">AddMenuItem</a>($item,$parent=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00408"></a>00408         {
+<a name="l00409"></a>00409                 <span class="keywordflow">if</span> ($parent!=<span class="stringliteral">&quot;&quot;</span>)
+<a name="l00410"></a>00410                 {
+<a name="l00411"></a>00411                         $parent=strtolower($parent);
+<a name="l00412"></a>00412                         <span class="keywordflow">if</span> (is_array($this-&gt;menu[$parent][<span class="stringliteral">&#39;items&#39;</span>]))
+<a name="l00413"></a>00413                         {
+<a name="l00414"></a>00414                                 $this-&gt;menu[$parent][<span class="stringliteral">&#39;items&#39;</span>]=array_merge($this-&gt;menu[$parent][<span class="stringliteral">&#39;items&#39;</span>],$item);
+<a name="l00415"></a>00415                         }
+<a name="l00416"></a>00416                         <span class="keywordflow">else</span>
+<a name="l00417"></a>00417                         {
+<a name="l00418"></a>00418                                 $this-&gt;menu[$parent][<span class="stringliteral">&#39;items&#39;</span>]=$item;
+<a name="l00419"></a>00419                         }
+<a name="l00420"></a>00420                 }
+<a name="l00421"></a>00421                 <span class="keywordflow">else</span>
+<a name="l00422"></a>00422                 {
+<a name="l00423"></a>00423                         <span class="keywordflow">foreach</span>($item as $key=&gt;$arMenu)
+<a name="l00424"></a>00424                         {
+<a name="l00425"></a>00425                                 $this-&gt;menu[strtolower($key)]=$arMenu;
+<a name="l00426"></a>00426                         }
+<a name="l00427"></a>00427                 }
+<a name="l00428"></a>00428                 }
+<a name="l00429"></a>00429 
+<a name="l00438"></a><a class="code" href="class_c_admin_module_managment.html#a183f513e53bbc4faf696e1698503b950">00438</a>         function <a class="code" href="class_c_admin_module_managment.html#a183f513e53bbc4faf696e1698503b950">Menu</a>($sModule,$sPage,$sTitle,$arAdd=<span class="keyword">false</span>)
+<a name="l00439"></a>00439         {
+<a name="l00440"></a>00440                 <span class="keywordflow">if</span>($sPage==<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00441"></a>00441                 {
+<a name="l00442"></a>00442                         <span class="comment">//Добавляем корневой пункт меню</span>
+<a name="l00443"></a>00443                         $this-&gt;menu[$sModule]=array(
+<a name="l00444"></a>00444                                 <span class="stringliteral">&#39;module&#39;</span> =&gt; $sModule,
+<a name="l00445"></a>00445                                 <span class="stringliteral">&#39;href&#39;</span> =&gt; <span class="stringliteral">&#39;module=&#39;</span>.$sModule,
+<a name="l00446"></a>00446                                 <span class="stringliteral">&#39;title&#39;</span> =&gt; $sTitle,
+<a name="l00447"></a>00447                         );
+<a name="l00448"></a>00448                         <span class="keywordflow">if</span>(is_array($arAdd)&amp;&amp;count($arAdd)&gt;0)
+<a name="l00449"></a>00449                         {
+<a name="l00450"></a>00450                                 $this-&gt;menu[$sModule]=array_merge($this-&gt;menu[$sModule],$arAdd);
+<a name="l00451"></a>00451                         }
+<a name="l00452"></a>00452                 }
+<a name="l00453"></a>00453                 <span class="keywordflow">else</span>
+<a name="l00454"></a>00454                 {
+<a name="l00455"></a>00455                         <span class="comment">//Добавляем корневой пункт меню</span>
+<a name="l00456"></a>00456                         $this-&gt;menu[$sModule][<span class="stringliteral">&#39;items&#39;</span>][$sPage]=array(
+<a name="l00457"></a>00457                                 <span class="stringliteral">&#39;module&#39;</span> =&gt; $sModule,
+<a name="l00458"></a>00458                                 <span class="stringliteral">&#39;href&#39;</span> =&gt; <span class="stringliteral">&#39;module=&#39;</span>.$sModule.<span class="stringliteral">&#39;&amp;page=&#39;</span>.$sPage,
+<a name="l00459"></a>00459                                 <span class="stringliteral">&#39;title&#39;</span> =&gt; $sTitle,
+<a name="l00460"></a>00460                         );
+<a name="l00461"></a>00461                         <span class="keywordflow">if</span>(is_array($arAdd)&amp;&amp;count($arAdd)&gt;0)
+<a name="l00462"></a>00462                         {
+<a name="l00463"></a>00463                                 $this-&gt;menu[$sModule][<span class="stringliteral">&#39;items&#39;</span>][$sPage]=array_merge($this-&gt;menu[$sModule][<span class="stringliteral">&#39;items&#39;</span>][$sPage],$arAdd);
+<a name="l00464"></a>00464                         }
+<a name="l00465"></a>00465                 }
+<a name="l00466"></a>00466                 <span class="keywordflow">return</span> $this;
+<a name="l00467"></a>00467         }
+<a name="l00468"></a>00468 }
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

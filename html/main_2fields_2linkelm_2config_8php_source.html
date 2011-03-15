@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/linkelm/config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/linkelm/config.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="main_2fields_2linkelm_2config_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00013"></a><a class="code" href="main_2fields_2linkelm_2config_8php.html#ac1f85a0248c2fe57082475eb1d4bdbb3">00013</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 global <a class="code" href="main_2fields_2linkcat_2config_8php.html#a3fb3edc68f6da052397a5c2262942834">$_ks_modules_linkable</a>,<a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="main_2fields_2linkelm_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">00017</a> <a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>=$KS_MODULES-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;-&gt;directory&#39;</span>=&gt;<span class="stringliteral">&#39;(\&#39;&#39;</span>.join(<span class="stringliteral">&quot;&#39;,&#39;&quot;</span>,$_ks_modules_linkable).<span class="charliteral">&#39;\&#39;</span>)<span class="charliteral">&#39;,&#39;</span>active<span class="stringliteral">&#39;=&gt;1));</span>
+<a name="l00018"></a>00018 <span class="stringliteral"></span>
+<a name="l00019"></a>00019 <span class="stringliteral">if(is_array($arModules))</span>
+<a name="l00020"></a>00020 <span class="stringliteral">{</span>
+<a name="l00021"></a>00021 <span class="stringliteral">        $sResult=&#39;</span>&lt;table <span class="keyword">class</span>=<span class="stringliteral">&quot;layout&quot;</span>&gt;&lt;tr&gt;&lt;td width=<span class="stringliteral">&quot;30%&quot;</span>&gt;Модуль к элементам которого осуществлять привязку: &lt;/td&gt;<span class="stringliteral">&#39; .</span>
+<a name="l00022"></a>00022 <span class="stringliteral">                &#39;</span>&lt;td width=<span class="stringliteral">&quot;70%&quot;</span>&gt;&lt;select name=<span class="stringliteral">&quot;&#39;.$params[&#39;prefix&#39;].&#39;option_1&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;&#39;.$params[&#39;prefix&#39;].&#39;option_1&quot;</span>&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00023"></a>00023 <span class="stringliteral">        foreach($arModules as $arItem)</span>
+<a name="l00024"></a>00024 <span class="stringliteral">        {</span>
+<a name="l00025"></a>00025 <span class="stringliteral">                $sResult.=&#39;</span>&lt;option value=<span class="stringliteral">&quot;&#39;.$arItem[&#39;directory&#39;].&#39;&quot;</span> <span class="stringliteral">&#39;.($arItem[&#39;</span>directory<span class="stringliteral">&#39;]==$params[&#39;</span>field<span class="stringliteral">&#39;][&#39;</span>option_1<span class="stringliteral">&#39;]?&#39;</span>selected=<span class="stringliteral">&quot;selected&quot;</span><span class="charliteral">&#39;:&#39;</span><span class="stringliteral">&#39;).&#39;</span>&gt;<span class="stringliteral">&#39;.$arItem[&#39;</span>name<span class="stringliteral">&#39;].&#39;</span>&lt;/option&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00026"></a>00026 <span class="stringliteral">        }</span>
+<a name="l00027"></a>00027 <span class="stringliteral">        $sResult.=&#39;</span>&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;<span class="stringliteral">&#39;.</span>
+<a name="l00028"></a>00028 <span class="stringliteral">                &#39;</span>&lt;tr&gt;&lt;td&gt;Значение по умолчанию: &lt;/td&gt;&lt;td&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00029"></a>00029 <span class="stringliteral">        $value=$params[&#39;</span>field<span class="stringliteral">&#39;][&#39;</span><span class="keywordflow">default</span><span class="stringliteral">&#39;];</span>
+<a name="l00030"></a>00030 <span class="stringliteral">        $myData=explode(&#39;</span>|<span class="stringliteral">&#39;,$value);</span>
+<a name="l00031"></a>00031 <span class="stringliteral">        $rand=rand(100000,999999);</span>
+<a name="l00032"></a>00032 <span class="stringliteral">        $sResult.=&quot;&lt;input type=\&quot;text\&quot; name=\&quot;id&quot;.$rand.&quot;\&quot; id=\&quot;id&quot;.$rand.&quot;\&quot; value=\&quot;&quot;.$myData[1].&quot;\&quot;&gt;[&lt;span id=\&quot;module&quot;.$rand.&quot;\&quot;&gt;&quot;.$myData[0].&quot;&lt;/span&gt;]\n&quot;;</span>
+<a name="l00033"></a>00033 <span class="stringliteral">        $sResult.=&#39;</span>&lt;input type=<span class="stringliteral">&quot;hidden&quot;</span> name=<span class="stringliteral">&quot;&#39;.$params[&#39;prefix&#39;].&quot;</span>ext_<span class="stringliteral">&quot;.$params[&#39;field&#39;][&#39;title&#39;].&#39;&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;&#39;.$params[&#39;prefix&#39;].&quot;</span>ext_<span class="stringliteral">&quot;.$params[&#39;field&#39;][&#39;title&#39;].&#39;&quot;</span> value=<span class="stringliteral">&quot;&#39;.$params[&#39;value&#39;].&#39;&quot;</span> style=<span class="stringliteral">&quot;width:100%&quot;</span>/&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00034"></a>00034 <span class="stringliteral">        $sResult.=&#39;</span>&lt;input type=<span class="stringliteral">&quot;button&quot;</span> <span class="keywordtype">id</span>=<span class="stringliteral">&quot;select&quot;</span> name=<span class="stringliteral">&quot;select&quot;</span> value=<span class="stringliteral">&quot;...&quot;</span>&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00035"></a>00035 <span class="stringliteral">        $sResult.=&#39;</span>&lt;script type=<span class="stringliteral">&quot;text/javascript&quot;</span>&gt;<span class="stringliteral">&#39; .&quot;\n&quot;.</span>
+<a name="l00036"></a>00036 <span class="stringliteral">                        &#39;</span>function showForm<span class="stringliteral">&#39;.$rand.&#39;</span>(e,data){<span class="stringliteral">&#39;.&quot;\n&quot;.</span>
+<a name="l00037"></a>00037 <span class="stringliteral">                                &#39;</span>var obData=$(<span class="stringliteral">&quot;:checkbox[name=\&#39;sel\[elm\]\[\]\&#39;]&quot;</span>,data);<span class="stringliteral">&#39;.&quot;\n&quot;.</span>
+<a name="l00038"></a>00038 <span class="stringliteral">                                &#39;</span><span class="keywordflow">for</span>(var i=0;i&lt;obData.length;i++)<span class="stringliteral">&#39;.&quot;\n&quot;.</span>
+<a name="l00039"></a>00039 <span class="stringliteral">                                &#39;</span>{<span class="stringliteral">&#39;.&quot;\n&quot;.</span>
+<a name="l00040"></a>00040 <span class="stringliteral">                                        &#39;</span>obData.eq(i).replaceWith($(\<span class="stringliteral">&#39;&lt;input type=&quot;button&quot; name=&quot;\&#39;+obData.eq(i).attr(\&#39;value\&#39;)+\&#39;&quot; kstitle=&quot;\&#39;+obData.eq(i).next(&quot;input[type=hidden]&quot;).eq(0).val()+\&#39;&quot; value=&quot;Выбрать&quot;/&gt;\&#39;).click(&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00041"></a>00041                                         <span class="stringliteral">&#39;function(event){&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00042"></a>00042                                                 <span class="stringliteral">&#39;$(&quot;#id&#39;</span>.<a class="code" href="linkcat_2show_8php.html#a2da3681c9cce2efe7de29aa578ff4219">$rand</a>.<span class="stringliteral">&#39;&quot;).val($(this).attr(&quot;kstitle&quot;));&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00043"></a>00043                                                 <span class="stringliteral">&#39;$(&quot;#module&#39;</span>.$rand.<span class="stringliteral">&#39;&quot;).html($(this).attr(&quot;name&quot;));&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00044"></a>00044                                                 <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&quot;ext_&quot;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&#39;&quot;).val(this.name);</span>
+<a name="l00045"></a>00045 <span class="stringliteral">                                                kstb_remove();</span>
+<a name="l00046"></a>00046 <span class="stringliteral">                                                })&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00047"></a>00047                                         <span class="stringliteral">&#39;);&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00048"></a>00048                                 <span class="charliteral">&#39;}&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00049"></a>00049                                 <span class="stringliteral">&#39;$(&quot;#navChain&gt;:first-child&quot;,data).remove();&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00050"></a>00050                                 <span class="stringliteral">&#39;$(document).trigger(&quot;InitCalendar&quot;);&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00051"></a>00051                                 <span class="stringliteral">&#39;if($(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).val()==&quot;blog&quot;) $(&quot;#navChain&gt;:first-child&quot;,data).remove();&#39;</span>.
+<a name="l00052"></a>00052                                 <span class="stringliteral">&#39;$(document).trigger(&quot;InitTiny&quot;);&#39;</span>.     <span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00053"></a>00053                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00054"></a>00054                         <span class="stringliteral">&#39;$(document).ready(function(){&#39;</span> .
+<a name="l00055"></a>00055                         <span class="stringliteral">&#39;$(&quot;input#select&quot;).click(function(event){&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00056"></a>00056                                 <span class="stringliteral">&#39;if($(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).val()==&quot;blog&quot;)&#39;</span>.
+<a name="l00057"></a>00057                                         <span class="stringliteral">&#39;kstb_show(&quot;Выбрать элемент&quot;,&quot;/admin.php?module=&quot;+$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).val()+&quot;&amp;page=records&amp;mode=small&amp;width=800&amp;height=480&quot;,null,showForm&#39;</span>.<a class="code" href="linkcat_2show_8php.html#a2da3681c9cce2efe7de29aa578ff4219">$rand</a>.<span class="stringliteral">&#39;);&#39;</span>.
+<a name="l00058"></a>00058                                 <span class="stringliteral">&#39;else kstb_show(&quot;Выбрать элемент&quot;,&quot;/admin.php?module=&quot;+$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).val()+&quot;&amp;mode=small&amp;width=800&amp;height=480&quot;,null,showForm&#39;</span>.<a class="code" href="linkcat_2show_8php.html#a2da3681c9cce2efe7de29aa578ff4219">$rand</a>.<span class="stringliteral">&#39;);&#39;</span>.
+<a name="l00059"></a>00059                         <span class="stringliteral">&#39;})});&#39;</span>.
+<a name="l00060"></a>00060                 <span class="stringliteral">&#39;&lt;/script&gt;&#39;</span>;
+<a name="l00061"></a>00061 }
+<a name="l00062"></a>00062 <span class="keywordflow">else</span>
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=<span class="stringliteral">&#39;Ни один из установленных модулей не поддерживает привязки&#39;</span>;
+<a name="l00065"></a>00065 }
+<a name="l00066"></a>00066 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

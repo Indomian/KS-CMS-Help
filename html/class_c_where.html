@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CWhere</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a>  </div>
+  <div class="headertitle">
+<h1>Класс CWhere</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CWhere" --><!-- doxytag: inherits="CBaseObject" -->
+<p>Базовые классы:<a class="el" href="class_c_base_object.html">CBaseObject</a>.</p>
+<div class="dynheader">
+Граф связей класса CWhere:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_where__coll__graph.png" border="0" usemap="#_c_where_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_where_coll__map" id="_c_where_coll__map">
+<area shape="rect" id="node2" href="class_c_base_object.html" title="CBaseObject" alt="" coords="5,5,109,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_where.html#a76b4d55311df946f6723a0a1dcdf638e">__construct</a> ($arFields)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_where.html#a4422e7c947f95d03638973e0d4e06f85">GetOperation</a> ($field, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_where.html#a1db5a244f19c89a9584a52f315404321">doIf</a> ($arIf, $data)</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_where.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="class_c_where.html">CWhere</a> выполняет операции связанные с генерацией параметров фильтра и анализом поступивших значений </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a> строка <a class="el" href="class_8_c_where_8php_source.html#l00019">19</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a76b4d55311df946f6723a0a1dcdf638e"></a><!-- doxytag: member="CWhere::__construct" ref="a76b4d55311df946f6723a0a1dcdf638e" args="($arFields)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFields</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор класса, в качестве параметров необходимо передать список полей по которым сможет работать фильтр. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arFields</em>&nbsp;</td><td>array массив полей по которым может работать фильтр </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a> строка <a class="el" href="class_8_c_where_8php_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a1db5a244f19c89a9584a52f315404321"></a><!-- doxytag: member="CWhere::doIf" ref="a1db5a244f19c89a9584a52f315404321" args="($arIf, $data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">doIf </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arIf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет операцию сравнения, в качестве параметров передаются, массив для обработки операции и данные которые необходимо обработать. Возвращает 0 или 1 в зависимости от того, прошли данные проверку или нет </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arIf</em>&nbsp;</td><td>array - массив операции, обычно используется результат вызова метода <a class="el" href="class_c_where.html#a4422e7c947f95d03638973e0d4e06f85">CWhere::GetOperation()</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$data</em>&nbsp;</td><td>array - массив данных в котором необходимо выполнить проверку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>int 1 или 0, если 1 - данные прошли через фильтр, 0 - не прошли. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a> строка <a class="el" href="class_8_c_where_8php_source.html#l00074">74</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4422e7c947f95d03638973e0d4e06f85"></a><!-- doxytag: member="CWhere::GetOperation" ref="a4422e7c947f95d03638973e0d4e06f85" args="($field, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetOperation </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет получение операции по переданному полю и значению. В качестве результата работы возвращает массив указывающий что делать с тим полем </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$field</em>&nbsp;</td><td>имя поля в фильтре, может принимать специальные знаки, так же смотрите <a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere()</a> </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$value</em>&nbsp;</td><td>значение поля </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array массив для выполнения операции сравнения </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a> строка <a class="el" href="class_8_c_where_8php_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="a2568d5753d3eb90cd0a3d1d06462323d"></a><!-- doxytag: member="CWhere::$arFields" ref="a2568d5753d3eb90cd0a3d1d06462323d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arFields<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Список полей доступных для поиска значений </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a> строка <a class="el" href="class_8_c_where_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_where_8php_source.html">class.CWhere.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:27. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

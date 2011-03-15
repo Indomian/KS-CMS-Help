@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="__toString" alt="" coords="153,112,239,141"/>
+<area shape="rect" id="node5" href="$class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="335,5,476,35"/>
+<area shape="rect" id="node7" href="$class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="288,59,523,88"/>
+<area shape="rect" id="node9" href="$class_cmain_a_imodules.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CmainAImodules::Run" alt="" coords="325,112,485,141"/>
+<area shape="rect" id="node11" href="$class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Cguestbook2AIcategories::Save" alt="" coords="293,165,517,195"/>
+<area shape="rect" id="node15" href="$function_8_pic_8php.html#ad37d9875a58f53120af02a026b9c42a9" title="smarty_function_Pic" alt="" coords="331,219,480,248"/>
+<area shape="rect" id="node13" href="$class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="571,165,787,195"/>
+</map>

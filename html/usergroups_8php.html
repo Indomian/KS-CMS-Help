@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/main/pages/usergroups.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/main/pages/usergroups.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="usergroups_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a> (!defined('KS_ENGINE'))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">global&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#aba1471f5413b7c782c8d08e525f8ad3b">$KS_URL</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a7de2782dfb6f1748575b81bca183b9dd">$USERGROUP</a> = new <a class="el" href="class_c_user_group.html">CUserGroup</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a> = new <a class="el" href="class_c_page_navigation.html">CPageNavigation</a>($USERGROUP)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a> = array('id','title','level')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a> = (in_array($_REQUEST['order'],$arSortFields))?$_REQUEST['order']:'id'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>($_REQUEST['dir']=='asc')&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a> = 'desc'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">else&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a8e01dcc96c43199448ee66f7c2ae8ea6">__pad0__</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a82cd33ca97ff99f2fcc5e9c81d65251b">endif</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="usergroups_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a> = $_REQUEST['ACTION']</td></tr>
+</table>
+<hr/><h2>Переменные</h2>
+<a class="anchor" id="aa698a3e72116e8e778be0e95d908ee30"></a><!-- doxytag: member="usergroups.php::$action" ref="aa698a3e72116e8e778be0e95d908ee30" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$action = $_REQUEST['ACTION']</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8c2dc53cd22d0dd877b7efafa7564ed5"></a><!-- doxytag: member="usergroups.php::$arOrder" ref="a8c2dc53cd22d0dd877b7efafa7564ed5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arOrder</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><pre class="fragment">array(
+        <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=&gt;$sOrderDir,
+)
+</pre></div>
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2a525403da6f573e9e29e4ef9da31dc0"></a><!-- doxytag: member="usergroups.php::$arSortFields" ref="a2a525403da6f573e9e29e4ef9da31dc0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arSortFields = array('id','title','level')</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aba1471f5413b7c782c8d08e525f8ad3b"></a><!-- doxytag: member="usergroups.php::$KS_URL" ref="aba1471f5413b7c782c8d08e525f8ad3b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">global $KS_URL</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab62c6708db035f862eba4826e47e6e41"></a><!-- doxytag: member="usergroups.php::$obPages" ref="ab62c6708db035f862eba4826e47e6e41" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obPages = new <a class="el" href="class_c_page_navigation.html">CPageNavigation</a>($USERGROUP)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0aa002b79564cd3610e4dffdb2b3d1df"></a><!-- doxytag: member="usergroups.php::$sNewDir" ref="a0aa002b79564cd3610e4dffdb2b3d1df" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sNewDir = 'desc'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8763a905c873b701142957d5b86b0eca"></a><!-- doxytag: member="usergroups.php::$sOrderField" ref="a8763a905c873b701142957d5b86b0eca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sOrderField = (in_array($_REQUEST['order'],$arSortFields))?$_REQUEST['order']:'id'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7de2782dfb6f1748575b81bca183b9dd"></a><!-- doxytag: member="usergroups.php::$USERGROUP" ref="a7de2782dfb6f1748575b81bca183b9dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$USERGROUP = new <a class="el" href="class_c_user_group.html">CUserGroup</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8e01dcc96c43199448ee66f7c2ae8ea6"></a><!-- doxytag: member="usergroups.php::__pad0__" ref="a8e01dcc96c43199448ee66f7c2ae8ea6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">else <a class="el" href="usergroups_8php.html#a8e01dcc96c43199448ee66f7c2ae8ea6">__pad0__</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a82cd33ca97ff99f2fcc5e9c81d65251b"></a><!-- doxytag: member="usergroups.php::endif" ref="a82cd33ca97ff99f2fcc5e9c81d65251b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="users_8php.html#a82cd33ca97ff99f2fcc5e9c81d65251b">endif</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa2751051afe353ae55a548bdc2a59679"></a><!-- doxytag: member="usergroups.php::if" ref="aa2751051afe353ae55a548bdc2a59679" args="(!defined('KS_ENGINE'))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="wave_2pages_2options_8php.html#aa2751051afe353ae55a548bdc2a59679">if</a>(!defined('KS_ENGINE'))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="usergroups_8php_source.html">usergroups.php</a> строка <a class="el" href="usergroups_8php_source.html#l00003">3</a></p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:22. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

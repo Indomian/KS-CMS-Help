@@ -1,0 +1,28 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty.html#af0c22913faf4ec5e6d8674c643c69cc5" title="_compile_resource" alt="" coords="177,165,319,195"/>
+<area shape="rect" id="node29" href="$class_smarty.html#a8a89232edb42318063b90fee5f608ec0" title="_get_compile_path" alt="" coords="177,376,319,405"/>
+<area shape="rect" id="node33" href="$class_smarty.html#a315bf9a64ca2baea77f8868804d847be" title="_is_compiled" alt="" coords="196,85,300,115"/>
+<area shape="rect" id="node36" href="$class_smarty.html#ad642cca94486c492c56071fb32a3421c" title="load_filter" alt="" coords="207,429,289,459"/>
+<area shape="rect" id="node38" href="$core_8load__plugins_8php.html#a2d7a9938080993f97849f36a277f7e9c" title="smarty_core_load_plugins" alt="" coords="475,456,661,485"/>
+<area shape="rect" id="node40" href="$core_8display__debug__console_8php.html#a75eea2cab797115a678346fc85959cd5" title="smarty_core_display_debug_console" alt="" coords="120,533,376,563"/>
+<area shape="rect" id="node42" href="$core_8get__microtime_8php.html#af2e673e8b446d0f6e879a5b0a07c14a3" title="smarty_core_get_microtime" alt="" coords="467,325,669,355"/>
+<area shape="rect" id="node45" href="$core_8process__cached__inserts_8php.html#a7ecf3769e443f1f25e31960f53b2777b" title="smarty_core_process_cached_inserts" alt="" coords="117,272,379,301"/>
+<area shape="rect" id="node53" href="$core_8process__compiled__include_8php.html#a14c8b416ffcab6084ff899138d46fee1" title="smarty_core_process_compiled_include" alt="" coords="111,587,385,616"/>
+<area shape="rect" id="node55" href="$core_8read__cache__file_8php.html#a5473362becadb450be4767d6a41a1761" title="smarty_core_read_cache_file" alt="" coords="144,640,352,669"/>
+<area shape="rect" id="node57" href="$core_8write__cache__file_8php.html#a6d5f921cd36f26c47142c14fddeb6eb0" title="smarty_core_write_cache_file" alt="" coords="144,693,352,723"/>
+<area shape="rect" id="node5" href="$class_smarty.html#a9df9b14069c359f1f45416acc6d7d81f" title="_compile_source" alt="" coords="504,165,632,195"/>
+<area shape="rect" id="node7" href="$class_smarty.html#a0c3ac497dbe0e595d4f2a85f1168a219" title="_fetch_resource_info" alt="" coords="491,59,645,88"/>
+<area shape="rect" id="node21" href="$core_8write__compiled__include_8php.html#af51abb1f65afc828687d0b091a47774e" title="smarty_core_write_compiled_include" alt="" coords="440,219,696,248"/>
+<area shape="rect" id="node27" href="$core_8write__compiled__resource_8php.html#afd921c78cd68ad02f1140dfaa55f0546" title="smarty_core_write_compiled_resource" alt="" coords="435,112,701,141"/>
+<area shape="rect" id="node9" href="$class_smarty.html#a3fd3782e935db8cbac33da3d735df988" title="_parse_resource_name" alt="" coords="751,59,921,88"/>
+<area shape="rect" id="node15" href="$class_smarty.html#a5aca16bc6189ba04a7f0a807ca08ff71" title="_read_file" alt="" coords="795,112,877,141"/>
+<area shape="rect" id="node17" href="$core_8is__secure_8php.html#a2240f07846b86da447f045254b33df5b" title="smarty_core_is_secure" alt="" coords="752,165,920,195"/>
+<area shape="rect" id="node19" href="$class_smarty.html#aa4f8246510406271300bee84f9e1bce3" title="trigger_error" alt="" coords="785,5,887,35"/>
+<area shape="rect" id="node11" href="$core_8get__include__path_8php.html#a0420062b2f204568487415679c070101" title="smarty_core_get_include_path" alt="" coords="984,271,1203,300"/>
+<area shape="rect" id="node13" href="$core_8load__resource__plugin_8php.html#a8dc87f80f6684ee3585f869b18fb2d31" title="smarty_core_load_resource_plugin" alt="" coords="972,59,1215,88"/>
+<area shape="rect" id="node23" href="$core_8write__file_8php.html#a3bb0fa40cf3f425efe31f50463824aa0" title="smarty_core_write_file" alt="" coords="755,219,917,248"/>
+<area shape="rect" id="node25" href="$core_8create__dir__structure_8php.html#a7bccc70f1486254bbc47950432d50b85" title="smarty_core_create_dir_structure" alt="" coords="975,217,1212,247"/>
+<area shape="rect" id="node31" href="$class_smarty.html#a3e145fee368d93f35313bcb7018c1a76" title="_get_auto_filename" alt="" coords="495,379,641,408"/>
+<area shape="rect" id="node48" href="$core_8get__php__resource_8php.html#a0d49b41e38881f00adacbc4a0ad392e0" title="smarty_core_get_php_resource" alt="" coords="456,272,680,301"/>
+<area shape="rect" id="node51" href="$core_8is__trusted_8php.html#a789b1faca337284e4e10a0f2308aaa91" title="smarty_core_is_trusted" alt="" coords="751,323,921,352"/>
+</map>

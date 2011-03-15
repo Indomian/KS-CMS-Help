@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="143,57,228,87"/>
+<area shape="rect" id="node5" href="$class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="279,57,569,87"/>
+<area shape="rect" id="node7" href="$class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="CModuleManagment::Install" alt="" coords="629,5,827,35"/>
+<area shape="rect" id="node9" href="$class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="CModuleManagment::SelfInstall" alt="" coords="887,32,1108,61"/>
+<area shape="rect" id="node18" href="$class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="CModuleManagment::UnInstall" alt="" coords="620,109,836,139"/>
+<area shape="rect" id="node11" href="$class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="CModuleManagment::__construct" alt="" coords="1159,32,1393,61"/>
+<area shape="rect" id="node13" href="$class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="1476,5,1687,35"/>
+<area shape="rect" id="node15" href="$class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="1443,59,1720,88"/>
+</map>

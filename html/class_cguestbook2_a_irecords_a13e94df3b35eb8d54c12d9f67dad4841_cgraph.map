@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_cguestbook2_a_irecords.html#a9f844d1903ac46357c85e3f23d2299d3" title="EditForm" alt="" coords="251,5,328,35"/>
+<area shape="rect" id="node5" href="$class_cguestbook2_a_irecords.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Save" alt="" coords="100,59,153,88"/>
+<area shape="rect" id="node10" href="$class_cguestbook2_a_irecords.html#a2a7f82c625b00a53f710b2ed305248d2" title="Table" alt="" coords="100,112,153,141"/>
+<area shape="rect" id="node8" href="$class_cguestbook2_a_irecords.html#aad5b28ebdb74bf4e6abd80fda9477920" title="GetDataFromPost" alt="" coords="221,59,357,88"/>
+<area shape="rect" id="node12" href="$class_c_module_admin.html#a3160f20700c1e4015c4d5ef90de6c890" title="CModuleAdmin::InitSort" alt="" coords="204,112,375,141"/>
+</map>

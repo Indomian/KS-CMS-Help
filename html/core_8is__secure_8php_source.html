@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/smarty/internals/core.is_secure.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/smarty/internals/core.is_secure.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="core_8is__secure_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00016"></a>00016 <span class="comment">//  $resource_type, $resource_name</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="core_8is__secure_8php.html#a2240f07846b86da447f045254b33df5b">00018</a> function <a class="code" href="core_8is__secure_8php.html#a2240f07846b86da447f045254b33df5b">smarty_core_is_secure</a>($params, &amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>)
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020     <span class="keywordflow">if</span> (!<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;security || <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;security_settings[<span class="stringliteral">&#39;INCLUDE_ANY&#39;</span>]) {
+<a name="l00021"></a>00021         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00022"></a>00022     }
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024     <span class="keywordflow">if</span> ($params[<span class="stringliteral">&#39;resource_type&#39;</span>] == <span class="stringliteral">&#39;file&#39;</span>) {
+<a name="l00025"></a>00025         $_rp = realpath($params[<span class="stringliteral">&#39;resource_name&#39;</span>]);
+<a name="l00026"></a>00026         <span class="keywordflow">if</span> (isset($params[<span class="stringliteral">&#39;resource_base_path&#39;</span>])) {
+<a name="l00027"></a>00027             <span class="keywordflow">foreach</span> ((array)$params[<span class="stringliteral">&#39;resource_base_path&#39;</span>] as $curr_dir) {
+<a name="l00028"></a>00028                 <span class="keywordflow">if</span> ( ($_cd = realpath($curr_dir)) !== <span class="keyword">false</span> &amp;&amp;
+<a name="l00029"></a>00029                      strncmp($_rp, $_cd, strlen($_cd)) == 0 &amp;&amp;
+<a name="l00030"></a>00030                      substr($_rp, strlen($_cd), 1) == DIRECTORY_SEPARATOR ) {
+<a name="l00031"></a>00031                     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00032"></a>00032                 }
+<a name="l00033"></a>00033             }
+<a name="l00034"></a>00034         }
+<a name="l00035"></a>00035         <span class="keywordflow">if</span> (!empty(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;secure_dir)) {
+<a name="l00036"></a>00036             <span class="keywordflow">foreach</span> ((array)<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;secure_dir as $curr_dir) {
+<a name="l00037"></a>00037                 <span class="keywordflow">if</span> ( ($_cd = realpath($curr_dir)) !== <span class="keyword">false</span>) {
+<a name="l00038"></a>00038                     <span class="keywordflow">if</span>($_cd == $_rp) {
+<a name="l00039"></a>00039                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00040"></a>00040                     } elseif (strncmp($_rp, $_cd, strlen($_cd)) == 0 &amp;&amp;
+<a name="l00041"></a>00041                         substr($_rp, strlen($_cd), 1) == DIRECTORY_SEPARATOR) {
+<a name="l00042"></a>00042                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00043"></a>00043                     }
+<a name="l00044"></a>00044                 }
+<a name="l00045"></a>00045             }
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047     } <span class="keywordflow">else</span> {
+<a name="l00048"></a>00048         <span class="comment">// resource is not on local file system</span>
+<a name="l00049"></a>00049         <span class="keywordflow">return</span> call_user_func_array(
+<a name="l00050"></a>00050             <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;_plugins[<span class="stringliteral">&#39;resource&#39;</span>][$params[<span class="stringliteral">&#39;resource_type&#39;</span>]][0][2],
+<a name="l00051"></a>00051             array($params[<span class="stringliteral">&#39;resource_name&#39;</span>], &amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>));
+<a name="l00052"></a>00052     }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00055"></a>00055 }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">/* vim: set expandtab: */</span>
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:19. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

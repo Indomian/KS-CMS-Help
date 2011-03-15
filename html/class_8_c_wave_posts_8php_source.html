@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/wave/libs/class.CWavePosts.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/wave/libs/class.CWavePosts.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_wave_posts_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00013"></a>00013 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="class_8_c_wave_posts_8php.html#a6a59ac91b125b7bf4880504b7388a24f">00016</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_FULL&#39;</span>,0);
+<a name="l00017"></a><a class="code" href="class_8_c_wave_posts_8php.html#a0d3ec03638dd86742433bde04f6f8e95">00017</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_MODERATE&#39;</span>,4);
+<a name="l00018"></a><a class="code" href="class_8_c_wave_posts_8php.html#ab84e873639c467bf74cb55fced8527a2">00018</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_ANSWER&#39;</span>,6);
+<a name="l00019"></a><a class="code" href="class_8_c_wave_posts_8php.html#ae6eb8e1af757750ba4bddc088110ea5c">00019</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_ADD&#39;</span>,7);
+<a name="l00020"></a><a class="code" href="class_8_c_wave_posts_8php.html#ae9cb16486ae6d894da208bf8dcd66dc4">00020</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_ADD_GUEST&#39;</span>,8);
+<a name="l00021"></a><a class="code" href="class_8_c_wave_posts_8php.html#a3062a3c1194eb635a766c2399bead590">00021</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_VIEW&#39;</span>,9);
+<a name="l00022"></a><a class="code" href="class_8_c_wave_posts_8php.html#a9c9239ee70509e4dedbf146e7d0eba7a">00022</a> define(<span class="stringliteral">&#39;KS_ACCESS_WAVE_DENIED&#39;</span>,10);
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="class_8_c_wave_posts_8php.html#a666285a27de026f795225cbf6ccbbe74">00024</a> define(<span class="stringliteral">&#39;SMALL_STEP&#39;</span>,1);
+<a name="l00025"></a><a class="code" href="class_8_c_wave_posts_8php.html#a66664e1320bd11320c497aa31175a27e">00025</a> define(<span class="stringliteral">&#39;BIG_STEP&#39;</span>,10);
+<a name="l00026"></a>00026 
+<a name="l00027"></a><a class="code" href="class_c_wave_posts.html">00027</a> <span class="keyword">class </span><a class="code" href="class_c_wave_posts.html">CWavePosts</a> <span class="keyword">extends</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>
+<a name="l00028"></a>00028 {
+<a name="l00029"></a><a class="code" href="class_c_wave_posts.html#ae891292bb83d2ad7536d30dd42fef550">00029</a>         <span class="keyword">private</span> <a class="code" href="class_c_wave_posts.html#ae891292bb83d2ad7536d30dd42fef550">$arPostsCache</a>;
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="class_c_wave_posts.html#a740f67c96abe5a81f5e2310f7c7ec164">00031</a>         function <a class="code" href="class_c_wave_posts.html#a740f67c96abe5a81f5e2310f7c7ec164">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&#39;wave_posts&#39;</span>)
+<a name="l00032"></a>00032         {
+<a name="l00033"></a>00033                 <a class="code" href="class_c_wave_posts.html#a740f67c96abe5a81f5e2310f7c7ec164">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00034"></a>00034                 $this-&gt;sFieldsModule=<span class="stringliteral">&#39;wave&#39;</span>;
+<a name="l00035"></a>00035                 <span class="comment">//Подключаем работу с пользовательскими полями.</span>
+<a name="l00036"></a>00036                 <span class="keywordflow">if</span> (class_exists(<a class="code" href="class_c_fields.html">CFields</a>))
+<a name="l00037"></a>00037                 {
+<a name="l00038"></a>00038                         $this-&gt;bFields=<span class="keyword">true</span>;
+<a name="l00039"></a>00039                         $obFields=<span class="keyword">new</span> <a class="code" href="class_c_fields.html">CFields</a>();
+<a name="l00040"></a>00040                         $this-&gt;arUserFields=$obFields-&gt;GetFields($this-&gt;sFieldsModule,$this-&gt;sTable);
+<a name="l00041"></a>00041                         <span class="keywordflow">foreach</span>($this-&gt;arUserFields as $item)
+<a name="l00042"></a>00042                         {
+<a name="l00043"></a>00043                                 $this-&gt;arFields[]=<span class="stringliteral">&#39;ext_&#39;</span>.$item[<span class="stringliteral">&#39;title&#39;</span>];
+<a name="l00044"></a>00044                         }
+<a name="l00045"></a>00045                 }
+<a name="l00046"></a>00046                 $this-&gt;arPostsCache=array();
+<a name="l00047"></a>00047                 <span class="comment">//Устанавливаем папку для загрузки</span>
+<a name="l00048"></a>00048                 $this-&gt;sUploadPath=<span class="stringliteral">&#39;/wave&#39;</span>;
+<a name="l00049"></a>00049         }
+<a name="l00050"></a>00050 
+<a name="l00054"></a><a class="code" href="class_c_wave_posts.html#a115eede3d9039bedf6c1279032fdc159">00054</a>         <span class="keyword">protected</span> function <a class="code" href="class_c_wave_posts.html#a115eede3d9039bedf6c1279032fdc159">_ParseItem</a>(&amp;$arItem)
+<a name="l00055"></a>00055         {
+<a name="l00056"></a>00056                 <a class="code" href="class_c_object.html#abce37e6268ad8fa4251d7bb984d8c031">CObject::$arCache</a>[$this-&gt;sTable][$arItem[<span class="stringliteral">&#39;id&#39;</span>]]=$arItem;
+<a name="l00057"></a>00057                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00058"></a>00058         }
+<a name="l00059"></a>00059 
+<a name="l00063"></a><a class="code" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449">00063</a>         function <a class="code" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449">RecountTree</a>($sHash,$parent_id=0,$iCurrentMargin=1,$depth=0)
+<a name="l00064"></a>00064         {
+<a name="l00065"></a>00065                 <span class="keywordflow">if</span>($parent_id==0 || $this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$parent_id,<span class="stringliteral">&#39;hash&#39;</span>=&gt;$sHash)))
+<a name="l00066"></a>00066                 {
+<a name="l00067"></a>00067                         $iBaseMargin=$iCurrentMargin;
+<a name="l00068"></a>00068                         <span class="keywordflow">if</span>($arSubItems=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;date_add&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;parent_id&#39;</span>=&gt;$parent_id,<span class="stringliteral">&#39;hash&#39;</span>=&gt;$sHash),<span class="keyword">false</span>,array(<span class="stringliteral">&#39;id&#39;</span>)))
+<a name="l00069"></a>00069                         {
+<a name="l00070"></a>00070                                 <span class="keywordflow">foreach</span>($arSubItems as $arItem)
+<a name="l00071"></a>00071                                 {
+<a name="l00072"></a>00072                                         <span class="comment">//echo str_repeat(&#39;-&#39;,$depth).$arItem[&#39;id&#39;].&#39;&lt;br/&gt;&#39;;</span>
+<a name="l00073"></a>00073                                         $iCurrentMargin=$this-&gt;<a class="code" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449">RecountTree</a>($sHash,$arItem[<span class="stringliteral">&#39;id&#39;</span>],$iCurrentMargin+<a class="code" href="class_8_c_wave_posts_8php.html#a666285a27de026f795225cbf6ccbbe74">SMALL_STEP</a>,$depth+1);
+<a name="l00074"></a>00074                                 }
+<a name="l00075"></a>00075                                 $iCurrentMargin+=BIG_STEP;
+<a name="l00076"></a>00076                         }
+<a name="l00077"></a>00077                         <span class="keywordflow">if</span>($parent_id&gt;0)
+<a name="l00078"></a>00078                         {
+<a name="l00079"></a>00079                                 $this-&gt;<a class="code" href="class_c_object.html#abe38f51985100039a9291bad69727ab4">Update</a>($parent_id,array(<span class="stringliteral">&#39;left_margin&#39;</span>=&gt;$iBaseMargin,<span class="stringliteral">&#39;right_margin&#39;</span>=&gt;$iCurrentMargin,<span class="stringliteral">&#39;depth&#39;</span>=&gt;$depth));
+<a name="l00080"></a>00080                         }
+<a name="l00081"></a>00081                 }
+<a name="l00082"></a>00082                 <span class="keywordflow">return</span> $iCurrentMargin+SMALL_STEP;
+<a name="l00083"></a>00083         }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4">00085</a>         function <a class="code" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4">Save</a>($prefix=<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=<span class="keyword">false</span>)
+<a name="l00086"></a>00086         {
+<a name="l00087"></a>00087                 global <a class="code" href="catsubcat_2install_2install_8php.html#a0ae7292c4bc4192dfbd231dc81e7128f">$KS_EVENTS_HANDLER</a>;
+<a name="l00088"></a>00088                 $id=<a class="code" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4">parent::Save</a>($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00089"></a>00089                 <span class="keywordflow">if</span>($arPost=$this-&gt;<a class="code" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$id)))
+<a name="l00090"></a>00090                 {
+<a name="l00091"></a>00091                         $this-&gt;<a class="code" href="class_c_wave_posts.html#a115eede3d9039bedf6c1279032fdc159">_ParseItem</a>($arPost);
+<a name="l00092"></a>00092                         $this-&gt;<a class="code" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449">RecountTree</a>($arPost[<span class="stringliteral">&#39;hash&#39;</span>]);
+<a name="l00093"></a>00093                         <span class="keywordflow">if</span>(!$KS_EVENTS_HANDLER-&gt;Execute(<span class="stringliteral">&#39;wave&#39;</span>,<span class="stringliteral">&#39;onAfterAdd&#39;</span>,$arPost))
+<a name="l00094"></a>00094                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;MAIN_HANDLER_ERROR&#39;</span>,<span class="stringliteral">&#39;wave:onAfterAdd&#39;</span>);
+<a name="l00095"></a>00095                 }
+<a name="l00096"></a>00096                 <span class="keywordflow">return</span> $id;
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098 }
+<a name="l00099"></a>00099 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

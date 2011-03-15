@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CCache.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CCache.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_cache_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="class_c_cache.html">00016</a> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_c_cache.html">CCache</a> <span class="keyword">extends</span> <a class="code" href="class_c_base_object.html">CBaseObject</a> 
+<a name="l00017"></a>00017 {
+<a name="l00018"></a><a class="code" href="class_c_cache.html#ac531301c55a8d8b6c7613597218ff482">00018</a>         <span class="keyword">protected</span> <a class="code" href="class_c_cache.html#ac531301c55a8d8b6c7613597218ff482">$module</a>;
+<a name="l00019"></a><a class="code" href="class_c_cache.html#a1f1d2b0ffba6c505a43e2713e6e4416b">00019</a>         <span class="keyword">protected</span> <a class="code" href="class_c_cache.html#a1f1d2b0ffba6c505a43e2713e6e4416b">$cacheTime</a>;
+<a name="l00020"></a><a class="code" href="class_c_cache.html#a5e21d1aa3a8234d2a84aa79d10339331">00020</a>         <span class="keyword">protected</span> <a class="code" href="class_c_cache.html#a5e21d1aa3a8234d2a84aa79d10339331">$cacheId</a>;
+<a name="l00021"></a><a class="code" href="class_c_cache.html#a5585bbc008fa2c04b1d2b1bb709e0d4b">00021</a>         <span class="keyword">protected</span> <a class="code" href="class_c_cache.html#a5585bbc008fa2c04b1d2b1bb709e0d4b">$isAlive</a>;
+<a name="l00022"></a><a class="code" href="class_c_cache.html#a44dd29ca1b1124225dd68fe1b8f174ce">00022</a>         <span class="keyword">protected</span> <a class="code" href="class_c_cache.html#a44dd29ca1b1124225dd68fe1b8f174ce">$sCacheFile</a>;
+<a name="l00023"></a>00023         
+<a name="l00027"></a><a class="code" href="class_c_cache.html#afd9e51c23c2fe6c84b8952c3a545d8f7">00027</a>         function <a class="code" href="class_c_cache.html#afd9e51c23c2fe6c84b8952c3a545d8f7">__construct</a>(<a class="code" href="class_c_cache.html#a5e21d1aa3a8234d2a84aa79d10339331">$cacheId</a>,<a class="code" href="class_c_cache.html#a1f1d2b0ffba6c505a43e2713e6e4416b">$cacheTime</a>,<a class="code" href="class_c_cache.html#ac531301c55a8d8b6c7613597218ff482">$module</a>=<span class="stringliteral">&#39;common&#39;</span>)
+<a name="l00028"></a>00028         {
+<a name="l00029"></a>00029                 $this-&gt;module=<a class="code" href="class_c_cache.html#ac531301c55a8d8b6c7613597218ff482">$module</a>;
+<a name="l00030"></a>00030                 $this-&gt;cacheTime=<a class="code" href="class_c_cache.html#a1f1d2b0ffba6c505a43e2713e6e4416b">$cacheTime</a>;
+<a name="l00031"></a>00031                 $this-&gt;cacheId=<a class="code" href="class_c_cache.html#a5e21d1aa3a8234d2a84aa79d10339331">$cacheId</a>;
+<a name="l00032"></a>00032                 $this-&gt;sCacheFile=MODULES_DIR.<span class="stringliteral">&#39;/main/cache/&#39;</span>.$this-&gt;module.<span class="charliteral">&#39;/&#39;</span>.<a class="code" href="class_c_cache.html#a5e21d1aa3a8234d2a84aa79d10339331">$cacheId</a>.<span class="stringliteral">&#39;.php&#39;</span>;
+<a name="l00033"></a>00033                 $this-&gt;isAlive=<span class="keyword">false</span>;
+<a name="l00034"></a>00034                 <span class="keywordflow">if</span>(file_exists($this-&gt;sCacheFile))
+<a name="l00035"></a>00035                 {
+<a name="l00036"></a>00036                         $this-&gt;isAlive=(filemtime($this-&gt;sCacheFile)+<a class="code" href="class_c_cache.html#a1f1d2b0ffba6c505a43e2713e6e4416b">$cacheTime</a>)&gt;time();
+<a name="l00037"></a>00037                 }
+<a name="l00038"></a>00038         }
+<a name="l00039"></a>00039         
+<a name="l00043"></a>00043         <span class="keyword">abstract</span> function <a class="code" href="class_c_cache.html#aa2fab92f30b0a5215d776e779ed7d5a7">Alive</a>();
+<a name="l00044"></a>00044         
+<a name="l00048"></a>00048         <span class="keyword">abstract</span> function <a class="code" href="class_c_cache.html#a5ede2e5148227d32eaf268285da9d6cb">GetData</a>();
+<a name="l00049"></a>00049         
+<a name="l00053"></a>00053         <span class="keyword">abstract</span> function <a class="code" href="class_c_cache.html#a8cef22dcb3ec1cffc39888473b4fff1f">SaveToCache</a>(<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

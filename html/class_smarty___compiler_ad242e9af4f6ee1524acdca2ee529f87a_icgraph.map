@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty___compiler.html#a7925236cb19a53ba4fb17ff51f164eb9" title="_parse_var_props" alt="" coords="215,313,348,343"/>
+<area shape="rect" id="node5" href="$class_smarty___compiler.html#a75459b547539c23758a5e3c8128651b0" title="_compile_if_tag" alt="" coords="619,133,739,163"/>
+<area shape="rect" id="node7" href="$class_smarty___compiler.html#a2a8edf6c0079fb0fa53d98837f17ff8c" title="_compile_tag" alt="" coords="1080,475,1187,504"/>
+<area shape="rect" id="node11" href="$class_smarty___compiler.html#ab320c43ef5206f5be26190264ee8e87d" title="_compile_smarty_ref" alt="" coords="397,736,552,765"/>
+<area shape="rect" id="node18" href="$class_smarty___compiler.html#ad03b182e7b84d4a40218ae9b4f8080de" title="_parse_is_expr" alt="" coords="416,133,533,163"/>
+<area shape="rect" id="node21" href="$class_smarty___compiler.html#a2ab9cbfebcdbc2807c684de842278295" title="_parse_vars_props" alt="" coords="404,448,545,477"/>
+<area shape="rect" id="node9" href="$class_smarty___compiler.html#acfef9359d4a045b3c17bb36c713d80dc" title="_compile_file" alt="" coords="1235,475,1339,504"/>
+<area shape="rect" id="node13" href="$class_smarty___compiler.html#aeeaa2b6e8325e1aa932d45a189e8bce6" title="_parse_var" alt="" coords="873,819,964,848"/>
+<area shape="rect" id="node23" href="$class_smarty___compiler.html#a226e4f37cafc2d535b3ea7ccad565d6a" title="_parse_attrs" alt="" coords="628,504,729,533"/>
+<area shape="rect" id="node50" href="$class_smarty___compiler.html#afd43133d5f05a358b1a76cf60805119e" title="_parse_modifiers" alt="" coords="613,339,744,368"/>
+<area shape="rect" id="node64" href="$class_smarty___compiler.html#a77a6bbc6a17e76b941c3cefeee9c7b2d" title="_parse_parenth_args" alt="" coords="600,564,757,593"/>
+<area shape="rect" id="node25" href="$class_smarty___compiler.html#aa2e5d024c2c566aa9baeb4636928de18" title="_compile_block_tag" alt="" coords="845,341,992,371"/>
+<area shape="rect" id="node28" href="$class_smarty___compiler.html#acbc6398ee7fbeb22e3ad5ee79b889fcc" title="_compile_capture_tag" alt="" coords="837,552,1000,581"/>
+<area shape="rect" id="node31" href="$class_smarty___compiler.html#af172dbd373fed01b38c00d0afa8b2cbe" title="_compile_custom_tag" alt="" coords="837,395,1000,424"/>
+<area shape="rect" id="node34" href="$class_smarty___compiler.html#a84b4644d15ae71ec55412e8c26cd702b" title="_compile_foreach_start" alt="" coords="833,605,1004,635"/>
+<area shape="rect" id="node37" href="$class_smarty___compiler.html#a92a50ae51f7da35e56d58065d2f880ef" title="_compile_include_php_tag" alt="" coords="824,659,1013,688"/>
+<area shape="rect" id="node40" href="$class_smarty___compiler.html#ad57897c82c75a0a37868853a544368d5" title="_compile_include_tag" alt="" coords="840,712,997,741"/>
+<area shape="rect" id="node43" href="$class_smarty___compiler.html#a155076f7f3939480a7cbb17ae1b79d7d" title="_compile_insert_tag" alt="" coords="844,765,993,795"/>
+<area shape="rect" id="node46" href="$class_smarty___compiler.html#ab1362bbbec0dd0376e46c46c7af6fe4e" title="_compile_section_start" alt="" coords="835,448,1003,477"/>
+<area shape="rect" id="node54" href="$class_smarty___compiler.html#ae513c736559da523560a8699db475881" title="_compile_registered_object_tag" alt="" coords="807,288,1031,317"/>
+<area shape="rect" id="node57" href="$class_smarty___compiler.html#a3887c9771f60165babae612a4595d1fc" title="_parse_conf_var" alt="" coords="856,181,981,211"/>
+<area shape="rect" id="node60" href="$class_smarty___compiler.html#a4509a57efd495c63579f7447c2d28972" title="_parse_section_prop" alt="" coords="841,235,996,264"/>
+</map>

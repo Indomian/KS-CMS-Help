@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/pages/usergroups.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/pages/usergroups.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="usergroups_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="usergroups_8php.html#aa2751051afe353ae55a548bdc2a59679">00003</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) )
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005   die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);
+<a name="l00006"></a>00006 }
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="comment">/*KS Engine ADMIN SYSTEM</span>
+<a name="l00009"></a>00009 <span class="comment"></span>
+<a name="l00010"></a>00010 <span class="comment">File: usergroups.php</span>
+<a name="l00011"></a>00011 <span class="comment">Original Code by BlaDe39 (c) 2008</span>
+<a name="l00012"></a>00012 <span class="comment">Назначение: управление группами пользователей*/</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CUserGroup.php&#39;</span>;
+<a name="l00015"></a><a class="code" href="usergroups_8php.html#aba1471f5413b7c782c8d08e525f8ad3b">00015</a> require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CUGModules.php&#39;</span>;
+<a name="l00016"></a>00016 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CAccess.php&#39;</span>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 global <a class="code" href="smilies_8php.html#a17f6eca81ab87d6a14c25002c2d946e8">$KS_URL</a>;
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="usergroups_8php.html#a7de2782dfb6f1748575b81bca183b9dd">00020</a> <a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>=<span class="keyword">new</span> <a class="code" href="class_c_user_group.html">CUserGroup</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="comment">//Проверка прав доступа</span>
+<a name="l00023"></a>00023 <span class="keywordflow">if</span>(<a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>-&gt;GetLevel(<span class="stringliteral">&#39;main&#39;</span>)&gt;2) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;MAIN_NOT_RIGHTS_MANAGE_USER_GROUPS&quot;</span>);
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="comment">/*Обрабатываем входные данные (постраничный вывод)*/</span>
+<a name="l00026"></a><a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">00026</a> <a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>=<span class="keyword">new</span> <a class="code" href="class_c_page_navigation.html">CPageNavigation</a>(<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>);
+<a name="l00027"></a>00027 <span class="comment">/*Обработка сортировки*/</span>
+<a name="l00028"></a><a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">00028</a> <a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>=array(<span class="stringliteral">&#39;id&#39;</span>,<span class="stringliteral">&#39;title&#39;</span>,<span class="stringliteral">&#39;level&#39;</span>);
+<a name="l00029"></a><a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">00029</a> <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=(in_array($_REQUEST[<span class="stringliteral">&#39;order&#39;</span>],<a class="code" href="usergroups_8php.html#a2a525403da6f573e9e29e4ef9da31dc0">$arSortFields</a>))?$_REQUEST[<span class="stringliteral">&#39;order&#39;</span>]:<span class="stringliteral">&#39;id&#39;</span>;
+<a name="l00030"></a><a class="code" href="usergroups_8php.html#a82cd33ca97ff99f2fcc5e9c81d65251b">00030</a> <span class="keywordflow">if</span>($_REQUEST[<span class="stringliteral">&#39;dir&#39;</span>]==<span class="stringliteral">&#39;asc&#39;</span>):$sOrderDir=<span class="stringliteral">&#39;asc&#39;</span>;<a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>=<span class="stringliteral">&#39;desc&#39;</span>;<span class="keywordflow">else</span>: $sOrderDir=<span class="stringliteral">&#39;desc&#39;</span>;<a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>=<span class="stringliteral">&#39;asc&#39;</span>;<a class="code" href="usergroups_8php.html#a82cd33ca97ff99f2fcc5e9c81d65251b">endif</a>;
+<a name="l00031"></a><a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">00031</a> <a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a>=array(
+<a name="l00032"></a>00032         <a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>=&gt;$sOrderDir,
+<a name="l00033"></a>00033 );
+<a name="l00034"></a>00034 <span class="comment">/*Получаем затребованную операцию*/</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="usergroups_8php.html#aa698a3e72116e8e778be0e95d908ee30">00036</a> <a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=$_REQUEST[<span class="stringliteral">&#39;ACTION&#39;</span>];
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;new&#39;</span>)
+<a name="l00039"></a>00039 {
+<a name="l00040"></a>00040         $userdata[<span class="stringliteral">&#39;id&#39;</span>]=-1;
+<a name="l00041"></a>00041         $obModule=<span class="keyword">new</span> <a class="code" href="class_c_u_g_modules.html">CUGModules</a>();
+<a name="l00042"></a>00042         $userdata[<span class="stringliteral">&#39;MODULES&#39;</span>]=$obModule-&gt;GetList();
+<a name="l00043"></a>00043         <span class="comment">//Добавляем в список главный модуль</span>
+<a name="l00044"></a>00044         $userdata[<span class="stringliteral">&#39;MODULES&#39;</span>][]=array(
+<a name="l00045"></a>00045                 <span class="stringliteral">&#39;name&#39;</span>=&gt;<span class="stringliteral">&#39;Главный модуль&#39;</span>,
+<a name="l00046"></a>00046                 <span class="stringliteral">&#39;directory&#39;</span>=&gt;<span class="stringliteral">&#39;main&#39;</span>,
+<a name="l00047"></a>00047                 <span class="stringliteral">&#39;LEVELS&#39;</span>=&gt;<a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>-&gt;GetAccessArray(<span class="stringliteral">&#39;main&#39;</span>));
+<a name="l00048"></a>00048         <a class="code" href="interfaces_2install_2install_8php.html#a86ef15b6dd39b492a8b2af4cf8a3fd38">$obAccess</a>=<span class="keyword">new</span> <a class="code" href="class_c_modules_access.html">CModulesAccess</a>();
+<a name="l00049"></a>00049         $userdata[<span class="stringliteral">&#39;ACCESS&#39;</span>]=$obAccess-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;group_id&#39;</span>=&gt;$id));
+<a name="l00050"></a>00050         <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 elseif (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;edit&#39;</span>)
+<a name="l00053"></a>00053 {
+<a name="l00054"></a>00054         $id=intval($_REQUEST[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00055"></a>00055         $userdata=<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$id));
+<a name="l00056"></a>00056         $obModule=<span class="keyword">new</span> <a class="code" href="class_c_u_g_modules.html">CUGModules</a>();
+<a name="l00057"></a>00057         $userdata[<span class="stringliteral">&#39;MODULES&#39;</span>]=$obModule-&gt;GetList();
+<a name="l00058"></a>00058         <span class="comment">//Добавляем в список главный модуль</span>
+<a name="l00059"></a>00059         $userdata[<span class="stringliteral">&#39;MODULES&#39;</span>][]=array(
+<a name="l00060"></a>00060                 <span class="stringliteral">&#39;name&#39;</span>=&gt;<span class="stringliteral">&#39;Главный модуль&#39;</span>,
+<a name="l00061"></a>00061                 <span class="stringliteral">&#39;directory&#39;</span>=&gt;<span class="stringliteral">&#39;main&#39;</span>,
+<a name="l00062"></a>00062                 <span class="stringliteral">&#39;LEVELS&#39;</span>=&gt;<a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>-&gt;GetAccessArray(<span class="stringliteral">&#39;main&#39;</span>));
+<a name="l00063"></a>00063         <a class="code" href="interfaces_2install_2install_8php.html#a86ef15b6dd39b492a8b2af4cf8a3fd38">$obAccess</a>=<span class="keyword">new</span> <a class="code" href="class_c_modules_access.html">CModulesAccess</a>();
+<a name="l00064"></a>00064         $userdata[<span class="stringliteral">&#39;ACCESS&#39;</span>]=$obAccess-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;group_id&#39;</span>=&gt;$id));
+<a name="l00065"></a>00065         <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00066"></a>00066 }
+<a name="l00067"></a>00067 elseif (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;save&#39;</span>)
+<a name="l00068"></a>00068 {
+<a name="l00069"></a>00069         <span class="keywordflow">try</span>
+<a name="l00070"></a>00070         {
+<a name="l00071"></a>00071                 <a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;AddAutoField(<span class="stringliteral">&#39;id&#39;</span>);
+<a name="l00072"></a>00072                 $id=<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;Save(<span class="stringliteral">&quot;CUG_&quot;</span>);
+<a name="l00073"></a>00073                 <span class="keywordflow">if</span>(!($id===<span class="keyword">false</span>))
+<a name="l00074"></a>00074                 {
+<a name="l00075"></a>00075                         $obAccess=<span class="keyword">new</span> <a class="code" href="class_c_modules_access.html">CModulesAccess</a>();
+<a name="l00076"></a>00076                         <span class="keywordflow">foreach</span>($_POST[<span class="stringliteral">&#39;CUG_level&#39;</span>] as $key=&gt;<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)
+<a name="l00077"></a>00077                         {
+<a name="l00078"></a>00078                                 $obAccess-&gt;Set($id,$key,min(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>));
+<a name="l00079"></a>00079                         }
+<a name="l00080"></a>00080                 }
+<a name="l00081"></a>00081                 CUrlParser::Redirect(<span class="stringliteral">&quot;/admin.php?&quot;</span>.$KS_URL-&gt;GetUrl(Array(<span class="stringliteral">&#39;ACTION&#39;</span>,<span class="stringliteral">&#39;id&#39;</span>)));
+<a name="l00082"></a>00082         }
+<a name="l00083"></a>00083         <span class="keywordflow">catch</span> (<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00084"></a>00084         {
+<a name="l00085"></a>00085                 $userdata=<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$id));
+<a name="l00086"></a>00086                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;last_error&#39;</span>,$e);
+<a name="l00087"></a>00087                 <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089 }
+<a name="l00090"></a>00090 elseif (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;delete&#39;</span>)
+<a name="l00091"></a>00091 {
+<a name="l00092"></a>00092         <span class="keywordflow">if</span>(in_array($_REQUEST[<span class="stringliteral">&#39;id&#39;</span>],<a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>-&gt;GetGroups()))
+<a name="l00093"></a>00093         {
+<a name="l00094"></a>00094                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;MAIN_NOT_DELETE_GROUP_YOU_BELONG&quot;</span>);
+<a name="l00095"></a>00095         }
+<a name="l00096"></a>00096         <span class="keywordflow">else</span>
+<a name="l00097"></a>00097         {
+<a name="l00098"></a>00098                 $id=intval($_REQUEST[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00099"></a>00099                 <a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;Delete($id);
+<a name="l00100"></a>00100                 $obAccess=<span class="keyword">new</span> <a class="code" href="class_c_modules_access.html">CModulesAccess</a>();
+<a name="l00101"></a>00101                 $obAccess-&gt;DeleteItems(array(<span class="stringliteral">&#39;group_id&#39;</span>=&gt;$id));
+<a name="l00102"></a>00102                 CUrlParser::Redirect(<span class="stringliteral">&quot;/admin.php?&quot;</span>.$KS_URL-&gt;GetUrl(Array(<span class="stringliteral">&#39;ACTION&#39;</span>,<span class="stringliteral">&#39;id&#39;</span>)));
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104 }
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 <span class="keywordflow">if</span>(<a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>==<span class="stringliteral">&#39;_edit&#39;</span>)
+<a name="l00107"></a>00107 {
+<a name="l00108"></a>00108         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;userdata&#39;</span>,$userdata);
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 <span class="keywordflow">else</span>
+<a name="l00111"></a>00111 {
+<a name="l00112"></a>00112         $totalUsers=<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;count();
+<a name="l00113"></a>00113         $list=<a class="code" href="interfaces_2install_2install_8php.html#a577716000383ae02f9eff1484e9c1109">$USERGROUP</a>-&gt;GetList(<a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a>,$arFilter,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetLimits($totalUsers));
+<a name="l00114"></a>00114         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;list&#39;</span>,$list);
+<a name="l00115"></a>00115         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;groups_num&#39;</span>,$totalUsers);
+<a name="l00116"></a>00116         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;pages&#39;</span>,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetPages($totalUsers));
+<a name="l00117"></a>00117         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;num_visible&#39;</span>,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetVisible());
+<a name="l00118"></a>00118         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;order&#39;</span>,Array(<span class="stringliteral">&#39;newdir&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>,<span class="stringliteral">&#39;curdir&#39;</span>=&gt;$sOrderDir,<span class="stringliteral">&#39;field&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>));
+<a name="l00119"></a>00119 }
+<a name="l00120"></a>00120 <span class="comment">/*подготавливаем данные для вывода*/</span>
+<a name="l00121"></a>00121 <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_usersgroup&#39;</span>.$page;
+<a name="l00122"></a>00122 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

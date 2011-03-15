@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty.html#a9df9b14069c359f1f45416acc6d7d81f" title="_compile_source" alt="" coords="267,85,395,115"/>
+<area shape="rect" id="node5" href="$class_smarty.html#a0c3ac497dbe0e595d4f2a85f1168a219" title="_fetch_resource_info" alt="" coords="253,139,408,168"/>
+<area shape="rect" id="node19" href="$core_8write__compiled__include_8php.html#af51abb1f65afc828687d0b091a47774e" title="smarty_core_write_compiled_include" alt="" coords="203,192,459,221"/>
+<area shape="rect" id="node25" href="$core_8write__compiled__resource_8php.html#afd921c78cd68ad02f1140dfaa55f0546" title="smarty_core_write_compiled_resource" alt="" coords="197,245,464,275"/>
+<area shape="rect" id="node7" href="$class_smarty.html#a3fd3782e935db8cbac33da3d735df988" title="_parse_resource_name" alt="" coords="513,32,684,61"/>
+<area shape="rect" id="node13" href="$class_smarty.html#a5aca16bc6189ba04a7f0a807ca08ff71" title="_read_file" alt="" coords="557,85,640,115"/>
+<area shape="rect" id="node15" href="$core_8is__secure_8php.html#a2240f07846b86da447f045254b33df5b" title="smarty_core_is_secure" alt="" coords="515,139,683,168"/>
+<area shape="rect" id="node17" href="$class_smarty.html#aa4f8246510406271300bee84f9e1bce3" title="trigger_error" alt="" coords="548,192,649,221"/>
+<area shape="rect" id="node9" href="$core_8get__include__path_8php.html#a0420062b2f204568487415679c070101" title="smarty_core_get_include_path" alt="" coords="747,5,965,35"/>
+<area shape="rect" id="node11" href="$core_8load__resource__plugin_8php.html#a8dc87f80f6684ee3585f869b18fb2d31" title="smarty_core_load_resource_plugin" alt="" coords="735,59,977,88"/>
+<area shape="rect" id="node21" href="$core_8write__file_8php.html#a3bb0fa40cf3f425efe31f50463824aa0" title="smarty_core_write_file" alt="" coords="517,245,680,275"/>
+<area shape="rect" id="node23" href="$core_8create__dir__structure_8php.html#a7bccc70f1486254bbc47950432d50b85" title="smarty_core_create_dir_structure" alt="" coords="737,245,975,275"/>
+</map>

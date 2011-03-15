@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CFilterFrame</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Поля данных</a>  </div>
+  <div class="headertitle">
+<h1>Класс CFilterFrame</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CFilterFrame" --><!-- doxytag: inherits="CFrame" -->
+<p>Базовые классы:<a class="el" href="class_c_frame.html">CFrame</a>.</p>
+<div class="dynheader">
+Граф связей класса CFilterFrame:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_filter_frame__coll__graph.png" border="0" usemap="#_c_filter_frame_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_filter_frame_coll__map" id="_c_filter_frame_coll__map">
+<area shape="rect" id="node2" href="class_c_frame.html" title="CFrame" alt="" coords="21,83,91,112"/><area shape="rect" id="node4" href="class_c_interface.html" title="CInterface" alt="" coords="13,5,99,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#ae7f0b4ea0b53511571669caf0d77f3b1">AddField</a> ($arField)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#aa56065c372ec36bd0529576721cb5d11">SetSmartyFilter</a> ($sName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#a49bd8860cc56c0d02e5603bcf6c8b583">RemoveField</a> ($sField)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#a3e7ebdb4078b69fe39032cadc070fab4">SetType</a> ($sField, $sType, $arValues=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#afce3c12aedb55b51511a792587ebc947">GetFilter</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_filter_frame.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс выводит рамку для фильтрации списков. Автоматически определяет поля фильтрации по переданным в запросе данным, может возвращать значения массива для фильтрации при использовании функций потомков <a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject::GetList()</a>. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00013">13</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a><!-- doxytag: member="CFilterFrame::__construct" ref="a095c5d389db211932136b53f25f39685" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор, выполняет работу по получению данных из строки запроса. Все поля получают тип STRING, чтобы изменить можно воспользоваться функцией SetType </p>
+
+<p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Необходимо сделать:</a></b></dt><dd>: Переместить потом в <a class="el" href="class_c_url_parser.html">CUrlParser</a> </dd></dl>
+</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00028">28</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_filter_frame_a095c5d389db211932136b53f25f39685_cgraph.png" border="0" usemap="#class_c_filter_frame_a095c5d389db211932136b53f25f39685_cgraph" alt=""/></div>
+<map name="class_c_filter_frame_a095c5d389db211932136b53f25f39685_cgraph" id="class_c_filter_frame_a095c5d389db211932136b53f25f39685_cgraph">
+<area shape="rect" id="node3" href="class_c_filter_frame.html#ae7f0b4ea0b53511571669caf0d77f3b1" title="AddField" alt="" coords="149,5,224,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="ae7f0b4ea0b53511571669caf0d77f3b1"></a><!-- doxytag: member="CFilterFrame::AddField" ref="ae7f0b4ea0b53511571669caf0d77f3b1" args="($arField)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arField</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Выполняет добавление одного поля для фильтрации. Добавлена поддержка значения по умолчанию, используется если не задано значение пользователем. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00081">81</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_filter_frame_ae7f0b4ea0b53511571669caf0d77f3b1_icgraph.png" border="0" usemap="#class_c_filter_frame_ae7f0b4ea0b53511571669caf0d77f3b1_icgraph" alt=""/></div>
+<map name="class_c_filter_frame_ae7f0b4ea0b53511571669caf0d77f3b1_icgraph" id="class_c_filter_frame_ae7f0b4ea0b53511571669caf0d77f3b1_icgraph">
+<area shape="rect" id="node3" href="class_c_filter_frame.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="128,5,224,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afce3c12aedb55b51511a792587ebc947"></a><!-- doxytag: member="CFilterFrame::GetFilter" ref="afce3c12aedb55b51511a792587ebc947" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetFilter </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возращает массив для фильтрации списка. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array массив где ключи - ключи фильтра, а значения - значения фильтрации </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00152">152</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a49bd8860cc56c0d02e5603bcf6c8b583"></a><!-- doxytag: member="CFilterFrame::RemoveField" ref="a49bd8860cc56c0d02e5603bcf6c8b583" args="($sField)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RemoveField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sField</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Выполняет удаление одного поля из результата фильтрации. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00126">126</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa56065c372ec36bd0529576721cb5d11"></a><!-- doxytag: member="CFilterFrame::SetSmartyFilter" ref="aa56065c372ec36bd0529576721cb5d11" args="($sName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetSmartyFilter </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Выполняет экспорт внутреннего массива фильтрации в переменную смарти. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sName</em>&nbsp;</td><td>-- имя переменной в шаблоне куда экспортировать значение. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00114">114</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3e7ebdb4078b69fe39032cadc070fab4"></a><!-- doxytag: member="CFilterFrame::SetType" ref="a3e7ebdb4078b69fe39032cadc070fab4" args="($sField, $sType, $arValues=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetType </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sField</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arValues</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавиливает новый тип поля фильтрации. В качестве параметров передаются, имя поля, тип и значения (необязательно). </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00137">137</a></p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="a2568d5753d3eb90cd0a3d1d06462323d"></a><!-- doxytag: member="CFilterFrame::$arFields" ref="a2568d5753d3eb90cd0a3d1d06462323d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arFields</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Список полей по которым осуществляется фильтрация. Содержит массив записей, структура записи такова: arRow=array( 'FIELD' -- имя поля для фильтрации, совпадает с именем поля в БД; 'TYPE' -- тип поля при выводе, допустимые значения: STRING,LIST,CHECKBOX; 'VALUE' -- установленное значение поля; 'VALUES' -- значения для полей типа список, массив где ключ - значение поля в БД, элемент - его название; 'METHOD' -- метод сравнения поля, по умолчанию - равно, также доступны &gt;,&lt;,~,&gt;=,&lt;= и ~ в качестве текстового поиска в поле; ) </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a> строка <a class="el" href="class_8_c_filter_frame_8php_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/interfaces/libs/<a class="el" href="class_8_c_filter_frame_8php_source.html">class.CFilterFrame.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:24. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

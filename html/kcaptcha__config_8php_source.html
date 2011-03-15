@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/captcha/kcaptcha_config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/captcha/kcaptcha_config.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="kcaptcha__config_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor"># KCAPTCHA configuration file</span>
+<a name="l00004"></a>00004 <span class="preprocessor"></span>
+<a name="l00005"></a><a class="code" href="kcaptcha__config_8php.html#ae57789f47235b0967bdfed3bda11bcc5">00005</a> <a class="code" href="kcaptcha__config_8php.html#ae57789f47235b0967bdfed3bda11bcc5">$alphabet</a> = <span class="stringliteral">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span>; # <span class="keywordflow">do</span> not change without changing font files!
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="preprocessor"># symbols used to draw CAPTCHA</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="comment">//$allowed_symbols = &quot;0123456789&quot;; #digits</span>
+<a name="l00009"></a><a class="code" href="kcaptcha__config_8php.html#a2594ab4850b4d7bc2cc523b0d6e97a25">00009</a> <a class="code" href="kcaptcha__config_8php.html#a2594ab4850b4d7bc2cc523b0d6e97a25">$allowed_symbols</a> = <span class="stringliteral">&quot;23456789abcdeghkmnpqsuvxyz&quot;</span>; #alphabet without similar symbols (o=0, 1=l, i=j, t=f)
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor"># folder with fonts</span>
+<a name="l00012"></a><a class="code" href="kcaptcha__config_8php.html#ae2cdb6cee520fcfede808d61670f59b8">00012</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#ae2cdb6cee520fcfede808d61670f59b8">$fontsdir</a> = <span class="stringliteral">&#39;fonts&#39;</span>;    
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="preprocessor"># CAPTCHA string length</span>
+<a name="l00015"></a><a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">00015</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a> = mt_rand(5,6); # random 5 or 6
+<a name="l00016"></a>00016 <span class="comment">//$length = 6;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor"># CAPTCHA image size (you do not need to change it, whis parameters is optimal)</span>
+<a name="l00019"></a><a class="code" href="kcaptcha__config_8php.html#a5795120b4b324bc4ca83f1e6fdce7d57">00019</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#a5795120b4b324bc4ca83f1e6fdce7d57">$width</a> = 120;
+<a name="l00020"></a><a class="code" href="kcaptcha__config_8php.html#a2c265bba1724371bb03e6901297c30b2">00020</a> <a class="code" href="kcaptcha__config_8php.html#a2c265bba1724371bb03e6901297c30b2">$height</a> = 60;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor"># symbol&#39;s vertical fluctuation amplitude divided by 2</span>
+<a name="l00023"></a><a class="code" href="kcaptcha__config_8php.html#ad751555663bf4e61aed78117c218dcde">00023</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#ad751555663bf4e61aed78117c218dcde">$fluctuation_amplitude</a> = 5;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor"># increase safety by prevention of spaces between symbols</span>
+<a name="l00026"></a><a class="code" href="kcaptcha__config_8php.html#a2b60b5b96f37dd28fe69d79df871552c">00026</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#a2b60b5b96f37dd28fe69d79df871552c">$no_spaces</a> = <span class="keyword">true</span>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor"># show credits</span>
+<a name="l00029"></a><a class="code" href="kcaptcha__config_8php.html#a059daafd9500e97576b3872664b757f3">00029</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#a059daafd9500e97576b3872664b757f3">$show_credits</a> = <span class="keyword">false</span>; # <span class="keyword">set</span> to <span class="keyword">false</span> to <span class="keyword">remove</span> credits line. Credits adds 12 pixels to image height
+<a name="l00030"></a><a class="code" href="kcaptcha__config_8php.html#a2019a1bb67946f4716cc99e5450c1ab0">00030</a> <a class="code" href="kcaptcha__config_8php.html#a2019a1bb67946f4716cc99e5450c1ab0">$credits</a> = <span class="stringliteral">&#39;www.captcha.ru&#39;</span>; # <span class="keywordflow">if</span> empty, HTTP_HOST will be shown
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor"># CAPTCHA image colors (RGB, 0-255)</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span><span class="comment">//$foreground_color = array(0, 0, 0);</span>
+<a name="l00034"></a>00034 <span class="comment">//$background_color = array(220, 230, 255);</span>
+<a name="l00035"></a><a class="code" href="kcaptcha__config_8php.html#a7d86980916a0850790cac663f09f3fbf">00035</a> <a class="code" href="kcaptcha__config_8php.html#a7d86980916a0850790cac663f09f3fbf">$foreground_color</a> = array(mt_rand(0,100), mt_rand(0,100), mt_rand(0,100));
+<a name="l00036"></a><a class="code" href="kcaptcha__config_8php.html#ab99599d1702f329ce472bcbf96846531">00036</a> <a class="code" href="kcaptcha__config_8php.html#ab99599d1702f329ce472bcbf96846531">$background_color</a> = array(mt_rand(200,255), mt_rand(200,255), mt_rand(200,255));
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="preprocessor"># JPEG quality of CAPTCHA image (bigger is better quality, but larger file size)</span>
+<a name="l00039"></a><a class="code" href="kcaptcha__config_8php.html#a90ffe63797caadbc62bbe8a9b8f66ebc">00039</a> <span class="preprocessor"></span><a class="code" href="kcaptcha__config_8php.html#a90ffe63797caadbc62bbe8a9b8f66ebc">$jpeg_quality</a> = 90;
+<a name="l00040"></a>00040 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

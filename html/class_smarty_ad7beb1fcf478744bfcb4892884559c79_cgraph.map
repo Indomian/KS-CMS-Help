@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty.html#aca3dac6a8fa20f5038e34af0c7f1c78b" title="_get_plugin_filepath" alt="" coords="177,5,327,35"/>
+<area shape="rect" id="node9" href="$function_8config__load_8php.html#ad46e10c84419e2bc15ba3b98cd9272bd" title="smarty_function_config_load" alt="" coords="151,59,353,88"/>
+<area shape="rect" id="node5" href="$core_8assemble__plugin__filepath_8php.html#ae99615f30658b8ecb31a2805e14fe363" title="smarty_core_assemble_plugin_filepath" alt="" coords="404,5,673,35"/>
+<area shape="rect" id="node7" href="$core_8get__include__path_8php.html#a0420062b2f204568487415679c070101" title="smarty_core_get_include_path" alt="" coords="723,5,941,35"/>
+<area shape="rect" id="node11" href="$core_8get__microtime_8php.html#af2e673e8b446d0f6e879a5b0a07c14a3" title="smarty_core_get_microtime" alt="" coords="437,59,640,88"/>
+</map>

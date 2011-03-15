@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer.html#aebe67aa5a1ffd41a69811e38427c8eba" title="__construct" alt="" coords="168,164,264,193"/>
+<area shape="rect" id="node7" href="$class_image_resizer.html#a3948e0f6d174dd5f2969b86b14d83970" title="AutoRotate" alt="" coords="169,60,263,89"/>
+<area shape="rect" id="node9" href="$class_image_resizer.html#a44a754bed17c81f25d50263ad5841f20" title="ExifData" alt="" coords="328,112,403,141"/>
+<area shape="rect" id="node18" href="$class_image_resizer.html#ace5da380aeb26e6c3ee3a410d78cad06" title="Resize" alt="" coords="185,217,247,247"/>
+<area shape="rect" id="node5" href="$main_2libs_2functions_8php.html#a9103d1a2e8cdef9b3136b8a2a844a8ba" title="GetMaxMemory" alt="" coords="469,191,592,220"/>
+<area shape="rect" id="node11" href="$class_image_resizer.html#af58ec6c8c2f01618c8683062a412482f" title="Mirror" alt="" coords="336,59,395,88"/>
+<area shape="rect" id="node13" href="$class_image_resizer.html#a7ca7e53e69392964536f2b9f9cfe0476" title="Rotate" alt="" coords="335,5,396,35"/>
+<area shape="rect" id="node15" href="$class_image_resizer.html#a920bb1eb1c6fbb82cf6dce4b85cf3179" title="ImageRotateSec" alt="" coords="468,5,593,35"/>
+<area shape="rect" id="node20" href="$class_image_resizer.html#a29c611ea77c8a508fd3323e880f37109" title="NewDirName" alt="" coords="312,216,419,245"/>
+<area shape="rect" id="node22" href="$class_image_resizer.html#a51bc2c64bc7c2bca207cafd629473ed4" title="Process" alt="" coords="329,269,401,299"/>
+<area shape="rect" id="node25" href="$class_image_resizer.html#a574dbc9475ae19829f1c03592b94d0c0" title="NewFileName" alt="" coords="477,269,584,299"/>
+<area shape="rect" id="node27" href="$class_image_resizer.html#abd0e72b81c858bdbb74770ad1f2fd470" title="NewDirCreate" alt="" coords="644,269,753,299"/>
+</map>

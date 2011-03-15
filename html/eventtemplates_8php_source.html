@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/pages/eventtemplates.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/pages/eventtemplates.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="eventtemplates_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00013"></a><a class="code" href="eventtemplates_8php.html#aa2751051afe353ae55a548bdc2a59679">00013</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CModuleAdmin.php&#39;</span>;
+<a name="l00016"></a>00016 include_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CEventTemplates.php&#39;</span>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_cmain_a_ieventtemplates.html">00018</a> <span class="keyword">class </span><a class="code" href="class_cmain_a_ieventtemplates.html">CmainAIeventtemplates</a> <span class="keyword">extends</span> <a class="code" href="class_c_module_admin.html">CModuleAdmin</a>
+<a name="l00019"></a>00019 {
+<a name="l00020"></a><a class="code" href="class_cmain_a_ieventtemplates.html#a1e9eefcc2a70b02bf62a64bc11bc0e4e">00020</a>         <span class="keyword">private</span> <a class="code" href="class_cmain_a_ieventtemplates.html#a1e9eefcc2a70b02bf62a64bc11bc0e4e">$obTemplates</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="class_cmain_a_ieventtemplates.html#a7228c6495c3654fa75e32ee71c3b173e">00022</a>         function <a class="code" href="class_cmain_a_ieventtemplates.html#a7228c6495c3654fa75e32ee71c3b173e">__construct</a>(<a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">$module</a>=<span class="stringliteral">&#39;main&#39;</span>,&amp;<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,&amp;$parent)
+<a name="l00023"></a>00023         {
+<a name="l00024"></a>00024                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>;
+<a name="l00025"></a>00025                 <a class="code" href="class_cmain_a_ieventtemplates.html#a7228c6495c3654fa75e32ee71c3b173e">parent::__construct</a>(<a class="code" href="class_c_module_admin.html#ac531301c55a8d8b6c7613597218ff482">$module</a>,<a class="code" href="class_c_module_admin.html#ac3ae29e9ccbb2006fa26fd9eb2c12117">$smarty</a>,$parent);
+<a name="l00026"></a>00026                 $this-&gt;obUser=$USER;
+<a name="l00027"></a>00027                 $this-&gt;obTemplates=<span class="keyword">new</span> <a class="code" href="class_c_event_templates.html">CEventTemplates</a>();
+<a name="l00028"></a>00028         }
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="class_cmain_a_ieventtemplates.html#a2a7f82c625b00a53f710b2ed305248d2">00030</a>         function <a class="code" href="class_cmain_a_ieventtemplates.html#a2a7f82c625b00a53f710b2ed305248d2">Table</a>()
+<a name="l00031"></a>00031         {
+<a name="l00032"></a>00032                 $ob=<span class="keyword">new</span> <a class="code" href="class___c_event_templates.html">_CEventTemplates</a>();
+<a name="l00033"></a>00033                 <span class="comment">/*Обрабатываем входные данные (постраничный вывод)*/</span>
+<a name="l00034"></a>00034                 <a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>=<span class="keyword">new</span> <a class="code" href="class_c_page_navigation.html">CPageNavigation</a>($ob);
+<a name="l00035"></a>00035                 $totalUsers=$ob-&gt;count();
+<a name="l00036"></a>00036                 <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$ob-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),<span class="keyword">false</span>,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetLimits($totalUsers));
+<a name="l00037"></a>00037                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;pages&#39;</span>,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetPages($totalUsers));
+<a name="l00038"></a>00038                 $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;data&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00039"></a>00039                 <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="class_cmain_a_ieventtemplates.html#a13e94df3b35eb8d54c12d9f67dad4841">00042</a>         function <a class="code" href="class_cmain_a_ieventtemplates.html#a13e94df3b35eb8d54c12d9f67dad4841">Run</a>()
+<a name="l00043"></a>00043         {
+<a name="l00044"></a>00044                 <span class="keywordflow">if</span>($this-&gt;obUser-&gt;GetLevel(<span class="stringliteral">&#39;main&#39;</span>)&gt;6) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;MAIN_NOT_RIGHTS_MANAGE_MAIL_TEMPLATES&quot;</span>);
+<a name="l00045"></a>00045                 <a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=$_REQUEST[<span class="stringliteral">&#39;ACTION&#39;</span>];
+<a name="l00046"></a>00046                 <span class="keywordflow">try</span>
+<a name="l00047"></a>00047                 {
+<a name="l00048"></a>00048                         <span class="keywordflow">switch</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>)
+<a name="l00049"></a>00049                         {
+<a name="l00050"></a>00050                                 <span class="keywordflow">case</span> <span class="stringliteral">&#39;edit&#39;</span>:
+<a name="l00051"></a>00051                                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=$this-&gt;obTemplates-&gt;GetTemplate($_GET[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00052"></a>00052                                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;data&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00053"></a>00053                                         <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00054"></a>00054                                 <span class="keywordflow">break</span>;
+<a name="l00055"></a>00055                                 <span class="keywordflow">case</span> <span class="stringliteral">&#39;new&#39;</span>:
+<a name="l00056"></a>00056                                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>=array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;-1&#39;</span>,<span class="stringliteral">&#39;file_id&#39;</span>=&gt;<span class="stringliteral">&#39;&#39;</span>);
+<a name="l00057"></a>00057                                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;data&#39;</span>,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00058"></a>00058                                         <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00059"></a>00059                                 <span class="keywordflow">break</span>;
+<a name="l00060"></a>00060                                         <span class="keywordflow">case</span> <span class="stringliteral">&#39;delete&#39;</span>:
+<a name="l00061"></a>00061                                         $this-&gt;obTemplates-&gt;Delete($_GET[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00062"></a>00062                                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;MAIN_EVENTS_DELETE_DONE&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00063"></a>00063                                         CUrlParser::Redirect(<span class="stringliteral">&#39;/admin.php?module=main&amp;modpage=eventtemplates&#39;</span>);
+<a name="l00064"></a>00064                                 <span class="keywordflow">break</span>;
+<a name="l00065"></a>00065                                 <span class="keywordflow">case</span> <span class="stringliteral">&#39;save&#39;</span>:
+<a name="l00066"></a>00066                                         $this-&gt;obTemplates-&gt;SaveTemplate();
+<a name="l00067"></a>00067                                         $this-&gt;obModules-&gt;AddNotify(<span class="stringliteral">&#39;MAIN_EVENTS_SAVE_DONE&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00068"></a>00068                                         CUrlParser::Redirect(<span class="stringliteral">&#39;/admin.php?module=main&amp;modpage=eventtemplates&#39;</span>);
+<a name="l00069"></a>00069                                 <span class="keywordflow">break</span>;
+<a name="l00070"></a>00070                                 <span class="keywordflow">default</span>:
+<a name="l00071"></a>00071                                         <a class="code" href="class_c_module_admin.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=$this-&gt;<a class="code" href="class_cmain_a_ieventtemplates.html#a2a7f82c625b00a53f710b2ed305248d2">Table</a>();
+<a name="l00072"></a>00072                         }
+<a name="l00073"></a>00073                 }
+<a name="l00074"></a>00074                 <span class="keywordflow">catch</span>(<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00075"></a>00075                 {
+<a name="l00076"></a>00076                         $this-&gt;smarty-&gt;assign(<span class="stringliteral">&#39;last_error&#39;</span>,$e);
+<a name="l00077"></a>00077                 }
+<a name="l00078"></a>00078                 <span class="keywordflow">return</span> <span class="stringliteral">&#39;_etemplates&#39;</span>.$page;
+<a name="l00079"></a>00079         }
+<a name="l00080"></a>00080 }
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

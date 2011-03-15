@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/catsubcat/main.inc.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/catsubcat/main.inc.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="catsubcat_2main_8inc_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00011"></a>00011 <span class="comment">/* Защита от взлома */</span>
+<a name="l00012"></a>00012 <span class="keywordflow">if</span> (!defined(<span class="stringliteral">&quot;KS_ENGINE&quot;</span>))
+<a name="l00013"></a>00013         die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">/* Глобальные переменные */</span>
+<a name="l00016"></a><a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">00016</a> global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>, <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>, <a class="code" href="catsubcat_2main_8inc_8php.html#a2f565251ad8386454acdab24fc7244e4">$KS_IND_matches</a>, <a class="code" href="catsubcat_2main_8inc_8php.html#a33701ba7c828f7a24eb4fe5c41be903b">$KS_IND_dir</a>,  <a class="code" href="catsubcat_2main_8inc_8php.html#a3f58186e9f159c5b08255858275ec9c9">$CCatsubcat</a>, <a class="code" href="catsubcat_2main_8inc_8php.html#a69db94368c3d1c30bc71073322cfbf29">$global_template</a>, <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="comment">/* Идентификатор модуля */</span>
+<a name="l00019"></a><a class="code" href="catsubcat_2main_8inc_8php.html#a68b641f7e74c6ab83515f2428072637d">00019</a> <a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a> = <span class="stringliteral">&quot;catsubcat&quot;</span>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="comment">/* Проверка прав доступа пользователя */</span>
+<a name="l00022"></a>00022 <span class="keywordflow">if</span> ($USER-&gt;GetLevel(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>) == 10)
+<a name="l00023"></a>00023         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;SYSTEM_NOT_ACCESS_MODULE&quot;</span>);
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="comment">/* Установка директории с плагинами модуля для Смарти */</span>
+<a name="l00026"></a><a class="code" href="catsubcat_2main_8inc_8php.html#a9e612e0d6e67d6ddc55a25e25d7d1303">00026</a> $smarty-&gt;plugins_dir[] = MODULES_DIR . <span class="stringliteral">&quot;/&quot;</span> . <a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a> . <span class="stringliteral">&quot;/widgets/&quot;</span>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="comment">/* Чтение конфигурации модуля */</span>
+<a name="l00029"></a><a class="code" href="catsubcat_2main_8inc_8php.html#a245b5e2095552450102848e14ec9d9d3">00029</a> <a class="code" href="catsubcat_2main_8inc_8php.html#a245b5e2095552450102848e14ec9d9d3">$module_config</a> = $KS_MODULES-&gt;GetConfigArray(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="comment">/* Если модуль подключается из шаблона, то не обращаем внимание на УРЛ */</span>
+<a name="l00032"></a>00032 <span class="keywordflow">if</span> ($KS_IND_matches[3] == <span class="stringliteral">&quot;index&quot;</span>)
+<a name="l00033"></a>00033         $KS_IND_matches[2] = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keywordflow">if</span> ($module_parameters[<span class="stringliteral">&#39;is_widget&#39;</span>] == 1)
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037         <span class="comment">/* Подключение виджета */</span>
+<a name="l00038"></a>00038         $widget_filename = MODULES_DIR . <span class="stringliteral">&quot;/&quot;</span> . <a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a> . <span class="stringliteral">&quot;/widgets/function.&quot;</span> . $module_parameters[<span class="stringliteral">&#39;action&#39;</span>] . <span class="stringliteral">&quot;.php&quot;</span>;
+<a name="l00039"></a>00039         <span class="keywordflow">if</span> (file_exists($widget_filename))
+<a name="l00040"></a>00040         {
+<a name="l00041"></a>00041                 include_once($widget_filename);
+<a name="l00042"></a>00042                 $res = call_user_func(<span class="stringliteral">&quot;smarty_function_&quot;</span> . $module_parameters[<span class="stringliteral">&#39;action&#39;</span>], $module_parameters, $smarty);
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044         <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a>[<span class="stringliteral">&#39;main_content&#39;</span>] = $res;
+<a name="l00045"></a>00045         <span class="keywordflow">return</span> <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a>[<span class="stringliteral">&#39;main_content&#39;</span>];
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 <span class="keywordflow">else</span>
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049         <span class="comment">/* Работаем как модуль, значит надо провести полную проверку переданного пути</span>
+<a name="l00050"></a>00050 <span class="comment">         * на правильность и на права доступа, если что-то не так, лучше отдать ошибку */</span>
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052          <span class="comment">/* Путь к корню модуля */</span>
+<a name="l00053"></a>00053         $root_path = $this-&gt;GetSitePath(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="keywordflow">if</span> ($root_path != <span class="stringliteral">&quot;/&quot;</span>)
+<a name="l00056"></a>00056         {
+<a name="l00057"></a>00057                 <span class="comment">/* Добавляем элемент навигационной цепочки */</span>
+<a name="l00058"></a>00058                 <span class="keywordflow">if</span> ($this-&gt;GetConfigVar(<span class="stringliteral">&quot;catsubcat&quot;</span>, <span class="stringliteral">&quot;show_nav_chain&quot;</span>,<span class="charliteral">&#39;1&#39;</span>))
+<a name="l00059"></a>00059                         <a class="code" href="class_c_n_nav_chain.html#aeeb76432d095288ac056df22cca56d16">CNNavChain::get_instance</a>()-&gt;Add( $this-&gt;arModules[<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>][<span class="stringliteral">&#39;name&#39;</span>],$root_path);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061                 $sUrl = $root_path;
+<a name="l00062"></a>00062                 $iBase = 2;
+<a name="l00063"></a>00063         }
+<a name="l00064"></a>00064         <span class="keywordflow">else</span>
+<a name="l00065"></a>00065         {
+<a name="l00066"></a>00066                 <span class="comment">/* Модуль является модулем по умолчанию */</span>
+<a name="l00067"></a>00067                 $sUrl = <span class="stringliteral">&quot;/&quot;</span>;
+<a name="l00068"></a>00068                 $iBase = 1;
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="comment">/* Устанавливать заголовок страницы или нет */</span>
+<a name="l00072"></a>00072         $module_parameters[<span class="stringliteral">&#39;setPageTitle&#39;</span>] = $this-&gt;GetConfigVar(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>, <span class="stringliteral">&quot;set_title&quot;</span>,1) ==1 ? <span class="stringliteral">&quot;Y&quot;</span> : <span class="stringliteral">&quot;N&quot;</span>;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">/* Родительский раздел */</span>
+<a name="l00075"></a>00075         $module_parameters[<span class="stringliteral">&#39;parent_id&#39;</span>] = 0;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <span class="comment">/* Формирование навигационной цепочки */</span>
+<a name="l00078"></a>00078         <span class="keywordflow">if</span> (count($KS_IND_dir) &gt; $iBase)
+<a name="l00079"></a>00079         {
+<a name="l00080"></a>00080                 <span class="comment">/* Объект для работы с категориями */</span>
+<a name="l00081"></a>00081                 <a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a> = <span class="keyword">new</span> <a class="code" href="class_c_category.html">CCategory</a>();
+<a name="l00082"></a>00082                 $arFilter = array(<span class="stringliteral">&#39;parent_id&#39;</span> =&gt; 0);
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084                 <span class="keywordflow">for</span> ($i = $iBase; $i &lt; count($KS_IND_dir); $i++)
+<a name="l00085"></a>00085                 {
+<a name="l00086"></a>00086                         $arFilter[<span class="stringliteral">&#39;text_ident&#39;</span>] = $KS_IND_dir[$i];
+<a name="l00087"></a>00087                         $arCategory = <a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>-&gt;GetRecord($arFilter);
+<a name="l00088"></a>00088                         <span class="keywordflow">if</span>($arCategory)
+<a name="l00089"></a>00089                         {
+<a name="l00090"></a>00090                                 $arFilter[<span class="stringliteral">&#39;parent_id&#39;</span>] = $arCategory[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00091"></a>00091                                 $sUrl .= $arCategory[<span class="stringliteral">&#39;text_ident&#39;</span>] . <span class="stringliteral">&quot;/&quot;</span>;
+<a name="l00092"></a>00092                                 <span class="keywordflow">if</span> (<a class="code" href="catsubcat_2main_8inc_8php.html#a245b5e2095552450102848e14ec9d9d3">$module_config</a>[<span class="stringliteral">&#39;show_nav_chain&#39;</span>] == <span class="stringliteral">&quot;1&quot;</span>)
+<a name="l00093"></a>00093                                 {
+<a name="l00094"></a>00094                                         <span class="keywordflow">if</span> ($this-&gt;IsActive(<span class="stringliteral">&quot;navigation&quot;</span>))
+<a name="l00095"></a>00095                                                 <a class="code" href="class_c_n_nav_chain.html#aeeb76432d095288ac056df22cca56d16">CNNavChain::get_instance</a>()-&gt;Add( $arCategory[<span class="stringliteral">&#39;title&#39;</span>],$sUrl);
+<a name="l00096"></a>00096                                 }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098                                 <span class="comment">/* Проверка прав доступа */</span>
+<a name="l00099"></a>00099                                 <span class="keywordflow">if</span> (<a class="code" href="guestbook2_2main_8inc_8php.html#a7b14efceeea16ca4b1531a76e362137b">$access_level</a> &gt; 8)
+<a name="l00100"></a>00100                                         <span class="keywordflow">if</span>(!in_array($arCategory[<span class="stringliteral">&#39;access_view&#39;</span>], <a class="code" href="guestbook2_2main_8inc_8php.html#a4ed40f5afb7819c5663a20bdb58472a8">$arUserGroups</a>))
+<a name="l00101"></a>00101                                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_access_error.html">CAccessError</a>(<span class="stringliteral">&quot;CATSUBCAT_NOT_ACCESS_SECTION&quot;</span>);
+<a name="l00102"></a>00102                                 $module_parameters[<span class="stringliteral">&#39;parent_id&#39;</span>] = $arCategory[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00103"></a>00103                         }
+<a name="l00104"></a>00104                         <span class="keywordflow">else</span>
+<a name="l00105"></a>00105                         {
+<a name="l00106"></a>00106                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_h_t_t_p_error.html">CHTTPError</a>(<span class="stringliteral">&quot;SYSTEM_SECTION_NOT_FOUND&quot;</span>, 404);
+<a name="l00107"></a>00107                         }
+<a name="l00108"></a>00108                 }
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110         <span class="comment">/* Определение виджета для подключения в качестве контента страницы */</span>
+<a name="l00111"></a>00111         <span class="keywordflow">if</span> (strlen($KS_IND_matches[2]) &gt; 0 OR ($module_parameters[<span class="stringliteral">&#39;action&#39;</span>] == <span class="stringliteral">&quot;CatElement&quot;</span>))
+<a name="l00112"></a>00112         {
+<a name="l00113"></a>00113                 <span class="comment">/* Элемент каталога */</span>
+<a name="l00114"></a>00114                 $module_parameters[<span class="stringliteral">&#39;text_ident&#39;</span>] = $KS_IND_matches[3];
+<a name="l00115"></a>00115                 $module_parameters[<span class="stringliteral">&#39;setPageTitle&#39;</span>]=$KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;catsubcat&#39;</span>,<span class="stringliteral">&#39;set_title&#39;</span>,1)==1?<span class="charliteral">&#39;Y&#39;</span>:<span class="charliteral">&#39;N&#39;</span>;
+<a name="l00116"></a>00116                 <span class="keywordflow">if</span>(!function_exists(<span class="stringliteral">&#39;smarty_function_CatElement&#39;</span>))
+<a name="l00117"></a>00117                         include_once(<span class="stringliteral">&quot;widgets/function.CatElement.php&quot;</span>);
+<a name="l00118"></a>00118                 $res = <a class="code" href="function_8_cat_element_8php.html#a67e24d1cb2d2a2926d5753863bf21d51">smarty_function_CatElement</a>($module_parameters, $smarty);
+<a name="l00119"></a>00119         }
+<a name="l00120"></a>00120         elseif ($_GET[<span class="stringliteral">&#39;type&#39;</span>] == <span class="stringliteral">&quot;rss&quot;</span>)
+<a name="l00121"></a>00121         {
+<a name="l00122"></a>00122                 <span class="comment">/* RSS */</span>
+<a name="l00123"></a>00123                 $module_parameters[<span class="stringliteral">&#39;tpl&#39;</span>] = <span class="stringliteral">&quot;RSS&quot;</span>;
+<a name="l00124"></a>00124                 $module_parameters[<span class="stringliteral">&#39;sort_by&#39;</span>] = $KS_MODULES-&gt;GetConfigVar(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>, <span class="stringliteral">&quot;sort_by&quot;</span>,<span class="stringliteral">&#39;id&#39;</span>);
+<a name="l00125"></a>00125                 $module_parameters[<span class="stringliteral">&#39;sort_dir&#39;</span>] = $KS_MODULES-&gt;GetConfigVar(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>, <span class="stringliteral">&quot;sort_dir&quot;</span>,<span class="stringliteral">&#39;asc&#39;</span>);
+<a name="l00126"></a>00126                 $module_parameters[<span class="stringliteral">&#39;announces_count&#39;</span>] = $KS_MODULES-&gt;GetConfigVar(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>, <span class="stringliteral">&quot;count&quot;</span>,<span class="stringliteral">&#39;10&#39;</span>);
+<a name="l00127"></a>00127                 $module_parameters[<span class="stringliteral">&#39;parent_id&#39;</span>] = $module_parameters[<span class="stringliteral">&#39;parent_id&#39;</span>];
+<a name="l00128"></a>00128                 $module_parameters[<span class="stringliteral">&#39;select_from_children&#39;</span>] = $KS_MODULES-&gt;GetConfigVar(<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>, <span class="stringliteral">&quot;select_from_children&quot;</span>,<span class="charliteral">&#39;y&#39;</span>);
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130                 <span class="keywordflow">if</span> (!function_exists(<span class="stringliteral">&quot;smarty_function_CatAnnounce&quot;</span>))
+<a name="l00131"></a>00131                         include_once(<span class="stringliteral">&quot;widgets/function.CatAnnounce.php&quot;</span>);
+<a name="l00132"></a>00132                 $res = <a class="code" href="function_8_cat_announce_8php.html#a7e482c7616398e08bcd7a361414ca7ce">smarty_function_CatAnnounce</a>($module_parameters, $smarty);
+<a name="l00133"></a>00133                 <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a>[<span class="stringliteral">&#39;include_global_template&#39;</span>] = 0;
+<a name="l00134"></a>00134         }
+<a name="l00135"></a>00135         <span class="keywordflow">else</span>
+<a name="l00136"></a>00136         {
+<a name="l00137"></a>00137                 <span class="comment">/* Категория */</span>
+<a name="l00138"></a>00138                 $module_parameters[<span class="stringliteral">&#39;ID&#39;</span>] = $module_parameters[<span class="stringliteral">&#39;parent_id&#39;</span>];
+<a name="l00139"></a>00139                 include_once(<span class="stringliteral">&quot;widgets/function.CatCategory.php&quot;</span>);
+<a name="l00140"></a>00140                 $res = <a class="code" href="function_8_cat_category_8php.html#a7a2da865873df226e3eeb0d7c3690d98">smarty_function_CatCategory</a>($module_parameters, $smarty);
+<a name="l00141"></a>00141         }
+<a name="l00142"></a>00142 }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 <span class="comment">/* Возвращаем результат работы */</span>
+<a name="l00145"></a>00145 <a class="code" href="self_8simple__expanding__menu_8php.html#a73004ce9cd673c1bfafd1dc351134797">$output</a>[<span class="stringliteral">&#39;main_content&#39;</span>] = $res;
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

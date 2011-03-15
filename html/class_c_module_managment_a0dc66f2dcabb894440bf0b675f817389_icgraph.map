@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="135,5,457,35"/>
+<area shape="rect" id="node5" href="$class_c_module_managment.html#a78e32f236574e2d1aa2f33e50b0d5410" title="CopyModuleTemplates" alt="" coords="213,59,379,88"/>
+<area shape="rect" id="node7" href="$class_c_module_managment.html#afd2f773f311568e271d84045e233ca5b" title="GetUninstalledList" alt="" coords="227,112,365,141"/>
+<area shape="rect" id="node9" href="$class_c_admin_module_managment.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CAdminModuleManagment::init" alt="" coords="185,165,407,195"/>
+<area shape="rect" id="node11" href="$class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="267,219,325,248"/>
+<area shape="rect" id="node13" href="$class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="583,189,665,219"/>
+<area shape="rect" id="node21" href="$class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="261,323,331,352"/>
+<area shape="rect" id="node35" href="$class_c_module_managment.html#a1bc05652fce4b10caf256f5200472ac0" title="IsInstallable" alt="" coords="248,376,344,405"/>
+<area shape="rect" id="node38" href="$class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="UnInstall" alt="" coords="257,429,335,459"/>
+<area shape="rect" id="node15" href="$class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="789,189,885,219"/>
+<area shape="rect" id="node17" href="$class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="967,163,1177,192"/>
+<area shape="rect" id="node19" href="$class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="933,216,1211,245"/>
+<area shape="rect" id="node23" href="$class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="507,243,741,272"/>
+<area shape="rect" id="node25" href="$class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="GetSitePath" alt="" coords="575,296,673,325"/>
+<area shape="rect" id="node27" href="$class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="GetTitle" alt="" coords="589,349,659,379"/>
+<area shape="rect" id="node29" href="$class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="IncludeTreeFile" alt="" coords="568,403,680,432"/>
+<area shape="rect" id="node31" href="$class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb" title="IsDefault" alt="" coords="585,456,663,485"/>
+<area shape="rect" id="node33" href="$class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89" title="module" alt="" coords="589,509,659,539"/>
+</map>

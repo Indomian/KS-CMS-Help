@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/pages/fields_getList.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/pages/fields_getList.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="fields__get_list_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="fields__get_list_8php.html#a3fb3edc68f6da052397a5c2262942834">00003</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00004"></a>00004 <span class="comment">/*KS Engine ADMIN SYSTEM</span>
+<a name="l00005"></a>00005 <span class="comment"></span>
+<a name="l00006"></a>00006 <span class="comment">File: field_getList.php</span>
+<a name="l00007"></a>00007 <span class="comment">Original Code by BlaDe39 (c) 2008</span>
+<a name="l00008"></a>00008 <span class="comment">Назначение: вывод окна отображения привязки к элементам дополнительных полей*/</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="comment">//Устанавливаем шаблон отрисовки результатов</span>
+<a name="l00011"></a>00011 global <a class="code" href="main_2fields_2linkcat_2config_8php.html#a3fb3edc68f6da052397a5c2262942834">$_ks_modules_linkable</a>;
+<a name="l00012"></a><a class="code" href="fields__get_list_8php.html#a0a44e6760141442bb439b1ab1395d8ff">00012</a> <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;admin/main_getList.tpl&#39;</span>;
+<a name="l00013"></a><a class="code" href="fields__get_list_8php.html#a29eece98f16fb857997c33843fc4d810">00013</a> <span class="keywordflow">if</span>($_REQUEST[<span class="stringliteral">&#39;type&#39;</span>]==<span class="stringliteral">&#39;elm&#39;</span>)
+<a name="l00014"></a>00014 {
+<a name="l00015"></a>00015         <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;admin/main_getElmList.tpl&#39;</span>;
+<a name="l00016"></a>00016 }
+<a name="l00017"></a>00017 <span class="comment">//Получаем значения входных переменных</span>
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00020"></a><a class="code" href="fields__get_list_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">00020</a> <a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>=$KS_MODULES-&gt;GetInstalledList();
+<a name="l00021"></a>00021 <span class="keywordflow">foreach</span> (<a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a> as $item)
+<a name="l00022"></a>00022 {
+<a name="l00023"></a>00023         $arTitles[$item[<span class="stringliteral">&#39;directory&#39;</span>]]=$item[<span class="stringliteral">&#39;name&#39;</span>];
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 <span class="keywordflow">foreach</span> ($_ks_modules_linkable as $item)
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027     <span class="keywordflow">if</span> ($item==$_GET[<span class="stringliteral">&#39;mod&#39;</span>])
+<a name="l00028"></a>00028         $sel=<span class="stringliteral">&quot;selected=\&quot;selected\&quot;&quot;</span>;
+<a name="l00029"></a>00029     <span class="keywordflow">else</span>
+<a name="l00030"></a>00030         $sel=<span class="stringliteral">&quot;&quot;</span>;
+<a name="l00031"></a>00031         <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[]=Array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$item,<span class="stringliteral">&#39;title&#39;</span>=&gt;$arTitles[$item],<span class="stringliteral">&#39;sel&#39;</span>=&gt;$sel);
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="comment">// Формирование данных для вывода</span>
+<a name="l00035"></a>00035 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;num_visible&#39;</span>,$iElCount);
+<a name="l00036"></a>00036 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;dataList&#39;</span>,<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>);
+<a name="l00037"></a>00037 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;pages&#39;</span>,$pages);
+<a name="l00038"></a>00038 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;order&#39;</span>,Array(<span class="stringliteral">&#39;newdir&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a0aa002b79564cd3610e4dffdb2b3d1df">$sNewDir</a>,<span class="stringliteral">&#39;curdir&#39;</span>=&gt;$sOrderDir,<span class="stringliteral">&#39;field&#39;</span>=&gt;<a class="code" href="usergroups_8php.html#a8763a905c873b701142957d5b86b0eca">$sOrderField</a>));
+<a name="l00039"></a>00039 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;display(<a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>);
+<a name="l00040"></a>00040 die();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

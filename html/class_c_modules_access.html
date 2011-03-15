@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CModulesAccess</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a>  </div>
+  <div class="headertitle">
+<h1>Класс CModulesAccess</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CModulesAccess" --><!-- doxytag: inherits="CBaseAccess" -->
+<p>Базовые классы:<a class="el" href="class_c_base_access.html">CBaseAccess</a>.</p>
+<div class="dynheader">
+Граф связей класса CModulesAccess:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_modules_access__coll__graph.png" border="0" usemap="#_c_modules_access_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_modules_access_coll__map" id="_c_modules_access_coll__map">
+<area shape="rect" id="node2" href="class_c_base_access.html" title="CBaseAccess" alt="" coords="16,392,123,421"/><area shape="rect" id="node4" href="class_c_fields_object.html" title="CFieldsObject" alt="" coords="16,315,123,344"/><area shape="rect" id="node6" href="class_c_files_object.html" title="CFilesObject" alt="" coords="20,237,119,267"/><area shape="rect" id="node8" href="class_c_object.html" title="CObject" alt="" coords="33,160,105,189"/><area shape="rect" id="node10" href="class_c_base_list.html" title="CBaseList" alt="" coords="27,83,112,112"/><area shape="rect" id="node12" href="class_c_base_object.html" title="CBaseObject" alt="" coords="17,5,121,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_modules_access.html#ada959ea544ccb97467410e5153627977">__construct</a> ($sTable='usergroups_levels')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_modules_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">Set</a> ($group_id, $module, $level)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_modules_access.html#ad92a22dd909a1677de6d1bfdc5d59b3c">GetList</a> ($arOrder=false, $arFilter=false, $arLimit=false, $arSelect=false, $arGroupBy=false)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс для управления правами доступа групп пользователей к модулям </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a> строка <a class="el" href="class_8_c_access_8php_source.html#l00041">41</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="ada959ea544ccb97467410e5153627977"></a><!-- doxytag: member="CModulesAccess::__construct" ref="ada959ea544ccb97467410e5153627977" args="($sTable='usergroups_levels')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em> = <code>'usergroups_levels'</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор класса. Заполняет атрибуты класса значениями по умолчанию. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sTable</em>&nbsp;</td><td>-- имя таблицы для работы (без префикса). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_object.html#ab54990bcb0ebceb8909f3303b01293cf">CObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a> строка <a class="el" href="class_8_c_access_8php_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="ad92a22dd909a1677de6d1bfdc5d59b3c"></a><!-- doxytag: member="CModulesAccess::GetList" ref="ad92a22dd909a1677de6d1bfdc5d59b3c" args="($arOrder=false, $arFilter=false, $arLimit=false, $arSelect=false, $arGroupBy=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetList </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arOrder</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>limit</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arSelect</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arGroupBy</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция возвращает отфильтрованный и упорядоченый список значений из базы данных. Возращаемые данные - массив строк, каждая строка - асоциатиный массив по структуре сходный либо с запросом либо с базой данных из которой осуществляется выборка. </p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.2 Добавлена обработка сложных имен полей, добавлена поддержка выборки из нескольких таблиц </dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arOrder</em>&nbsp;</td><td>-- ассоциативный массив упорядочивания, ключ - поле для упорядочивания, значение - направление (asc|desc); </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$arFilter</em>&nbsp;</td><td>-- ассоциатвный массив фильтрации, ключ - поле, значение - значение поля (приводиться в sql безопасный вид) перед именем поля можно указывать одну из следующих операций: &gt;,&lt;,!,&gt;=,&lt;= - операции сравнения; ~ - опреация текстового сравнения LIKE %%; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$limit</em>&nbsp;</td><td>-- количество выбираемых элементов; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$arSelect</em>&nbsp;</td><td>-- список выбираемых полей. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a> строка <a class="el" href="class_8_c_access_8php_source.html#l00062">62</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_modules_access_ad92a22dd909a1677de6d1bfdc5d59b3c_cgraph.png" border="0" usemap="#class_c_modules_access_ad92a22dd909a1677de6d1bfdc5d59b3c_cgraph" alt=""/></div>
+<map name="class_c_modules_access_ad92a22dd909a1677de6d1bfdc5d59b3c_cgraph" id="class_c_modules_access_ad92a22dd909a1677de6d1bfdc5d59b3c_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="121,5,273,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c2f95dfeb16d0b687d2205d1d037e89"></a><!-- doxytag: member="CModulesAccess::Set" ref="a0c2f95dfeb16d0b687d2205d1d037e89" args="($group_id, $module, $level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Set </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>group_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>level</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет запись прав в базу данных. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$group_id</em>&nbsp;</td><td>идентификатор группы </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>идентификатор элемента для которого устанавливаются права </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$leve</em>&nbsp;</td><td>уровень прав доступа </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_base_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">CBaseAccess</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a> строка <a class="el" href="class_8_c_access_8php_source.html#l00049">49</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_modules_access_a0c2f95dfeb16d0b687d2205d1d037e89_cgraph.png" border="0" usemap="#class_c_modules_access_a0c2f95dfeb16d0b687d2205d1d037e89_cgraph" alt=""/></div>
+<map name="class_c_modules_access_a0c2f95dfeb16d0b687d2205d1d037e89_cgraph" id="class_c_modules_access_a0c2f95dfeb16d0b687d2205d1d037e89_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="99,139,245,168"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="293,139,419,168"/><area shape="rect" id="node7" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="472,5,616,35"/><area shape="rect" id="node9" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="468,59,620,88"/><area shape="rect" id="node11" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="469,112,619,141"/><area shape="rect" id="node13" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="468,165,620,195"/><area shape="rect" id="node15" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="468,219,620,248"/><area shape="rect" id="node17" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="469,272,619,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:25. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

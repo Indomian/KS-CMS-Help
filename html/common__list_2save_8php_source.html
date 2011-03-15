@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/common_list/save.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/common_list/save.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="common__list_2save_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00016"></a>00016 <span class="keywordflow">if</span>(is_array(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>))
+<a name="l00017"></a>00017 {
+<a name="l00018"></a>00018         <span class="keywordflow">if</span>(count(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>)&lt;=$arField[<span class="stringliteral">&#39;option_1&#39;</span>])
+<a name="l00019"></a>00019         {
+<a name="l00020"></a>00020                 <a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>=str_replace(<span class="charliteral">&#39;&gt;&#39;</span>,<span class="stringliteral">&#39;&amp;gt;&#39;</span>,<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>);
+<a name="l00021"></a>00021                 <a class="code" href="main_2libs_2functions_8php.html#a5190c90e33f5fa962b4a7ec7ac7b0704">ClearArray</a>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>);
+<a name="l00022"></a>00022                 <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>=join(<span class="charliteral">&#39;&gt;&#39;</span>,<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>).<span class="charliteral">&#39;&gt;&#39;</span>;
+<a name="l00023"></a>00023         }
+<a name="l00024"></a>00024         <span class="keywordflow">else</span>
+<a name="l00025"></a>00025         {
+<a name="l00026"></a>00026                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;MAIN_MANY_VALUES_FOR_FIELD&quot;</span>, 0, $arField[<span class="stringliteral">&#39;option_1&#39;</span>]);
+<a name="l00027"></a>00027         }
+<a name="l00028"></a>00028 }
+<a name="l00029"></a>00029 <span class="keywordflow">else</span>
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031         <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>=<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>.<span class="charliteral">&#39;&gt;&#39;</span>;
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

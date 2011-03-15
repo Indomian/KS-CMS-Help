@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/navigation/widgets/function.ShowNavChain.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/navigation/widgets/function.ShowNavChain.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="function_8_show_nav_chain_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00010"></a><a class="code" href="function_8_show_nav_chain_8php.html#a3208ee47752b3d071f14e935d5935bdf">00010</a> function <a class="code" href="function_8_show_nav_chain_8php.html#a3208ee47752b3d071f14e935d5935bdf">smarty_function_ShowNavChain</a>($params, &amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>) 
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012         global <a class="code" href="catsubcat_2main_8inc_8php.html#a69db94368c3d1c30bc71073322cfbf29">$global_template</a>,<a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00013"></a>00013         $arNC=array(
+<a name="l00014"></a>00014                 <span class="stringliteral">&#39;arr&#39;</span>=&gt;<a class="code" href="class_c_n_nav_chain.html#aeeb76432d095288ac056df22cca56d16">CNNavChain::get_instance</a>()-&gt;NC,
+<a name="l00015"></a>00015                 <span class="stringliteral">&#39;delimiter&#39;</span>=&gt;$params[<span class="stringliteral">&#39;delimiter&#39;</span>]
+<a name="l00016"></a>00016         );
+<a name="l00017"></a>00017         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;NC_arr&#39;</span>,$arNC);
+<a name="l00018"></a>00018         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&quot;items&quot;</span>, <a class="code" href="class_c_n_nav_chain.html#aeeb76432d095288ac056df22cca56d16">CNNavChain::get_instance</a>()-&gt;NC);
+<a name="l00019"></a>00019         <span class="comment">/* Поиск шаблона для виджета и возвращение результата */</span>
+<a name="l00020"></a>00020         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=$KS_MODULES-&gt;RenderTemplate(<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>,<span class="stringliteral">&#39;/navigation/ShowNavChain&#39;</span>,$params[<span class="stringliteral">&#39;global_template&#39;</span>],$params[<span class="stringliteral">&#39;tpl&#39;</span>]);
+<a name="l00021"></a>00021         <span class="keywordflow">return</span> <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>;
+<a name="l00022"></a>00022 }
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="function_8_show_nav_chain_8php.html#a31be83ce893448a71f7e9bd247111439">00024</a> function <a class="code" href="function_8_show_nav_chain_8php.html#a31be83ce893448a71f7e9bd247111439">widget_params_ShowNavChain</a>()
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026         <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=array(
+<a name="l00027"></a>00027                 <span class="stringliteral">&#39;delimiter&#39;</span>=&gt;array(
+<a name="l00028"></a>00028                   <span class="stringliteral">&#39;title&#39;</span>=&gt;<span class="stringliteral">&#39;Разделитель пунктов&#39;</span>,
+<a name="l00029"></a>00029                   <span class="stringliteral">&#39;type&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
+<a name="l00030"></a>00030                   <span class="stringliteral">&#39;value&#39;</span>=&gt;<span class="stringliteral">&#39;&amp;nbsp;/&amp;nbsp;&#39;</span>,
+<a name="l00031"></a>00031                 )
+<a name="l00032"></a>00032         );
+<a name="l00033"></a>00033         <span class="keywordflow">return</span> array(
+<a name="l00034"></a>00034                 <span class="stringliteral">&#39;fields&#39;</span>=&gt;<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>,
+<a name="l00035"></a>00035         );
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

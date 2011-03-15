@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/catsubcat/libs/class.CCommonElement.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/catsubcat/libs/class.CCommonElement.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_common_element_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a><a class="code" href="class_8_c_common_element_8php.html#aa2751051afe353ae55a548bdc2a59679">00014</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 require_once MODULES_DIR.<span class="stringliteral">&#39;/catsubcat/libs/class.CCategorySubCategory.php&#39;</span>;
+<a name="l00017"></a>00017 
+<a name="l00021"></a><a class="code" href="class_c_common_element.html">00021</a> <span class="keyword">class </span><a class="code" href="class_c_common_element.html">CCommonElement</a> <span class="keyword">extends</span> <a class="code" href="class_c_category_sub_category.html">CCategorySubCategory</a>
+<a name="l00022"></a>00022 {
+<a name="l00023"></a><a class="code" href="class_c_common_element.html#a56d8936de099d503419961239fd75b0b">00023</a>         <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="class_c_common_element.html#a56d8936de099d503419961239fd75b0b">$__arUserFields</a>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="class_c_common_element.html#a4c34f8d2679b9e9222e861e54200c2a9">00025</a>         function <a class="code" href="class_c_common_element.html#a4c34f8d2679b9e9222e861e54200c2a9">__construct</a>($sCategoryTable=<span class="stringliteral">&quot;&quot;</span>,$sElementsTable=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00026"></a>00026         {
+<a name="l00027"></a>00027                 <a class="code" href="class_c_common_element.html#a4c34f8d2679b9e9222e861e54200c2a9">parent::__construct</a>($sElementsTable,$sCategoryTable);
+<a name="l00028"></a>00028         }
+<a name="l00029"></a>00029 
+<a name="l00034"></a><a class="code" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356">00034</a>         function <a class="code" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356">RestoreItems</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00035"></a>00035         {
+<a name="l00036"></a>00036                 <span class="keywordflow">if</span>(!$this-&gt;<a class="code" href="class_c_restorable.html#a3819dc4e3a5f8dd3e5a72af495faa897">ParseFilter</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>))
+<a name="l00037"></a>00037                         <a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>[<span class="stringliteral">&#39;&gt;deleted&#39;</span>]=<span class="charliteral">&#39;0&#39;</span>;
+<a name="l00038"></a>00038                 <a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>=<span class="keyword">new</span> <a class="code" href="class_c_category.html">CCategory</a>($this-&gt;sElTable,$this-&gt;sTable);
+<a name="l00039"></a>00039                 $arItems=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00040"></a>00040                 <span class="keywordflow">if</span>(is_array($arItems)&amp;&amp;count($arItems)&gt;0)
+<a name="l00041"></a>00041                 {
+<a name="l00042"></a>00042                         $arCats=array();
+<a name="l00043"></a>00043                         <span class="keywordflow">foreach</span>($arItems as $key=&gt;$item)
+<a name="l00044"></a>00044                         {
+<a name="l00045"></a>00045                                 $arCats[]=$item[<span class="stringliteral">&#39;parent_id&#39;</span>];
+<a name="l00046"></a>00046                         }
+<a name="l00047"></a>00047                         <span class="keywordflow">if</span>(count($arCats)&gt;0)
+<a name="l00048"></a>00048                         {
+<a name="l00049"></a>00049                                 $arCategory=<a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),array(<span class="stringliteral">&#39;-&gt;id&#39;</span>=&gt;<span class="stringliteral">&quot;(&quot;</span>.join(<span class="charliteral">&#39;,&#39;</span>,$arCats).<span class="charliteral">&#39;)&#39;</span>,<span class="stringliteral">&#39;&gt;deleted&#39;</span>=&gt;-1));
+<a name="l00050"></a>00050                                 <span class="keywordflow">if</span>(is_array($arCategory)&amp;&amp;count($arCategory)&gt;0)
+<a name="l00051"></a>00051                                 {
+<a name="l00052"></a>00052                                         <span class="keywordflow">foreach</span>($arCategory as $arRow)
+<a name="l00053"></a>00053                                         {
+<a name="l00054"></a>00054                                                 <span class="keywordflow">if</span>($arRow[<span class="stringliteral">&#39;deleted&#39;</span>]&gt;0)
+<a name="l00055"></a>00055                                                 {
+<a name="l00056"></a>00056                                                         <a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>-&gt;RestoreItems(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$arRow[<span class="stringliteral">&#39;id&#39;</span>],<span class="stringliteral">&#39;childs&#39;</span>=&gt;<span class="charliteral">&#39;N&#39;</span>));
+<a name="l00057"></a>00057                                                 }
+<a name="l00058"></a>00058                                         }
+<a name="l00059"></a>00059                                 }
+<a name="l00060"></a>00060                         }
+<a name="l00061"></a>00061                         <span class="keywordflow">return</span> <a class="code" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356">parent::RestoreItems</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>);
+<a name="l00062"></a>00062                 }
+<a name="l00063"></a>00063                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065 
+<a name="l00070"></a><a class="code" href="class_c_common_element.html#a455c1c357c08905bc9b9909e55e0c1e4">00070</a>         function <a class="code" href="class_c_common_element.html#a455c1c357c08905bc9b9909e55e0c1e4">GenHash</a>($arRecord)
+<a name="l00071"></a>00071         {
+<a name="l00072"></a>00072                 <span class="keywordflow">return</span> <span class="charliteral">&#39;e&#39;</span>.$arRecord[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074 
+<a name="l00075"></a><a class="code" href="class_c_common_element.html#aca7d5ec2e95d269b3cb917fbb0943aed">00075</a>         function <a class="code" href="class_c_common_element.html#aca7d5ec2e95d269b3cb917fbb0943aed">GetParents</a>($id)
+<a name="l00076"></a>00076         {
+<a name="l00077"></a>00077                 echo <span class="stringliteral">&quot;&lt;pre&gt;&quot;</span>;
+<a name="l00078"></a>00078                 print_r(parent::element_info(Array(<span class="stringliteral">&#39;element&#39;</span>=&gt;$this-&gt;sTable,<span class="stringliteral">&#39;catsubcat&#39;</span>=&gt;$this-&gt;sCatTable),intval($id),<span class="keyword">true</span>,0,<span class="stringliteral">&#39;text_ident&#39;</span>));
+<a name="l00079"></a>00079                 echo <span class="stringliteral">&quot;&lt;/pre&gt;&quot;</span>;
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00085"></a><a class="code" href="class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf">00085</a>         function <a class="code" href="class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf">GetRecord</a>(<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>)
+<a name="l00086"></a>00086         {
+<a name="l00087"></a>00087                 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>;
+<a name="l00088"></a>00088                 $ks_db-&gt;add2log(__METHOD__.<span class="stringliteral">&#39; at &#39;</span>.__LINE__.<span class="stringliteral">&#39; in &#39;</span>.__FILE__);
+<a name="l00089"></a>00089                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=<a class="code" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a>;
+<a name="l00090"></a>00090                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="charliteral">&#39;?&#39;</span>.$this-&gt;sElTable.<span class="stringliteral">&#39;.id&#39;</span>]=$this-&gt;sTable.<span class="stringliteral">&#39;.parent_id&#39;</span>;
+<a name="l00091"></a>00091                 <span class="comment">//Генерируем строку поиска</span>
+<a name="l00092"></a>00092                 $sWhere=$this-&gt;<a class="code" href="class_c_category_sub_category.html#a19e151c88b2031d646f21b274f8fae0e">_GenWhere</a>(<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>);
+<a name="l00093"></a>00093                 <span class="keywordflow">if</span>(strlen($sWhere)&gt;0)
+<a name="l00094"></a>00094                 {
+<a name="l00095"></a>00095                         <span class="comment">//Формируем запрос</span>
+<a name="l00096"></a>00096                         $query=<span class="stringliteral">&quot;SELECT &quot;</span>.$this-&gt;arTables[$this-&gt;sElTable].<span class="stringliteral">&quot;.id as parent_id&quot;</span>;
+<a name="l00097"></a>00097                         <span class="comment">//Получаем список полей внутренних</span>
+<a name="l00098"></a>00098                         <span class="comment">//Исправление бага с работой с доп полями</span>
+<a name="l00099"></a>00099                         <a class="code" href="class_c_category_sub_category.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=$this-&gt;arFields;
+<a name="l00100"></a>00100                         <span class="keywordflow">foreach</span>(<a class="code" href="class_c_category_sub_category.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a> as $sField)
+<a name="l00101"></a>00101                         {
+<a name="l00102"></a>00102                                 $query.= <span class="stringliteral">&quot; ,&quot;</span>.$this-&gt;arTables[$this-&gt;sTable].<span class="stringliteral">&quot;.$sField&quot;</span>;
+<a name="l00103"></a>00103                         }
+<a name="l00104"></a>00104                         <span class="comment">//Получаем список полей раздела</span>
+<a name="l00105"></a>00105                         $arCatFields=$this-&gt;<a class="code" href="class_c_object.html#adc9b6bf70f31025bde56faade9aa147b">_GetTableFields</a>($this-&gt;sElTable);
+<a name="l00106"></a>00106                         <span class="keywordflow">foreach</span>($arCatFields as $sField=&gt;$arField)
+<a name="l00107"></a>00107                         {
+<a name="l00108"></a>00108                                 <span class="keywordflow">if</span>($sField==<span class="stringliteral">&#39;id&#39;</span>) <span class="keywordflow">continue</span>;
+<a name="l00109"></a>00109                                 $query.= <span class="stringliteral">&quot; ,&quot;</span>.$this-&gt;arTables[$this-&gt;sElTable].<span class="stringliteral">&quot;.$sField as CAT_$sField&quot;</span>;
+<a name="l00110"></a>00110                         }
+<a name="l00111"></a>00111                         $query.=<span class="stringliteral">&quot;  FROM &quot;</span>.$this-&gt;_GenFrom().<span class="stringliteral">&quot; $sWhere LIMIT 1&quot;</span>;
+<a name="l00112"></a>00112                         <span class="comment">//echo $query;</span>
+<a name="l00113"></a>00113                         $res=$ks_db-&gt;query($query);
+<a name="l00114"></a>00114                         <span class="keywordflow">if</span>($ks_db-&gt;num_rows($res)&gt;0)
+<a name="l00115"></a>00115                         {
+<a name="l00116"></a>00116                                 $arRow=$ks_db-&gt;get_row($res);
+<a name="l00117"></a>00117                                 $this-&gt;<a class="code" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72">_ParseItem</a>($arRow);
+<a name="l00118"></a>00118                                 <span class="keywordflow">return</span> $arRow;
+<a name="l00119"></a>00119                         }
+<a name="l00120"></a>00120                 }
+<a name="l00121"></a>00121                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00122"></a>00122         }
+<a name="l00123"></a>00123 
+<a name="l00124"></a><a class="code" href="class_c_common_element.html#a34041ca4ce8bdb507fd4a8e36807ef6c">00124</a>         function <a class="code" href="class_c_common_element.html#a34041ca4ce8bdb507fd4a8e36807ef6c">BuildPath</a>(&amp;<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>)
+<a name="l00125"></a>00125         {
+<a name="l00126"></a>00126             $res[]=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;text_ident&#39;</span>];
+<a name="l00127"></a>00127             <span class="keywordflow">if</span> (is_array(<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;cat_info&#39;</span>]))
+<a name="l00128"></a>00128             {
+<a name="l00129"></a>00129                 $subArray=<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;cat_info&#39;</span>];
+<a name="l00130"></a>00130                         <span class="keywordflow">while</span>($subArray!=0)
+<a name="l00131"></a>00131                         {
+<a name="l00132"></a>00132                                 <span class="keywordflow">if</span>($subArray[<span class="stringliteral">&#39;text_ident&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00133"></a>00133                                 {
+<a name="l00134"></a>00134                                         $res[]=$subArray[<span class="stringliteral">&#39;text_ident&#39;</span>];
+<a name="l00135"></a>00135                                 }
+<a name="l00136"></a>00136                                         $subArray=$subArray[<span class="stringliteral">&#39;parents&#39;</span>][0];
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138                         }
+<a name="l00139"></a>00139                 }
+<a name="l00140"></a>00140                 <span class="keywordflow">if</span>(count($res)&gt;0) <span class="keywordflow">return</span> join(<span class="charliteral">&#39;/&#39;</span>,array_reverse($res));
+<a name="l00141"></a>00141         }
+<a name="l00142"></a>00142 
+<a name="l00146"></a><a class="code" href="class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">00146</a>         function <a class="code" href="class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">GetById</a>($id)
+<a name="l00147"></a>00147         {
+<a name="l00148"></a>00148                 <a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>=<span class="keyword">new</span> <a class="code" href="class_c_common_category.html">CCommonCategory</a>($this-&gt;sElTable,$this-&gt;sTable);
+<a name="l00149"></a>00149                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>=$this-&gt;<a class="code" href="class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf">GetRecord</a>(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$id));
+<a name="l00150"></a>00150                 <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;URL&#39;</span>]=<a class="code" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a>-&gt;GetFullPath(<a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>[<span class="stringliteral">&#39;parent_id&#39;</span>]).$arResult[<span class="stringliteral">&#39;text_ident&#39;</span>].<span class="stringliteral">&#39;.html&#39;</span>;
+<a name="l00151"></a>00151                 <span class="keywordflow">return</span> <a class="code" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a>;
+<a name="l00152"></a>00152         }
+<a name="l00153"></a>00153 }
+<a name="l00154"></a>00154 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_smarty.html#af0c22913faf4ec5e6d8674c643c69cc5" title="Smarty::_compile_resource" alt="" coords="321,32,516,61"/>
+<area shape="rect" id="node5" href="$class_smarty.html#a2636e88dc9c8c3876aa63720c7d6ac25" title="Smarty::_smarty_include" alt="" coords="567,5,745,35"/>
+<area shape="rect" id="node7" href="$class_smarty.html#acd45e8177ae9f297026ee9a0732e976c" title="Smarty::fetch" alt="" coords="603,59,709,88"/>
+<area shape="rect" id="node9" href="$class_smarty.html#a7318c22504478672906d321cba2bd713" title="Smarty::display" alt="" coords="795,59,915,88"/>
+</map>

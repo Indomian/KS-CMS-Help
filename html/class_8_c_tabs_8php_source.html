@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/interfaces/libs/class.CTabs.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/interfaces/libs/class.CTabs.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_tabs_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="class_8_c_tabs_8php.html#aa2751051afe353ae55a548bdc2a59679">00003</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00004"></a>00004 include_once MODULES_DIR.<span class="stringliteral">&#39;/interfaces/libs/class.CInterface.php&#39;</span>;
+<a name="l00005"></a>00005 
+<a name="l00010"></a><a class="code" href="class_c_tabs.html">00010</a> <span class="keyword">class </span><a class="code" href="class_c_tabs.html">CTabs</a> <span class="keyword">extends</span> <a class="code" href="class_c_interface.html">CInterface</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a><a class="code" href="class_c_tabs.html#a17c8948c68aa44fa9961ae169b6a8961">00012</a>         var <a class="code" href="class_c_tabs.html#a17c8948c68aa44fa9961ae169b6a8961">$version</a>;
+<a name="l00013"></a><a class="code" href="class_c_tabs.html#ab6ac9b33076d715d3f1376b426e25da0">00013</a>         var <a class="code" href="class_c_tabs.html#ab6ac9b33076d715d3f1376b426e25da0">$tabs</a>;
+<a name="l00014"></a><a class="code" href="class_c_tabs.html#a2475cd7c7ecac5cb93fab0b15629dd39">00014</a>         var <a class="code" href="class_c_tabs.html#a2475cd7c7ecac5cb93fab0b15629dd39">$jsIncluded</a>;
+<a name="l00015"></a><a class="code" href="class_c_tabs.html#a849c5125558f146625c9935d6d28ba20">00015</a>         <span class="keyword">private</span> <a class="code" href="class_c_tabs.html#a849c5125558f146625c9935d6d28ba20">$iTimeStart</a>;
+<a name="l00016"></a><a class="code" href="class_c_tabs.html#a128a9d5c9bb619d4516c854c3fce9b68">00016</a>         <span class="keyword">private</span> <a class="code" href="class_c_tabs.html#a128a9d5c9bb619d4516c854c3fce9b68">$tabsStack</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_c_tabs.html#a095c5d389db211932136b53f25f39685">00018</a>         function <a class="code" href="class_c_tabs.html#a095c5d389db211932136b53f25f39685">__construct</a>()
+<a name="l00019"></a>00019         {
+<a name="l00020"></a>00020                 global <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>;
+<a name="l00021"></a>00021                 $this-&gt;version=1;
+<a name="l00022"></a>00022                 $smarty-&gt;register_block(<span class="stringliteral">&quot;ksTabs&quot;</span>, array($this,<span class="stringliteral">&quot;_smarty_begin_tabs&quot;</span>));
+<a name="l00023"></a>00023                 $smarty-&gt;register_block(<span class="stringliteral">&quot;ksTab&quot;</span>, array($this,<span class="stringliteral">&quot;_smarty_add_tab&quot;</span>));
+<a name="l00024"></a>00024                 $smarty-&gt;register_block(<span class="stringliteral">&quot;ksRoll&quot;</span>,array($this,<span class="stringliteral">&quot;_smarty_add_roll&quot;</span>));
+<a name="l00025"></a>00025                 $this-&gt;tabsStack=array();
+<a name="l00026"></a>00026                 $this-&gt;iTimeStart=time();
+<a name="l00027"></a>00027                 $this-&gt;jsIncluded=0;
+<a name="l00028"></a>00028         }
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="class_c_tabs.html#adb8300f8a9da98b649d2a39e72341a57">00030</a>         function <a class="code" href="class_c_tabs.html#adb8300f8a9da98b649d2a39e72341a57">_smarty_add_roll</a>($params,$content,&amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>,&amp;$repeat)
+<a name="l00031"></a>00031         {
+<a name="l00032"></a>00032                 <span class="keywordflow">if</span>($content)
+<a name="l00033"></a>00033                 {
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035                 }
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_c_tabs.html#a6c3c3032aacb03d8492b9b54bd8dc4a7">00038</a>         function <a class="code" href="class_c_tabs.html#a6c3c3032aacb03d8492b9b54bd8dc4a7">_smarty_begin_tabs</a>($params,$content, &amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>, &amp;$repeat)
+<a name="l00039"></a>00039         {
+<a name="l00040"></a>00040                 $tabsname=$params[<span class="stringliteral">&#39;NAME&#39;</span>].<span class="charliteral">&#39;_&#39;</span>.$this-&gt;iTimeStart;
+<a name="l00041"></a>00041                 <span class="keywordflow">if</span>($tabsname!=$this-&gt;tabs[<span class="stringliteral">&#39;NAME&#39;</span>])
+<a name="l00042"></a>00042                 {
+<a name="l00043"></a>00043                         array_push($this-&gt;tabsStack,$this-&gt;tabs);
+<a name="l00044"></a>00044                         $this-&gt;tabs=array();
+<a name="l00045"></a>00045                         $this-&gt;tabs[<span class="stringliteral">&#39;NAME&#39;</span>]=$tabsname;
+<a name="l00046"></a>00046                 }
+<a name="l00047"></a>00047                 <span class="keywordflow">if</span> ($content)
+<a name="l00048"></a>00048                 {
+<a name="l00049"></a>00049                         <span class="keywordflow">if</span>(!is_array($this-&gt;tabs[<span class="stringliteral">&#39;ITEMS&#39;</span>])) <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00050"></a>00050                         $header=<span class="stringliteral">&#39;&lt;script type=&quot;text/javascript&quot; src=&quot;/js/interfaces/tabs.js&quot;&gt;&lt;/script&gt;&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00051"></a>00051                         $header.=<span class="stringliteral">&#39;&lt;ul class=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;head_class&#39;</span>].<span class="stringliteral">&#39;&quot; clear_after&quot; id=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;
+<a name="l00052"></a>00052                 <span class="keywordflow">if</span>(count($this-&gt;tabs[<span class="stringliteral">&#39;ITEMS&#39;</span>])==1)
+<a name="l00053"></a>00053                 {
+<a name="l00054"></a>00054                         $sClass=<span class="stringliteral">&#39; class=&quot;one&quot; &#39;</span>;
+<a name="l00055"></a>00055                 }
+<a name="l00056"></a>00056                 <span class="keywordflow">else</span>
+<a name="l00057"></a>00057                 {
+<a name="l00058"></a>00058                         $sClass=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00059"></a>00059                 }
+<a name="l00060"></a>00060                 $bHideTabs=<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;get_template_vars(<span class="stringliteral">&#39;isLight&#39;</span>)==1;
+<a name="l00061"></a>00061                 $bHasHidden=<span class="keyword">false</span>;
+<a name="l00062"></a>00062                 $bUserTab=<span class="keyword">false</span>;
+<a name="l00063"></a>00063                 <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#^&#39;</span>.$params[<span class="stringliteral">&#39;NAME&#39;</span>].<span class="stringliteral">&#39;_[0-9]{10,10}_tab([0-9]+)$#i&#39;</span>,$_COOKIE[<span class="stringliteral">&#39;lastSelectedTab&#39;</span>],$matches))
+<a name="l00064"></a>00064                 {
+<a name="l00065"></a>00065                         <span class="keywordflow">if</span>($matches[1]&lt;=count($this-&gt;tabs[<span class="stringliteral">&#39;ITEMS&#39;</span>]))
+<a name="l00066"></a>00066                         {
+<a name="l00067"></a>00067                                 $bUserTab=<span class="keyword">true</span>;
+<a name="l00068"></a>00068                         }
+<a name="l00069"></a>00069                 }
+<a name="l00070"></a>00070                 <span class="comment">//Проверяем не оказалась ли открываемая вкладка невидимой</span>
+<a name="l00071"></a>00071                 <span class="keywordflow">if</span>($bHideTabs)
+<a name="l00072"></a>00072                 {
+<a name="l00073"></a>00073                         $i=0;
+<a name="l00074"></a>00074                         <span class="keywordflow">foreach</span> ($this-&gt;tabs[<span class="stringliteral">&#39;ITEMS&#39;</span>] as $sName=&gt;$arItem)
+<a name="l00075"></a>00075                         {
+<a name="l00076"></a>00076                                 <span class="keywordflow">if</span>($arItem[<span class="stringliteral">&#39;hide&#39;</span>]&gt;0)
+<a name="l00077"></a>00077                                 {
+<a name="l00078"></a>00078                                         <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#^&#39;</span>.$params[<span class="stringliteral">&#39;NAME&#39;</span>].<span class="stringliteral">&#39;_[0-9]{10,10}_tab&#39;</span>.$i.<span class="stringliteral">&#39;$#i&#39;</span>,$_COOKIE[<span class="stringliteral">&#39;lastSelectedTab&#39;</span>]))
+<a name="l00079"></a>00079                                                 {
+<a name="l00080"></a>00080                                                         $bUserTab=<span class="keyword">false</span>;
+<a name="l00081"></a>00081                                                 }
+<a name="l00082"></a>00082                                 }
+<a name="l00083"></a>00083                                 $i++;
+<a name="l00084"></a>00084                                 }
+<a name="l00085"></a>00085                 }
+<a name="l00086"></a>00086                 $arActiveTab=array();
+<a name="l00087"></a>00087                 $i=0;
+<a name="l00088"></a>00088                 <span class="keywordflow">foreach</span> ($this-&gt;tabs[<span class="stringliteral">&#39;ITEMS&#39;</span>] as $sName=&gt;$arItem)
+<a name="l00089"></a>00089                 {
+<a name="l00090"></a>00090                         <span class="keywordflow">if</span>($bHideTabs&amp;&amp;($arItem[<span class="stringliteral">&#39;hide&#39;</span>]&gt;0))
+<a name="l00091"></a>00091                         {
+<a name="l00092"></a>00092                                 $sStyle=<span class="stringliteral">&quot;hide&quot;</span>;
+<a name="l00093"></a>00093                                 $bHasHidden=<span class="keyword">true</span>;
+<a name="l00094"></a>00094                         }
+<a name="l00095"></a>00095                         <span class="keywordflow">else</span> $sStyle=<span class="stringliteral">&quot;&quot;</span>;
+<a name="l00096"></a>00096                                 <span class="keywordflow">if</span>(preg_match(<span class="stringliteral">&#39;#^&#39;</span>.$params[<span class="stringliteral">&#39;NAME&#39;</span>].<span class="stringliteral">&#39;_[0-9]{10,10}_tab&#39;</span>.$i.<span class="stringliteral">&#39;$#i&#39;</span>,$_COOKIE[<span class="stringliteral">&#39;lastSelectedTab&#39;</span>]))
+<a name="l00097"></a>00097                                 {
+<a name="l00098"></a>00098                                         <span class="keywordflow">if</span>($sStyle!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00099"></a>00099                                         {
+<a name="l00100"></a>00100                                                 $bUserTab=<span class="keyword">false</span>;
+<a name="l00101"></a>00101                                                 $header.=<span class="stringliteral">&#39;&lt;li id=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; class=&quot;&#39;</span>.$sStyle.<span class="stringliteral">&#39;&quot;&gt;&lt;a href=&quot;#&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; rel=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; &#39;</span>;
+<a name="l00102"></a>00102                                         $header.=<span class="stringliteral">&#39;&gt;&lt;span&#39;</span>.$sClass.<span class="charliteral">&#39;&gt;&#39;</span>.$sName.<span class="stringliteral">&#39;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+<a name="l00103"></a>00103                                 $arItem[<span class="stringliteral">&#39;content&#39;</span>]=str_replace(<span class="stringliteral">&#39;#DISPLAY#&#39;</span>,<span class="stringliteral">&#39; style=&quot;display:none;&quot; &#39;</span>,$arItem[<span class="stringliteral">&#39;content&#39;</span>]);
+<a name="l00104"></a>00104                                 $arItem[<span class="stringliteral">&#39;id&#39;</span>]=$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i;
+<a name="l00105"></a>00105                                         }
+<a name="l00106"></a>00106                                         <span class="keywordflow">else</span>
+<a name="l00107"></a>00107                                         {
+<a name="l00108"></a>00108                                                 $header.=<span class="stringliteral">&#39;&lt;li id=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; class=&quot;active &#39;</span>.$sStyle.<span class="stringliteral">&#39;&quot;&gt;&lt;a href=&quot;#&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; rel=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="charliteral">&#39;&quot;&#39;</span>;
+<a name="l00109"></a>00109                                                 $header.=<span class="stringliteral">&#39;&gt;&lt;span&#39;</span>.$sClass.<span class="charliteral">&#39;&gt;&#39;</span>.$sName.<span class="stringliteral">&#39;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+<a name="l00110"></a>00110                                                 $arItem[<span class="stringliteral">&#39;content&#39;</span>]=str_replace(<span class="stringliteral">&#39;#DISPLAY#&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,$arItem[<span class="stringliteral">&#39;content&#39;</span>]);
+<a name="l00111"></a>00111                                                 $arItem[<span class="stringliteral">&#39;id&#39;</span>]=$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i;
+<a name="l00112"></a>00112                                                 $arActiveTab=$arItem;
+<a name="l00113"></a>00113                                         }
+<a name="l00114"></a>00114                                 }
+<a name="l00115"></a>00115                         elseif (($arItem[<span class="stringliteral">&#39;SELECTED&#39;</span>]==1) &amp;&amp; (!$bUserTab))
+<a name="l00116"></a>00116                         {
+<a name="l00117"></a>00117                                 $header.=<span class="stringliteral">&#39;&lt;li id=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; class=&quot;active &#39;</span>.$sStyle.<span class="stringliteral">&#39;&quot;&gt;&lt;a href=&quot;#&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; rel=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="charliteral">&#39;&quot;&#39;</span>;
+<a name="l00118"></a>00118                                         $header.=<span class="stringliteral">&#39;&gt;&lt;span&#39;</span>.$sClass.<span class="charliteral">&#39;&gt;&#39;</span>.$sName.<span class="stringliteral">&#39;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+<a name="l00119"></a>00119                                         $arItem[<span class="stringliteral">&#39;content&#39;</span>]=str_replace(<span class="stringliteral">&#39;#DISPLAY#&#39;</span>,<span class="stringliteral">&#39;&#39;</span>,$arItem[<span class="stringliteral">&#39;content&#39;</span>]);
+<a name="l00120"></a>00120                                         $arItem[<span class="stringliteral">&#39;id&#39;</span>]=$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i;
+<a name="l00121"></a>00121                                         $arActiveTab=$arItem;
+<a name="l00122"></a>00122                         }
+<a name="l00123"></a>00123                         <span class="keywordflow">else</span>
+<a name="l00124"></a>00124                         {
+<a name="l00125"></a>00125                                 $header.=<span class="stringliteral">&#39;&lt;li id=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; class=&quot;&#39;</span>.$sStyle.<span class="stringliteral">&#39;&quot;&gt;&lt;a href=&quot;#&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; rel=&quot;&#39;</span>.$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i.<span class="stringliteral">&#39;&quot; &#39;</span>;
+<a name="l00126"></a>00126                                 $header.=<span class="stringliteral">&#39;&gt;&lt;span&#39;</span>.$sClass.<span class="charliteral">&#39;&gt;&#39;</span>.$sName.<span class="stringliteral">&#39;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&#39;</span>;
+<a name="l00127"></a>00127                                 $arItem[<span class="stringliteral">&#39;content&#39;</span>]=str_replace(<span class="stringliteral">&#39;#DISPLAY#&#39;</span>,<span class="stringliteral">&#39; style=&quot;display:none;&quot; &#39;</span>,$arItem[<span class="stringliteral">&#39;content&#39;</span>]);
+<a name="l00128"></a>00128                                 $arItem[<span class="stringliteral">&#39;id&#39;</span>]=$tabsname.<span class="stringliteral">&#39;_tab&#39;</span>.$i;
+<a name="l00129"></a>00129                         }
+<a name="l00130"></a>00130                         $i++;
+<a name="l00131"></a>00131                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>.=<span class="stringliteral">&quot;\n &quot;</span>.$arItem[<span class="stringliteral">&#39;content&#39;</span>];
+<a name="l00132"></a>00132                 }
+<a name="l00133"></a>00133                 $header.=<span class="stringliteral">&#39;&lt;/ul&gt;&#39;</span>;
+<a name="l00134"></a>00134                 <span class="keywordflow">if</span>($bHasHidden)
+<a name="l00135"></a>00135                         $header=<span class="stringliteral">&#39;&lt;div class=&quot;showhide_tabs&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return ShowTabs(\&#39;&#39;</span>.$tabsname.<span class="charliteral">&#39;\&#39;</span>)<span class="stringliteral">&quot;&gt;Показать дополнительные параметры&lt;/a&gt;&lt;/div&gt;&#39;.$header;</span>
+<a name="l00136"></a>00136 <span class="stringliteral">                $data.=&quot;</span>\n<span class="stringliteral">&quot;.&#39;&lt;script type=&quot;</span>text/javascript<span class="stringliteral">&quot;&gt;$(document).ready(function(){var obList=$(&quot;</span>ul#<span class="stringliteral">&#39;.$tabsname.&#39;</span>&gt;li&gt;a<span class="stringliteral">&quot;);&#39;;</span>
+<a name="l00137"></a>00137 <span class="stringliteral">                        $i=0;</span>
+<a name="l00138"></a>00138 <span class="stringliteral">                        foreach($this-&gt;tabs[&#39;ITEMS&#39;] as $sName=&gt;$arItem)</span>
+<a name="l00139"></a>00139 <span class="stringliteral">                        {</span>
+<a name="l00140"></a>00140 <span class="stringliteral">                                $data.=&quot;</span>\n      $(obList.get($i)).bind(<span class="stringliteral">&#39;click&#39;</span>,null,function(event){\nChangeActive(this.rel,<span class="stringliteral">&#39;$tabsname&#39;</span>);<span class="keyword">event</span>.stopImmediatePropagation();<span class="stringliteral">&quot;;</span>
+<a name="l00141"></a>00141 <span class="stringliteral">                                if($arItem[&#39;ONACTIVATE&#39;]!=&#39;&#39;)</span>
+<a name="l00142"></a>00142 <span class="stringliteral">                                $data.=$arItem[&#39;ONACTIVATE&#39;];</span>
+<a name="l00143"></a>00143 <span class="stringliteral">                            $data.=&quot;</span>\nreturn <span class="keyword">false</span>;});\n<span class="stringliteral">&quot;;</span>
+<a name="l00144"></a>00144 <span class="stringliteral">                            $i++;</span>
+<a name="l00145"></a>00145 <span class="stringliteral">                        }</span>
+<a name="l00146"></a>00146 <span class="stringliteral">                        $data.=&#39;});&#39;;</span>
+<a name="l00147"></a>00147 <span class="stringliteral">                        if(is_array($arActiveTab) &amp;&amp; ($arActiveTab[&#39;ONACTIVATE&#39;]!=&#39;&#39;))</span>
+<a name="l00148"></a>00148 <span class="stringliteral">                {</span>
+<a name="l00149"></a>00149 <span class="stringliteral">                        $data.=&quot;</span>\n$(document).ready(function(){<span class="stringliteral">&quot;.$arActiveTab[&#39;ONACTIVATE&#39;].&quot;</span>;});<span class="stringliteral">&quot;;</span>
+<a name="l00150"></a>00150 <span class="stringliteral">                }</span>
+<a name="l00151"></a>00151 <span class="stringliteral">                $data.=&#39;&lt;/script&gt;&#39;;</span>
+<a name="l00152"></a>00152 <span class="stringliteral">                $this-&gt;tabs=array_pop($this-&gt;tabsStack);</span>
+<a name="l00153"></a>00153 <span class="stringliteral">                $repeat=false;</span>
+<a name="l00154"></a>00154 <span class="stringliteral">                        return $header.$data;</span>
+<a name="l00155"></a>00155 <span class="stringliteral">                }</span>
+<a name="l00156"></a>00156 <span class="stringliteral">        }</span>
+<a name="l00157"></a>00157 <span class="stringliteral"></span>
+<a name="l00158"></a><a class="code" href="class_c_tabs.html#a46360bc81042c1af8e7e9694bce1d0c6">00158</a> <span class="stringliteral">        function _smarty_add_tab($params,$content, &amp;$smarty, &amp;$repeat)</span>
+<a name="l00159"></a>00159 <span class="stringliteral">        {</span>
+<a name="l00160"></a>00160 <span class="stringliteral">                if ($content)</span>
+<a name="l00161"></a>00161 <span class="stringliteral">                {</span>
+<a name="l00162"></a>00162 <span class="stringliteral">                        $arResult[&#39;content&#39;]=$content;</span>
+<a name="l00163"></a>00163 <span class="stringliteral">                        $arResult[&#39;name&#39;]=$params[&#39;NAME&#39;];</span>
+<a name="l00164"></a>00164 <span class="stringliteral">                        if ($params[&#39;selected&#39;]==1)</span>
+<a name="l00165"></a>00165 <span class="stringliteral">                        {</span>
+<a name="l00166"></a>00166 <span class="stringliteral">                                $arResult[&#39;SELECTED&#39;]=1;</span>
+<a name="l00167"></a>00167 <span class="stringliteral">                        }</span>
+<a name="l00168"></a>00168 <span class="stringliteral">                        else</span>
+<a name="l00169"></a>00169 <span class="stringliteral">                        {</span>
+<a name="l00170"></a>00170 <span class="stringliteral">                                $arResult[&#39;SELECTED&#39;]=0;</span>
+<a name="l00171"></a>00171 <span class="stringliteral">                        }</span>
+<a name="l00172"></a>00172 <span class="stringliteral">                        $arResult[&#39;content&#39;]=&#39;&lt;div class=&quot;</span><span class="stringliteral">&#39;.$params[&#39;</span><span class="keyword">class</span><span class="stringliteral">&#39;].&#39;</span><span class="stringliteral">&quot; id=&quot;</span><span class="stringliteral">&#39;.$this-&gt;tabs[&#39;</span>NAME<span class="stringliteral">&#39;].&#39;</span>_tab<span class="stringliteral">&#39;.intval($this-&gt;tabs[&#39;</span>COUNT<span class="stringliteral">&#39;]).&#39;</span>cont<span class="stringliteral">&quot; #DISPLAY#&gt;&#39;.$content.&#39;&lt;/div&gt;&#39;;</span>
+<a name="l00173"></a>00173 <span class="stringliteral">                        if($params[&#39;onActivate&#39;]!=&#39;&#39;)</span>
+<a name="l00174"></a>00174 <span class="stringliteral">                        {</span>
+<a name="l00175"></a>00175 <span class="stringliteral">                                $arResult[&#39;ONACTIVATE&#39;]=$params[&#39;onActivate&#39;];</span>
+<a name="l00176"></a>00176 <span class="stringliteral">                        }</span>
+<a name="l00177"></a>00177 <span class="stringliteral">                        $arResult[&#39;hide&#39;]=intval($params[&#39;hide&#39;]);</span>
+<a name="l00178"></a>00178 <span class="stringliteral">                        $this-&gt;tabs[&#39;ITEMS&#39;][$params[&#39;NAME&#39;]]=$arResult;</span>
+<a name="l00179"></a>00179 <span class="stringliteral">                        $this-&gt;tabs[&#39;COUNT&#39;]++;</span>
+<a name="l00180"></a>00180 <span class="stringliteral">                        $repeat=false;</span>
+<a name="l00181"></a>00181 <span class="stringliteral">                }</span>
+<a name="l00182"></a>00182 <span class="stringliteral">                return &#39;&#39;;</span>
+<a name="l00183"></a>00183 <span class="stringliteral">        }</span>
+<a name="l00184"></a>00184 <span class="stringliteral">}</span>
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

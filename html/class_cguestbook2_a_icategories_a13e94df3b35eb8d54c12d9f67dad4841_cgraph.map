@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_cguestbook2_a_icategories.html#a9f844d1903ac46357c85e3f23d2299d3" title="EditForm" alt="" coords="251,5,328,35"/>
+<area shape="rect" id="node5" href="$class_cguestbook2_a_icategories.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="Save" alt="" coords="100,112,153,141"/>
+<area shape="rect" id="node20" href="$class_cguestbook2_a_icategories.html#a2a7f82c625b00a53f710b2ed305248d2" title="Table" alt="" coords="100,219,153,248"/>
+<area shape="rect" id="node7" href="$class_c_error.html#a7516ca30af0db3cdbf9a7739b48ce91d" title="CError::__toString" alt="" coords="223,59,356,88"/>
+<area shape="rect" id="node14" href="$class_cguestbook2_a_icategories.html#aad5b28ebdb74bf4e6abd80fda9477920" title="GetDataFromPost" alt="" coords="221,112,357,141"/>
+<area shape="rect" id="node16" href="$main_2libs_2functions_8php.html#ab5ef7d7e024d5a5675019e691cb40214" title="IsTextIdent" alt="" coords="245,165,333,195"/>
+<area shape="rect" id="node18" href="$main_2libs_2functions_8php.html#a585f6e587f4220a9d23d55fb8654a733" title="Translit" alt="" coords="256,219,323,248"/>
+<area shape="rect" id="node9" href="$class_c_error.html#a2e783519d7ccbc12dfdd265f2f9c1b91" title="CError::_error_form" alt="" coords="427,32,571,61"/>
+<area shape="rect" id="node11" href="$class_c_error.html#aff849052098521fd979745f8e50af269" title="CError::GetErrorText" alt="" coords="424,85,573,115"/>
+<area shape="rect" id="node22" href="$class_c_module_admin.html#a3160f20700c1e4015c4d5ef90de6c890" title="CModuleAdmin::InitSort" alt="" coords="204,272,375,301"/>
+</map>

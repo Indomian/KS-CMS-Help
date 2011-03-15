@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_url_parser.html#a3e1c140b88cbf2c757ab705b2ba2e718" title="redirect" alt="" coords="127,32,196,61"/>
+<area shape="rect" id="node5" href="$class_c_url_parser.html#a39908e15da40397a4df4ec42472de05d" title="_smarty_redirect" alt="" coords="292,5,423,35"/>
+<area shape="rect" id="node7" href="$class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="CModuleManagment::SelfInstall" alt="" coords="247,59,468,88"/>
+<area shape="rect" id="node9" href="$class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="CModuleManagment::__construct" alt="" coords="519,59,753,88"/>
+<area shape="rect" id="node11" href="$class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="836,32,1047,61"/>
+<area shape="rect" id="node13" href="$class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="803,85,1080,115"/>
+</map>

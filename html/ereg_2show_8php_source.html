@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/ereg/show.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/ereg/show.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="ereg_2show_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a><a class="code" href="ereg_2show_8php.html#ae491bbe5a660c3f3f9150e072f40b0ab">00002</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=<span class="stringliteral">&quot;&lt;input type=\&quot;text\&quot; class=\&quot;form_input\&quot; id=\&quot;&quot;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&quot;ext_&quot;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&quot;\&quot; name=\&quot;&quot;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&quot;ext_&quot;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&quot;\&quot; value=\&quot;&quot;</span>.$params[<span class="stringliteral">&#39;value&#39;</span>].<span class="stringliteral">&quot;\&quot; style=\&quot;width:100%\&quot;&gt;&quot;</span>;
+<a name="l00003"></a>00003 <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>.=<span class="stringliteral">&#39;&lt;script type=&quot;text/javascript&quot;&gt;$(document).ready(function(){&#39;</span> .
+<a name="l00004"></a>00004                         <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;ext_&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&#39;&quot;).keyup(&#39;</span> .
+<a name="l00005"></a>00005                                 <span class="stringliteral">&#39;function(event){&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00006"></a>00006                                 <span class="stringliteral">&#39;var regexp=new RegExp(&quot;&#39;</span>.addslashes($params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_1&#39;</span>]).<span class="stringliteral">&#39;&quot;,&quot;i&quot;);&#39;</span> .<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00007"></a>00007                                         <span class="stringliteral">&#39;regexp.ignoreCase=true;&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00008"></a>00008                                         <span class="stringliteral">&#39;if(!regexp.test(this.value)) $(this).addClass(&quot;invalid&quot;); else $(this).removeClass(&quot;invalid&quot;);&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00009"></a>00009                                         <span class="stringliteral">&#39;return true;});});&#39;</span>.<span class="stringliteral">&quot;\n&quot;</span>.
+<a name="l00010"></a>00010                 <span class="stringliteral">&#39;&lt;/script&gt;&#39;</span>;
+<a name="l00011"></a>00011 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

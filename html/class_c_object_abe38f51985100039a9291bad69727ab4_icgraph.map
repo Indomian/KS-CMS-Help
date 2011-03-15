@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="133,5,317,35"/>
+<area shape="rect" id="node5" href="$class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="123,59,328,88"/>
+<area shape="rect" id="node7" href="$class_c_user.html#a04319249ee2785318535b92beb1aad82" title="CUser::OnAfterLogin" alt="" coords="149,112,301,141"/>
+<area shape="rect" id="node15" href="$class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="133,165,317,195"/>
+<area shape="rect" id="node19" href="$class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="131,219,320,248"/>
+<area shape="rect" id="node21" href="$class_c_user.html#a39c631b045052241e951f7cac0bd2a2e" title="CUser::WriteUserVars" alt="" coords="147,272,304,301"/>
+<area shape="rect" id="node9" href="$class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="379,59,520,88"/>
+<area shape="rect" id="node11" href="$class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="377,112,521,141"/>
+<area shape="rect" id="node13" href="$class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="571,112,669,141"/>
+<area shape="rect" id="node17" href="$class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="380,165,519,195"/>
+</map>

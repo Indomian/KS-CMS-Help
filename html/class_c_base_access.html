@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CBaseAccess</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a>  </div>
+  <div class="headertitle">
+<h1>Класс CBaseAccess</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CBaseAccess" --><!-- doxytag: inherits="CFieldsObject" -->
+<p>Базовые классы:<a class="el" href="class_c_fields_object.html">CFieldsObject</a>.</p>
+
+<p>Производные классы:<a class="el" href="class_c_modules_access.html">CModulesAccess</a> и <a class="el" href="class_c_users_common.html">CUsersCommon</a>.</p>
+<div class="dynheader">
+Граф связей класса CBaseAccess:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_base_access__coll__graph.png" border="0" usemap="#_c_base_access_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_base_access_coll__map" id="_c_base_access_coll__map">
+<area shape="rect" id="node2" href="class_c_fields_object.html" title="CFieldsObject" alt="" coords="5,315,112,344"/><area shape="rect" id="node4" href="class_c_files_object.html" title="CFilesObject" alt="" coords="9,237,108,267"/><area shape="rect" id="node6" href="class_c_object.html" title="CObject" alt="" coords="23,160,95,189"/><area shape="rect" id="node8" href="class_c_base_list.html" title="CBaseList" alt="" coords="16,83,101,112"/><area shape="rect" id="node10" href="class_c_base_object.html" title="CBaseObject" alt="" coords="7,5,111,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_base_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">Set</a> ($group_id, $module, $level)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Абстрактный класс - корень для работы с системой распределения прав. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a> строка <a class="el" href="class_8_c_access_8php_source.html#l00026">26</a></p>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a0c2f95dfeb16d0b687d2205d1d037e89"></a><!-- doxytag: member="CBaseAccess::Set" ref="a0c2f95dfeb16d0b687d2205d1d037e89" args="($group_id, $module, $level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Set </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>group_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>level</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [abstract]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет запись прав в базу данных. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$group_id</em>&nbsp;</td><td>идентификатор группы </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>идентификатор элемента для которого устанавливаются права </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$leve</em>&nbsp;</td><td>уровень прав доступа </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="class_c_modules_access.html#a0c2f95dfeb16d0b687d2205d1d037e89">CModulesAccess</a> и <a class="el" href="class_c_users_common.html#a0c2f95dfeb16d0b687d2205d1d037e89">CUsersCommon</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_access_8php_source.html">class.CAccess.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:23. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

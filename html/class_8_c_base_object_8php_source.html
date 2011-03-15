@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/class.CBaseObject.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/class.CBaseObject.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_base_object_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00020"></a><a class="code" href="class_c_base_object.html">00020</a> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_c_base_object.html">CBaseObject</a>
+<a name="l00021"></a>00021 {
+<a name="l00027"></a><a class="code" href="class_c_base_object.html#a3c418b2cb38438e707f323f75f56f1fa">00027</a>         <span class="keyword">public</span> function <a class="code" href="class_c_base_object.html#a3c418b2cb38438e707f323f75f56f1fa">callStack</a>(){
+<a name="l00028"></a>00028                 <span class="keywordflow">try</span>{
+<a name="l00029"></a>00029                         <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception();
+<a name="l00030"></a>00030                 }<span class="keywordflow">catch</span> (Exception $e){
+<a name="l00031"></a>00031                         $call = $e-&gt;getTrace();
+<a name="l00032"></a>00032                         $error = array();
+<a name="l00033"></a>00033                         <span class="keywordflow">foreach</span>($call as $index =&gt; $arr){
+<a name="l00034"></a>00034                                 $error[$index][<span class="stringliteral">&#39;file&#39;</span>] = $arr[<span class="stringliteral">&#39;file&#39;</span>].<span class="charliteral">&#39;(&#39;</span>.$arr[<span class="stringliteral">&#39;line&#39;</span>].<span class="charliteral">&#39;)&#39;</span>;
+<a name="l00035"></a>00035                                 $error[$index][<span class="stringliteral">&#39;function&#39;</span>] = $arr[<span class="stringliteral">&#39;class&#39;</span>].$arr[<span class="stringliteral">&#39;type&#39;</span>].$arr[<span class="stringliteral">&#39;function&#39;</span>];
+<a name="l00036"></a>00036                                 $error[$index][<span class="stringliteral">&#39;param&#39;</span>] = $arr[<span class="stringliteral">&#39;args&#39;</span>];
+<a name="l00037"></a>00037                         }
+<a name="l00038"></a>00038                         unset($error[0]);
+<a name="l00039"></a>00039                         $error = array_values($error);
+<a name="l00040"></a>00040                         var_dump($error);
+<a name="l00041"></a>00041                         die;
+<a name="l00042"></a>00042                 }
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

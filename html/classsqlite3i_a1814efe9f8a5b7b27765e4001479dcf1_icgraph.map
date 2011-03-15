@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classsqlite3i.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="159,5,231,35"/>
+<area shape="rect" id="node5" href="$classsqlite3i.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="280,32,339,61"/>
+<area shape="rect" id="node10" href="$classsqlite3i.html#ad70448da8aa6efa96bb18eaf1ed29fbc" title="rollback" alt="" coords="160,109,229,139"/>
+<area shape="rect" id="node7" href="$classsqlite3i.html#a3773aafc62bbe690bf66a84e8368ef06" title="super_query" alt="" coords="387,32,488,61"/>
+</map>

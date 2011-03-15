@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$main_2libs_2functions_8php.html#ab5ef7d7e024d5a5675019e691cb40214" title="IsTextIdent" alt="" coords="159,5,247,35"/>
+<area shape="rect" id="node5" href="$classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="161,59,244,88"/>
+<area shape="rect" id="node7" href="$classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="296,85,355,115"/>
+<area shape="rect" id="node9" href="$class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="421,5,587,35"/>
+<area shape="rect" id="node11" href="$classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="468,59,540,88"/>
+<area shape="rect" id="node14" href="$class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="403,112,605,141"/>
+<area shape="rect" id="node16" href="$classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="468,165,540,195"/>
+<area shape="rect" id="node18" href="$classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="467,219,541,248"/>
+</map>

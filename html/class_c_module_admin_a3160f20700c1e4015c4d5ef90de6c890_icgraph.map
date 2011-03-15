@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_errors_a_i.html#a2a7f82c625b00a53f710b2ed305248d2" title="CErrorsAI::Table" alt="" coords="176,31,296,60"/>
+<area shape="rect" id="node10" href="$class_cguestbook2_a_irecords.html#a2a7f82c625b00a53f710b2ed305248d2" title="Cguestbook2AIrecords::Table" alt="" coords="133,84,339,113"/>
+<area shape="rect" id="node14" href="$class_cguestbook2_a_icategories.html#a2a7f82c625b00a53f710b2ed305248d2" title="Cguestbook2AIcategories::Table" alt="" coords="124,137,348,167"/>
+<area shape="rect" id="node18" href="$class_cnavigation_a_iindex.html#a2a7f82c625b00a53f710b2ed305248d2" title="CnavigationAIindex::Table" alt="" coords="145,191,327,220"/>
+<area shape="rect" id="node22" href="$class_ccatsubcat_a_iindex.html#a2a7f82c625b00a53f710b2ed305248d2" title="CcatsubcatAIindex::Table" alt="" coords="147,244,325,273"/>
+<area shape="rect" id="node26" href="$class_ccatsubcat_a_ibasket.html#a2a7f82c625b00a53f710b2ed305248d2" title="CcatsubcatAIbasket::Table" alt="" coords="141,297,331,327"/>
+<area shape="rect" id="node5" href="$class_c_errors_a_i.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CErrorsAI::Run" alt="" coords="661,5,773,35"/>
+<area shape="rect" id="node7" href="$class_c_errors_a_i.html#aebdc2dc2f7bd911f2be617599bcf8ae4" title="CErrorsAI::Save" alt="" coords="445,31,565,60"/>
+<area shape="rect" id="node12" href="$class_cguestbook2_a_irecords.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIrecords::Run" alt="" coords="407,84,604,113"/>
+<area shape="rect" id="node16" href="$class_cguestbook2_a_icategories.html#a13e94df3b35eb8d54c12d9f67dad4841" title="Cguestbook2AIcategories::Run" alt="" coords="397,137,613,167"/>
+<area shape="rect" id="node20" href="$class_cnavigation_a_iindex.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CnavigationAIindex::Run" alt="" coords="419,191,592,220"/>
+<area shape="rect" id="node24" href="$class_ccatsubcat_a_iindex.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CcatsubcatAIindex::Run" alt="" coords="420,244,591,273"/>
+<area shape="rect" id="node28" href="$class_ccatsubcat_a_ibasket.html#a13e94df3b35eb8d54c12d9f67dad4841" title="CcatsubcatAIbasket::Run" alt="" coords="416,297,595,327"/>
+</map>

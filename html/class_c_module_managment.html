@@ -1,0 +1,1512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CModuleManagment</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="#pri-methods">Закрытые члены</a>  </div>
+  <div class="headertitle">
+<h1>Класс CModuleManagment</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CModuleManagment" --><!-- doxytag: inherits="CObject" -->
+<p>Базовые классы:<a class="el" href="class_c_object.html">CObject</a>.</p>
+
+<p>Производные классы:<a class="el" href="class_c_admin_module_managment.html">CAdminModuleManagment</a> и <a class="el" href="class_c_module_hook_up.html">CModuleHookUp</a>.</p>
+<div class="dynheader">
+Граф связей класса CModuleManagment:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment__coll__graph.png" border="0" usemap="#_c_module_managment_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_module_managment_coll__map" id="_c_module_managment_coll__map">
+<area shape="rect" id="node2" href="class_c_object.html" title="CObject" alt="" coords="47,160,119,189"/><area shape="rect" id="node4" href="class_c_base_list.html" title="CBaseList" alt="" coords="40,83,125,112"/><area shape="rect" id="node6" href="class_c_base_object.html" title="CBaseObject" alt="" coords="31,5,135,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a92808e2f88ed4edfb1ee2db75f460bcd">SetUser</a> ($obUser)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a97ae76d44c87df0178e2cf1d6fbd48d5">SetSmarty</a> ($obSmarty)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a53464ddc117cbdd66fa7209837e65bee">SetLanguage</a> ($obLanguage)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a9412c900e7e94da3eed1001d399fadba">GetText</a> ($code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aea3c28ddbf0502d3d0c1027e227cc136">SetLanguageError</a> ($obLanguage)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a68f97bc8ac692bd4dad54ee9d5421dc8">GetErrorText</a> ($code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a0da44bff884dea2e05f4d698540558e6">AddNotify</a> ($msg, $text='', $type=<a class="el" href="class_8_c_module_managment_8php.html#a095b4ba3e6626676f54b6ee2f9774955">NOTIFY_WARNING</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a7b958758f602b79cb3b60912ff5beefd">GetNotifies</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#af963fb6ec0e44e3171372f2af00f3877">ShowNotifies</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#afd2f773f311568e271d84045e233ca5b">GetUninstalledList</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a1bc05652fce4b10caf256f5200472ac0">IsInstallable</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a">RecountDBStructure</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5">RecountTextStructure</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490">Install</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31">UnInstall</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280">InitModule</a> ($module_name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a9b59d5505d3d4e93084d57e11cc5ad57">AddHeadString</a> ($string)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa337f89018f666b86d17ee00a538041f">UseJavaScript</a> ($script, $position=10)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a4285d204a07b105dfecb838d2f671854">GetJavaScript</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa4da6148263302bf4f9162655cc5ff0f">GetHeader</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389">IsModule</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae">IsActive</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb">IsDefault</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e">GetSitePath</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1">GetTitle</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a144b824eb172f49e723d133daacacb75">GetConfigVar</a> ($module, $var, $default=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa82055fc451a5ec7867395553b7c77c8">GetConfigArray</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a0cc8e9e705c15c4b7458103cfb996004">GetDBVar</a> ($module, $var)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a804ee07de9de7fa041a47083106753c0">GetDBConfigArray</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#abe5c9c24de0277149206c6c4ec0bad98">GetAccessArray</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a">IncludeTreeFile</a> ($module, $arRow)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89">module</a> ($module)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a78e32f236574e2d1aa2f33e50b0d5410">CopyModuleTemplates</a> ($module)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a36b62ef42e3642f437b291cc64bcb817">select_global_template</a> ($full_uri, $jumps_quant='4', $internal=0)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a523427fab49d6ab357e6ff21d0622c33">$arHeads</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#ac797c7e6cc1f534aec03a4ba79e486fe">$arHeadScripts</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a9c8cfae8f91b1376cd604239f1c5d107">$arIsModules</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a4befb605ae6a8dd3e878fa23ce926d9a">$arNotifies</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a5ed65e85294f010198c5bf523d7df077">$obUser</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#a296afd768088584bc154e9c90b03a9f2">$obSmarty</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa9645e8d4ef1d237cbe1fa3466cb3d35">$obLanguage</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#ad41f9c954526c3babd966b2e76afee3d">$obLanguageError</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2">SelfInstall</a> ()</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Базовый класс обеспечивающий работу с модулями </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00015">15</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a095c5d389db211932136b53f25f39685"></a><!-- doxytag: member="CModuleManagment::__construct" ref="a095c5d389db211932136b53f25f39685" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="class_c_u_g_modules.html#a095c5d389db211932136b53f25f39685">CUGModules</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00027">27</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a095c5d389db211932136b53f25f39685_cgraph.png" border="0" usemap="#class_c_module_managment_a095c5d389db211932136b53f25f39685_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a095c5d389db211932136b53f25f39685_cgraph" id="class_c_module_managment_a095c5d389db211932136b53f25f39685_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="149,165,232,195"/><area shape="rect" id="node5" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="324,165,383,195"/><area shape="rect" id="node7" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="516,85,593,115"/><area shape="rect" id="node25" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="RecountDBStructure" alt="" coords="479,197,631,227"/><area shape="rect" id="node32" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="RecountTextStructure" alt="" coords="476,139,633,168"/><area shape="rect" id="node38" href="class_c_url_parser.html#a3e1c140b88cbf2c757ab705b2ba2e718" title="CUrlParser::redirect" alt="" coords="280,269,427,299"/><area shape="rect" id="node9" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="683,87,829,116"/><area shape="rect" id="node11" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="877,139,1003,168"/><area shape="rect" id="node13" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="1056,5,1200,35"/><area shape="rect" id="node15" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="1052,59,1204,88"/><area shape="rect" id="node17" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="1053,112,1203,141"/><area shape="rect" id="node19" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="1052,165,1204,195"/><area shape="rect" id="node21" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="1052,219,1204,248"/><area shape="rect" id="node23" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="1053,272,1203,301"/><area shape="rect" id="node28" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="713,241,799,271"/><area shape="rect" id="node30" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce" title="OutputVar" alt="" coords="897,241,983,271"/><area shape="rect" id="node40" href="class_c_url_parser.html#aebea1ae77c7418adbc81928096d98f06" title="CUrlParser::AjaxReq" alt="" coords="481,316,628,345"/><area shape="rect" id="node42" href="class_c_url_parser.html#a26b16e8042b1f4f73c80972d85f948a9" title="CUrlParser::GetJS" alt="" coords="489,263,620,292"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a095c5d389db211932136b53f25f39685_icgraph.png" border="0" usemap="#class_c_module_managment_a095c5d389db211932136b53f25f39685_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a095c5d389db211932136b53f25f39685_icgraph" id="class_c_module_managment_a095c5d389db211932136b53f25f39685_icgraph">
+<area shape="rect" id="node3" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="183,5,393,35"/><area shape="rect" id="node5" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="149,59,427,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a><!-- doxytag: member="CModuleManagment::__destruct" ref="a421831a265621325e1fdd19aace0c758" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Деструктор класса </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_object.html#a421831a265621325e1fdd19aace0c758">CObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00098">98</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a9b59d5505d3d4e93084d57e11cc5ad57"></a><!-- doxytag: member="CModuleManagment::AddHeadString" ref="a9b59d5505d3d4e93084d57e11cc5ad57" args="($string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddHeadString </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>string</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод добавляет указанные строки в заголовок шаблона </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$string - строка которую необходимо добавить </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00360">360</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0da44bff884dea2e05f4d698540558e6"></a><!-- doxytag: member="CModuleManagment::AddNotify" ref="a0da44bff884dea2e05f4d698540558e6" args="($msg, $text='', $type=NOTIFY_WARNING)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddNotify </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>text</em> = <code>''</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em> = <code><a class="el" href="class_8_c_module_managment_8php.html#a095b4ba3e6626676f54b6ee2f9774955">NOTIFY_WARNING</a></code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод добавляет уведомление в массив уведомлений </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00116">116</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a78e32f236574e2d1aa2f33e50b0d5410"></a><!-- doxytag: member="CModuleManagment::CopyModuleTemplates" ref="a78e32f236574e2d1aa2f33e50b0d5410" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CopyModuleTemplates </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет копирование шаблонов из установочного каталога в рабочий каталог. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00768">768</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a78e32f236574e2d1aa2f33e50b0d5410_cgraph.png" border="0" usemap="#class_c_module_managment_a78e32f236574e2d1aa2f33e50b0d5410_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a78e32f236574e2d1aa2f33e50b0d5410_cgraph" id="class_c_module_managment_a78e32f236574e2d1aa2f33e50b0d5410_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="220,139,297,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="347,139,493,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="541,139,667,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="720,5,864,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="716,59,868,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="717,112,867,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="716,165,868,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="716,219,868,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="717,272,867,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe5c9c24de0277149206c6c4ec0bad98"></a><!-- doxytag: member="CModuleManagment::GetAccessArray" ref="abe5c9c24de0277149206c6c4ec0bad98" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetAccessArray </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция возвращает массив названий уровней доступа для модуля. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>- имя модуля настройки которого требуется получить. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00600">600</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_abe5c9c24de0277149206c6c4ec0bad98_cgraph.png" border="0" usemap="#class_c_module_managment_abe5c9c24de0277149206c6c4ec0bad98_cgraph" alt=""/></div>
+<map name="class_c_module_managment_abe5c9c24de0277149206c6c4ec0bad98_cgraph" id="class_c_module_managment_abe5c9c24de0277149206c6c4ec0bad98_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="180,139,265,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="315,139,461,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="509,139,635,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="688,5,832,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="684,59,836,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="685,112,835,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="684,165,836,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="684,219,836,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="685,272,835,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa82055fc451a5ec7867395553b7c77c8"></a><!-- doxytag: member="CModuleManagment::GetConfigArray" ref="aa82055fc451a5ec7867395553b7c77c8" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetConfigArray </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает массив настроек для определенного модуля.</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$module Имя модуля, настройки которого требуется получить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00546">546</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_cgraph.png" border="0" usemap="#class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_cgraph" alt=""/></div>
+<map name="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_cgraph" id="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="175,139,260,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="309,139,456,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="504,139,629,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="683,5,827,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="679,59,831,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="680,112,829,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="679,165,831,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="679,219,831,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="680,272,829,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_icgraph.png" border="0" usemap="#class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_icgraph" alt=""/></div>
+<map name="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_icgraph" id="class_c_module_managment_aa82055fc451a5ec7867395553b7c77c8_icgraph">
+<area shape="rect" id="node3" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="173,5,408,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a144b824eb172f49e723d133daacacb75"></a><!-- doxytag: member="CModuleManagment::GetConfigVar" ref="a144b824eb172f49e723d133daacacb75" args="($module, $var, $default=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetConfigVar </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>default</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает значение параметра настройки определенного модуля. Если модуль не был подключен, подключает его и возвращает значение соответствующего параметра.</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>Идентификатор модуля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$var</em>&nbsp;</td><td>Имя требуемого параметра </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$default</em>&nbsp;</td><td>значение которое необходимо использовать по умолчанию если не задано значение в конфиге </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>mixed </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00529">529</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a144b824eb172f49e723d133daacacb75_cgraph.png" border="0" usemap="#class_c_module_managment_a144b824eb172f49e723d133daacacb75_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a144b824eb172f49e723d133daacacb75_cgraph" id="class_c_module_managment_a144b824eb172f49e723d133daacacb75_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="161,139,247,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="296,139,443,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="491,139,616,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="669,5,813,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="665,59,817,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="667,112,816,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="665,165,817,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="665,219,817,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="667,272,816,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a144b824eb172f49e723d133daacacb75_icgraph.png" border="0" usemap="#class_c_module_managment_a144b824eb172f49e723d133daacacb75_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a144b824eb172f49e723d133daacacb75_icgraph" id="class_c_module_managment_a144b824eb172f49e723d133daacacb75_icgraph">
+<area shape="rect" id="node3" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="160,5,395,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a804ee07de9de7fa041a47083106753c0"></a><!-- doxytag: member="CModuleManagment::GetDBConfigArray" ref="a804ee07de9de7fa041a47083106753c0" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetDBConfigArray </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает массив параметров модуля для работы с базой данных.</p>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>14.09.2009</dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$module Имя модуля, настройки которого требуется получить. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00585">585</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a804ee07de9de7fa041a47083106753c0_cgraph.png" border="0" usemap="#class_c_module_managment_a804ee07de9de7fa041a47083106753c0_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a804ee07de9de7fa041a47083106753c0_cgraph" id="class_c_module_managment_a804ee07de9de7fa041a47083106753c0_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="193,139,279,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="328,139,475,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="523,139,648,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="701,5,845,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="697,59,849,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="699,112,848,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="697,165,849,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="697,219,849,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="699,272,848,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cc8e9e705c15c4b7458103cfb996004"></a><!-- doxytag: member="CModuleManagment::GetDBVar" ref="a0cc8e9e705c15c4b7458103cfb996004" args="($module, $var)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetDBVar </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>var</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает параметры модуля для работы с базой данных.</p>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>14.09.2009</dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>Идентификатор модуля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$var</em>&nbsp;</td><td>Имя требуемого параметра </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>mixed </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00566">566</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a0cc8e9e705c15c4b7458103cfb996004_cgraph.png" border="0" usemap="#class_c_module_managment_a0cc8e9e705c15c4b7458103cfb996004_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a0cc8e9e705c15c4b7458103cfb996004_cgraph" id="class_c_module_managment_a0cc8e9e705c15c4b7458103cfb996004_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="140,139,225,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="275,139,421,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="469,139,595,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="648,5,792,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="644,59,796,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="645,112,795,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="644,165,796,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="644,219,796,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="645,272,795,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a68f97bc8ac692bd4dad54ee9d5421dc8"></a><!-- doxytag: member="CModuleManagment::GetErrorText" ref="a68f97bc8ac692bd4dad54ee9d5421dc8" args="($code)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetErrorText </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>code</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa4da6148263302bf4f9162655cc5ff0f"></a><!-- doxytag: member="CModuleManagment::GetHeader" ref="aa4da6148263302bf4f9162655cc5ff0f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetHeader </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает все строки которые должны быть добавлены в хэдер страницы </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00405">405</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa4da6148263302bf4f9162655cc5ff0f_cgraph.png" border="0" usemap="#class_c_module_managment_aa4da6148263302bf4f9162655cc5ff0f_cgraph" alt=""/></div>
+<map name="class_c_module_managment_aa4da6148263302bf4f9162655cc5ff0f_cgraph" id="class_c_module_managment_aa4da6148263302bf4f9162655cc5ff0f_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a4285d204a07b105dfecb838d2f671854" title="GetJavaScript" alt="" coords="148,5,255,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4285d204a07b105dfecb838d2f671854"></a><!-- doxytag: member="CModuleManagment::GetJavaScript" ref="a4285d204a07b105dfecb838d2f671854" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetJavaScript </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает строки подключения яваскрипта </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00388">388</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a4285d204a07b105dfecb838d2f671854_icgraph.png" border="0" usemap="#class_c_module_managment_a4285d204a07b105dfecb838d2f671854_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a4285d204a07b105dfecb838d2f671854_icgraph" id="class_c_module_managment_a4285d204a07b105dfecb838d2f671854_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa4da6148263302bf4f9162655cc5ff0f" title="GetHeader" alt="" coords="164,5,255,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b958758f602b79cb3b60912ff5beefd"></a><!-- doxytag: member="CModuleManagment::GetNotifies" ref="a7b958758f602b79cb3b60912ff5beefd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetNotifies </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выводит список уведомлений </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00129">129</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a67a6e25dd3acfdc4041673ad7f130c2e"></a><!-- doxytag: member="CModuleManagment::GetSitePath" ref="a67a6e25dd3acfdc4041673ad7f130c2e" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetSitePath </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает путь к модулю в пользовательской части сайта, также проверяет данный модуль на активность перед построением пути, если модуль неактивен возвращает false </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>- имя модуля </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>false|string - путь к модулю или false если модуль отключен </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00495">495</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a67a6e25dd3acfdc4041673ad7f130c2e_cgraph.png" border="0" usemap="#class_c_module_managment_a67a6e25dd3acfdc4041673ad7f130c2e_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a67a6e25dd3acfdc4041673ad7f130c2e_cgraph" id="class_c_module_managment_a67a6e25dd3acfdc4041673ad7f130c2e_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="153,139,223,168"/><area shape="rect" id="node5" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="273,112,359,141"/><area shape="rect" id="node23" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="277,165,355,195"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="408,139,555,168"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="603,139,728,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="781,5,925,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="777,59,929,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="779,112,928,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="777,165,929,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="777,219,929,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="779,272,928,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9412c900e7e94da3eed1001d399fadba"></a><!-- doxytag: member="CModuleManagment::GetText" ref="a9412c900e7e94da3eed1001d399fadba" args="($code)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetText </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>code</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00075">75</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aec423bd7e0bbbdb7b9a4a700f93ad5c1"></a><!-- doxytag: member="CModuleManagment::GetTitle" ref="aec423bd7e0bbbdb7b9a4a700f93ad5c1" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetTitle </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает текстовое название указанного модуля </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00511">511</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aec423bd7e0bbbdb7b9a4a700f93ad5c1_cgraph.png" border="0" usemap="#class_c_module_managment_aec423bd7e0bbbdb7b9a4a700f93ad5c1_cgraph" alt=""/></div>
+<map name="class_c_module_managment_aec423bd7e0bbbdb7b9a4a700f93ad5c1_cgraph" id="class_c_module_managment_aec423bd7e0bbbdb7b9a4a700f93ad5c1_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="127,139,196,168"/><area shape="rect" id="node5" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="247,112,332,141"/><area shape="rect" id="node23" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="251,165,328,195"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="381,139,528,168"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="576,139,701,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="755,5,899,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="751,59,903,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="752,112,901,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="751,165,903,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="751,219,903,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="752,272,901,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afd2f773f311568e271d84045e233ca5b"></a><!-- doxytag: member="CModuleManagment::GetUninstalledList" ref="afd2f773f311568e271d84045e233ca5b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetUninstalledList </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод получает список еще не установленных модулей путем сканирования папки modules и проверки является ли указанный файл модулем. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00148">148</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_afd2f773f311568e271d84045e233ca5b_cgraph.png" border="0" usemap="#class_c_module_managment_afd2f773f311568e271d84045e233ca5b_cgraph" alt=""/></div>
+<map name="class_c_module_managment_afd2f773f311568e271d84045e233ca5b_cgraph" id="class_c_module_managment_afd2f773f311568e271d84045e233ca5b_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="193,139,271,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="320,139,467,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="515,139,640,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="693,5,837,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="689,59,841,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="691,112,840,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="689,165,841,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="689,219,841,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="691,272,840,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad005f82147e8dc00b930ac5fb3b39a5a"></a><!-- doxytag: member="CModuleManagment::IncludeTreeFile" ref="ad005f82147e8dc00b930ac5fb3b39a5a" args="($module, $arRow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IncludeTreeFile </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arRow</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет подключение файла .tree.php для указанного модуля </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00612">612</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_ad005f82147e8dc00b930ac5fb3b39a5a_cgraph.png" border="0" usemap="#class_c_module_managment_ad005f82147e8dc00b930ac5fb3b39a5a_cgraph" alt=""/></div>
+<map name="class_c_module_managment_ad005f82147e8dc00b930ac5fb3b39a5a_cgraph" id="class_c_module_managment_ad005f82147e8dc00b930ac5fb3b39a5a_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="169,139,239,168"/><area shape="rect" id="node5" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="289,112,375,141"/><area shape="rect" id="node23" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="293,165,371,195"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="424,139,571,168"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="619,139,744,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="797,5,941,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="793,59,945,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="795,112,944,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="793,165,945,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="793,219,945,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="795,272,944,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2956153a176c9e8b2ed24489c3730280"></a><!-- doxytag: member="CModuleManagment::InitModule" ref="a2956153a176c9e8b2ed24489c3730280" args="($module_name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">InitModule </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module_name</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет подключение указанного модуля </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$module_name - название модуля </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array|false - если модуль подключен - массив со списком подключенных модулей, иначе false; </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_admin_module_managment.html#acc67c92c7fb83eeef5692591163bd235">CAdminModuleManagment</a> и <a class="el" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280">CModuleHookUp</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00346">346</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_cgraph.png" border="0" usemap="#class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_cgraph" id="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="141,139,288,168"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="336,139,461,168"/><area shape="rect" id="node7" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="515,5,659,35"/><area shape="rect" id="node9" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="511,59,663,88"/><area shape="rect" id="node11" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="512,112,661,141"/><area shape="rect" id="node13" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="511,165,663,195"/><area shape="rect" id="node15" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="511,219,663,248"/><area shape="rect" id="node17" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="512,272,661,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_icgraph.png" border="0" usemap="#class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_icgraph" id="class_c_module_managment_a2956153a176c9e8b2ed24489c3730280_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#abe5c9c24de0277149206c6c4ec0bad98" title="GetAccessArray" alt="" coords="149,5,272,35"/><area shape="rect" id="node5" href="class_c_module_managment.html#aa82055fc451a5ec7867395553b7c77c8" title="GetConfigArray" alt="" coords="152,59,269,88"/><area shape="rect" id="node9" href="class_c_module_managment.html#a144b824eb172f49e723d133daacacb75" title="GetConfigVar" alt="" coords="157,112,264,141"/><area shape="rect" id="node12" href="class_c_module_managment.html#a804ee07de9de7fa041a47083106753c0" title="GetDBConfigArray" alt="" coords="141,165,280,195"/><area shape="rect" id="node14" href="class_c_module_managment.html#a0cc8e9e705c15c4b7458103cfb996004" title="GetDBVar" alt="" coords="168,219,253,248"/><area shape="rect" id="node16" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="176,272,245,301"/><area shape="rect" id="node7" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="328,112,563,141"/><area shape="rect" id="node19" href="class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="GetSitePath" alt="" coords="396,165,495,195"/><area shape="rect" id="node21" href="class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="GetTitle" alt="" coords="411,219,480,248"/><area shape="rect" id="node23" href="class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="IncludeTreeFile" alt="" coords="389,272,501,301"/><area shape="rect" id="node25" href="class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb" title="IsDefault" alt="" coords="407,325,484,355"/><area shape="rect" id="node27" href="class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89" title="module" alt="" coords="411,379,480,408"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1993246c6a3f3a022ba8dce0cb2f490"></a><!-- doxytag: member="CModuleManagment::Install" ref="aa1993246c6a3f3a022ba8dce0cb2f490" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Install </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет подключение установочного файла для установки нового модуля </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00298">298</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_cgraph.png" border="0" usemap="#class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_cgraph" alt=""/></div>
+<map name="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_cgraph" id="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="149,139,227,168"/><area shape="rect" id="node21" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="RecountDBStructure" alt="" coords="112,192,264,221"/><area shape="rect" id="node28" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="RecountTextStructure" alt="" coords="313,85,471,115"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="319,139,465,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="520,139,645,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="699,5,843,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="695,59,847,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="696,112,845,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="695,165,847,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="695,219,847,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="696,272,845,301"/><area shape="rect" id="node24" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="349,243,435,272"/><area shape="rect" id="node26" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce" title="OutputVar" alt="" coords="540,243,625,272"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_icgraph.png" border="0" usemap="#class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_icgraph" alt=""/></div>
+<map name="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_icgraph" id="class_c_module_managment_aa1993246c6a3f3a022ba8dce0cb2f490_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="112,32,195,61"/><area shape="rect" id="node5" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="243,32,339,61"/><area shape="rect" id="node7" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="420,5,631,35"/><area shape="rect" id="node9" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="387,59,664,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a29304d835877c00f2d7239b6dda8c8ae"></a><!-- doxytag: member="CModuleManagment::IsActive" ref="a29304d835877c00f2d7239b6dda8c8ae" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IsActive </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод проверяет является ли указанный модуль активным </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00460">460</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_cgraph.png" border="0" usemap="#class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_cgraph" id="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="127,112,212,141"/><area shape="rect" id="node21" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="131,165,208,195"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="261,139,408,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="456,139,581,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="635,5,779,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="631,59,783,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="632,112,781,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="631,165,783,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="631,219,783,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="632,272,781,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_icgraph.png" border="0" usemap="#class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_icgraph" id="class_c_module_managment_a29304d835877c00f2d7239b6dda8c8ae_icgraph">
+<area shape="rect" id="node3" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="125,5,360,35"/><area shape="rect" id="node5" href="class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="GetSitePath" alt="" coords="193,59,292,88"/><area shape="rect" id="node7" href="class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="GetTitle" alt="" coords="208,112,277,141"/><area shape="rect" id="node9" href="class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="IncludeTreeFile" alt="" coords="187,165,299,195"/><area shape="rect" id="node11" href="class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb" title="IsDefault" alt="" coords="204,219,281,248"/><area shape="rect" id="node13" href="class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89" title="module" alt="" coords="208,272,277,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab70061ecf2be3f854202f27ed8f6cceb"></a><!-- doxytag: member="CModuleManagment::IsDefault" ref="ab70061ecf2be3f854202f27ed8f6cceb" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IsDefault </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод проверяет является ли указанный модуль, модулем по умолчанию </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00479">479</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_ab70061ecf2be3f854202f27ed8f6cceb_cgraph.png" border="0" usemap="#class_c_module_managment_ab70061ecf2be3f854202f27ed8f6cceb_cgraph" alt=""/></div>
+<map name="class_c_module_managment_ab70061ecf2be3f854202f27ed8f6cceb_cgraph" id="class_c_module_managment_ab70061ecf2be3f854202f27ed8f6cceb_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="135,139,204,168"/><area shape="rect" id="node5" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="255,112,340,141"/><area shape="rect" id="node23" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="259,165,336,195"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="389,139,536,168"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="584,139,709,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="763,5,907,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="759,59,911,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="760,112,909,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="759,165,911,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="759,219,911,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="760,272,909,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bc05652fce4b10caf256f5200472ac0"></a><!-- doxytag: member="CModuleManagment::IsInstallable" ref="a1bc05652fce4b10caf256f5200472ac0" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IsInstallable </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод проверяет можно ли устанавливать данный модуль </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00183">183</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a1bc05652fce4b10caf256f5200472ac0_cgraph.png" border="0" usemap="#class_c_module_managment_a1bc05652fce4b10caf256f5200472ac0_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a1bc05652fce4b10caf256f5200472ac0_cgraph" id="class_c_module_managment_a1bc05652fce4b10caf256f5200472ac0_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="151,139,228,168"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="277,139,424,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="472,139,597,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="651,5,795,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="647,59,799,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="648,112,797,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="647,165,799,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="647,219,799,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="648,272,797,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0dc66f2dcabb894440bf0b675f817389"></a><!-- doxytag: member="CModuleManagment::IsModule" ref="a0dc66f2dcabb894440bf0b675f817389" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IsModule </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Проверяет является ли указанный модуль, модулем. Возвращает описание модуля </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>- имя модуля (текстовый идентификатор). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00414">414</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_cgraph.png" border="0" usemap="#class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_cgraph" id="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="133,139,280,168"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="328,139,453,168"/><area shape="rect" id="node7" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="507,5,651,35"/><area shape="rect" id="node9" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="503,59,655,88"/><area shape="rect" id="node11" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="504,112,653,141"/><area shape="rect" id="node13" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="503,165,655,195"/><area shape="rect" id="node15" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="503,219,655,248"/><area shape="rect" id="node17" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="504,272,653,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_icgraph.png" border="0" usemap="#class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_icgraph" id="class_c_module_managment_a0dc66f2dcabb894440bf0b675f817389_icgraph">
+<area shape="rect" id="node3" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="135,5,457,35"/><area shape="rect" id="node5" href="class_c_module_managment.html#a78e32f236574e2d1aa2f33e50b0d5410" title="CopyModuleTemplates" alt="" coords="213,59,379,88"/><area shape="rect" id="node7" href="class_c_module_managment.html#afd2f773f311568e271d84045e233ca5b" title="GetUninstalledList" alt="" coords="227,112,365,141"/><area shape="rect" id="node9" href="class_c_admin_module_managment.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CAdminModuleManagment::init" alt="" coords="185,165,407,195"/><area shape="rect" id="node11" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="267,219,325,248"/><area shape="rect" id="node13" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="583,189,665,219"/><area shape="rect" id="node21" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="261,323,331,352"/><area shape="rect" id="node35" href="class_c_module_managment.html#a1bc05652fce4b10caf256f5200472ac0" title="IsInstallable" alt="" coords="248,376,344,405"/><area shape="rect" id="node38" href="class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="UnInstall" alt="" coords="257,429,335,459"/><area shape="rect" id="node15" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="789,189,885,219"/><area shape="rect" id="node17" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="967,163,1177,192"/><area shape="rect" id="node19" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="933,216,1211,245"/><area shape="rect" id="node23" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="507,243,741,272"/><area shape="rect" id="node25" href="class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="GetSitePath" alt="" coords="575,296,673,325"/><area shape="rect" id="node27" href="class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="GetTitle" alt="" coords="589,349,659,379"/><area shape="rect" id="node29" href="class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="IncludeTreeFile" alt="" coords="568,403,680,432"/><area shape="rect" id="node31" href="class_c_module_managment.html#ab70061ecf2be3f854202f27ed8f6cceb" title="IsDefault" alt="" coords="585,456,663,485"/><area shape="rect" id="node33" href="class_c_module_managment.html#a486cea78d8488fe01de441fd1ca81a89" title="module" alt="" coords="589,509,659,539"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a486cea78d8488fe01de441fd1ca81a89"></a><!-- doxytag: member="CModuleManagment::module" ref="a486cea78d8488fe01de441fd1ca81a89" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">module </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод реализует работу с апи модулей </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$module</em>&nbsp;</td><td>string - имя модуля к апи которого происходит обращение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00637">637</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a486cea78d8488fe01de441fd1ca81a89_cgraph.png" border="0" usemap="#class_c_module_managment_a486cea78d8488fe01de441fd1ca81a89_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a486cea78d8488fe01de441fd1ca81a89_cgraph" id="class_c_module_managment_a486cea78d8488fe01de441fd1ca81a89_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="IsActive" alt="" coords="127,139,196,168"/><area shape="rect" id="node5" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="InitModule" alt="" coords="247,112,332,141"/><area shape="rect" id="node23" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="251,165,328,195"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="381,139,528,168"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="576,139,701,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="755,5,899,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="751,59,903,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="752,112,901,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="751,165,903,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="751,219,903,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="752,272,901,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a54b82731d01e67c6f6641682fed2bb7a"></a><!-- doxytag: member="CModuleManagment::RecountDBStructure" ref="a54b82731d01e67c6f6641682fed2bb7a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RecountDBStructure </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет перерасчет стркутуры базы данных хранящейся в конфигурации сайта на основании структур таблиц различных модулей, при этом происходит сохранение сгенерированной структуры. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00204">204</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_cgraph.png" border="0" usemap="#class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_cgraph" id="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="205,165,331,195"/><area shape="rect" id="node17" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="225,272,311,301"/><area shape="rect" id="node5" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="384,5,528,35"/><area shape="rect" id="node7" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="380,59,532,88"/><area shape="rect" id="node9" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="381,112,531,141"/><area shape="rect" id="node11" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="380,165,532,195"/><area shape="rect" id="node13" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="380,219,532,248"/><area shape="rect" id="node15" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="381,272,531,301"/><area shape="rect" id="node19" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce" title="OutputVar" alt="" coords="413,325,499,355"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_icgraph.png" border="0" usemap="#class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_icgraph" id="class_c_module_managment_a54b82731d01e67c6f6641682fed2bb7a_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="215,5,273,35"/><area shape="rect" id="node5" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="331,32,413,61"/><area shape="rect" id="node14" href="class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="UnInstall" alt="" coords="205,109,283,139"/><area shape="rect" id="node7" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="461,32,557,61"/><area shape="rect" id="node9" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="639,5,849,35"/><area shape="rect" id="node11" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="605,59,883,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a309f3d45a137d425934d40152dc84cf5"></a><!-- doxytag: member="CModuleManagment::RecountTextStructure" ref="a309f3d45a137d425934d40152dc84cf5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RecountTextStructure </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет компиляцию файлов текстовых констант из файлов текстов различных модулей выполняется после установки или удаления модулей, а также после обновления системы </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00230">230</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_cgraph.png" border="0" usemap="#class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_cgraph" alt=""/></div>
+<map name="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_cgraph" id="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="213,139,339,168"/><area shape="rect" id="node5" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="392,5,536,35"/><area shape="rect" id="node7" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="388,59,540,88"/><area shape="rect" id="node9" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="389,112,539,141"/><area shape="rect" id="node11" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="388,165,540,195"/><area shape="rect" id="node13" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="388,219,540,248"/><area shape="rect" id="node15" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="389,272,539,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_icgraph.png" border="0" usemap="#class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_icgraph" id="class_c_module_managment_a309f3d45a137d425934d40152dc84cf5_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="223,5,281,35"/><area shape="rect" id="node5" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="SelfInstall" alt="" coords="339,32,421,61"/><area shape="rect" id="node14" href="class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="UnInstall" alt="" coords="213,109,291,139"/><area shape="rect" id="node7" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="469,32,565,61"/><area shape="rect" id="node9" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="647,5,857,35"/><area shape="rect" id="node11" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="613,59,891,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a36b62ef42e3642f437b291cc64bcb817"></a><!-- doxytag: member="CModuleManagment::select_global_template" ref="a36b62ef42e3642f437b291cc64bcb817" args="($full_uri, $jumps_quant='4', $internal=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">select_global_template </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>full_uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>jumps_quant</em> = <code>'4'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>internal</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает имя глобального шаблона, который необходимо использовать, в зависимости от url Если по данному url шаблон не удалось найти, то отдаётся имя дефолтового шаблона (.default) Изменен принцип работы, добавлены сложные варианты выбора шаблонов.</p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.5.2 </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>23.05.2009</dd></dl>
+<p>Добавлен поиск глобального шаблона для главной страницы (в базе должен быть указан uri='/') Функция сделанна</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$full_uri Полный путь к странице </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$jumps_quant Максимальное количество прыжков для поиска шаблона: '' (пусто) - не задано, 0 - не делать прыжков </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>$internal - внутренняя переменная, не использовать </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>unknown </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00681">681</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_a36b62ef42e3642f437b291cc64bcb817_icgraph.png" border="0" usemap="#class_c_module_managment_a36b62ef42e3642f437b291cc64bcb817_icgraph" alt=""/></div>
+<map name="class_c_module_managment_a36b62ef42e3642f437b291cc64bcb817_icgraph" id="class_c_module_managment_a36b62ef42e3642f437b291cc64bcb817_icgraph">
+<area shape="rect" id="node3" href="class_c_admin_module_managment.html#a17252ffd96c6483b65ab07f3f519e847" title="CAdminModuleManagment::GetTemplate" alt="" coords="225,5,508,35"/><area shape="rect" id="node5" href="class_c_module_hook_up.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CModuleHookUp::init" alt="" coords="289,59,444,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa21698940394266d7b475ef5ebbaffe2"></a><!-- doxytag: member="CModuleManagment::SelfInstall" ref="aa21698940394266d7b475ef5ebbaffe2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SelfInstall </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Данный метод выполняет автоматическую установку системы, в случае если она не была установлена </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00797">797</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_cgraph.png" border="0" usemap="#class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_cgraph" alt=""/></div>
+<map name="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_cgraph" id="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="Install" alt="" coords="180,165,239,195"/><area shape="rect" id="node5" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="372,85,449,115"/><area shape="rect" id="node23" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="RecountDBStructure" alt="" coords="335,197,487,227"/><area shape="rect" id="node30" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="RecountTextStructure" alt="" coords="332,139,489,168"/><area shape="rect" id="node36" href="class_c_url_parser.html#a3e1c140b88cbf2c757ab705b2ba2e718" title="CUrlParser::redirect" alt="" coords="136,269,283,299"/><area shape="rect" id="node7" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="539,87,685,116"/><area shape="rect" id="node9" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="733,139,859,168"/><area shape="rect" id="node11" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="912,5,1056,35"/><area shape="rect" id="node13" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="908,59,1060,88"/><area shape="rect" id="node15" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="909,112,1059,141"/><area shape="rect" id="node17" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="908,165,1060,195"/><area shape="rect" id="node19" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="908,219,1060,248"/><area shape="rect" id="node21" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="909,272,1059,301"/><area shape="rect" id="node26" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="569,241,655,271"/><area shape="rect" id="node28" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce" title="OutputVar" alt="" coords="753,241,839,271"/><area shape="rect" id="node38" href="class_c_url_parser.html#aebea1ae77c7418adbc81928096d98f06" title="CUrlParser::AjaxReq" alt="" coords="337,316,484,345"/><area shape="rect" id="node40" href="class_c_url_parser.html#a26b16e8042b1f4f73c80972d85f948a9" title="CUrlParser::GetJS" alt="" coords="345,263,476,292"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_icgraph.png" border="0" usemap="#class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_icgraph" alt=""/></div>
+<map name="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_icgraph" id="class_c_module_managment_aa21698940394266d7b475ef5ebbaffe2_icgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a095c5d389db211932136b53f25f39685" title="__construct" alt="" coords="136,32,232,61"/><area shape="rect" id="node5" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214" title="CModuleHookUp::__construct" alt="" coords="313,5,524,35"/><area shape="rect" id="node7" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214" title="CAdminModuleManagment::__construct" alt="" coords="280,59,557,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a53464ddc117cbdd66fa7209837e65bee"></a><!-- doxytag: member="CModuleManagment::SetLanguage" ref="a53464ddc117cbdd66fa7209837e65bee" args="($obLanguage)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetLanguage </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>obLanguage</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00064">64</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aea3c28ddbf0502d3d0c1027e227cc136"></a><!-- doxytag: member="CModuleManagment::SetLanguageError" ref="aea3c28ddbf0502d3d0c1027e227cc136" args="($obLanguage)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetLanguageError </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>obLanguage</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00082">82</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a97ae76d44c87df0178e2cf1d6fbd48d5"></a><!-- doxytag: member="CModuleManagment::SetSmarty" ref="a97ae76d44c87df0178e2cf1d6fbd48d5" args="($obSmarty)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetSmarty </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>obSmarty</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00059">59</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a92808e2f88ed4edfb1ee2db75f460bcd"></a><!-- doxytag: member="CModuleManagment::SetUser" ref="a92808e2f88ed4edfb1ee2db75f460bcd" args="($obUser)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetUser </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>obUser</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af963fb6ec0e44e3171372f2af00f3877"></a><!-- doxytag: member="CModuleManagment::ShowNotifies" ref="af963fb6ec0e44e3171372f2af00f3877" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ShowNotifies </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает уведомления и отчишает их список </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00137">137</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae85425e7d70bcfe666db3e0bd9e15b31"></a><!-- doxytag: member="CModuleManagment::UnInstall" ref="ae85425e7d70bcfe666db3e0bd9e15b31" args="($module)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UnInstall </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>module</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет удаление указанного модуля </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00321">321</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_ae85425e7d70bcfe666db3e0bd9e15b31_cgraph.png" border="0" usemap="#class_c_module_managment_ae85425e7d70bcfe666db3e0bd9e15b31_cgraph" alt=""/></div>
+<map name="class_c_module_managment_ae85425e7d70bcfe666db3e0bd9e15b31_cgraph" id="class_c_module_managment_ae85425e7d70bcfe666db3e0bd9e15b31_cgraph">
+<area shape="rect" id="node3" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="IsModule" alt="" coords="168,139,245,168"/><area shape="rect" id="node21" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="RecountDBStructure" alt="" coords="131,192,283,221"/><area shape="rect" id="node28" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="RecountTextStructure" alt="" coords="332,85,489,115"/><area shape="rect" id="node5" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="CObject::GetRecord" alt="" coords="337,139,484,168"/><area shape="rect" id="node7" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="CObject::GetList" alt="" coords="539,139,664,168"/><area shape="rect" id="node9" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="CObject::_GenFrom" alt="" coords="717,5,861,35"/><area shape="rect" id="node11" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="CObject::_GenGroup" alt="" coords="713,59,865,88"/><area shape="rect" id="node13" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="CObject::_GenOrder" alt="" coords="715,112,864,141"/><area shape="rect" id="node15" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="CObject::_GenSelect" alt="" coords="713,165,865,195"/><area shape="rect" id="node17" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="CObject::_GenWhere" alt="" coords="713,219,865,248"/><area shape="rect" id="node19" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="CObject::_ParseItem" alt="" coords="715,272,864,301"/><area shape="rect" id="node24" href="main_2libs_2functions_8php.html#a7ede9f209699b8ba0ebc4a2797e8c841" title="SaveToFile" alt="" coords="368,243,453,272"/><area shape="rect" id="node26" href="main_2libs_2functions_8php.html#a3a15d8facae92d6d9ac572f1b6ae87ce" title="OutputVar" alt="" coords="559,243,644,272"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa337f89018f666b86d17ee00a538041f"></a><!-- doxytag: member="CModuleManagment::UseJavaScript" ref="aa337f89018f666b86d17ee00a538041f" args="($script, $position=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UseJavaScript </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>script</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>position</em> = <code>10</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод добавляет указанный скрипт в список скриптов при рендеринге страницы </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$script</em>&nbsp;</td><td>имя скрипта относительно папки яваскриптов </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$position</em>&nbsp;</td><td>позция скрипта в шапке </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00372">372</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_module_managment_aa337f89018f666b86d17ee00a538041f_icgraph.png" border="0" usemap="#class_c_module_managment_aa337f89018f666b86d17ee00a538041f_icgraph" alt=""/></div>
+<map name="class_c_module_managment_aa337f89018f666b86d17ee00a538041f_icgraph" id="class_c_module_managment_aa337f89018f666b86d17ee00a538041f_icgraph">
+<area shape="rect" id="node3" href="class_c_module_hook_up.html#a082d4a327408ab750c53ea44416c4f08" title="CModuleHookUp::RenderTemplate" alt="" coords="167,5,404,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="a523427fab49d6ab357e6ff21d0622c33"></a><!-- doxytag: member="CModuleManagment::$arHeads" ref="a523427fab49d6ab357e6ff21d0622c33" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arHeads<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>массив строк для вывода в заголовок </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac797c7e6cc1f534aec03a4ba79e486fe"></a><!-- doxytag: member="CModuleManagment::$arHeadScripts" ref="ac797c7e6cc1f534aec03a4ba79e486fe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arHeadScripts<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9c8cfae8f91b1376cd604239f1c5d107"></a><!-- doxytag: member="CModuleManagment::$arIsModules" ref="a9c8cfae8f91b1376cd604239f1c5d107" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arIsModules<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Массив скриптов которые необходимо вывести в заголовке список существующих модулей </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a11e9448a4588fe6e27996ec7d7849d4c"></a><!-- doxytag: member="CModuleManagment::$arModules" ref="a11e9448a4588fe6e27996ec7d7849d4c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arModules<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4befb605ae6a8dd3e878fa23ce926d9a"></a><!-- doxytag: member="CModuleManagment::$arNotifies" ref="a4befb605ae6a8dd3e878fa23ce926d9a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arNotifies<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>массив в котором хранятся уведомления системы </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa9645e8d4ef1d237cbe1fa3466cb3d35"></a><!-- doxytag: member="CModuleManagment::$obLanguage" ref="aa9645e8d4ef1d237cbe1fa3466cb3d35" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obLanguage<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad41f9c954526c3babd966b2e76afee3d"></a><!-- doxytag: member="CModuleManagment::$obLanguageError" ref="ad41f9c954526c3babd966b2e76afee3d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obLanguageError<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a296afd768088584bc154e9c90b03a9f2"></a><!-- doxytag: member="CModuleManagment::$obSmarty" ref="a296afd768088584bc154e9c90b03a9f2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obSmarty<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5ed65e85294f010198c5bf523d7df077"></a><!-- doxytag: member="CModuleManagment::$obUser" ref="a5ed65e85294f010198c5bf523d7df077" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obUser<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a> строка <a class="el" href="class_8_c_module_managment_8php_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_module_managment_8php_source.html">class.CModuleManagment.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:25. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

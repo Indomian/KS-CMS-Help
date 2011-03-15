@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/widgets/function.ShowEditor.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/widgets/function.ShowEditor.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="function_8_show_editor_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="function_8_show_editor_8php.html#a24be73478bd3251a0ff54e54f9166a54">00016</a> function <a class="code" href="function_8_show_editor_8php.html#a24be73478bd3251a0ff54e54f9166a54">smarty_function_ShowEditor</a>($params,&amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>)
+<a name="l00017"></a>00017 {
+<a name="l00018"></a>00018         global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00019"></a>00019         <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;object&#39;</span>]==<span class="stringliteral">&#39;&#39;</span>) $params[<span class="stringliteral">&#39;object&#39;</span>]=<span class="stringliteral">&#39;textarea&#39;</span>;
+<a name="l00020"></a>00020         <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;theme&#39;</span>]==<span class="stringliteral">&#39;&#39;</span>) $params[<span class="stringliteral">&#39;theme&#39;</span>]=<span class="stringliteral">&#39;advanced&#39;</span>;
+<a name="l00021"></a>00021         <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;path&#39;</span>]==<span class="stringliteral">&#39;&#39;</span>) $params[<span class="stringliteral">&#39;path&#39;</span>]=<span class="charliteral">&#39;/&#39;</span>;
+<a name="l00022"></a>00022         $sTemplate=$KS_MODULES-&gt;GetTemplate($params[<span class="stringliteral">&#39;path&#39;</span>]);
+<a name="l00023"></a>00023         $sContentCss=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00024"></a>00024         <span class="keywordflow">if</span>(file_exists(TEMPLATES_DIR.<span class="charliteral">&#39;/&#39;</span>.$sTemplate.<span class="stringliteral">&#39;/css/content.css&#39;</span>))
+<a name="l00025"></a>00025         {
+<a name="l00026"></a>00026                 $sContentCss=<span class="stringliteral">&#39;content_css:&quot;&#39;</span>.str_replace(ROOT_DIR,<span class="stringliteral">&#39;&#39;</span>,TEMPLATES_DIR.<span class="charliteral">&#39;/&#39;</span>.$sTemplate.<span class="stringliteral">&#39;/css/content.css&#39;</span>).<span class="stringliteral">&#39;&quot;,&#39;</span>;
+<a name="l00027"></a>00027         }
+<a name="l00028"></a>00028         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=<span class="stringliteral">&#39;&lt;script type=&quot;text/javascript&quot;&gt;&#39;</span>.
+<a name="l00029"></a>00029         <span class="stringliteral">&#39;$(document).bind(&quot;InitTiny&quot;,function(event)&#39;</span>.
+<a name="l00030"></a>00030         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00031"></a>00031                 <span class="stringliteral">&#39;if($(\&#39;&#39;</span>.$params[<span class="stringliteral">&#39;object&#39;</span>].<span class="charliteral">&#39;\&#39;</span>).attr(<span class="stringliteral">&quot;isTiny&quot;</span>)!=1)<span class="stringliteral">&#39; .</span>
+<a name="l00032"></a>00032 <span class="stringliteral">                &#39;</span>$(\<span class="stringliteral">&#39;&#39;</span>.$params[<span class="stringliteral">&#39;object&#39;</span>].<span class="charliteral">&#39;\&#39;</span>).attr(<span class="stringliteral">&quot;isTiny&quot;</span>,<span class="stringliteral">&quot;1&quot;</span>).tinymce({<span class="stringliteral">&#39;.&quot;\n&quot;.</span>
+<a name="l00033"></a>00033 <span class="stringliteral">                        &#39;</span>script_url : <span class="stringliteral">&quot;/js/tiny_mce/tiny_mce.js&quot;</span>,<span class="stringliteral">&#39;;</span>
+<a name="l00034"></a>00034 <span class="stringliteral">        if($params[&#39;</span>theme<span class="stringliteral">&#39;]==&#39;</span>advanced<span class="stringliteral">&#39;)</span>
+<a name="l00035"></a>00035 <span class="stringliteral">        {</span>
+<a name="l00036"></a>00036 <span class="stringliteral">                $sResult.=&#39;</span>theme : <span class="stringliteral">&quot;advanced&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00037"></a>00037 <span class="stringliteral">                        &#39;</span>plugins : <span class="stringliteral">&quot;safari,typograf,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,media,searchreplace,print,contextmenu,paste,directionality,fullscreen&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00038"></a>00038 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons1_add_before : <span class="stringliteral">&quot;save,newdocument,separator&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00039"></a>00039 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons1_add : <span class="stringliteral">&quot;fontselect,fontsizeselect,typograf&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00040"></a>00040 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons2_add : <span class="stringliteral">&quot;separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00041"></a>00041 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons2_add_before: <span class="stringliteral">&quot;cut,copy,paste,pastetext,pasteword,separator,search,replace,separator&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00042"></a>00042 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons3_add_before : <span class="stringliteral">&quot;tablecontrols,separator&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00043"></a>00043 <span class="stringliteral">                        &#39;</span>theme_advanced_buttons3_add : <span class="stringliteral">&quot;iespell,media,advhr,separator,print,separator,ltr,rtl,separator,fullscreen,ksSmile&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00044"></a>00044 <span class="stringliteral">                        &#39;</span>theme_advanced_toolbar_location : <span class="stringliteral">&quot;top&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00045"></a>00045 <span class="stringliteral">                        &#39;</span>theme_advanced_toolbar_align : <span class="stringliteral">&quot;left&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00046"></a>00046 <span class="stringliteral">                        &#39;</span>theme_advanced_statusbar_location : <span class="stringliteral">&quot;bottom&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00047"></a>00047 <span class="stringliteral">                        &#39;</span>plugi2n_insertdate_dateFormat : <span class="stringliteral">&quot;%Y-%m-%d&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00048"></a>00048 <span class="stringliteral">                    &#39;</span>plugi2n_insertdate_timeFormat : <span class="stringliteral">&quot;%H:%M:%S&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00049"></a>00049 <span class="stringliteral">                        &#39;</span>paste_use_dialog : <span class="keyword">false</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00050"></a>00050 <span class="stringliteral">                        &#39;</span>theme_advanced_resizing : <span class="keyword">true</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00051"></a>00051 <span class="stringliteral">                        &#39;</span>theme_advanced_resize_horizontal : <span class="keyword">false</span>,<span class="stringliteral">&#39;;</span>
+<a name="l00052"></a>00052 <span class="stringliteral">        }</span>
+<a name="l00053"></a>00053 <span class="stringliteral">        $sResult.=$sContentCss.&#39;</span>paste_auto_cleanup_on_paste : <span class="keyword">true</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00054"></a>00054 <span class="stringliteral">                        &#39;</span>paste_convert_headers_to_strong : <span class="keyword">false</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00055"></a>00055 <span class="stringliteral">                        &#39;</span>paste_strip_class_attributes : <span class="stringliteral">&quot;all&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00056"></a>00056 <span class="stringliteral">                        &#39;</span>paste_remove_spans : <span class="keyword">false</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00057"></a>00057 <span class="stringliteral">                        &#39;</span>paste_remove_styles : <span class="keyword">false</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00058"></a>00058 <span class="stringliteral">                        &#39;</span>relative_urls:<span class="keyword">false</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00059"></a>00059 <span class="stringliteral">                        &#39;</span>language : <span class="stringliteral">&quot;ru&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00060"></a>00060 <span class="stringliteral">                        &#39;</span>valid_elements : <span class="stringliteral">&quot;@[id|class|style|title|dir&lt;ltr?rtl|lang|xml::lang|onclick|ondblclick|&#39;.</span>
+<a name="l00061"></a>00061 <span class="stringliteral">                        &#39;onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|&#39;.</span>
+<a name="l00062"></a>00062 <span class="stringliteral">                        &#39;onkeydown|onkeyup],a[rel|rev|charset|hreflang|tabindex|accesskey|type|&#39;.</span>
+<a name="l00063"></a>00063 <span class="stringliteral">                        &quot;</span>name|href|target|title|<span class="keyword">class</span>|onfocus|onblur],strong/b,em/i,strike,u,<span class="stringliteral">&quot;.</span>
+<a name="l00064"></a>00064 <span class="stringliteral">                        &quot;</span>#p,-ol[type|compact],-ul[type|compact],-li,br,img[longdesc|usemap|<span class="stringliteral">&quot;.</span>
+<a name="l00065"></a>00065 <span class="stringliteral">                        &quot;</span>src|border|alt=|title|hspace|vspace|width|height|align],-sub,-sup,<span class="stringliteral">&quot;.</span>
+<a name="l00066"></a>00066 <span class="stringliteral">                        &quot;</span>-blockquote,-table[border=0|cellspacing|cellpadding|width|frame|rules|<span class="stringliteral">&quot;.</span>
+<a name="l00067"></a>00067 <span class="stringliteral">                        &quot;</span>height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|<span class="stringliteral">&quot;.</span>
+<a name="l00068"></a>00068 <span class="stringliteral">                        &quot;</span>height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,<span class="stringliteral">&quot;.</span>
+<a name="l00069"></a>00069 <span class="stringliteral">                        &quot;</span>#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor<span class="stringliteral">&quot;.</span>
+<a name="l00070"></a>00070 <span class="stringliteral">                        &quot;</span>|scope],#th[colspan|rowspan|width|height|align|valign|scope],caption,-div,<span class="stringliteral">&quot;.</span>
+<a name="l00071"></a>00071 <span class="stringliteral">                        &quot;</span>-span,-code,-pre,address,-h1,-h2,-h3,-h4,-h5,-h6,hr[size|noshade],-font[face<span class="stringliteral">&quot;.</span>
+<a name="l00072"></a>00072 <span class="stringliteral">                        &quot;</span>|size|color],dd,dl,dt,cite,abbr,acronym,del[datetime|cite],ins[datetime|cite],<span class="stringliteral">&quot;.</span>
+<a name="l00073"></a>00073 <span class="stringliteral">                        &quot;</span><span class="keywordtype">object</span>[classid|width|height|codebase|*],param[name|value|_value],embed[type|width<span class="stringliteral">&quot;.</span>
+<a name="l00074"></a>00074 <span class="stringliteral">                        &quot;</span>|height|src|*],script[src|type],map[name],area[shape|coords|href|alt|target],bdo,<span class="stringliteral">&quot;.</span>
+<a name="l00075"></a>00075 <span class="stringliteral">                        &quot;</span>button,col[align|<span class="keywordtype">char</span>|charoff|span|valign|width],colgroup[align|<span class="keywordtype">char</span>|charoff|span|<span class="stringliteral">&quot;.</span>
+<a name="l00076"></a>00076 <span class="stringliteral">                        &quot;</span>valign|width],dfn,fieldset,form[action|accept|accept-charset|enctype|method],<span class="stringliteral">&quot;.</span>
+<a name="l00077"></a>00077 <span class="stringliteral">                        &quot;</span>input[accept|alt|checked|disabled|maxlength|name|readonly|size|src|type|value],<span class="stringliteral">&quot;.</span>
+<a name="l00078"></a>00078 <span class="stringliteral">                        &quot;</span>kbd,label[<span class="keywordflow">for</span>],legend,noscript,optgroup[label|disabled],option[disabled|label|selected|value],<span class="stringliteral">&quot;.</span>
+<a name="l00079"></a>00079 <span class="stringliteral">                        &quot;</span>q[cite],samp,select[disabled|multiple|name|size],small,<span class="stringliteral">&quot;.</span>
+<a name="l00080"></a>00080 <span class="stringliteral">                        &#39;textarea[cols|rows|disabled|name|readonly],tt,var,big&quot;</span>,<span class="stringliteral">&#39;.</span>
+<a name="l00081"></a>00081 <span class="stringliteral">                        &#39;</span>file_browser_callback : <span class="stringliteral">&quot;myFileBrowser&quot;</span><span class="stringliteral">&#39;.</span>
+<a name="l00082"></a>00082 <span class="stringliteral">                &#39;</span>});});<span class="stringliteral">&#39;.</span>
+<a name="l00083"></a>00083 <span class="stringliteral">        &#39;</span>$(document).ready(function(){$(document).trigger(<span class="stringliteral">&quot;InitTiny&quot;</span>)});<span class="stringliteral">&#39;.</span>
+<a name="l00084"></a>00084 <span class="stringliteral">        &#39;</span>&lt;/script&gt;<span class="stringliteral">&#39;;</span>
+<a name="l00085"></a>00085 <span class="stringliteral">        return $sResult;</span>
+<a name="l00086"></a>00086 <span class="stringliteral">}</span>
+<a name="l00087"></a>00087 <span class="stringliteral">?&gt;</span>
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/file/config.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/file/config.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="main_2fields_2file_2config_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00012"></a>00012 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00013"></a>00013 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00014"></a><a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">00014</a> <a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>=ini_get(<span class="stringliteral">&#39;upload_max_filesize&#39;</span>);
+<a name="l00015"></a><a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">00015</a> <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>=strtolower(substr(<a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>,-1));
+<a name="l00016"></a>00016 <a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>=(int)<a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>;
+<a name="l00017"></a><a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">00017</a> <a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a> = array(<span class="stringliteral">&quot;b&quot;</span>=&gt;1, <span class="stringliteral">&quot;k&quot;</span>=&gt;1024, <span class="stringliteral">&quot;m&quot;</span>=&gt;1048576, <span class="stringliteral">&quot;g&quot;</span>=&gt;1073741824);
+<a name="l00018"></a><a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">00018</a> <a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a>=$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_1&#39;</span>];
+<a name="l00019"></a><a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">00019</a> <a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a> = array(<span class="stringliteral">&quot;b&quot;</span>, <span class="stringliteral">&quot;k&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;g&quot;</span>);
+<a name="l00020"></a>00020 <span class="keywordflow">if</span>(!in_array(<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>,<a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a>))
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022   <a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>=<span class="charliteral">&#39;b&#39;</span>;
+<a name="l00023"></a>00023 }
+<a name="l00024"></a><a class="code" href="main_2fields_2file_2config_8php.html#ac9c6ea5b1c228a884931ddc5f94fcc6d">00024</a> <a class="code" href="main_2fields_2file_2config_8php.html#ac9c6ea5b1c228a884931ddc5f94fcc6d">$pos</a> = 0;
+<a name="l00025"></a>00025 <span class="keywordflow">while</span>(<a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> &gt;= 1024)
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027         <a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> /= 1024;
+<a name="l00028"></a>00028         <a class="code" href="main_2fields_2file_2config_8php.html#ac9c6ea5b1c228a884931ddc5f94fcc6d">$pos</a>++;
+<a name="l00029"></a>00029 }
+<a name="l00030"></a><a class="code" href="main_2fields_2file_2config_8php.html#abe0b3d169d70eace6fd953dfc091f088">00030</a> <a class="code" href="main_2fields_2file_2config_8php.html#abe0b3d169d70eace6fd953dfc091f088">$type</a>=<a class="code" href="main_2fields_2file_2config_8php.html#acebf83966ef6d7e5645a6b62ba368f9f">$a</a>[<a class="code" href="main_2fields_2file_2config_8php.html#ac9c6ea5b1c228a884931ddc5f94fcc6d">$pos</a>];
+<a name="l00031"></a>00031 <a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a> = round(<a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a>,2);
+<a name="l00032"></a>00032 <span class="keywordflow">if</span>((<a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a>*<a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>[<a class="code" href="main_2fields_2file_2config_8php.html#abe0b3d169d70eace6fd953dfc091f088">$type</a>])&gt;(<a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>*<a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>[<a class="code" href="main_2fields_2file_2config_8php.html#a3d44ea1cbbc9bc72aad8436186c4866e">$t</a>])) {<a class="code" href="main_2fields_2file_2config_8php.html#af594986e4618a8d6a5d7566617f583c6">$size</a>=<a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>; $type=$t;}
+<a name="l00033"></a><a class="code" href="main_2fields_2file_2config_8php.html#ac9ae0d8ec848e21b58e77c72133a5335">00033</a> <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=<span class="stringliteral">&#39;&lt;table class=&quot;layout&quot;&gt;&lt;tr&gt;&lt;td width=&quot;30%&quot;&gt;Ограничить размер файла (0 - не ограничивать или предельный размер в настройках ПХП (&#39;</span>.$max_size.$t.<span class="stringliteral">&#39;)): &lt;/td&gt;&#39;</span> .
+<a name="l00034"></a>00034                 <span class="stringliteral">&#39;&lt;td width=&quot;70%&quot;&gt;&lt;input type=&quot;text&quot; class=&quot;form_input&quot; &#39;</span> .
+<a name="l00035"></a>00035                 <span class="stringliteral">&#39;name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; &#39;</span> .
+<a name="l00036"></a>00036                 <span class="stringliteral">&#39;value=&quot;&#39;</span>.$size.<span class="stringliteral">&#39;&quot; &#39;</span> .
+<a name="l00037"></a>00037                 <span class="stringliteral">&#39;id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot; /&gt;&lt;select name=&quot;numberSize&quot; id=&quot;sizeType&quot;&gt;&lt;option value=&quot;1&quot;&gt;Байт&lt;/option&gt;&lt;option value=&quot;k&quot;&#39;</span>.($type==<span class="charliteral">&#39;k&#39;</span>?<span class="stringliteral">&#39; selected=&quot;selected&quot;&#39;</span>:<span class="stringliteral">&#39;&#39;</span>).<span class="stringliteral">&#39;&gt;КБайт&lt;/option&gt;&lt;option value=&quot;m&quot;&#39;</span>.($type==<span class="charliteral">&#39;m&#39;</span>?<span class="stringliteral">&#39; selected=&quot;selected&quot;&#39;</span>:<span class="stringliteral">&#39;&#39;</span>).<span class="stringliteral">&#39;&gt;МБайт&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+<a name="l00038"></a>00038                 <span class="stringliteral">&#39;&lt;tr&gt;&lt;td&gt;Допустимые расширения файлов (каждое с новой строки): &lt;/td&gt;&lt;td&gt;&#39;</span> .
+<a name="l00039"></a>00039                 <span class="stringliteral">&#39;&lt;textarea class=&quot;form_input&quot; style=&quot;width:100px;&quot;&#39;</span> .
+<a name="l00040"></a>00040                 <span class="stringliteral">&#39;name=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot; &#39;</span>.
+<a name="l00041"></a>00041                 <span class="stringliteral">&#39;id=&quot;&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot;&gt;&#39;</span>.$params[<span class="stringliteral">&#39;field&#39;</span>][<span class="stringliteral">&#39;option_2&#39;</span>].<span class="stringliteral">&#39;&lt;/textarea&gt;&lt;select name=&quot;fileType&quot; id=&quot;fileType&quot;&gt;&#39;</span> .
+<a name="l00042"></a>00042                                 <span class="stringliteral">&#39;&lt;option value=&quot;&quot;&gt;&lt;/option&gt;&#39;</span>.
+<a name="l00043"></a>00043                                 <span class="stringliteral">&#39;&lt;option value=&quot;jpg\npng\ngif\nbmp\njpeg&quot;&gt;Картинки&lt;/option&gt;&#39;</span> .
+<a name="l00044"></a>00044                                 <span class="stringliteral">&#39;&lt;option value=&quot;zip\nrar\n7zp\ntar.gz\ncab&quot;&gt;Архивы&lt;/option&gt;&#39;</span> .
+<a name="l00045"></a>00045                                 <span class="stringliteral">&#39;&lt;option value=&quot;doc\notd\ntxt\nxls&quot;&gt;Документы&lt;/option&gt;&#39;</span> .
+<a name="l00046"></a>00046                                 <span class="stringliteral">&#39;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;&#39;</span> .
+<a name="l00047"></a>00047                 <span class="stringliteral">&#39;&lt;/table&gt;&#39;</span>.
+<a name="l00048"></a>00048                 <span class="stringliteral">&#39;&lt;script type=&quot;text/javascript&quot;&gt;$(document).ready(function(){&#39;</span> .
+<a name="l00049"></a>00049                         <span class="stringliteral">&#39;$(&quot;#fileType&quot;).change(&#39;</span> .
+<a name="l00050"></a>00050                                 <span class="stringliteral">&#39;function(event){&#39;</span> .
+<a name="l00051"></a>00051                                         <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_2&quot;).get(0).value=this.value.replace(/\\\\n/gi,&quot;\n&quot;)&#39;</span> .
+<a name="l00052"></a>00052                                         <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00053"></a>00053                         <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).change(&#39;</span> .
+<a name="l00054"></a>00054                                 <span class="stringliteral">&#39;function(event){&#39;</span> .
+<a name="l00055"></a>00055                                         <span class="stringliteral">&#39;checkSize();&#39;</span>.
+<a name="l00056"></a>00056                                         <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00057"></a>00057                         <span class="stringliteral">&#39;$(&quot;#sizeType&quot;).change(&#39;</span> .
+<a name="l00058"></a>00058                                 <span class="stringliteral">&#39;function(event){&#39;</span> .
+<a name="l00059"></a>00059                                         <span class="stringliteral">&#39;checkSize();&#39;</span>.
+<a name="l00060"></a>00060                                         <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00061"></a>00061                                         <span class="stringliteral">&#39;function checkSize(){&#39;</span>.
+<a name="l00062"></a>00062                                         <span class="stringliteral">&#39;mSize=&#39;</span>.$max_size*<a class="code" href="main_2fields_2file_2config_8php.html#a0c788ee1ad50aa3f1b2c28bb7a00db49">$m</a>[$t].<span class="charliteral">&#39;;&#39;</span>.
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064                                         <span class="stringliteral">&#39;switch($(&quot;#sizeType&quot;).get(0).value){&#39;</span>.
+<a name="l00065"></a>00065                                           <span class="stringliteral">&#39;case &quot;1&quot;: mSize=mSize/&#39;</span>.$m[<span class="charliteral">&#39;b&#39;</span>].<span class="stringliteral">&#39;; break;&#39;</span>.
+<a name="l00066"></a>00066                                           <span class="stringliteral">&#39;case &quot;k&quot;: mSize=mSize/&#39;</span>.$m[<span class="charliteral">&#39;k&#39;</span>].<span class="stringliteral">&#39;; break;&#39;</span>.
+<a name="l00067"></a>00067                                           <span class="stringliteral">&#39;case &quot;m&quot;: mSize=mSize/&#39;</span>.$m[<span class="charliteral">&#39;m&#39;</span>].<span class="stringliteral">&#39;; break;&#39;</span>.
+<a name="l00068"></a>00068                                           <span class="stringliteral">&#39;case &quot;g&quot;: mSize=mSize/&#39;</span>.$m[<span class="charliteral">&#39;g&#39;</span>].<span class="stringliteral">&#39;; break;&#39;</span>.
+<a name="l00069"></a>00069                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00070"></a>00070                                         <span class="stringliteral">&#39;if(($(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).get(0).value&gt;mSize))&#39;</span>.
+<a name="l00071"></a>00071                                         <span class="charliteral">&#39;{&#39;</span>.
+<a name="l00072"></a>00072                                           <span class="stringliteral">&#39;$(&quot;#&#39;</span>.$params[<span class="stringliteral">&#39;prefix&#39;</span>].<span class="stringliteral">&#39;option_1&quot;).get(0).value=&#39;</span>.<a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>.<span class="charliteral">&#39;;&#39;</span>.
+<a name="l00073"></a>00073                                           <span class="stringliteral">&#39;t=&quot;&#39;</span>.$t.<span class="stringliteral">&#39;&quot;;&#39;</span>.
+<a name="l00074"></a>00074                                           <span class="stringliteral">&#39;switch(t){&#39;</span>.
+<a name="l00075"></a>00075                                             <span class="stringliteral">&#39;case &quot;b&quot;: $(&quot;#sizeType&quot;).get(0).selectedIndex=0; break;&#39;</span>.
+<a name="l00076"></a>00076                                             <span class="stringliteral">&#39;case &quot;k&quot;: $(&quot;#sizeType&quot;).get(0).selectedIndex=1; break;&#39;</span>.
+<a name="l00077"></a>00077                                             <span class="stringliteral">&#39;case &quot;m&quot;: $(&quot;#sizeType&quot;).get(0).selectedIndex=2; break;&#39;</span>.
+<a name="l00078"></a>00078                                             <span class="stringliteral">&#39;case &quot;g&quot;: $(&quot;#sizeType&quot;).get(0).selectedIndex=3; break;&#39;</span>.
+<a name="l00079"></a>00079                                           <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00080"></a>00080                                           <span class="stringliteral">&#39;alert(&quot;Вы превысили ограничение ПХП (&#39;</span>.$max_size.$t.<span class="stringliteral">&#39;)&quot;)&#39;</span>.
+<a name="l00081"></a>00081                                         <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00082"></a>00082                                     <span class="charliteral">&#39;}&#39;</span>.
+<a name="l00083"></a>00083                                 <span class="stringliteral">&#39;});&#39;</span>.
+<a name="l00084"></a>00084                         
+<a name="l00085"></a>00085                 <span class="stringliteral">&#39;&lt;/script&gt;&#39;</span>;
+<a name="l00086"></a>00086 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

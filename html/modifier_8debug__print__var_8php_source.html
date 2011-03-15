@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/libs/smarty/plugins/modifier.debug_print_var.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/libs/smarty/plugins/modifier.debug_print_var.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="modifier_8debug__print__var_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00023"></a><a class="code" href="modifier_8debug__print__var_8php.html#a5bce0a958ecc559f553eda1de78db1be">00023</a> function <a class="code" href="modifier_8debug__print__var_8php.html#a5bce0a958ecc559f553eda1de78db1be">smarty_modifier_debug_print_var</a>($var, $depth = 0, <a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a> = 40)
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025     $_replace = array(<span class="stringliteral">&quot;\n&quot;</span>=&gt;<span class="stringliteral">&#39;&lt;i&gt;&amp;#92;n&lt;/i&gt;&#39;</span>, <span class="stringliteral">&quot;\r&quot;</span>=&gt;<span class="stringliteral">&#39;&lt;i&gt;&amp;#92;r&lt;/i&gt;&#39;</span>, <span class="stringliteral">&quot;\t&quot;</span>=&gt;<span class="stringliteral">&#39;&lt;i&gt;&amp;#92;t&lt;/i&gt;&#39;</span>);
+<a name="l00026"></a>00026     <span class="keywordflow">if</span> (is_array($var)) {
+<a name="l00027"></a>00027         $results = <span class="stringliteral">&quot;&lt;b&gt;Array (&quot;</span>.count($var).<span class="stringliteral">&quot;)&lt;/b&gt;&quot;</span>;
+<a name="l00028"></a>00028         <span class="keywordflow">foreach</span> ($var as $curr_key =&gt; $curr_val) {
+<a name="l00029"></a>00029             $return = <a class="code" href="modifier_8debug__print__var_8php.html#a5bce0a958ecc559f553eda1de78db1be">smarty_modifier_debug_print_var</a>($curr_val, $depth+1, <a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a>);
+<a name="l00030"></a>00030             $results .= <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>.str_repeat(<span class="stringliteral">&#39;&amp;nbsp;&#39;</span>, $depth*2).<span class="stringliteral">&quot;&lt;b&gt;&quot;</span>.strtr($curr_key, $_replace).<span class="stringliteral">&quot;&lt;/b&gt; =&amp;gt; $return&quot;</span>;
+<a name="l00031"></a>00031         }
+<a name="l00032"></a>00032     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_object($var)) {
+<a name="l00033"></a>00033         $object_vars = get_object_vars($var);
+<a name="l00034"></a>00034         $results = <span class="stringliteral">&quot;&lt;b&gt;&quot;</span>.get_class($var).<span class="stringliteral">&quot; Object (&quot;</span>.count($object_vars).<span class="stringliteral">&quot;)&lt;/b&gt;&quot;</span>;
+<a name="l00035"></a>00035         <span class="keywordflow">foreach</span> ($object_vars as $curr_key =&gt; $curr_val) {
+<a name="l00036"></a>00036             $return = <a class="code" href="modifier_8debug__print__var_8php.html#a5bce0a958ecc559f553eda1de78db1be">smarty_modifier_debug_print_var</a>($curr_val, $depth+1, <a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a>);
+<a name="l00037"></a>00037             $results .= <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>.str_repeat(<span class="stringliteral">&#39;&amp;nbsp;&#39;</span>, $depth*2).<span class="stringliteral">&quot;&lt;b&gt;$curr_key&lt;/b&gt; =&amp;gt; $return&quot;</span>;
+<a name="l00038"></a>00038         }
+<a name="l00039"></a>00039     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_resource($var)) {
+<a name="l00040"></a>00040         $results = <span class="stringliteral">&#39;&lt;i&gt;&#39;</span>.(string)$var.<span class="stringliteral">&#39;&lt;/i&gt;&#39;</span>;
+<a name="l00041"></a>00041     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (empty($var) &amp;&amp; $var != <span class="stringliteral">&quot;0&quot;</span>) {
+<a name="l00042"></a>00042         $results = <span class="stringliteral">&#39;&lt;i&gt;empty&lt;/i&gt;&#39;</span>;
+<a name="l00043"></a>00043     } <span class="keywordflow">else</span> {
+<a name="l00044"></a>00044         <span class="keywordflow">if</span> (strlen($var) &gt; <a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a> ) {
+<a name="l00045"></a>00045             $results = substr($var, 0, <a class="code" href="kcaptcha__config_8php.html#adf14d8e29912c1855022dfa252aa4087">$length</a>-3).<span class="stringliteral">&#39;...&#39;</span>;
+<a name="l00046"></a>00046         } <span class="keywordflow">else</span> {
+<a name="l00047"></a>00047             $results = $var;
+<a name="l00048"></a>00048         }
+<a name="l00049"></a>00049         $results = htmlspecialchars($results);
+<a name="l00050"></a>00050         $results = strtr($results, $_replace);
+<a name="l00051"></a>00051     }
+<a name="l00052"></a>00052     <span class="keywordflow">return</span> $results;
+<a name="l00053"></a>00053 }
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="comment">/* vim: set expandtab: */</span>
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

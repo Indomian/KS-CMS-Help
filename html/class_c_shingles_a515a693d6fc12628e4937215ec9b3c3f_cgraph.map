@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_shingles.html#aceca194e03d6e0121e0edc5d0c955b38" title="CanonizeText" alt="" coords="185,5,292,35"/>
+<area shape="rect" id="node5" href="$class_c_shingles.html#ad8d98342cb9b18c6e8cd47c003b918f3" title="GetTextEncoding" alt="" coords="357,32,485,61"/>
+<area shape="rect" id="node7" href="$class_c_shingles.html#a1f5f01e31c93fcc4ceb2f0ed9905b19f" title="GetChecksumFunc" alt="" coords="168,109,309,139"/>
+<area shape="rect" id="node9" href="$class_c_shingles.html#ac031e9212ddb87ab037c5d5b7f04adb6" title="GetCopiedText" alt="" coords="181,163,296,192"/>
+<area shape="rect" id="node11" href="$class_c_shingles.html#a0ec827cbf0152403d743d7dcc88d12fe" title="GetOriginalText" alt="" coords="180,216,297,245"/>
+<area shape="rect" id="node14" href="$class_c_shingles.html#a749fe13d054d37a3345804e9facfbc74" title="GetWordsInShingle" alt="" coords="168,269,309,299"/>
+</map>

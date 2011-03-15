@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmysql.html#abac3984f645d8abb10af7ee222795ced" title="mysql::query" alt="" coords="128,244,232,273"/>
+<area shape="rect" id="node5" href="$classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="mysql::AddColumn" alt="" coords="296,5,437,35"/>
+<area shape="rect" id="node7" href="$classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="mysql::AddTable" alt="" coords="304,59,429,88"/>
+<area shape="rect" id="node9" href="$classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="mysql::connect" alt="" coords="308,112,425,141"/>
+<area shape="rect" id="node12" href="$classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="mysql::DeleteColumn" alt="" coords="288,165,445,195"/>
+<area shape="rect" id="node14" href="$classmysql.html#a4afaae705eb9639715c9f0d386383164" title="mysql::DeleteTables" alt="" coords="523,263,672,292"/>
+<area shape="rect" id="node16" href="$classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="mysql::DescribeColumn" alt="" coords="280,373,453,403"/>
+<area shape="rect" id="node18" href="$classmysql.html#a18939e10851c114b310e6995056a9a69" title="mysql::UpdateColumn" alt="" coords="516,328,679,357"/>
+<area shape="rect" id="node20" href="$classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="mysql::UpdateColumnType" alt="" coords="501,405,693,435"/>
+<area shape="rect" id="node22" href="$classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="mysql::GetTableFields" alt="" coords="288,477,445,507"/>
+<area shape="rect" id="node24" href="$classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="mysql::ListTables" alt="" coords="303,269,431,299"/>
+<area shape="rect" id="node27" href="$classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="mysql::RenameTable" alt="" coords="291,531,443,560"/>
+</map>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/widgets/function.widget.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/widgets/function.widget.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="function_8widget_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00015"></a>00015 include_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CHTMLCache.php&#39;</span>;
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="function_8widget_8php.html#a6ae5df4cec0f2e6b5c6148ff8e31ac2e">00017</a> function <a class="code" href="function_8widget_8php.html#a6ae5df4cec0f2e6b5c6148ff8e31ac2e">smarty_function_widget</a>($params, &amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>)
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019         <span class="comment">/* подключение модуля CMS */</span>
+<a name="l00020"></a>00020         global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00021"></a>00021         <span class="comment">/* Запоминаем ранее установленные переменные других виджетов */</span>
+<a name="l00022"></a>00022         $arOldVars=<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;get_template_vars();
+<a name="l00023"></a>00023         $params[<span class="stringliteral">&#39;is_widget&#39;</span>] = 1;
+<a name="l00024"></a>00024         <span class="keywordflow">try</span>
+<a name="l00025"></a>00025         {
+<a name="l00026"></a>00026                 <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;html_cache&#39;</span>]&gt;0)
+<a name="l00027"></a>00027                 {
+<a name="l00028"></a>00028                         $params[<span class="stringliteral">&#39;html_cache&#39;</span>]=intval($params[<span class="stringliteral">&#39;html_cache&#39;</span>]);
+<a name="l00029"></a>00029                         $cacheId=md5(join(<span class="stringliteral">&#39;&#39;</span>,$params));
+<a name="l00030"></a>00030                         $obCache=<span class="keyword">new</span> <a class="code" href="class_c_h_t_m_l_cache.html">CHTMLCache</a>($cacheId,$params[<span class="stringliteral">&#39;html_cache&#39;</span>],$params[<span class="stringliteral">&#39;name&#39;</span>]);
+<a name="l00031"></a>00031                         <span class="keywordflow">if</span>($obCache-&gt;Alive())
+<a name="l00032"></a>00032                         {
+<a name="l00033"></a>00033                                 <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>=$obCache-&gt;GetData();
+<a name="l00034"></a>00034                         }
+<a name="l00035"></a>00035                         <span class="keywordflow">else</span>
+<a name="l00036"></a>00036                         {
+<a name="l00037"></a>00037                                 <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a> = $KS_MODULES-&gt;IncludeWidget($params[<span class="stringliteral">&#39;name&#39;</span>],$params[<span class="stringliteral">&#39;action&#39;</span>], $params);
+<a name="l00038"></a>00038                                 $obCache-&gt;SaveToCache(<a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>);
+<a name="l00039"></a>00039                         }
+<a name="l00040"></a>00040                 }
+<a name="l00041"></a>00041                 <span class="keywordflow">else</span>
+<a name="l00042"></a>00042                 {
+<a name="l00043"></a>00043                         <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a> = $KS_MODULES-&gt;IncludeWidget($params[<span class="stringliteral">&#39;name&#39;</span>],$params[<span class="stringliteral">&#39;action&#39;</span>], $params);
+<a name="l00044"></a>00044                 }
+<a name="l00045"></a>00045                 <span class="comment">//Добавлена обработка глобальных переменных шаблона</span>
+<a name="l00046"></a>00046                 $arNewVars=<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;get_template_vars();
+<a name="l00047"></a>00047                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;TITLE&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;TITLE&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;TITLE&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;TITLE&#39;</span>];
+<a name="l00048"></a>00048                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;SEO_TITLE&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;SEO_TITLE&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;SEO_TITLE&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;SEO_TITLE&#39;</span>];
+<a name="l00049"></a>00049                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;SEO_KEYWORDS&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;SEO_KEYWORDS&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;SEO_KEYWORDS&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;SEO_KEYWORDS&#39;</span>];
+<a name="l00050"></a>00050                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;SEO_DESCRIPTION&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;SEO_DESCRIPTION&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;SEO_DESCRIPTION&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;SEO_DESCRIPTION&#39;</span>];
+<a name="l00051"></a>00051                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;KEYWORDS&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;KEYWORDS&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;KEYWORDS&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;KEYWORDS&#39;</span>];
+<a name="l00052"></a>00052                 <span class="keywordflow">if</span>($arNewVars[<span class="stringliteral">&#39;DESCRIPTION&#39;</span>]!=$arOldVars[<span class="stringliteral">&#39;DESCRIPTION&#39;</span>]) $arOldVars[<span class="stringliteral">&#39;DESCRIPTION&#39;</span>]=$arNewVars[<span class="stringliteral">&#39;DESCRIPTION&#39;</span>];
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054                 <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;noprint&#39;</span>] != <span class="keyword">true</span>)
+<a name="l00055"></a>00055                 {
+<a name="l00056"></a>00056                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign($arOldVars);
+<a name="l00057"></a>00057                         <span class="keywordflow">return</span> <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>;
+<a name="l00058"></a>00058                 }
+<a name="l00059"></a>00059                 <span class="keywordflow">else</span>
+<a name="l00060"></a>00060                 {
+<a name="l00061"></a>00061                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign($arOldVars);
+<a name="l00062"></a>00062                         <span class="keywordflow">return</span> <span class="stringliteral">&#39;&lt;!-- widget &#39;</span>.$params[<span class="stringliteral">&#39;name&#39;</span>].<span class="stringliteral">&#39; --&gt;&#39;</span>;
+<a name="l00063"></a>00063                 }
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065         <span class="keywordflow">catch</span> (<a class="code" href="class_c_error.html">CError</a> $e)
+<a name="l00066"></a>00066         {
+<a name="l00067"></a>00067                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign($arOldVars);
+<a name="l00068"></a>00068                 <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;noErrors&#39;</span>]==<span class="charliteral">&#39;Y&#39;</span>)
+<a name="l00069"></a>00069                         <span class="keywordflow">if</span>($params[<span class="stringliteral">&#39;default&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>) <span class="keywordflow">return</span> $params[<span class="stringliteral">&#39;default&#39;</span>];
+<a name="l00070"></a>00070                         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="stringliteral">&#39;&#39;</span>;
+<a name="l00071"></a>00071                 <span class="keywordflow">return</span> $e;
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/interfaces/libs/class.CAdminTextParser.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/interfaces/libs/class.CAdminTextParser.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_admin_text_parser_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a><a class="code" href="class_8_c_admin_text_parser_8php.html#aa2751051afe353ae55a548bdc2a59679">00002</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00003"></a>00003 
+<a name="l00004"></a>00004 include_once MODULES_DIR.<span class="stringliteral">&#39;/interfaces/libs/class.CSmile.php&#39;</span>;
+<a name="l00005"></a>00005 
+<a name="l00009"></a><a class="code" href="class_c_admin_text_parser.html">00009</a> <span class="keyword">class </span><a class="code" href="class_c_admin_text_parser.html">CAdminTextParser</a> <span class="keyword">extends</span> <a class="code" href="class_c_smile.html">CSmile</a>
+<a name="l00010"></a>00010 {
+<a name="l00011"></a><a class="code" href="class_c_admin_text_parser.html#a017e87302e93f7a7a874fae8cbc24c56">00011</a>         function <a class="code" href="class_c_admin_text_parser.html#a017e87302e93f7a7a874fae8cbc24c56">__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>=<span class="stringliteral">&#39;interfaces_smilies&#39;</span>)
+<a name="l00012"></a>00012         {
+<a name="l00013"></a>00013                 global <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>;
+<a name="l00014"></a>00014                 <a class="code" href="class_c_admin_text_parser.html#a017e87302e93f7a7a874fae8cbc24c56">parent::__construct</a>(<a class="code" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a>);
+<a name="l00015"></a>00015                 $smarty-&gt;register_block(<span class="stringliteral">&quot;ksParseText&quot;</span>, array($this,<span class="stringliteral">&quot;_smarty_parse_text&quot;</span>));
+<a name="l00016"></a>00016         }
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836">00018</a>         function <a class="code" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836">Parse</a>(<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>)
+<a name="l00019"></a>00019         {
+<a name="l00020"></a>00020                 $arSmiles=$this-&gt;<a class="code" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a>(array(<span class="stringliteral">&#39;smile&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>));
+<a name="l00021"></a>00021                 <span class="keywordflow">if</span>(is_array($arSmiles) &amp;&amp; count($arSmiles)&gt;0)
+<a name="l00022"></a>00022                 {
+<a name="l00023"></a>00023                         $arCodes=array();
+<a name="l00024"></a>00024                         $arImages=array();
+<a name="l00025"></a>00025                         <span class="keywordflow">foreach</span>($arSmiles as $i=&gt;$item)
+<a name="l00026"></a>00026                         {
+<a name="l00027"></a>00027                                 $arCodes[]=<span class="stringliteral">&#39;&lt;span&gt;&#39;</span>.$item[<span class="stringliteral">&#39;smile&#39;</span>].<span class="stringliteral">&#39;&lt;/span&gt;&#39;</span>;
+<a name="l00028"></a>00028                                 $arImages[]=<span class="stringliteral">&#39;&lt;img src=&quot;/uploads/&#39;</span>.$item[<span class="stringliteral">&#39;img&#39;</span>].<span class="stringliteral">&#39;&quot; _mce_ks_smile=&quot;&#39;</span>.$item[<span class="stringliteral">&#39;smile&#39;</span>].<span class="stringliteral">&#39;&quot;&gt;&#39;</span>;
+<a name="l00029"></a>00029                         }
+<a name="l00030"></a>00030                         <span class="keywordflow">return</span> str_replace($arCodes,$arImages,<a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>);
+<a name="l00031"></a>00031                 }
+<a name="l00032"></a>00032                 <span class="keywordflow">return</span> <a class="code" href="typograf_8php.html#a8803880ffc6a5eb7ebc8cfa426f62a2f">$text</a>;
+<a name="l00033"></a>00033         }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="class_c_admin_text_parser.html#ab3891b4a64877f8334420cdeee2e85de">00035</a>         function <a class="code" href="class_c_admin_text_parser.html#ab3891b4a64877f8334420cdeee2e85de">_smarty_parse_text</a>($params,$content,&amp;<a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>,&amp;$repeat)
+<a name="l00036"></a>00036         {
+<a name="l00037"></a>00037                 <span class="keywordflow">if</span>($content)
+<a name="l00038"></a>00038                 {
+<a name="l00039"></a>00039                         $content=$this-&gt;<a class="code" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836">Parse</a>($content);
+<a name="l00040"></a>00040                         <span class="keywordflow">return</span> $content;
+<a name="l00041"></a>00041                 }
+<a name="l00042"></a>00042         }
+<a name="l00043"></a>00043 }
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/sitemap/widgets/function.sitemap.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/sitemap/widgets/function.sitemap.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="function_8sitemap_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span> 
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00023"></a><a class="code" href="function_8sitemap_8php.html#a50c2f4e4a7171e36c371a71092f7202a">00023</a> function <a class="code" href="function_8sitemap_8php.html#a50c2f4e4a7171e36c371a71092f7202a">smarty_function_sitemap</a>($params,&amp;$subsmarty)
+<a name="l00024"></a>00024 {
+<a name="l00025"></a>00025         global <a class="code" href="catsubcat_2main_8inc_8php.html#a69db94368c3d1c30bc71073322cfbf29">$global_template</a>,<a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>,<a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>,<a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>,<a class="code" href="smilies_8php.html#a17f6eca81ab87d6a14c25002c2d946e8">$KS_URL</a>;
+<a name="l00026"></a>00026         include_once MODULES_DIR.<span class="stringliteral">&#39;/sitemap/libs/class.CSitemap.php&#39;</span>;
+<a name="l00027"></a>00027         include_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CPHPCache.php&#39;</span>;
+<a name="l00028"></a>00028         $cacheId=<span class="stringliteral">&#39;sitemap&#39;</span>.join(<span class="charliteral">&#39;_&#39;</span>,$USER-&gt;GetGroups());
+<a name="l00029"></a>00029         $obCache=<span class="keyword">new</span> <a class="code" href="class_c_p_h_p_cache.html">CPHPCache</a>($cacheId,$KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;sitemap&#39;</span>,<span class="stringliteral">&#39;cacheTime&#39;</span>),<span class="stringliteral">&#39;sitemap&#39;</span>);
+<a name="l00030"></a>00030         <span class="keywordflow">if</span>(!$obCache-&gt;Alive())
+<a name="l00031"></a>00031         {
+<a name="l00032"></a>00032                 <a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>=$KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;sitemap&#39;</span>,<span class="stringliteral">&#39;modules&#39;</span>);
+<a name="l00033"></a>00033                 $arItems = $KS_MODULES-&gt;GetList(array(<span class="stringliteral">&quot;URL_ident&quot;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>), array(<span class="stringliteral">&quot;active&quot;</span> =&gt; 1,<span class="stringliteral">&#39;-&gt;directory&#39;</span>=&gt;array_keys(<a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>)));
+<a name="l00034"></a>00034                 <span class="comment">/* Формирование дерева сайта */</span>
+<a name="l00035"></a>00035                 <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a> = array();
+<a name="l00036"></a>00036                 <span class="comment">/* Список элементов уровня */</span>
+<a name="l00037"></a>00037                 <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&quot;list&quot;</span>] = array();
+<a name="l00038"></a>00038                 <span class="comment">/* Опции уровня */</span>
+<a name="l00039"></a>00039                 <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&quot;ui&quot;</span>] = array();
+<a name="l00040"></a>00040                 $obTree=<span class="keyword">new</span> <a class="code" href="class_c_sitemap.html">CSitemap</a>();
+<a name="l00041"></a>00041                 <span class="keywordflow">foreach</span>($arItems as $key=&gt;<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>)
+<a name="l00042"></a>00042                 {
+<a name="l00043"></a>00043                         <span class="keywordflow">if</span>($USER-&gt;GetLevel(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>])&lt;10)
+<a name="l00044"></a>00044                         {
+<a name="l00045"></a>00045                                 <span class="keywordflow">if</span> (<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;URL_ident&quot;</span>] == <span class="stringliteral">&quot;default&quot;</span>)
+<a name="l00046"></a>00046                                 {
+<a name="l00047"></a>00047                                         <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&#39;list&#39;</span>]=array_merge(<a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&#39;list&#39;</span>],$obTree-&gt;GetModuleMap(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>],0,<a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>[<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>]]));
+<a name="l00048"></a>00048                                 }
+<a name="l00049"></a>00049                                 elseif(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;URL_ident&quot;</span>] != <span class="stringliteral">&quot;&quot;</span>)
+<a name="l00050"></a>00050                                 {
+<a name="l00051"></a>00051                                         <span class="comment">/* Остальные модули представляем свёрнутыми */</span>
+<a name="l00052"></a>00052                                         $arData=$KS_MODULES-&gt;IncludeTreeFile(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>]);
+<a name="l00053"></a>00053                                         $arModRow = array();
+<a name="l00054"></a>00054                                         $arModRow[<span class="stringliteral">&quot;title&quot;</span>] = <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;name&quot;</span>];
+<a name="l00055"></a>00055                                         $arModRow[<span class="stringliteral">&quot;path&quot;</span>] = <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;URL_ident&quot;</span>];
+<a name="l00056"></a>00056                                         $arModRow[<span class="stringliteral">&quot;type&quot;</span>] = <span class="stringliteral">&quot;folder&quot;</span>;
+<a name="l00057"></a>00057                                         $arModRow[<span class="stringliteral">&quot;module&quot;</span>] = <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;directory&quot;</span>];
+<a name="l00058"></a>00058                                         $arModRow[<span class="stringliteral">&quot;ico&quot;</span>] = $arData[<span class="stringliteral">&#39;settings&#39;</span>][<span class="stringliteral">&quot;ico&quot;</span>];
+<a name="l00059"></a>00059                                         $arModRow[<span class="stringliteral">&quot;watch_url&quot;</span>] = isset($arData[<span class="stringliteral">&#39;settings&#39;</span>][<span class="stringliteral">&quot;watch_url&quot;</span>]) ? $arData[<span class="stringliteral">&#39;settings&#39;</span>][<span class="stringliteral">&quot;watch_url&quot;</span>] : <span class="charliteral">&#39;/&#39;</span>.$arModule[<span class="stringliteral">&#39;URL_ident&#39;</span>].<span class="charliteral">&#39;/&#39;</span>;
+<a name="l00060"></a>00060                                         $arModRow[<span class="stringliteral">&quot;ajax_req&quot;</span>] = base64_encode(<span class="stringliteral">&quot;parent_id=0|module=&quot;</span> . <a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&quot;directory&quot;</span>]);
+<a name="l00061"></a>00061                                         $arModRow[<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00062"></a>00062                                         <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&quot;list&quot;</span>][] = $arModRow;
+<a name="l00063"></a>00063                                         <span class="keywordflow">if</span>($arSubItems=$obTree-&gt;GetModuleMap(<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>],1,<a class="code" href="main_2fields_2linkcat_2config_8php.html#a11e9448a4588fe6e27996ec7d7849d4c">$arModules</a>[<a class="code" href="interfaces_2install_2install_8php.html#a6eb2a618b0047ac12d0e20931b5e4986">$arModule</a>[<span class="stringliteral">&#39;directory&#39;</span>]],$arModRow[<span class="stringliteral">&#39;ajax_req&#39;</span>]))
+<a name="l00064"></a>00064                                                 <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&#39;list&#39;</span>]=array_merge(<a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>[<span class="stringliteral">&#39;list&#39;</span>],$arSubItems);
+<a name="l00065"></a>00065                                 }
+<a name="l00066"></a>00066                         }       
+<a name="l00067"></a>00067                 }
+<a name="l00068"></a>00068                 $obCache-&gt;SaveToCache(<a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>);
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070         <span class="keywordflow">else</span>
+<a name="l00071"></a>00071         {
+<a name="l00072"></a>00072                 <a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>=$obCache-&gt;GetData();
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074         $subsmarty-&gt;assign(<span class="stringliteral">&#39;data&#39;</span>,<a class="code" href="lite_8php.html#abd12b75e1e4229b5b319855335c635cb">$arTree</a>);
+<a name="l00075"></a>00075         <span class="comment">//Код для генерации пути к шаблону или вывод ошибки об отсутсвтии шаблона</span>
+<a name="l00076"></a>00076         <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>=$KS_MODULES-&gt;RenderTemplate($subsmarty,<span class="stringliteral">&#39;/sitemap/sitemap&#39;</span>,$params[<span class="stringliteral">&#39;global_template&#39;</span>],$params[<span class="stringliteral">&#39;tpl&#39;</span>]);
+<a name="l00077"></a>00077         <span class="keywordflow">return</span> <a class="code" href="main_2fields_2common__list_2config_8php.html#ad6eb2e39b56b25e24d21f61f6a59fe02">$sResult</a>;                
+<a name="l00078"></a>00078 }
+<a name="l00079"></a>00079 
+<a name="l00083"></a><a class="code" href="function_8sitemap_8php.html#a73828a59b73b90858ddae88b2f4cc0d4">00083</a> function <a class="code" href="function_8sitemap_8php.html#a73828a59b73b90858ddae88b2f4cc0d4">widget_params_sitemap</a>()
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085         <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a> = array
+<a name="l00086"></a>00086         (
+<a name="l00087"></a>00087         );
+<a name="l00088"></a>00088         
+<a name="l00089"></a>00089         <span class="keywordflow">return</span> array
+<a name="l00090"></a>00090         (
+<a name="l00091"></a>00091                 <span class="stringliteral">&#39;fields&#39;</span> =&gt; <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>
+<a name="l00092"></a>00092         );
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

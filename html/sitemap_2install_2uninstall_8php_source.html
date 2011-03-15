@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/sitemap/install/uninstall.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/sitemap/install/uninstall.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="sitemap_2install_2uninstall_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00014"></a><a class="code" href="sitemap_2install_2uninstall_8php.html#a0ae7292c4bc4192dfbd231dc81e7128f">00014</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 global <a class="code" href="catsubcat_2install_2install_8php.html#afc7cd28698e72d5bc152e5d74de0f54d">$ks_db</a>,<a class="code" href="catsubcat_2install_2install_8php.html#a0ae7292c4bc4192dfbd231dc81e7128f">$KS_EVENTS_HANDLER</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="sitemap_2install_2uninstall_8php.html#a68b641f7e74c6ab83515f2428072637d">00018</a> <a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>=<span class="stringliteral">&#39;sitemap&#39;</span>;
+<a name="l00019"></a><a class="code" href="sitemap_2install_2uninstall_8php.html#a645fcc13031fe99f73b0600c07ae147a">00019</a> <a class="code" href="catsubcat_2install_2install_8php.html#a645fcc13031fe99f73b0600c07ae147a">$sContent</a>=<span class="stringliteral">&#39;&#39;</span>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 include <span class="stringliteral">&#39;description.php&#39;</span>;
+<a name="l00022"></a>00022 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CUserGroup.php&#39;</span>;
+<a name="l00023"></a>00023 require_once MODULES_DIR.<span class="stringliteral">&#39;/main/libs/class.CAccess.php&#39;</span>;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keywordflow">if</span>(!$this-&gt;IsModule(<span class="stringliteral">&#39;sitemap&#39;</span>)) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;MAIN_MODULE_NOT_REGISTERED&#39;</span>);
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="comment">//Определяем режим работы</span>
+<a name="l00028"></a>00028 <span class="keywordflow">if</span>(array_key_exists(<span class="stringliteral">&#39;go&#39;</span>,$_POST))
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030         <a class="code" href="interfaces_2install_2install_8php.html#ad156d62dffd7303def62d3a67178912e">$showButtons</a>=0;
+<a name="l00031"></a>00031         <span class="comment">//Удаляем запись о модуле</span>
+<a name="l00032"></a>00032         $this-&gt;DeleteItems(array(<span class="stringliteral">&#39;directory&#39;</span>=&gt;<a class="code" href="catsubcat_2admin_8init_8php.html#a68b641f7e74c6ab83515f2428072637d">$module_name</a>));
+<a name="l00033"></a>00033         <span class="comment">//Удаляем файлы административных шаблонов</span>
+<a name="l00034"></a>00034         <span class="keywordflow">if</span>($arFiles=<a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>-&gt;GetDirItems(MODULES_DIR.<span class="stringliteral">&#39;/sitemap/install/templates/admin/&#39;</span>))
+<a name="l00035"></a>00035         {
+<a name="l00036"></a>00036                 <span class="keywordflow">foreach</span>($arFiles as $sFile)
+<a name="l00037"></a>00037                 {
+<a name="l00038"></a>00038                         <a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>-&gt;Remove(SYS_TEMPLATES_DIR.<span class="stringliteral">&#39;/admin/&#39;</span>.$sFile);
+<a name="l00039"></a>00039                 }
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041         <span class="comment">//Удаляем файлы яваскрипта</span>
+<a name="l00042"></a>00042         <span class="keywordflow">if</span>($arFiles=<a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>-&gt;GetDirItems(MODULES_DIR.<span class="stringliteral">&#39;/sitemap/install/js/&#39;</span>))
+<a name="l00043"></a>00043         {
+<a name="l00044"></a>00044                 <span class="keywordflow">if</span>(file_exists(ROOT_DIR.JS_DIR.<span class="stringliteral">&#39;/sitemap/&#39;</span>))
+<a name="l00045"></a>00045                         <a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>-&gt;Remove(ROOT_DIR.JS_DIR.<span class="stringliteral">&#39;/sitemap/&#39;</span>);
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047         <span class="keywordflow">if</span>(intval($_POST[<span class="stringliteral">&#39;deleteTemplates&#39;</span>])&gt;0)
+<a name="l00048"></a>00048         {
+<a name="l00049"></a>00049                 <span class="keywordflow">if</span>(file_exists(TEMPLATES_DIR.<span class="stringliteral">&#39;/.default/sitemap/&#39;</span>))
+<a name="l00050"></a>00050                 {
+<a name="l00051"></a>00051                         <a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>-&gt;Remove(TEMPLATES_DIR.<span class="stringliteral">&#39;/.default/sitemap/&#39;</span>);
+<a name="l00052"></a>00052                 }
+<a name="l00053"></a>00053         }
+<a name="l00054"></a>00054         <span class="comment">//Сообщаем что все ок</span>
+<a name="l00055"></a>00055         $this-&gt;AddNotify(SYSTEM_MODULE_UNINSTALL_OK,<a class="code" href="catsubcat_2install_2description_8php.html#a46af39cdf89e2fc7e2f1ce088275f8e1">$arDescription</a>[<span class="stringliteral">&#39;title&#39;</span>],<a class="code" href="class_8_c_module_managment_8php.html#a621e5d4aeff0453cb8c93dd8ed682429">NOTIFY_MESSAGE</a>);
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 <span class="keywordflow">else</span>
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059         <span class="comment">//Если мы не выполняем работу то надо сообщить о настройках модуля перед установкой</span>
+<a name="l00060"></a>00060         <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=array(
+<a name="l00061"></a>00061                 <span class="stringliteral">&#39;text&#39;</span>=&gt;array(
+<a name="l00062"></a>00062                         <span class="stringliteral">&#39;type&#39;</span>=&gt;<span class="stringliteral">&#39;label&#39;</span>,
+<a name="l00063"></a>00063                         <span class="stringliteral">&#39;title&#39;</span>=&gt;<span class="stringliteral">&#39;Вы готовы удалить модуль &quot;Карта сайта&quot;&#39;</span>
+<a name="l00064"></a>00064                 ),
+<a name="l00065"></a>00065                 <span class="stringliteral">&#39;deleteTemplates&#39;</span>=&gt;array(
+<a name="l00066"></a>00066                         <span class="stringliteral">&#39;type&#39;</span>=&gt;<span class="stringliteral">&#39;checkbox&#39;</span>,
+<a name="l00067"></a>00067                         <span class="stringliteral">&#39;title&#39;</span>=&gt;<span class="stringliteral">&#39;Удалить шаблоны виджетов в шаблоне по умолчанию&#39;</span>,
+<a name="l00068"></a>00068                         <span class="stringliteral">&#39;value&#39;</span>=&gt;<span class="charliteral">&#39;1&#39;</span>,
+<a name="l00069"></a>00069                 ),
+<a name="l00070"></a>00070         );
+<a name="l00071"></a>00071         <a class="code" href="interfaces_2install_2install_8php.html#ad156d62dffd7303def62d3a67178912e">$showButtons</a>=1;
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:17. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

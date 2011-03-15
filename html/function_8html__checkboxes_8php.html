@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/main/libs/smarty/plugins/function.html_checkboxes.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/main/libs/smarty/plugins/function.html_checkboxes.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="function_8html__checkboxes_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">namespace &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_smarty.html">Smarty</a></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="function_8html__checkboxes_8php.html#a65cb61d63738022f1a8fcf521e2465d1">smarty_function_html_checkboxes</a> ($params, &amp;$smarty)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="function_8html__checkboxes_8php.html#a3787d2177102fd17c5206fbe57a9728d">smarty_function_html_checkboxes_output</a> ($name, $value, $output, $selected, $extra, $separator, $labels)</td></tr>
+</table>
+<hr/><h2>Функции</h2>
+<a class="anchor" id="a65cb61d63738022f1a8fcf521e2465d1"></a><!-- doxytag: member="function.html_checkboxes.php::smarty_function_html_checkboxes" ref="a65cb61d63738022f1a8fcf521e2465d1" args="($params, &amp;$smarty)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">smarty_function_html_checkboxes </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>smarty</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="class_smarty.html">Smarty</a> {html_checkboxes} function plugin</p>
+<p>File: <a class="el" href="function_8html__checkboxes_8php.html">function.html_checkboxes.php</a><br/>
+ Type: function<br/>
+ Name: html_checkboxes<br/>
+ Date: 24.Feb.2003<br/>
+ Purpose: Prints out a list of checkbox input types<br/>
+ Input:<br/>
+</p>
+<ul>
+<li>name (optional) - string default "checkbox"</li>
+<li>values (required) - array</li>
+<li>options (optional) - associative array</li>
+<li>checked (optional) - array default not set</li>
+<li>separator (optional) - ie <br/>
+ or &nbsp;</li>
+<li>output (optional) - the output next to each checkbox</li>
+<li>assign (optional) - assign the output as an array to this variable Examples: <pre>
+ {html_checkboxes values=$ids output=$names}
+ {html_checkboxes values=$ids name='box' separator='<br/>
+' output=$names}
+ {html_checkboxes values=$ids checked=$checked separator='<br/>
+' output=$names}
+ </pre> <a class="el" href="">{html_checkboxes} (Smarty online manual)  Christopher Kvarme &lt;<a href="mailto:christopher.kvarme@flashjab.com">christopher.kvarme@flashjab.com</a>&gt;  credits to Monte Ohrt </a> <dl class="version"><dt><b>Версия:</b></dt><dd>1.0 </dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="class_smarty.html">Smarty</a></em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>string  <a class="el" href="shared_8escape__special__chars_8php.html#ad843cf793ce9443c5af46ebfc4544f16">smarty_function_escape_special_chars()</a> </dd></dl>
+</li>
+</ul>
+
+<p>См. определение в файле <a class="el" href="function_8html__checkboxes_8php_source.html">function.html_checkboxes.php</a> строка <a class="el" href="function_8html__checkboxes_8php_source.html#l00041">41</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="function_8html__checkboxes_8php_a65cb61d63738022f1a8fcf521e2465d1_cgraph.png" border="0" usemap="#function_8html__checkboxes_8php_a65cb61d63738022f1a8fcf521e2465d1_cgraph" alt=""/></div>
+<map name="function_8html__checkboxes_8php_a65cb61d63738022f1a8fcf521e2465d1_cgraph" id="function_8html__checkboxes_8php_a65cb61d63738022f1a8fcf521e2465d1_cgraph">
+<area shape="rect" id="node3" href="shared_8escape__special__chars_8php.html#ad843cf793ce9443c5af46ebfc4544f16" title="smarty_function_escape_special_chars" alt="" coords="639,5,908,35"/><area shape="rect" id="node5" href="function_8html__checkboxes_8php.html#a3787d2177102fd17c5206fbe57a9728d" title="smarty_function_html_checkboxes_output" alt="" coords="297,31,588,60"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3787d2177102fd17c5206fbe57a9728d"></a><!-- doxytag: member="function.html_checkboxes.php::smarty_function_html_checkboxes_output" ref="a3787d2177102fd17c5206fbe57a9728d" args="($name, $value, $output, $selected, $extra, $separator, $labels)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">smarty_function_html_checkboxes_output </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>extra</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>separator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>labels</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="function_8html__checkboxes_8php_source.html">function.html_checkboxes.php</a> строка <a class="el" href="function_8html__checkboxes_8php_source.html#l00126">126</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_cgraph.png" border="0" usemap="#function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_cgraph" alt=""/></div>
+<map name="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_cgraph" id="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_cgraph">
+<area shape="rect" id="node3" href="shared_8escape__special__chars_8php.html#ad843cf793ce9443c5af46ebfc4544f16" title="smarty_function_escape_special_chars" alt="" coords="348,5,617,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_icgraph.png" border="0" usemap="#function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_icgraph" alt=""/></div>
+<map name="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_icgraph" id="function_8html__checkboxes_8php_a3787d2177102fd17c5206fbe57a9728d_icgraph">
+<area shape="rect" id="node3" href="function_8html__checkboxes_8php.html#a65cb61d63738022f1a8fcf521e2465d1" title="smarty_function_html_checkboxes" alt="" coords="347,5,589,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:22. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

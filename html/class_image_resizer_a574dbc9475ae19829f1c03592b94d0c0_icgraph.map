@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer.html#a51bc2c64bc7c2bca207cafd629473ed4" title="Process" alt="" coords="163,32,235,61"/>
+<area shape="rect" id="node5" href="$class_image_resizer.html#ace5da380aeb26e6c3ee3a410d78cad06" title="Resize" alt="" coords="284,32,345,61"/>
+<area shape="rect" id="node7" href="$class_image_resizer.html#a863e3de9deb278e8f1a3714ca09eb0fb" title="CreateOriginal" alt="" coords="400,5,512,35"/>
+<area shape="rect" id="node9" href="$class_image_resizer.html#adaeda2382d4c1b2a99a01fbac91b720f" title="CreateStandart" alt="" coords="396,59,516,88"/>
+</map>

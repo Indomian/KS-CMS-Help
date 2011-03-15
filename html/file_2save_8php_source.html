@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/fields/file/save.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/fields/file/save.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="file_2save_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a><a class="code" href="file_2save_8php.html#a3fec414be9f76cb7ba77ed79b784de62">00002</a> <a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>=ini_get(<span class="stringliteral">&#39;upload_max_filesize&#39;</span>);
+<a name="l00003"></a>00003 <span class="keywordflow">if</span>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;error&#39;</span>]==0 &amp;&amp; is_array(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>))
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005         <span class="keywordflow">if</span>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;size&#39;</span>]&gt;$arField[<span class="stringliteral">&#39;option_1&#39;</span>] &amp;&amp; $arField[<span class="stringliteral">&#39;option_1&#39;</span>]) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_BIG_FILE_SIZE&quot;</span>, 0, $arField[<span class="stringliteral">&#39;option_1&#39;</span>]);
+<a name="l00006"></a>00006         <span class="keywordflow">if</span>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;name&#39;</span>]!=<span class="stringliteral">&#39;&#39;</span>)
+<a name="l00007"></a>00007         {
+<a name="l00008"></a>00008                 global <a class="code" href="update_8php.html#a1f17b2d64d0f2fe1c66da131c3aed106">$KS_FS</a>;
+<a name="l00009"></a>00009                 $ext=strtolower(substr(basename(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;name&#39;</span>]),strrpos(basename(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;name&#39;</span>]),<span class="stringliteral">&quot;.&quot;</span>)+1));
+<a name="l00010"></a>00010                 $arAvailable=explode(<span class="stringliteral">&quot;\n&quot;</span>,$arField[<span class="stringliteral">&#39;option_2&#39;</span>]);
+<a name="l00011"></a>00011                 <span class="keywordflow">foreach</span>($arAvailable as $key=&gt;$value1)
+<a name="l00012"></a>00012                         $arAvailable[$key]=trim($value1);
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014                 <span class="keywordflow">if</span>(is_array($arAvailable)&amp;&amp;count($arAvailable)&gt;0)
+<a name="l00015"></a>00015                 {
+<a name="l00016"></a>00016                         <span class="keywordflow">if</span>(!in_array(strtolower($ext),$arAvailable)&amp;&amp;($arAvailable[0]))
+<a name="l00017"></a>00017                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_THIS_FILE_TYPE_NOT_LOAD&quot;</span>, 0, $ext);
+<a name="l00018"></a>00018                 }
+<a name="l00019"></a>00019                 <span class="keywordflow">if</span>(!file_exists(ROOT_DIR.<span class="stringliteral">&#39;/uploads/filefield/&#39;</span>))
+<a name="l00020"></a>00020                 {
+<a name="l00021"></a>00021                         $KS_FS-&gt;makedir(ROOT_DIR.<span class="stringliteral">&#39;/uploads/filefield/&#39;</span>);
+<a name="l00022"></a>00022                 }
+<a name="l00023"></a>00023                 $filename=<span class="stringliteral">&#39;filefield/&#39;</span>.md5(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;name&#39;</span>].time()).<span class="charliteral">&#39;.&#39;</span>.$ext;
+<a name="l00024"></a>00024                 $upload_to=ROOT_DIR.<span class="stringliteral">&quot;/uploads/&quot;</span>.$filename;
+<a name="l00025"></a>00025                 <span class="keywordflow">if</span>(!move_uploaded_file(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;tmp_name&#39;</span>],$upload_to)) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_UPLOAD_FILE_ERROR&quot;</span>, 0, $arField[<span class="stringliteral">&#39;description&#39;</span>]);
+<a name="l00026"></a>00026                 chmod($upload_to,0644);
+<a name="l00027"></a>00027                 <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>=$filename;
+<a name="l00028"></a>00028         }
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 <span class="keywordflow">else</span>
+<a name="l00031"></a>00031 {
+<a name="l00032"></a>00032         <span class="keywordflow">switch</span>(<a class="code" href="linkcat_2show_8php.html#a0f298096f322952a72a50f98a74c7b60">$value</a>[<span class="stringliteral">&#39;error&#39;</span>])
+<a name="l00033"></a>00033         {
+<a name="l00034"></a>00034                 <span class="keywordflow">case</span> UPLOAD_ERR_FORM_SIZE:  
+<a name="l00035"></a>00035                 <span class="keywordflow">case</span> UPLOAD_ERR_INI_SIZE:
+<a name="l00036"></a>00036                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&quot;SYSTEM_BIG_FILE_SIZE&quot;</span>, 0, <a class="code" href="main_2fields_2file_2config_8php.html#a3fec414be9f76cb7ba77ed79b784de62">$max_size</a>);
+<a name="l00037"></a>00037                 <span class="keywordflow">break</span>;
+<a name="l00038"></a>00038                 <span class="keywordflow">case</span>  UPLOAD_ERR_NO_FILE:
+<a name="l00039"></a>00039                 <span class="keywordflow">break</span>;
+<a name="l00040"></a>00040                 <span class="keywordflow">default</span>:
+<a name="l00041"></a>00041                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_error.html">CError</a>(<span class="stringliteral">&#39;SYSTEM_FILE_NOT_FOUND_OR_NOT_WRITABLE&#39;</span>);
+<a name="l00042"></a>00042         }
+<a name="l00043"></a>00043         <a class="code" href="ereg_2save_8php.html#aa48745324c87b1399c744ade298eed28">$sValue</a>=<span class="stringliteral">&#39;no&#39;</span>;
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

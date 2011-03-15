@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="DeleteItems" alt="" coords="221,5,320,35"/>
+<area shape="rect" id="node5" href="$class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="155,59,387,88"/>
+<area shape="rect" id="node7" href="$class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="143,112,399,141"/>
+<area shape="rect" id="node9" href="$class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="RestoreItems" alt="" coords="217,165,324,195"/>
+<area shape="rect" id="node11" href="$class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="153,219,388,248"/>
+<area shape="rect" id="node13" href="$class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="152,272,389,301"/>
+</map>

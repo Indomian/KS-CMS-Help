@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Файл modules/catsubcat/.tree.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<h1>Файл modules/catsubcat/.tree.php</h1>  </div>
+</div>
+<div class="contents">
+
+<p><a href="_8tree_8php_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#a06872fc847b4ba143198c5f962fc6a83">$arTables</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#aaeb0a34550135c6f3caac7aa1db9b0ae">$userLevel</a> = $USER-&gt;GetLevel('catsubcat')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#acf7ad6a435e1f6695fdf0f742f402405">$obCategory</a> = $arTables['category']</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#a1f80f62758fa480fb93a8b1b77c9c873">$arResult</a> = GetAllList(array(&quot;orderation&quot; =&gt; &quot;asc&quot;), array(&quot;parent_id&quot; =&gt; $arRow[&quot;parent_id&quot;]), array(0, 1000), $arTables)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#a6a8a0c81dedd86667a1f24b1d329f44e">$modTreeSettings</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_8tree_8php.html#adffa3bfc94eb737d95825af7521e5bf7">$arSection</a> = $obCategory-&gt;GetRecord(array('id'=&gt;$arRow['parent_id']))</td></tr>
+</table>
+<hr/><h2>Переменные</h2>
+<a class="anchor" id="a1f80f62758fa480fb93a8b1b77c9c873"></a><!-- doxytag: member=".tree.php::$arResult" ref="a1f80f62758fa480fb93a8b1b77c9c873" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arResult = GetAllList(array(&quot;orderation&quot; =&gt; &quot;asc&quot;), array(&quot;parent_id&quot; =&gt; $arRow[&quot;parent_id&quot;]), array(0, 1000), $arTables)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adffa3bfc94eb737d95825af7521e5bf7"></a><!-- doxytag: member=".tree.php::$arSection" ref="adffa3bfc94eb737d95825af7521e5bf7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arSection = $obCategory-&gt;GetRecord(array('id'=&gt;$arRow['parent_id']))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a06872fc847b4ba143198c5f962fc6a83"></a><!-- doxytag: member=".tree.php::$arTables" ref="a06872fc847b4ba143198c5f962fc6a83" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arTables</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><pre class="fragment"> array(
+        <span class="stringliteral">&#39;element&#39;</span>=&gt;<span class="keyword">new</span> <a class="code" href="class_c_element.html">CElement</a>(),
+        <span class="stringliteral">&#39;category&#39;</span>=&gt;<span class="keyword">new</span> <a class="code" href="class_c_category.html">CCategory</a>()
+)
+</pre></div>
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6a8a0c81dedd86667a1f24b1d329f44e"></a><!-- doxytag: member=".tree.php::$modTreeSettings" ref="a6a8a0c81dedd86667a1f24b1d329f44e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$modTreeSettings</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><pre class="fragment"> array
+(
+        
+        <span class="stringliteral">&quot;admin_url&quot;</span> =&gt; <span class="stringliteral">&quot;?module=catsubcat&quot;</span>,
+
+        
+        
+
+        
+        <span class="stringliteral">&quot;ico&quot;</span> =&gt; <span class="stringliteral">&quot;/uploads/templates/admin/images/icons_tree/catsubcat.gif&quot;</span>,
+
+        
+        <span class="stringliteral">&quot;add_cat_url&quot;</span> =&gt; <span class="stringliteral">&quot;?module=catsubcat&amp;ACTION=new&amp;CSC_catid=&quot;</span> . $arRow[<span class="stringliteral">&quot;parent_id&quot;</span>],
+        <span class="stringliteral">&quot;add_elm_url&quot;</span> =&gt; <span class="stringliteral">&quot;?module=catsubcat&amp;ACTION=new&amp;CSC_catid=&quot;</span> . $arRow[<span class="stringliteral">&quot;parent_id&quot;</span>],
+
+        <span class="stringliteral">&quot;add_cat_text&quot;</span> =&gt; <span class="stringliteral">&quot;Раздел&quot;</span>,
+        <span class="stringliteral">&quot;add_elm_text&quot;</span> =&gt; <span class="stringliteral">&quot;Страница&quot;</span>
+)
+</pre></div>
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acf7ad6a435e1f6695fdf0f742f402405"></a><!-- doxytag: member=".tree.php::$obCategory" ref="acf7ad6a435e1f6695fdf0f742f402405" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obCategory = $arTables['category']</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaeb0a34550135c6f3caac7aa1db9b0ae"></a><!-- doxytag: member=".tree.php::$userLevel" ref="aaeb0a34550135c6f3caac7aa1db9b0ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$userLevel = $USER-&gt;GetLevel('catsubcat')</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="_8tree_8php_source.html">.tree.php</a> строка <a class="el" href="_8tree_8php_source.html#l00035">35</a></p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

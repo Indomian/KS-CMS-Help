@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/main/pages/currencies.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/main/pages/currencies.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="currencies_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="currencies_8php.html#aa2751051afe353ae55a548bdc2a59679">00003</a> <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) )
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005   die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);
+<a name="l00006"></a>00006 }
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="comment">/*KS Engine ADMIN SYSTEM</span>
+<a name="l00009"></a>00009 <span class="comment"></span>
+<a name="l00010"></a>00010 <span class="comment">File: currencies.php</span>
+<a name="l00011"></a>00011 <span class="comment">Original Code by BlaDe39 (c) 2008</span>
+<a name="l00012"></a>00012 <span class="comment">Назначение: управление валютами*/</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 require_once MODULES_DIR.<span class="stringliteral">&#39;/etc/CCurrency.php&#39;</span>;
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">00016</a> <a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>=<span class="keyword">new</span> CCurrency;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">00018</a> <a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>=5;
+<a name="l00019"></a>00019 <span class="keywordflow">if</span> (array_key_exists(<span class="stringliteral">&#39;CC_page&#39;</span>,$_REQUEST))
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021         $show_from=($_REQUEST[<span class="stringliteral">&#39;CC_page&#39;</span>]-1)*<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>;
+<a name="l00022"></a>00022         <span class="keywordflow">if</span> ($show_from&lt;0) $show_from=0;
+<a name="l00023"></a>00023 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keywordflow">if</span> (<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;num_rows&gt;<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>)
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027         $page_num=floor(<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;num_rows/<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>)+1;
+<a name="l00028"></a>00028         $pages[<span class="stringliteral">&#39;num&#39;</span>]=$page_num;
+<a name="l00029"></a>00029         $pages[<span class="stringliteral">&#39;active&#39;</span>]=$_REQUEST[<span class="stringliteral">&#39;CC_page&#39;</span>];
+<a name="l00030"></a>00030         <span class="keywordflow">if</span> ($pages[<span class="stringliteral">&#39;active&#39;</span>]==0) $pages[<span class="stringliteral">&#39;active&#39;</span>]=1;
+<a name="l00031"></a>00031         $uri=<span class="stringliteral">&quot;&quot;</span>;
+<a name="l00032"></a>00032         <span class="keywordflow">foreach</span>($_GET as $key=&gt;$item)
+<a name="l00033"></a>00033         {
+<a name="l00034"></a>00034                 <span class="keywordflow">if</span> ($key!=<span class="stringliteral">&quot;CC_page&quot;</span>)
+<a name="l00035"></a>00035                 {
+<a name="l00036"></a>00036                         $uri.=<span class="stringliteral">&quot;$key=$item&amp;&quot;</span>;
+<a name="l00037"></a>00037                 }
+<a name="l00038"></a>00038         }
+<a name="l00039"></a>00039         $uri=chop($uri,<span class="stringliteral">&quot;&amp; &quot;</span>);
+<a name="l00040"></a>00040         <span class="keywordflow">for</span>($i=1;$i&lt;=$page_num;$i++)
+<a name="l00041"></a>00041         {
+<a name="l00042"></a>00042                 $pages[<span class="stringliteral">&#39;pages&#39;</span>][$i]=<span class="stringliteral">&quot;CC_page=&quot;</span>.$i.<span class="stringliteral">&quot;&amp;$uri&quot;</span>;
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;pages&#39;</span>,$pages);
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="keywordflow">if</span> (array_key_exists(<span class="stringliteral">&#39;CC_ACTION&#39;</span>,$_REQUEST))
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049         <a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>=$_REQUEST[<span class="stringliteral">&#39;CC_ACTION&#39;</span>];
+<a name="l00050"></a>00050         <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;new&#39;</span>)
+<a name="l00051"></a>00051         {
+<a name="l00052"></a>00052                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;userdata&#39;</span>,$userdata);
+<a name="l00053"></a>00053                 <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055         <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;edit&#39;</span>)
+<a name="l00056"></a>00056         {
+<a name="l00057"></a>00057                 $id=intval($_REQUEST[<span class="stringliteral">&#39;CC_id&#39;</span>]);
+<a name="l00058"></a>00058                 $userdata=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetById($id);
+<a name="l00059"></a>00059                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;userdata&#39;</span>,$userdata);
+<a name="l00060"></a>00060                 <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062         <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;save&#39;</span>)
+<a name="l00063"></a>00063         {
+<a name="l00064"></a>00064                 $id=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;Save();
+<a name="l00065"></a>00065                 $userdata=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetById($id);
+<a name="l00066"></a>00066                 <span class="keywordflow">if</span> ($error_class-&gt;error!=0)
+<a name="l00067"></a>00067                 {
+<a name="l00068"></a>00068                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;userdata&#39;</span>,$userdata);
+<a name="l00069"></a>00069                         <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_edit&#39;</span>;
+<a name="l00070"></a>00070                 }
+<a name="l00071"></a>00071                 <span class="keywordflow">else</span>
+<a name="l00072"></a>00072                 {
+<a name="l00073"></a>00073                         $list=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetList(<span class="stringliteral">&quot;&quot;</span>,0,$order_query,$show_from,<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>);
+<a name="l00074"></a>00074                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;list&#39;</span>,$list);
+<a name="l00075"></a>00075                         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;groups_num&#39;</span>,<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;num_rows);
+<a name="l00076"></a>00076                 }
+<a name="l00077"></a>00077         }
+<a name="l00078"></a>00078         <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;delete&#39;</span>)
+<a name="l00079"></a>00079         {
+<a name="l00080"></a>00080                 $id=intval($_REQUEST[<span class="stringliteral">&#39;CC_id&#39;</span>]);
+<a name="l00081"></a>00081                 $userdata=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetById($id);
+<a name="l00082"></a>00082                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;message&#39;</span>,<span class="stringliteral">&#39;Вы действительно хотите удалить валюту: &#39;</span>.$userdata[<span class="stringliteral">&#39;title&#39;</span>].<span class="stringliteral">&#39;, имеющую номер: &#39;</span>.$userdata[<span class="stringliteral">&#39;id&#39;</span>]);
+<a name="l00083"></a>00083                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;userdata&#39;</span>,$userdata);
+<a name="l00084"></a>00084                 <a class="code" href="errors_8php.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a>=<span class="stringliteral">&#39;_msgbox&#39;</span>;
+<a name="l00085"></a>00085         }
+<a name="l00086"></a>00086         <span class="keywordflow">if</span> (<a class="code" href="smilies_8php.html#aa698a3e72116e8e778be0e95d908ee30">$action</a>==<span class="stringliteral">&#39;delete_confirm&#39;</span>)
+<a name="l00087"></a>00087         {
+<a name="l00088"></a>00088                 $id=intval($_REQUEST[<span class="stringliteral">&#39;CC_id&#39;</span>]);
+<a name="l00089"></a>00089                 <a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;Del($id);
+<a name="l00090"></a>00090                 $list=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetList(<span class="stringliteral">&quot;&quot;</span>,0,$order_query,$show_from,<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>);
+<a name="l00091"></a>00091                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;list&#39;</span>,$list);
+<a name="l00092"></a>00092                 <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;groups_num&#39;</span>,<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;num_rows);
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094 }
+<a name="l00095"></a>00095 <span class="keywordflow">else</span>
+<a name="l00096"></a>00096 {
+<a name="l00097"></a>00097         $list=<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;GetList(<span class="stringliteral">&quot;&quot;</span>,0,$order_query,$show_from,<a class="code" href="currencies_8php.html#a62d700a5915e9e4988c5b88b3150567c">$num_visible</a>);
+<a name="l00098"></a>00098         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;list&#39;</span>,$list);
+<a name="l00099"></a>00099         <a class="code" href="catsubcat_2main_8inc_8php.html#adcc61d2025f18e203a0e5e4d29f93014">$smarty</a>-&gt;assign(<span class="stringliteral">&#39;groups_num&#39;</span>,<a class="code" href="currencies_8php.html#a88c2195f35976a2fec31cbbd1dbb2516">$CURRENCY</a>-&gt;num_rows);
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:20. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

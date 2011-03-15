@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Исходный файл modules/guestbook2/libs/class.CGB2Api.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>modules/guestbook2/libs/class.CGB2Api.php</h1>  </div>
+</div>
+<div class="contents">
+<a href="class_8_c_g_b2_api_8php.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 &lt;?php
+<a name="l00013"></a>00013 <span class="comment">/*Обязательно вставляем во все файлы для защиты от взлома*/</span>
+<a name="l00014"></a>00014 <span class="keywordflow">if</span>( !defined(<span class="stringliteral">&#39;KS_ENGINE&#39;</span>) ) {die(<span class="stringliteral">&quot;Hacking attempt!&quot;</span>);}
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="comment">//==================== Блок констант для уровней доступа ==============================</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a7a3cbf6ab994f1bd83df1735625a4a05">00018</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_FULL&#39;</span>,0);
+<a name="l00019"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a197c94625fa6003f67bc3da5064904fd">00019</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB_CONFIG&#39;</span>,2);
+<a name="l00020"></a><a class="code" href="class_8_c_g_b2_api_8php.html#ac3fb0563d1b4326e4310e6dd27fc5a57">00020</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_REPLY&#39;</span>,3);
+<a name="l00021"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a3d6fe7041ed3bcc2967f846b965c3e88">00021</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_ANSWER&#39;</span>,7);
+<a name="l00022"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a1ba9dbdc5b9116c3f34faa9afd7aa931">00022</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_ANSWER_GUEST&#39;</span>,8);
+<a name="l00023"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a2828a3f63c0394a7dbe93ed362211ec3">00023</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_VIEW&#39;</span>,9);
+<a name="l00024"></a><a class="code" href="class_8_c_g_b2_api_8php.html#a415e34f0664cfe64700fdfdbc2ecb1eb">00024</a> define(<span class="stringliteral">&#39;KS_ACCESS_GB2_DENIED&#39;</span>,10);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="comment">//==================== Блок инклудов требуемых библиотек ==============================</span>
+<a name="l00027"></a>00027 include_once(MODULES_DIR . <span class="stringliteral">&quot;/main/libs/class.CBaseAPI.php&quot;</span>);
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="class_c_g_b2_a_p_i.html">00029</a> <span class="keyword">class </span><a class="code" href="class_c_g_b2_a_p_i.html">CGB2API</a> <span class="keyword">extends</span> <a class="code" href="class_c_base_a_p_i.html">CBaseAPI</a>
+<a name="l00030"></a>00030 {
+<a name="l00034"></a><a class="code" href="class_c_g_b2_a_p_i.html#a644b7d28f7d3403c863cb104a0677511">00034</a>         <span class="keyword">public</span> <a class="code" href="class_c_g_b2_a_p_i.html#a644b7d28f7d3403c863cb104a0677511">$obPosts</a>;
+<a name="l00035"></a><a class="code" href="class_c_g_b2_a_p_i.html#a666a9219350cb3de1a41910f932faef3">00035</a>         <span class="keyword">public</span> <a class="code" href="class_c_g_b2_a_p_i.html#a666a9219350cb3de1a41910f932faef3">$obAnswers</a>;
+<a name="l00036"></a><a class="code" href="class_c_g_b2_a_p_i.html#ae4de1cc1aede2783cb6fa3ae3492caa1">00036</a>         <span class="keyword">public</span> <a class="code" href="class_c_g_b2_a_p_i.html#ae4de1cc1aede2783cb6fa3ae3492caa1">$obCategories</a>;
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_c_g_b2_a_p_i.html#ad9d7ce33ebb142b70e58b68052ca0ea8">00038</a>         <span class="keyword">static</span> <span class="keyword">private</span> <a class="code" href="class_c_g_b2_a_p_i.html#ad9d7ce33ebb142b70e58b68052ca0ea8">$instance</a>;
+<a name="l00039"></a>00039 
+<a name="l00045"></a><a class="code" href="class_c_g_b2_a_p_i.html#aeeb76432d095288ac056df22cca56d16">00045</a>         <span class="keyword">static</span> function <a class="code" href="class_c_g_b2_a_p_i.html#aeeb76432d095288ac056df22cca56d16">get_instance</a>()
+<a name="l00046"></a>00046         {
+<a name="l00047"></a>00047             <span class="keywordflow">if</span> (!self::$instance)
+<a name="l00048"></a>00048             {
+<a name="l00049"></a>00049                 self::$instance = <span class="keyword">new</span> <a class="code" href="class_c_g_b2_a_p_i.html">CGB2API</a>();
+<a name="l00050"></a>00050                 self::$instance-&gt;startup();  <span class="comment">// init AFTER object was linked with self::$instance</span>
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052             <span class="keywordflow">return</span> self::$instance;
+<a name="l00053"></a>00053         }
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="class_c_g_b2_a_p_i.html#a095c5d389db211932136b53f25f39685">00055</a>         function <a class="code" href="class_c_g_b2_a_p_i.html#a095c5d389db211932136b53f25f39685">__construct</a>()
+<a name="l00056"></a>00056         {
+<a name="l00057"></a>00057         }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="class_c_g_b2_a_p_i.html#aca47505b8732177f52bb2d647eb2741c">00059</a>         <span class="keyword">private</span> function <a class="code" href="class_c_g_b2_a_p_i.html#aca47505b8732177f52bb2d647eb2741c">startup</a>()
+<a name="l00060"></a>00060         {
+<a name="l00061"></a>00061                 $this-&gt;obPosts=<span class="keyword">new</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>(<span class="stringliteral">&#39;gb2_posts&#39;</span>,<span class="stringliteral">&#39;/guestbook2&#39;</span>,<span class="stringliteral">&#39;guestbook2&#39;</span>);
+<a name="l00062"></a>00062                 $this-&gt;obAnswers=<span class="keyword">new</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>(<span class="stringliteral">&#39;gb2_answers&#39;</span>,<span class="stringliteral">&#39;/guestbook2&#39;</span>,<span class="stringliteral">&#39;guestbook2&#39;</span>);
+<a name="l00063"></a>00063                 $this-&gt;obCategories=<span class="keyword">new</span> <a class="code" href="class_c_fields_object.html">CFieldsObject</a>(<span class="stringliteral">&#39;gb2_categories&#39;</span>,<span class="stringliteral">&#39;/guestbook2&#39;</span>,<span class="stringliteral">&#39;guestbook2&#39;</span>);
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065 
+<a name="l00069"></a><a class="code" href="class_c_g_b2_a_p_i.html#af9e65440b0b582a3bf054c320790a9d1">00069</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#af9e65440b0b582a3bf054c320790a9d1">GetPostFields</a>()
+<a name="l00070"></a>00070         {
+<a name="l00071"></a>00071                 <span class="keywordflow">return</span> $this-&gt;obPosts-&gt;arFields;
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073 
+<a name="l00077"></a><a class="code" href="class_c_g_b2_a_p_i.html#a4ee1b6332825f97e9057f094f4aa75ce">00077</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a4ee1b6332825f97e9057f094f4aa75ce">GetCategoryFields</a>()
+<a name="l00078"></a>00078         {
+<a name="l00079"></a>00079                 <span class="keywordflow">return</span> $this-&gt;obCategories-&gt;arFields;
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00085"></a><a class="code" href="class_c_g_b2_a_p_i.html#a2c149e6780e7ecc1c7a9e1f07f546dd9">00085</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a2c149e6780e7ecc1c7a9e1f07f546dd9">GetAnswerFields</a>()
+<a name="l00086"></a>00086         {
+<a name="l00087"></a>00087                 <span class="keywordflow">return</span> $this-&gt;obAnswers-&gt;arFields;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089 
+<a name="l00093"></a><a class="code" href="class_c_g_b2_a_p_i.html#adb4ef15ece926cda528d61671ddccaa6">00093</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#adb4ef15ece926cda528d61671ddccaa6">AddPost</a>($arPost)
+<a name="l00094"></a>00094         {
+<a name="l00095"></a>00095                 global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>,<a class="code" href="catsubcat_2install_2install_8php.html#a0ae7292c4bc4192dfbd231dc81e7128f">$KS_EVENTS_HANDLER</a>;
+<a name="l00096"></a>00096                 $this-&gt;obPosts-&gt;AddAutoField(<span class="stringliteral">&#39;id&#39;</span>);
+<a name="l00097"></a>00097                 $arPost[<span class="stringliteral">&#39;date_shown&#39;</span>]=time();
+<a name="l00098"></a>00098                 <span class="keywordflow">if</span>($KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;guestbook2&#39;</span>,<span class="stringliteral">&#39;use_tags&#39;</span>)==0)
+<a name="l00099"></a>00099                 {
+<a name="l00100"></a>00100                         <span class="keywordflow">if</span>(strip_tags($arPost[<span class="stringliteral">&#39;content&#39;</span>])!=$arPost[<span class="stringliteral">&#39;content&#39;</span>])
+<a name="l00101"></a>00101                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_data_error.html">CDataError</a>(<span class="stringliteral">&#39;GB2_TAGS_NOT_ALLOWED&#39;</span>);
+<a name="l00102"></a>00102                 }
+<a name="l00103"></a>00103                 <span class="keywordflow">if</span>($KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;guestbook2&#39;</span>,<span class="stringliteral">&#39;no_empty_category&#39;</span>)==1)
+<a name="l00104"></a>00104                 {
+<a name="l00105"></a>00105                         <span class="keywordflow">if</span>($arPost[<span class="stringliteral">&#39;category_id&#39;</span>]==0)
+<a name="l00106"></a>00106                                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_c_data_error.html">CDataError</a>(<span class="stringliteral">&#39;GB2_CANT_GO_EMPTY_CATEGORY&#39;</span>);
+<a name="l00107"></a>00107                 }
+<a name="l00108"></a>00108                 <span class="keywordflow">if</span>($id=$this-&gt;obPosts-&gt;Save(<span class="stringliteral">&#39;&#39;</span>,$arPost))
+<a name="l00109"></a>00109                 {
+<a name="l00110"></a>00110                         $arPost[<span class="stringliteral">&#39;id&#39;</span>]=$id;
+<a name="l00111"></a>00111                         $KS_EVENTS_HANDLER-&gt;Execute(<span class="stringliteral">&#39;guestbook2&#39;</span>, <span class="stringliteral">&#39;onPostAdd&#39;</span>, <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>);
+<a name="l00112"></a>00112                         <span class="keywordflow">return</span> $id;
+<a name="l00113"></a>00113                 }
+<a name="l00114"></a>00114                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116 
+<a name="l00120"></a><a class="code" href="class_c_g_b2_a_p_i.html#af34e5894abd50692fe731dfc6e6a73a5">00120</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#af34e5894abd50692fe731dfc6e6a73a5">HidePost</a>($id)
+<a name="l00121"></a>00121         {
+<a name="l00122"></a>00122                 $this-&gt;obPosts-&gt;Update($id,array(<span class="stringliteral">&#39;active&#39;</span>=&gt;0));
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124 
+<a name="l00128"></a><a class="code" href="class_c_g_b2_a_p_i.html#a807af70d1dd551bb3e529623c32f8f05">00128</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a807af70d1dd551bb3e529623c32f8f05">ShowPost</a>($id)
+<a name="l00129"></a>00129         {
+<a name="l00130"></a>00130                 $this-&gt;obPosts-&gt;Update($id,array(<span class="stringliteral">&#39;active&#39;</span>=&gt;1));
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132 
+<a name="l00136"></a><a class="code" href="class_c_g_b2_a_p_i.html#a5ad6bd0e0ed473ac1b4cc9428b309b91">00136</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a5ad6bd0e0ed473ac1b4cc9428b309b91">GetCategories</a>($arSort=<span class="keyword">false</span>)
+<a name="l00137"></a>00137         {
+<a name="l00138"></a>00138                 global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00139"></a>00139                 <span class="keywordflow">if</span>(!$arSort) $arSort=array(<span class="stringliteral">&#39;orderation&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>);
+<a name="l00140"></a>00140                 <span class="keywordflow">if</span>($arCategories=$this-&gt;obCategories-&gt;GetList($arSort,array(<span class="stringliteral">&#39;active&#39;</span>=&gt;1)))
+<a name="l00141"></a>00141                 {
+<a name="l00142"></a>00142                         <span class="keywordflow">if</span>($KS_MODULES-&gt;GetConfigVar(<span class="stringliteral">&#39;guestbook2&#39;</span>,<span class="stringliteral">&#39;no_empty_category&#39;</span>)==0)
+<a name="l00143"></a>00143                                 array_unshift($arCategories,array(<span class="stringliteral">&#39;id&#39;</span>=&gt;0,<span class="stringliteral">&#39;title&#39;</span>=&gt;<span class="stringliteral">&#39;Не указано&#39;</span>));
+<a name="l00144"></a>00144                         <span class="keywordflow">return</span> $arCategories;
+<a name="l00145"></a>00145                 }
+<a name="l00146"></a>00146                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00147"></a>00147         }
+<a name="l00148"></a>00148 
+<a name="l00152"></a><a class="code" href="class_c_g_b2_a_p_i.html#addd8ae2860c96b41c52ad8afcf199d91">00152</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#addd8ae2860c96b41c52ad8afcf199d91">GetPost</a>($id)
+<a name="l00153"></a>00153         {
+<a name="l00154"></a>00154                 $arData=$this-&gt;obPosts-&gt;GetRecord(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;$id));
+<a name="l00155"></a>00155                 <span class="keywordflow">if</span>(is_array($arData)&amp;&amp;($arData[<span class="stringliteral">&#39;id&#39;</span>]==$id))
+<a name="l00156"></a>00156                 {
+<a name="l00157"></a>00157                         $arData[<span class="stringliteral">&#39;answer&#39;</span>]=$this-&gt;obAnswers-&gt;GetRecord(array(<span class="stringliteral">&#39;post_id&#39;</span>=&gt;$id));
+<a name="l00158"></a>00158                         <span class="keywordflow">return</span> $arData;
+<a name="l00159"></a>00159                 }
+<a name="l00160"></a>00160                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00161"></a>00161         }
+<a name="l00162"></a>00162 
+<a name="l00163"></a><a class="code" href="class_c_g_b2_a_p_i.html#a679028643046500a51e7eb0addc02a68">00163</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a679028643046500a51e7eb0addc02a68">UpdatePost</a>($post_id,$prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>)
+<a name="l00164"></a>00164         {
+<a name="l00165"></a>00165                 <span class="keywordflow">if</span>($arPost=$this-&gt;<a class="code" href="class_c_g_b2_a_p_i.html#addd8ae2860c96b41c52ad8afcf199d91">GetPost</a>($post_id))
+<a name="l00166"></a>00166                 {
+<a name="l00167"></a>00167                         <a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>[$prefix.<span class="stringliteral">&#39;id&#39;</span>]=$post_id;
+<a name="l00168"></a>00168                         $this-&gt;obPosts-&gt;Save($prefix,<a class="code" href="_cat_announce_g_te672c7eacccb4574c04551bf9ea53059_8php.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a>);
+<a name="l00169"></a>00169                 }
+<a name="l00170"></a>00170         }
+<a name="l00171"></a>00171 
+<a name="l00175"></a><a class="code" href="class_c_g_b2_a_p_i.html#a42cc528834b3e592fd384d05c2e84351">00175</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a42cc528834b3e592fd384d05c2e84351">AddAnswer</a>($post_id,$answer)
+<a name="l00176"></a>00176         {
+<a name="l00177"></a>00177                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>,<a class="code" href="catsubcat_2install_2install_8php.html#a0ae7292c4bc4192dfbd231dc81e7128f">$KS_EVENTS_HANDLER</a>;
+<a name="l00178"></a>00178                 <span class="keywordflow">if</span>($arPost=$this-&gt;<a class="code" href="class_c_g_b2_a_p_i.html#addd8ae2860c96b41c52ad8afcf199d91">GetPost</a>($post_id))
+<a name="l00179"></a>00179                 {
+<a name="l00180"></a>00180                         $arData=$this-&gt;obAnswers-&gt;GetRecord(array(<span class="stringliteral">&#39;post_id&#39;</span>=&gt;$post_id));
+<a name="l00181"></a>00181                         <span class="keywordflow">if</span>(is_array($arData)&amp;&amp;($arData[<span class="stringliteral">&#39;post_id&#39;</span>]==$post_id))
+<a name="l00182"></a>00182                         {
+<a name="l00183"></a>00183                                 <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=array(
+<a name="l00184"></a>00184                                         <span class="stringliteral">&#39;content&#39;</span>=&gt;$answer,
+<a name="l00185"></a>00185                                         <span class="stringliteral">&#39;user_id&#39;</span>=&gt;$USER-&gt;ID(),
+<a name="l00186"></a>00186                                         <span class="stringliteral">&#39;date&#39;</span>=&gt;time(),
+<a name="l00187"></a>00187                                 );
+<a name="l00188"></a>00188                                 $this-&gt;obPosts-&gt;Update($post_id,array(<span class="stringliteral">&#39;date_answer&#39;</span>=&gt;time()));
+<a name="l00189"></a>00189                                 <span class="keywordflow">if</span>($this-&gt;obAnswers-&gt;Update($arData[<span class="stringliteral">&#39;id&#39;</span>],<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>))
+<a name="l00190"></a>00190                                 {
+<a name="l00191"></a>00191                                         <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>[<span class="stringliteral">&#39;id&#39;</span>]=$arData[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00192"></a>00192                                         $KS_EVENTS_HANDLER-&gt;Execute(<span class="stringliteral">&#39;guestbook2&#39;</span>, <span class="stringliteral">&#39;onAnswerUpdate&#39;</span>, <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>);
+<a name="l00193"></a>00193                                 }
+<a name="l00194"></a>00194                         }
+<a name="l00195"></a>00195                         <span class="keywordflow">else</span>
+<a name="l00196"></a>00196                         {
+<a name="l00197"></a>00197                                 <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>=array(
+<a name="l00198"></a>00198                                         <span class="stringliteral">&#39;content&#39;</span>=&gt;$answer,
+<a name="l00199"></a>00199                                         <span class="stringliteral">&#39;user_id&#39;</span>=&gt;$USER-&gt;ID(),
+<a name="l00200"></a>00200                                         <span class="stringliteral">&#39;date&#39;</span>=&gt;time(),
+<a name="l00201"></a>00201                                         <span class="stringliteral">&#39;post_id&#39;</span>=&gt;$post_id,
+<a name="l00202"></a>00202                                 );
+<a name="l00203"></a>00203                                 $this-&gt;obPosts-&gt;Update($post_id,array(<span class="stringliteral">&#39;date_answer&#39;</span>=&gt;time()));
+<a name="l00204"></a>00204                                 <span class="keywordflow">if</span>($id=$this-&gt;obAnswers-&gt;Save(<span class="stringliteral">&#39;&#39;</span>,<a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>))
+<a name="l00205"></a>00205                                 {
+<a name="l00206"></a>00206                                         <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>[<span class="stringliteral">&#39;id&#39;</span>]=$id;
+<a name="l00207"></a>00207                                         $KS_EVENTS_HANDLER-&gt;Execute(<span class="stringliteral">&#39;guestbook2&#39;</span>, <span class="stringliteral">&#39;onAnswerAdd&#39;</span>, <a class="code" href="interfaces_2install_2install_8php.html#a2568d5753d3eb90cd0a3d1d06462323d">$arFields</a>);
+<a name="l00208"></a>00208                                 }
+<a name="l00209"></a>00209                         }
+<a name="l00210"></a>00210                 }
+<a name="l00211"></a>00211         }
+<a name="l00212"></a>00212 
+<a name="l00216"></a><a class="code" href="class_c_g_b2_a_p_i.html#a630e7484b7b09ab62ee8c4dd37449ae0">00216</a>         <span class="keyword">public</span> function <a class="code" href="class_c_g_b2_a_p_i.html#a630e7484b7b09ab62ee8c4dd37449ae0">GetPosts</a>(<a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a>=<span class="keyword">false</span>,$arFilter=<span class="keyword">false</span>,&amp;<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>)
+<a name="l00217"></a>00217         {
+<a name="l00218"></a>00218                 global <a class="code" href="catsubcat_2main_8inc_8php.html#a6e76f75e2c700b871e9e622e51598180">$USER</a>;
+<a name="l00219"></a>00219                 $iCount=$this-&gt;obPosts-&gt;Count($arFilter);
+<a name="l00220"></a>00220                 $arFilter[<span class="stringliteral">&#39;&lt;?&#39;</span>.$this-&gt;obPosts-&gt;sTable.<span class="stringliteral">&#39;.user_id&#39;</span>]=$USER-&gt;sTable.<span class="stringliteral">&#39;.id&#39;</span>;
+<a name="l00221"></a>00221                 $arSelect=$this-&gt;<a class="code" href="class_c_g_b2_a_p_i.html#af9e65440b0b582a3bf054c320790a9d1">GetPostFields</a>();
+<a name="l00222"></a>00222                 <span class="keywordflow">foreach</span>($USER-&gt;arFields as $sItem)
+<a name="l00223"></a>00223                         $arSelect[]=$USER-&gt;sTable.<span class="charliteral">&#39;.&#39;</span>.$sItem;
+<a name="l00224"></a>00224                 $arData=$this-&gt;obPosts-&gt;GetList(<a class="code" href="usergroups_8php.html#a8c2dc53cd22d0dd877b7efafa7564ed5">$arOrder</a>,$arFilter,<a class="code" href="usergroups_8php.html#ab62c6708db035f862eba4826e47e6e41">$obPages</a>-&gt;GetLimits($iCount),$arSelect);
+<a name="l00225"></a>00225                 $arID2Key=array();
+<a name="l00226"></a>00226                 <span class="keywordflow">foreach</span>($arData as $key=&gt;$arItem)
+<a name="l00227"></a>00227                 {
+<a name="l00228"></a>00228                         $arID2Key[$arItem[<span class="stringliteral">&#39;id&#39;</span>]]=$key;
+<a name="l00229"></a>00229                 }
+<a name="l00230"></a>00230                 <span class="keywordflow">if</span>(count($arID2Key)&gt;0)
+<a name="l00231"></a>00231                 {
+<a name="l00232"></a>00232                         <span class="comment">//Если есть хотябы один ответ, надо его приклеить</span>
+<a name="l00233"></a>00233                         $arAFilter=array(
+<a name="l00234"></a>00234                                 <span class="stringliteral">&#39;-&gt;post_id&#39;</span>=&gt;array_keys($arID2Key),
+<a name="l00235"></a>00235                         );
+<a name="l00236"></a>00236                         <span class="keywordflow">if</span>(array_key_exists($arFilter[<span class="stringliteral">&#39;active&#39;</span>]))
+<a name="l00237"></a>00237                         {
+<a name="l00238"></a>00238                                 $arAFilter[<span class="stringliteral">&#39;active&#39;</span>]=$arFilter[<span class="stringliteral">&#39;active&#39;</span>];
+<a name="l00239"></a>00239                         }
+<a name="l00240"></a>00240                         $arAFilter[<span class="stringliteral">&#39;&lt;?&#39;</span>.$this-&gt;obAnswers-&gt;sTable.<span class="stringliteral">&#39;.user_id&#39;</span>]=$USER-&gt;sTable.<span class="stringliteral">&#39;.id&#39;</span>;
+<a name="l00241"></a>00241                         $arSelect=$this-&gt;<a class="code" href="class_c_g_b2_a_p_i.html#a2c149e6780e7ecc1c7a9e1f07f546dd9">GetAnswerFields</a>();
+<a name="l00242"></a>00242                         <span class="keywordflow">foreach</span>($USER-&gt;arFields as $sItem)
+<a name="l00243"></a>00243                                 $arSelect[]=$USER-&gt;sTable.<span class="charliteral">&#39;.&#39;</span>.$sItem;
+<a name="l00244"></a>00244                         $arAnswers=$this-&gt;obAnswers-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),$arAFilter,<span class="keyword">false</span>,$arSelect);
+<a name="l00245"></a>00245                         <span class="keywordflow">foreach</span>($arAnswers as $arItem)
+<a name="l00246"></a>00246                         {
+<a name="l00247"></a>00247                                 $arData[$arID2Key[$arItem[<span class="stringliteral">&#39;post_id&#39;</span>]]][<span class="stringliteral">&#39;answer&#39;</span>]=$arItem;
+<a name="l00248"></a>00248                         }
+<a name="l00249"></a>00249                 }
+<a name="l00250"></a>00250                 <span class="keywordflow">return</span> $arData;
+<a name="l00251"></a>00251         }
+<a name="l00252"></a>00252 
+<a name="l00256"></a><a class="code" href="class_c_g_b2_a_p_i.html#afc620e0698e43dc40e7d6c9429a6f074">00256</a>         function <a class="code" href="class_c_g_b2_a_p_i.html#afc620e0698e43dc40e7d6c9429a6f074">DeletePost</a>($id)
+<a name="l00257"></a>00257         {
+<a name="l00258"></a>00258                 <span class="keywordflow">if</span>(is_numeric($id))
+<a name="l00259"></a>00259                 {
+<a name="l00260"></a>00260                         $id=array($id);
+<a name="l00261"></a>00261                 }
+<a name="l00262"></a>00262                 $this-&gt;obPosts-&gt;DeleteItems(array(<span class="stringliteral">&#39;-&gt;id&#39;</span>=&gt;$id));
+<a name="l00263"></a>00263                 $this-&gt;obAnswers-&gt;DeleteItems(array(<span class="stringliteral">&#39;-&gt;post_id&#39;</span>=&gt;$id));
+<a name="l00264"></a>00264         }
+<a name="l00265"></a>00265 
+<a name="l00269"></a><a class="code" href="class_c_g_b2_a_p_i.html#a28512092996b54c4431eaee2d8279c07">00269</a>         function <a class="code" href="class_c_g_b2_a_p_i.html#a28512092996b54c4431eaee2d8279c07">GetCategoryUrl</a>($id)
+<a name="l00270"></a>00270         {
+<a name="l00271"></a>00271                 global <a class="code" href="catsubcat_2main_8inc_8php.html#ac60d010ed36b2248b24f1834e355f178">$KS_MODULES</a>;
+<a name="l00272"></a>00272                 <span class="keywordflow">if</span>($arCategory=$this-&gt;obCategories-&gt;GetById($id))
+<a name="l00273"></a>00273                 {
+<a name="l00274"></a>00274                         <span class="keywordflow">return</span> $KS_MODULES-&gt;GetSitePath(<span class="stringliteral">&#39;guestbook2&#39;</span>).$arCategory[<span class="stringliteral">&#39;text_ident&#39;</span>].<span class="charliteral">&#39;/&#39;</span>;
+<a name="l00275"></a>00275                 }
+<a name="l00276"></a>00276                 <span class="keywordflow">return</span> $KS_MODULES-&gt;GetSitePath(<span class="stringliteral">&#39;guestbook2&#39;</span>);
+<a name="l00277"></a>00277         }
+<a name="l00278"></a>00278 
+<a name="l00282"></a><a class="code" href="class_c_g_b2_a_p_i.html#a729950f53f91a286309f93a57afaea7f">00282</a>         function <a class="code" href="class_c_g_b2_a_p_i.html#a729950f53f91a286309f93a57afaea7f">DeleteCategory</a>($id)
+<a name="l00283"></a>00283         {
+<a name="l00284"></a>00284                 <span class="keywordflow">if</span>(is_numeric($id)) $id=array($id);
+<a name="l00285"></a>00285                 $arFilter=array(
+<a name="l00286"></a>00286                         <span class="stringliteral">&#39;-&gt;id&#39;</span>=&gt;$id
+<a name="l00287"></a>00287                 );
+<a name="l00288"></a>00288                 <span class="keywordflow">if</span>($arCategories=$this-&gt;obCategories-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),$arFilter))
+<a name="l00289"></a>00289                 {
+<a name="l00290"></a>00290                         <span class="keywordflow">foreach</span>($arCategories as $arCategory)
+<a name="l00291"></a>00291                         {
+<a name="l00292"></a>00292                                 $arItemsFilter=array(
+<a name="l00293"></a>00293                                         <span class="stringliteral">&#39;category_id&#39;</span>=&gt;$arCategory[<span class="stringliteral">&#39;id&#39;</span>],
+<a name="l00294"></a>00294                                 );
+<a name="l00295"></a>00295                                 <span class="keywordflow">if</span>($arRecords=$this-&gt;obPosts-&gt;GetList(array(<span class="stringliteral">&#39;id&#39;</span>=&gt;<span class="stringliteral">&#39;asc&#39;</span>),$arItemsFilter,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="stringliteral">&#39;id&#39;</span>))
+<a name="l00296"></a>00296                                 {
+<a name="l00297"></a>00297                                         $arIDs=array();
+<a name="l00298"></a>00298                                         <span class="keywordflow">foreach</span>($arRecords as $arItem)
+<a name="l00299"></a>00299                                         {
+<a name="l00300"></a>00300                                                 $arIDs[]=$arItem[<span class="stringliteral">&#39;id&#39;</span>];
+<a name="l00301"></a>00301                                         }
+<a name="l00302"></a>00302                                         <span class="keywordflow">if</span>(count($arIDs)&gt;0)
+<a name="l00303"></a>00303                                         {
+<a name="l00304"></a>00304                                                 $this-&gt;obPosts-&gt;DeleteItems(array(<span class="stringliteral">&#39;-&gt;id&#39;</span>=&gt;$arIDs));
+<a name="l00305"></a>00305                                                 $this-&gt;obAnswers-&gt;DeleteItems(array(<span class="stringliteral">&#39;-&gt;post_id&#39;</span>=&gt;$arIDs));
+<a name="l00306"></a>00306                                         }
+<a name="l00307"></a>00307                                 }
+<a name="l00308"></a>00308                         }
+<a name="l00309"></a>00309                         <span class="keywordflow">return</span> $this-&gt;obCategories-&gt;DeleteItems(array(<span class="stringliteral">&#39;-&gt;id&#39;</span>=&gt;$id));
+<a name="l00310"></a>00310                 }
+<a name="l00311"></a>00311                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00312"></a>00312         }
+<a name="l00313"></a>00313 }
+<a name="l00314"></a>00314 ?&gt;
+</pre></div></div>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:18. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

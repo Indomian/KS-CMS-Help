@@ -1,0 +1,1338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс mysql</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Поля данных</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a>  </div>
+  <div class="headertitle">
+<h1>Класс mysql</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="mysql" --><!-- doxytag: inherits="CDBInterface" -->
+<p>Базовые классы:<a class="el" href="class_c_d_b_interface.html">CDBInterface</a>.</p>
+<div class="dynheader">
+Граф связей класса mysql:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql__coll__graph.png" border="0" usemap="#mysql_coll__map" alt="Collaboration graph"/></div>
+<map name="mysql_coll__map" id="mysql_coll__map">
+<area shape="rect" id="node2" href="class_c_d_b_interface.html" title="CDBInterface" alt="" coords="5,5,112,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a78aac747ed7aae3667c3feea1bd746c6">__construct</a> ($debug=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6">connect</a> ($ks_db_user, $ks_db_pass, $ks_db_name, $ks_db_location= 'localhost', $show_error=1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#abac3984f645d8abb10af7ee222795ced">query</a> ($query, $show_error=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ad70448da8aa6efa96bb18eaf1ed29fbc">rollback</a> ($show_error=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5">get_row</a> ($query_id= '')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ab41278b09d1ee13769ee0f9ecbc7d2ac">get_array</a> ($query_id= '')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a3773aafc62bbe690bf66a84e8368ef06">super_query</a> ($query, $multi=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aa16917fe3f4f6b1f3aba9f28233da4c1">num_rows</a> ($query_id= '')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99">insert_id</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ad4fec590e3fabb29590d739c0f3a3499">AffectedRows</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a26c4690373dd51aa90f92e5aafdea1fa">get_result_fields</a> ($query_id= '')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ae8a8a814d676b22f7e6283e4bc2e22de">safesql</a> ($source)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a8912ab1ccbe72992feb5460d856f7b8f">free</a> ($query_id= '')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aa69c8bf1f1dcf4e72552efff1fe3e87e">close</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42">ListTables</a> ($bGetFields=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a617f2d7363c358397d1fa42f4ff58750">GetTableFields</a> ($sTable, $sPrefix='')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f">AddTable</a> ($sTable, $arTableStructure)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a9d25f736948943a3dc925b6682cfa272">AddColumn</a> ($sTable, $arColumn)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c">UpdateColumnType</a> ($sTable, $sColumn, $sType)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a18939e10851c114b310e6995056a9a69">UpdateColumn</a> ($sTable, $sColumn, $arFieldParams)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a4afaae705eb9639715c9f0d386383164">DeleteTables</a> ($arTables)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a0954e95b659bf69b9b5e9abc630b4687">DeleteColumn</a> ($sTable, $sColumn)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e">RenameTable</a> ($sTable, $sNewName)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a6cf7a04a2800417389ae2a044eef05f7">$ks_db_id</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#adb9756d4524181e191069eaa76afb6cf">$connected</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a48e9d21e1d146c08d1a32da2fa95e80d">$query_num</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a22d3c4e39fe64d46b80b2f02e25fde65">$query_list</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a51016406c98bc1e35d248957863d2554">$mysql_error</a> = ''</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ae28f8306fdf3cfe7b6b30f1dcd481eac">$mysql_error_num</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a6d19ae730d0d108cf6b852b8da03dfd0">$mysql_extend</a> = &quot;MySQL&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aab5dfd53acb2aa3fd7654ca401f74cae">$MySQL_time_taken</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aaffbbf5913665f719562c9c75c4bb38f">$query_id</a> = false</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88">DescribeColumn</a> ($sTable, $sColumn)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#af9b473972953488ab42954cab46ef262">$iVersion</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#ab9aa92243e94820a6788906a457203a1">$arBackUpData</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a65b2daf25e56123c420471a91e25330f">$iBegin</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a3b6fca959d335de32cf6758272e3c4f6">$arRequests</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a13184a06ba02da0185bf61d3e9849729">$iDebug</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmysql.html#a0242b1d7597a58eef028f6d373bede03">$arColumnTypes</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс выполняет роль интерфейса к базе данных типа mysql. Логгирует все SQL запросы при работе в режиме отладки, также логирует время исполнения этих запросов. Добавлена функция вставки информационных строк в лог запросов, что позволяет отделять из каких методов произведен вызов того или иного запроса. </p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>1.3 </dd></dl>
+<dl class="author"><dt><b>Автор:</b></dt><dd>dotj &lt;<a href="mailto:dotj@kolosstudio.ru">dotj@kolosstudio.ru</a>&gt; </dd></dl>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00019">19</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a78aac747ed7aae3667c3feea1bd746c6"></a><!-- doxytag: member="mysql::__construct" ref="a78aac747ed7aae3667c3feea1bd746c6" args="($debug=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>debug</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор класса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$debug</em>&nbsp;</td><td>- устанавливает уровень отладки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>1.2 </dd></dl>
+<dl class="author"><dt><b>Автор:</b></dt><dd>blade39 &lt;<a href="mailto:blade39@kolosstudio.ru">blade39@kolosstudio.ru</a>&gt; </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a78aac747ed7aae3667c3feea1bd746c6">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a><!-- doxytag: member="mysql::__destruct" ref="a421831a265621325e1fdd19aace0c758" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Деструктор класса. Очищает память, закрывает соединение к БД (если оно было открыто ранее). </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00051">51</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a421831a265621325e1fdd19aace0c758_cgraph.png" border="0" usemap="#classmysql_a421831a265621325e1fdd19aace0c758_cgraph" alt=""/></div>
+<map name="classmysql_a421831a265621325e1fdd19aace0c758_cgraph" id="classmysql_a421831a265621325e1fdd19aace0c758_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#aa69c8bf1f1dcf4e72552efff1fe3e87e" title="close" alt="" coords="145,5,199,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a9d25f736948943a3dc925b6682cfa272"></a><!-- doxytag: member="mysql::AddColumn" ref="a9d25f736948943a3dc925b6682cfa272" args="($sTable, $arColumn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddColumn </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arColumn</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет добавление колонки в таблицу Внимание метод изменен! В качестве параметра колнки допускается передавать только строку или массив в формате возвращаемом при анализе таблицы mysql </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a65370ba6b9f545240b91fcf485d9d7ce">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00469">469</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a9d25f736948943a3dc925b6682cfa272_cgraph.png" border="0" usemap="#classmysql_a9d25f736948943a3dc925b6682cfa272_cgraph" alt=""/></div>
+<map name="classmysql_a9d25f736948943a3dc925b6682cfa272_cgraph" id="classmysql_a9d25f736948943a3dc925b6682cfa272_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="149,85,208,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="275,5,440,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="321,59,393,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="256,112,459,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="321,165,393,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="320,219,395,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aae9964ce9f9375a1ef40759bcd4c351f"></a><!-- doxytag: member="mysql::AddTable" ref="aae9964ce9f9375a1ef40759bcd4c351f" args="($sTable, $arTableStructure)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddTable </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arTableStructure</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет добавление таблицы в базу данных mysql </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#aae9964ce9f9375a1ef40759bcd4c351f">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00419">419</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aae9964ce9f9375a1ef40759bcd4c351f_cgraph.png" border="0" usemap="#classmysql_aae9964ce9f9375a1ef40759bcd4c351f_cgraph" alt=""/></div>
+<map name="classmysql_aae9964ce9f9375a1ef40759bcd4c351f_cgraph" id="classmysql_aae9964ce9f9375a1ef40759bcd4c351f_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="133,85,192,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="259,5,424,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="305,59,377,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="240,112,443,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="305,165,377,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="304,219,379,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4fec590e3fabb29590d739c0f3a3499"></a><!-- doxytag: member="mysql::AffectedRows" ref="ad4fec590e3fabb29590d739c0f3a3499" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AffectedRows </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает количество строк затронутых при выполнении последней операции. </p>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>версия класса 1.1, 25.11.2008 </dd></dl>
+<dl class="author"><dt><b>Автор:</b></dt><dd>blade39 &lt;<a href="mailto:blade39@kolosstudio.ru">blade39@kolosstudio.ru</a>&gt; </dd></dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>количество затронутых строк или -1 в случае ошибки. </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ad4fec590e3fabb29590d739c0f3a3499">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00291">291</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa69c8bf1f1dcf4e72552efff1fe3e87e"></a><!-- doxytag: member="mysql::close" ref="aa69c8bf1f1dcf4e72552efff1fe3e87e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">close </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Закрывает соединение с базой данных. </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#aa69c8bf1f1dcf4e72552efff1fe3e87e">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00344">344</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e_icgraph.png" border="0" usemap="#classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e_icgraph" alt=""/></div>
+<map name="classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e_icgraph" id="classmysql_aa69c8bf1f1dcf4e72552efff1fe3e87e_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#a421831a265621325e1fdd19aace0c758" title="__destruct" alt="" coords="111,5,199,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed47c9defc5c08cc7c782d7df2d1bcf6"></a><!-- doxytag: member="mysql::connect" ref="aed47c9defc5c08cc7c782d7df2d1bcf6" args="($ks_db_user, $ks_db_pass, $ks_db_name, $ks_db_location= 'localhost', $show_error=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">connect </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ks_db_user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ks_db_pass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ks_db_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ks_db_location</em> = <code>'localhost'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>show_error</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция открывает подключение к базе данных. В случае ошибки подключения выводит критическую ошибку базы данных и останавливает выполнение скрипта. Возвращаемые значения true - в случае успеха. False - если не удалось подключиться. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$ks_db_user</em>&nbsp;</td><td>-- имя пользоваталя; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$ks_db_pass</em>&nbsp;</td><td>-- пароль к базе данных; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$ks_db_name</em>&nbsp;</td><td>-- имя базы данных (непонятно почему не на первом месте); </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$ks_db_location</em>&nbsp;</td><td>-- размещение базы данных (обычно localhost); </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$show_error</em>&nbsp;</td><td>-- флаг останова по ошибке, обычно 1, при значении 0 скрипт продолжает работу. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#aed47c9defc5c08cc7c782d7df2d1bcf6">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00066">66</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_cgraph.png" border="0" usemap="#classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_cgraph" alt=""/></div>
+<map name="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_cgraph" id="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="128,85,187,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="253,5,419,35"/><area shape="rect" id="node8" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="235,59,437,88"/><area shape="rect" id="node10" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="300,112,372,141"/><area shape="rect" id="node12" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="299,165,373,195"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_icgraph.png" border="0" usemap="#classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_icgraph" alt=""/></div>
+<map name="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_icgraph" id="classmysql_aed47c9defc5c08cc7c782d7df2d1bcf6_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="128,243,187,272"/><area shape="rect" id="node5" href="classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="AddColumn" alt="" coords="251,5,347,35"/><area shape="rect" id="node7" href="classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="AddTable" alt="" coords="260,59,337,88"/><area shape="rect" id="node10" href="classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="DeleteColumn" alt="" coords="243,112,355,141"/><area shape="rect" id="node12" href="classmysql.html#a4afaae705eb9639715c9f0d386383164" title="DeleteTables" alt="" coords="433,373,535,403"/><area shape="rect" id="node14" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="236,216,361,245"/><area shape="rect" id="node16" href="classmysql.html#a18939e10851c114b310e6995056a9a69" title="UpdateColumn" alt="" coords="425,177,543,207"/><area shape="rect" id="node18" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="UpdateColumnType" alt="" coords="411,243,557,272"/><area shape="rect" id="node20" href="classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="GetTableFields" alt="" coords="243,373,355,403"/><area shape="rect" id="node22" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="257,320,340,349"/><area shape="rect" id="node25" href="classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="RenameTable" alt="" coords="245,477,352,507"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0954e95b659bf69b9b5e9abc630b4687"></a><!-- doxytag: member="mysql::DeleteColumn" ref="a0954e95b659bf69b9b5e9abc630b4687" args="($sTable, $sColumn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeleteColumn </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sColumn</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет удаление колонки из таблицы </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sTable</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$sColumn</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a0954e95b659bf69b9b5e9abc630b4687">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00639">639</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a0954e95b659bf69b9b5e9abc630b4687_cgraph.png" border="0" usemap="#classmysql_a0954e95b659bf69b9b5e9abc630b4687_cgraph" alt=""/></div>
+<map name="classmysql_a0954e95b659bf69b9b5e9abc630b4687_cgraph" id="classmysql_a0954e95b659bf69b9b5e9abc630b4687_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="168,85,227,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="293,5,459,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="340,59,412,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="275,112,477,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="340,165,412,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="339,219,413,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4afaae705eb9639715c9f0d386383164"></a><!-- doxytag: member="mysql::DeleteTables" ref="a4afaae705eb9639715c9f0d386383164" args="($arTables)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeleteTables </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arTables</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет удаление таблицы или таблиц переданных методу </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arTables</em>&nbsp;</td><td>mixed - список или одна таблица которые требуется удалить </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a4afaae705eb9639715c9f0d386383164">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00618">618</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a4afaae705eb9639715c9f0d386383164_cgraph.png" border="0" usemap="#classmysql_a4afaae705eb9639715c9f0d386383164_cgraph" alt=""/></div>
+<map name="classmysql_a4afaae705eb9639715c9f0d386383164_cgraph" id="classmysql_a4afaae705eb9639715c9f0d386383164_cgraph">
+<area shape="rect" id="node3" href="main_2libs_2functions_8php.html#ab5ef7d7e024d5a5675019e691cb40214" title="IsTextIdent" alt="" coords="159,5,247,35"/><area shape="rect" id="node5" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="161,59,244,88"/><area shape="rect" id="node7" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="296,85,355,115"/><area shape="rect" id="node9" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="421,5,587,35"/><area shape="rect" id="node11" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="468,59,540,88"/><area shape="rect" id="node14" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="403,112,605,141"/><area shape="rect" id="node16" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="468,165,540,195"/><area shape="rect" id="node18" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="467,219,541,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aca7978ca78c479a5326b3f0d48abfe88"></a><!-- doxytag: member="mysql::DescribeColumn" ref="aca7978ca78c479a5326b3f0d48abfe88" args="($sTable, $sColumn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DescribeColumn </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sColumn</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет получение информации о колонке таблицы </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00600">600</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aca7978ca78c479a5326b3f0d48abfe88_cgraph.png" border="0" usemap="#classmysql_aca7978ca78c479a5326b3f0d48abfe88_cgraph" alt=""/></div>
+<map name="classmysql_aca7978ca78c479a5326b3f0d48abfe88_cgraph" id="classmysql_aca7978ca78c479a5326b3f0d48abfe88_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="353,5,425,35"/><area shape="rect" id="node5" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="181,112,240,141"/><area shape="rect" id="node7" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="307,59,472,88"/><area shape="rect" id="node9" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="353,112,425,141"/><area shape="rect" id="node12" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="288,165,491,195"/><area shape="rect" id="node15" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="352,219,427,248"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aca7978ca78c479a5326b3f0d48abfe88_icgraph.png" border="0" usemap="#classmysql_aca7978ca78c479a5326b3f0d48abfe88_icgraph" alt=""/></div>
+<map name="classmysql_aca7978ca78c479a5326b3f0d48abfe88_icgraph" id="classmysql_aca7978ca78c479a5326b3f0d48abfe88_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#a18939e10851c114b310e6995056a9a69" title="UpdateColumn" alt="" coords="196,5,313,35"/><area shape="rect" id="node5" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="UpdateColumnType" alt="" coords="181,59,328,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8912ab1ccbe72992feb5460d856f7b8f"></a><!-- doxytag: member="mysql::free" ref="a8912ab1ccbe72992feb5460d856f7b8f" args="($query_id= '')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">free </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query_id</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Освобождает память выделенную под результат запроса. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query_id</em>&nbsp;</td><td>-- целое число, дескриптор результата. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a8912ab1ccbe72992feb5460d856f7b8f">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00335">335</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab41278b09d1ee13769ee0f9ecbc7d2ac"></a><!-- doxytag: member="mysql::get_array" ref="ab41278b09d1ee13769ee0f9ecbc7d2ac" args="($query_id= '')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">get_array </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query_id</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает одну строку в виде индексированного массива из запроса. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query_id</em>&nbsp;</td><td>-- целое число, дескриптор результата. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ab41278b09d1ee13769ee0f9ecbc7d2ac">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00247">247</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a26c4690373dd51aa90f92e5aafdea1fa"></a><!-- doxytag: member="mysql::get_result_fields" ref="a26c4690373dd51aa90f92e5aafdea1fa" args="($query_id= '')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">get_result_fields </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query_id</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает список полей результата запроса. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query_id</em>&nbsp;</td><td>-- целое число, дескриптор результата. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a26c4690373dd51aa90f92e5aafdea1fa">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00302">302</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa24825fef4dd273596c126f1c58829d5"></a><!-- doxytag: member="mysql::get_row" ref="aa24825fef4dd273596c126f1c58829d5" args="($query_id= '')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">get_row </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query_id</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает одну строку в виде ассоциативного массива из запроса. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query_id</em>&nbsp;</td><td>-- целое число, дескриптор результата. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#aa24825fef4dd273596c126f1c58829d5">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00234">234</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_aa24825fef4dd273596c126f1c58829d5_icgraph.png" border="0" usemap="#classmysql_aa24825fef4dd273596c126f1c58829d5_icgraph" alt=""/></div>
+<map name="classmysql_aa24825fef4dd273596c126f1c58829d5_icgraph" id="classmysql_aa24825fef4dd273596c126f1c58829d5_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="233,5,359,35"/><area shape="rect" id="node9" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="125,267,184,296"/><area shape="rect" id="node5" href="classmysql.html#a18939e10851c114b310e6995056a9a69" title="UpdateColumn" alt="" coords="423,19,540,48"/><area shape="rect" id="node7" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="UpdateColumnType" alt="" coords="408,96,555,125"/><area shape="rect" id="node11" href="classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="AddColumn" alt="" coords="248,320,344,349"/><area shape="rect" id="node13" href="classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="AddTable" alt="" coords="257,373,335,403"/><area shape="rect" id="node15" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="260,427,332,456"/><area shape="rect" id="node18" href="classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="DeleteColumn" alt="" coords="240,480,352,509"/><area shape="rect" id="node20" href="classmysql.html#a4afaae705eb9639715c9f0d386383164" title="DeleteTables" alt="" coords="431,400,532,429"/><area shape="rect" id="node23" href="classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="GetTableFields" alt="" coords="240,160,352,189"/><area shape="rect" id="node25" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="255,267,337,296"/><area shape="rect" id="node28" href="classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="RenameTable" alt="" coords="243,213,349,243"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a617f2d7363c358397d1fa42f4ff58750"></a><!-- doxytag: member="mysql::GetTableFields" ref="a617f2d7363c358397d1fa42f4ff58750" args="($sTable, $sPrefix='')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetTableFields </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sPrefix</em> = <code>''</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод опрашивает таблицу, и получает список её полей. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sTable</em>&nbsp;</td><td>таблица для которой надо получить поля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$sPrefix</em>&nbsp;</td><td>префикс названия полей которые надо получить </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00391">391</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a617f2d7363c358397d1fa42f4ff58750_cgraph.png" border="0" usemap="#classmysql_a617f2d7363c358397d1fa42f4ff58750_cgraph" alt=""/></div>
+<map name="classmysql_a617f2d7363c358397d1fa42f4ff58750_cgraph" id="classmysql_a617f2d7363c358397d1fa42f4ff58750_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="165,85,224,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="291,5,456,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="337,59,409,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="272,112,475,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="337,165,409,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="336,219,411,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a933f2cde8dc7f87875e257d0a4902e99"></a><!-- doxytag: member="mysql::insert_id" ref="a933f2cde8dc7f87875e257d0a4902e99" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">insert_id </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает номер последней вставленной записи. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a933f2cde8dc7f87875e257d0a4902e99">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00280">280</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a933f2cde8dc7f87875e257d0a4902e99_icgraph.png" border="0" usemap="#classmysql_a933f2cde8dc7f87875e257d0a4902e99_icgraph" alt=""/></div>
+<map name="classmysql_a933f2cde8dc7f87875e257d0a4902e99_icgraph" id="classmysql_a933f2cde8dc7f87875e257d0a4902e99_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="131,244,189,273"/><area shape="rect" id="node5" href="classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="AddColumn" alt="" coords="253,5,349,35"/><area shape="rect" id="node7" href="classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="AddTable" alt="" coords="263,59,340,88"/><area shape="rect" id="node9" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="265,112,337,141"/><area shape="rect" id="node12" href="classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="DeleteColumn" alt="" coords="245,165,357,195"/><area shape="rect" id="node14" href="classmysql.html#a4afaae705eb9639715c9f0d386383164" title="DeleteTables" alt="" coords="436,263,537,292"/><area shape="rect" id="node16" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="239,373,364,403"/><area shape="rect" id="node18" href="classmysql.html#a18939e10851c114b310e6995056a9a69" title="UpdateColumn" alt="" coords="428,328,545,357"/><area shape="rect" id="node20" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="UpdateColumnType" alt="" coords="413,405,560,435"/><area shape="rect" id="node22" href="classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="GetTableFields" alt="" coords="245,477,357,507"/><area shape="rect" id="node24" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="260,269,343,299"/><area shape="rect" id="node27" href="classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="RenameTable" alt="" coords="248,531,355,560"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a42c64ce8a18e358faa696a6f02feec42"></a><!-- doxytag: member="mysql::ListTables" ref="a42c64ce8a18e358faa696a6f02feec42" args="($bGetFields=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ListTables </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>bGetFields</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает список таблиц текущей базы данных </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00353">353</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a42c64ce8a18e358faa696a6f02feec42_cgraph.png" border="0" usemap="#classmysql_a42c64ce8a18e358faa696a6f02feec42_cgraph" alt=""/></div>
+<map name="classmysql_a42c64ce8a18e358faa696a6f02feec42_cgraph" id="classmysql_a42c64ce8a18e358faa696a6f02feec42_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="136,85,195,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="261,5,427,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="308,59,380,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="243,112,445,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="308,165,380,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="307,219,381,248"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a42c64ce8a18e358faa696a6f02feec42_icgraph.png" border="0" usemap="#classmysql_a42c64ce8a18e358faa696a6f02feec42_icgraph" alt=""/></div>
+<map name="classmysql_a42c64ce8a18e358faa696a6f02feec42_icgraph" id="classmysql_a42c64ce8a18e358faa696a6f02feec42_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#a4afaae705eb9639715c9f0d386383164" title="DeleteTables" alt="" coords="137,5,239,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa16917fe3f4f6b1f3aba9f28233da4c1"></a><!-- doxytag: member="mysql::num_rows" ref="aa16917fe3f4f6b1f3aba9f28233da4c1" args="($query_id= '')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">num_rows </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query_id</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает количество строк в результате запроса. В качестве параметра можно передать код запроса. По умолчанию используется код последненго запроса. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query_id</em>&nbsp;</td><td>-- целое число, дескриптор результата. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#aa16917fe3f4f6b1f3aba9f28233da4c1">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00268">268</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abac3984f645d8abb10af7ee222795ced"></a><!-- doxytag: member="mysql::query" ref="abac3984f645d8abb10af7ee222795ced" args="($query, $show_error=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">query </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>show_error</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет SQL запрос к базе данных. Возращает id результата. В случае работы в режиме отката, записывает последние изменения в базе данных в кэш. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$query</em>&nbsp;</td><td>-- sql запрос; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$show_error</em>&nbsp;</td><td>-- флаг вывода ошибок. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#abac3984f645d8abb10af7ee222795ced">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00104">104</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_abac3984f645d8abb10af7ee222795ced_cgraph.png" border="0" usemap="#classmysql_abac3984f645d8abb10af7ee222795ced_cgraph" alt=""/></div>
+<map name="classmysql_abac3984f645d8abb10af7ee222795ced_cgraph" id="classmysql_abac3984f645d8abb10af7ee222795ced_cgraph">
+<area shape="rect" id="node3" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="131,5,296,35"/><area shape="rect" id="node5" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="177,59,249,88"/><area shape="rect" id="node8" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="112,112,315,141"/><area shape="rect" id="node10" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="177,165,249,195"/><area shape="rect" id="node12" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="176,219,251,248"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_abac3984f645d8abb10af7ee222795ced_icgraph.png" border="0" usemap="#classmysql_abac3984f645d8abb10af7ee222795ced_icgraph" alt=""/></div>
+<map name="classmysql_abac3984f645d8abb10af7ee222795ced_icgraph" id="classmysql_abac3984f645d8abb10af7ee222795ced_icgraph">
+<area shape="rect" id="node3" href="classmysql.html#a9d25f736948943a3dc925b6682cfa272" title="AddColumn" alt="" coords="128,5,224,35"/><area shape="rect" id="node5" href="classmysql.html#aae9964ce9f9375a1ef40759bcd4c351f" title="AddTable" alt="" coords="137,59,215,88"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="140,112,212,141"/><area shape="rect" id="node10" href="classmysql.html#a0954e95b659bf69b9b5e9abc630b4687" title="DeleteColumn" alt="" coords="120,165,232,195"/><area shape="rect" id="node12" href="classmysql.html#a4afaae705eb9639715c9f0d386383164" title="DeleteTables" alt="" coords="311,263,412,292"/><area shape="rect" id="node14" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="113,373,239,403"/><area shape="rect" id="node16" href="classmysql.html#a18939e10851c114b310e6995056a9a69" title="UpdateColumn" alt="" coords="303,328,420,357"/><area shape="rect" id="node18" href="classmysql.html#a6ff92f0632459a3c871cba743d6aeb5c" title="UpdateColumnType" alt="" coords="288,405,435,435"/><area shape="rect" id="node20" href="classmysql.html#a617f2d7363c358397d1fa42f4ff58750" title="GetTableFields" alt="" coords="120,477,232,507"/><area shape="rect" id="node22" href="classmysql.html#a42c64ce8a18e358faa696a6f02feec42" title="ListTables" alt="" coords="135,269,217,299"/><area shape="rect" id="node25" href="classmysql.html#a7d84332acb86a38ebf9e77a72b771b0e" title="RenameTable" alt="" coords="123,531,229,560"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d84332acb86a38ebf9e77a72b771b0e"></a><!-- doxytag: member="mysql::RenameTable" ref="a7d84332acb86a38ebf9e77a72b771b0e" args="($sTable, $sNewName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenameTable </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sNewName</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет переименование одной таблицы в другую </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sTable</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$sNewName</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a7d84332acb86a38ebf9e77a72b771b0e">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00659">659</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a7d84332acb86a38ebf9e77a72b771b0e_cgraph.png" border="0" usemap="#classmysql_a7d84332acb86a38ebf9e77a72b771b0e_cgraph" alt=""/></div>
+<map name="classmysql_a7d84332acb86a38ebf9e77a72b771b0e_cgraph" id="classmysql_a7d84332acb86a38ebf9e77a72b771b0e_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="160,85,219,115"/><area shape="rect" id="node5" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="285,5,451,35"/><area shape="rect" id="node7" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="332,59,404,88"/><area shape="rect" id="node10" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="267,112,469,141"/><area shape="rect" id="node12" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="332,165,404,195"/><area shape="rect" id="node14" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="331,219,405,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad70448da8aa6efa96bb18eaf1ed29fbc"></a><!-- doxytag: member="mysql::rollback" ref="ad70448da8aa6efa96bb18eaf1ed29fbc" args="($show_error=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rollback </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>show_error</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Отменяет все последние изменения в базе данных. Внимание! Если с БД работает несколько человек (особенно на запись) присутствует вероятность искажения данных. По окончанию работы очищает массив последних операций, снимает флаг записи операций. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$show_error</em>&nbsp;</td><td>-- флаг отображения ошибок </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Автор:</b></dt><dd>blade39 &lt;<a href="mailto:blade39@kolosstudio.ru">blade39@kolosstudio.ru</a>&gt; </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>1.0 </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ad70448da8aa6efa96bb18eaf1ed29fbc">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00180">180</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae8a8a814d676b22f7e6283e4bc2e22de"></a><!-- doxytag: member="mysql::safesql" ref="ae8a8a814d676b22f7e6283e4bc2e22de" args="($source)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">safesql </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>source</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод преобразует переданную строку в sql безопасный вид. Производит предварительное отсечение слэшей, если включен magic_quotes. Включил дополнительную проверку переданной строки (mysql_real_escape_string) после отчистки слэшей от magic_quotes_gpc </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$source</em>&nbsp;</td><td>-- строка, данные требующие обработки. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ae8a8a814d676b22f7e6283e4bc2e22de">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00319">319</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3773aafc62bbe690bf66a84e8368ef06"></a><!-- doxytag: member="mysql::super_query" ref="a3773aafc62bbe690bf66a84e8368ef06" args="($query, $multi=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">super_query </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>multi</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Пока без документации </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Уст.:</a></b></dt><dd>2.5.4 - 17.02.2010 </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a3773aafc62bbe690bf66a84e8368ef06">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00257">257</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a18939e10851c114b310e6995056a9a69"></a><!-- doxytag: member="mysql::UpdateColumn" ref="a18939e10851c114b310e6995056a9a69" args="($sTable, $sColumn, $arFieldParams)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UpdateColumn </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFieldParams</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет обновление колонки указанной таблицы </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ab3958ce7eca8301cbb1c1733659ad2a9">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00550">550</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a18939e10851c114b310e6995056a9a69_cgraph.png" border="0" usemap="#classmysql_a18939e10851c114b310e6995056a9a69_cgraph" alt=""/></div>
+<map name="classmysql_a18939e10851c114b310e6995056a9a69_cgraph" id="classmysql_a18939e10851c114b310e6995056a9a69_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="175,60,300,89"/><area shape="rect" id="node7" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="349,112,408,141"/><area shape="rect" id="node5" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="521,5,593,35"/><area shape="rect" id="node9" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="475,59,640,88"/><area shape="rect" id="node11" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="521,112,593,141"/><area shape="rect" id="node14" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="456,165,659,195"/><area shape="rect" id="node17" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="520,219,595,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ff92f0632459a3c871cba743d6aeb5c"></a><!-- doxytag: member="mysql::UpdateColumnType" ref="a6ff92f0632459a3c871cba743d6aeb5c" args="($sTable, $sColumn, $sType)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UpdateColumnType </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sType</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет обновление типа данных указанного поля </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a6ff92f0632459a3c871cba743d6aeb5c">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00522">522</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmysql_a6ff92f0632459a3c871cba743d6aeb5c_cgraph.png" border="0" usemap="#classmysql_a6ff92f0632459a3c871cba743d6aeb5c_cgraph" alt=""/></div>
+<map name="classmysql_a6ff92f0632459a3c871cba743d6aeb5c_cgraph" id="classmysql_a6ff92f0632459a3c871cba743d6aeb5c_cgraph">
+<area shape="rect" id="node3" href="classmysql.html#aca7978ca78c479a5326b3f0d48abfe88" title="DescribeColumn" alt="" coords="201,60,327,89"/><area shape="rect" id="node7" href="classmysql.html#abac3984f645d8abb10af7ee222795ced" title="query" alt="" coords="376,112,435,141"/><area shape="rect" id="node5" href="classmysql.html#aa24825fef4dd273596c126f1c58829d5" title="get_row" alt="" coords="548,5,620,35"/><area shape="rect" id="node9" href="class_c_d_b_interface.html#a152dfd812d3fb6f2dc342660f36f07eb" title="CDBInterface::add2log" alt="" coords="501,59,667,88"/><area shape="rect" id="node11" href="classmysql.html#aed47c9defc5c08cc7c782d7df2d1bcf6" title="connect" alt="" coords="548,112,620,141"/><area shape="rect" id="node14" href="class_c_d_b_interface.html#a967a62086f30f44f647487707da6f288" title="CDBInterface::get_real_time" alt="" coords="483,165,685,195"/><area shape="rect" id="node17" href="classmysql.html#a933f2cde8dc7f87875e257d0a4902e99" title="insert_id" alt="" coords="547,219,621,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="ab9aa92243e94820a6788906a457203a1"></a><!-- doxytag: member="mysql::$arBackUpData" ref="ab9aa92243e94820a6788906a457203a1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arBackUpData<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>массив содержащий данные которые будут подвергнуты изменениям, необходим для сохранения данных. </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#ab9aa92243e94820a6788906a457203a1">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0242b1d7597a58eef028f6d373bede03"></a><!-- doxytag: member="mysql::$arColumnTypes" ref="a0242b1d7597a58eef028f6d373bede03" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arColumnTypes<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Массив со списком доступных типов полей </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a3b6fca959d335de32cf6758272e3c4f6"></a><!-- doxytag: member="mysql::$arRequests" ref="a3b6fca959d335de32cf6758272e3c4f6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arRequests<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В массиве храняться тексты всех запросов к БД в рамках одного вызова (если включен режим отладки) </p>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>1.2 </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a3b6fca959d335de32cf6758272e3c4f6">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adb9756d4524181e191069eaa76afb6cf"></a><!-- doxytag: member="mysql::$connected" ref="adb9756d4524181e191069eaa76afb6cf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$connected = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>флаг подключения к базе данных </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a65b2daf25e56123c420471a91e25330f"></a><!-- doxytag: member="mysql::$iBegin" ref="a65b2daf25e56123c420471a91e25330f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$iBegin = 0<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>обозначет количество вложенных вызовов системы отката </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a65b2daf25e56123c420471a91e25330f">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a13184a06ba02da0185bf61d3e9849729"></a><!-- doxytag: member="mysql::$iDebug" ref="a13184a06ba02da0185bf61d3e9849729" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$iDebug<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Флаг указывает на необходимость сохранения запросов к бд </p>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>1.2 </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_d_b_interface.html#a13184a06ba02da0185bf61d3e9849729">CDBInterface</a>.</p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af9b473972953488ab42954cab46ef262"></a><!-- doxytag: member="mysql::$iVersion" ref="af9b473972953488ab42954cab46ef262" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$iVersion<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Версия mysql </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6cf7a04a2800417389ae2a044eef05f7"></a><!-- doxytag: member="mysql::$ks_db_id" ref="a6cf7a04a2800417389ae2a044eef05f7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$ks_db_id = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>фиг знает </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a51016406c98bc1e35d248957863d2554"></a><!-- doxytag: member="mysql::$mysql_error" ref="a51016406c98bc1e35d248957863d2554" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$mysql_error = ''</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>ошибка работы db </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae28f8306fdf3cfe7b6b30f1dcd481eac"></a><!-- doxytag: member="mysql::$mysql_error_num" ref="ae28f8306fdf3cfe7b6b30f1dcd481eac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$mysql_error_num = 0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>номер ошибки db </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6d19ae730d0d108cf6b852b8da03dfd0"></a><!-- doxytag: member="mysql::$mysql_extend" ref="a6d19ae730d0d108cf6b852b8da03dfd0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$mysql_extend = &quot;MySQL&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>фиг знает </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aab5dfd53acb2aa3fd7654ca401f74cae"></a><!-- doxytag: member="mysql::$MySQL_time_taken" ref="aab5dfd53acb2aa3fd7654ca401f74cae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$MySQL_time_taken = 0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>время которое ушло на исполнение запросов </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaffbbf5913665f719562c9c75c4bb38f"></a><!-- doxytag: member="mysql::$query_id" ref="aaffbbf5913665f719562c9c75c4bb38f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$query_id = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>номер запроса </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a22d3c4e39fe64d46b80b2f02e25fde65"></a><!-- doxytag: member="mysql::$query_list" ref="a22d3c4e39fe64d46b80b2f02e25fde65" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$query_list = array()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>список выполненных запросов </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a48e9d21e1d146c08d1a32da2fa95e80d"></a><!-- doxytag: member="mysql::$query_num" ref="a48e9d21e1d146c08d1a32da2fa95e80d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$query_num = 0</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>количество выполненных запросов </p>
+
+<p>См. определение в файле <a class="el" href="mysql_8php_source.html">mysql.php</a> строка <a class="el" href="mysql_8php_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/db/<a class="el" href="mysql_8php_source.html">mysql.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:27. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

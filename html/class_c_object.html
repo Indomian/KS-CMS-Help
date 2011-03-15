@@ -1,0 +1,1563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>KS-CMS: Класс CObject</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.7.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="main.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="pages.html"><span>Описания</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&nbsp;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Структуры&nbsp;данных</span></a></li>
+      <li><a href="classes.html"><span>Алфавитный&nbsp;указатель&nbsp;структур&nbsp;данных</span></a></li>
+      <li><a href="hierarchy.html"><span>Иерархия&nbsp;классов</span></a></li>
+      <li><a href="functions.html"><span>Поля&nbsp;структур</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Поля данных</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="#pro-static-attribs">Статические защищенные данные</a>  </div>
+  <div class="headertitle">
+<h1>Класс CObject</h1>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="CObject" --><!-- doxytag: inherits="CBaseList" -->
+<p>Базовые классы:<a class="el" href="class_c_base_list.html">CBaseList</a>.</p>
+
+<p>Производные классы:<a class="el" href="class___c_event_templates.html">_CEventTemplates</a>, <a class="el" href="class_c_element_links.html">CElementLinks</a>, <a class="el" href="class_c_events.html">CEvents</a>, <a class="el" href="class_c_fields.html">CFields</a>, <a class="el" href="class_c_fields_values.html">CFieldsValues</a>, <a class="el" href="class_c_files_object.html">CFilesObject</a>, <a class="el" href="class_c_global_templates.html">CGlobalTemplates</a>, <a class="el" href="class_c_message.html">CMessage</a>, <a class="el" href="class_c_module_managment.html">CModuleManagment</a>, <a class="el" href="class_c_nav_types.html">CNavTypes</a>, <a class="el" href="class_c_text_parser.html">CTextParser</a> и <a class="el" href="class_tree.html">Tree</a>.</p>
+<div class="dynheader">
+Граф связей класса CObject:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object__coll__graph.png" border="0" usemap="#_c_object_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_object_coll__map" id="_c_object_coll__map">
+<area shape="rect" id="node2" href="class_c_base_list.html" title="CBaseList" alt="" coords="15,83,100,112"/><area shape="rect" id="node4" href="class_c_base_object.html" title="CBaseObject" alt="" coords="5,5,109,35"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ab54990bcb0ebceb8909f3303b01293cf">__construct</a> ($sTable='')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ab7a6339e9f44657a0183cc6d1894dbae">SetCheckMethod</a> ($method=&quot;AND&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a5abc92aa74de0c90972130da8b1b6867">AddCheckField</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a99fa7c04e5653e8a211bd3d11d45c884">AddAutoField</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ab069ae276954d25bed2dd98e535b0b11">AddFileField</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a216d12200cf633b71f318a1dcdef1e71">GenCheck</a> ($data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a2e932b1c5285b386f7f795703ac79479">GetFieldsList</a> ($prefix=&quot;&quot;, $my_table=&quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ad3fe79cedf46828ee79a230dfdce2e16">Save</a> ($prefix=&quot;KS_&quot;, $data=&quot;&quot;, $my_table=&quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b">GetRecord</a> ($where, $my_table=&quot;&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">GetById</a> ($id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#af5478d45bb4c7400c7830413a486a92b">GetRecordFromPost</a> ($prefix='', $data='')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a4fa0d7986c30256de3613650c539d744">GetTableFields</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">GetList</a> ($arOrder=false, $arFilter=false, $limit=false, $arSelect=false, $arGroupBy=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a0af6932332b9c12676735aa27f2640fb">Count</a> ($arFilter=false, $fGroup=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a75f36f5646e4513db4d265fa8f925983">Increase</a> ($field, $id, $increment=1)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#abe38f51985100039a9291bad69727ab4">Update</a> ($id, $values, $bFiltered=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a59113b5ecd1d155db6a4f30af34a1e80">Delete</a> ($id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a20cb5cab236d359a6513894f701936d7">DeleteItems</a> ($arFilter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a7f2e44cab1ac95bccc25be08afc15b1f">DeleteByIds</a> ($ids)</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Поля данных</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a6b7d3b9c752a0c977de5ddae78b522a9">$sTable</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a50b51f899e77f8e2df10908bad1bab91">$sUploadPath</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#adc9571fdc08bf3f0535d08d98217d732">_ParseField</a> ($prefix, $key, &amp;$input, &amp;$value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a5cd30b0fb664883d694689c7152d3d3f">_GenFilterHash</a> ($arFilter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">_GenWhere</a> ($arFilter, $method='AND', $step=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934">_GenFrom</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a">_GenOrder</a> ($arOrder)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32">_GenGroup</a> ($arOrder)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510">_GenSelect</a> ($arSelect=false, $bAddCount=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#adc9b6bf70f31025bde56faade9aa147b">_GetTableFields</a> ($table=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72">_ParseItem</a> (&amp;$item)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ae4ecc4fc9e5f1e17da78f225690309ee">$check_fields</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a19e5523b5bfa848ff048976073b0f72b">$auto_fields</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a06872fc847b4ba143198c5f962fc6a83">$arTables</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#acaf02986361f86c1431c91c56cd6dd6e">$arJoinTables</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a0cf8bfb72dea43a6b3de28d5d2cd0024">$obDB</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#aa5e2bccea53625700446546ecdc78fb6">$checkMethod</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a878d989791a56fc8695e648281410e05">$sFieldsModule</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#a9e975d50baf04b10642096e2889ef287">$arFilter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#ab61883dcd0807a6b56433e9f31d50bed">$bDistinctMode</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Статические защищенные данные</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#abce37e6268ad8fa4251d7bb984d8c031">$arCache</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_object.html#adb6be40a69c2325af5dd1e235ac76e75">$dbStructure</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="class_c_object.html">CObject</a> - базовый класс для работы с различными элементами в базе данных позволяет производить автоматическое сохранение данных любой сложности имеется возможность задавать Автозаполняемые поля, поля требующие проверки, поля для которых необходимо произвести загрузку файла.</p>
+<p>Изменения: 15.10.2008 - добавлен конструктор и деструктор в стиле ПХП5; 16.10.2008 - изменена фукция выборки, теперь фильтр поддерживает продвинутую выборку (больше, меньше, LIKE и т.д.); 22.11.2008 - добавлен тип проверки полей, по функции "И" или по "ИЛИ", по умолчанию используется "И" для обратной совместимости; 20.05.2009 - добавлена возможность сложных выборок из нескольких таблиц; </p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.3 </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00082">82</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="ab54990bcb0ebceb8909f3303b01293cf"></a><!-- doxytag: member="CObject::__construct" ref="ab54990bcb0ebceb8909f3303b01293cf" args="($sTable='')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>sTable</em> = <code>''</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор класса. Заполняет атрибуты класса значениями по умолчанию. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$sTable</em>&nbsp;</td><td>-- имя таблицы для работы (без префикса). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="class_c_element_links.html#a7ea8ed7926dc77dc41b954a0a5666ef8">CElementLinks</a>, <a class="el" href="class_c_admin_text_parser.html#a017e87302e93f7a7a874fae8cbc24c56">CAdminTextParser</a>, <a class="el" href="class_c_smile.html#a8aaaa6d6c4c8abc1265d9186ccf62cf7">CSmile</a>, <a class="el" href="class_c_modules_access.html#ada959ea544ccb97467410e5153627977">CModulesAccess</a>, <a class="el" href="class_c_admin_module_managment.html#a1f1138b29169d42a9be281c75dac1214">CAdminModuleManagment</a>, <a class="el" href="class_c_events.html#abf7d6c00dfa783fcb45b16f8315e226a">CEvents</a>, <a class="el" href="class_c_fields.html#ab7354513b0384aa4cb7025c06e5472d4">CFields</a>, <a class="el" href="class_c_fields_values.html#afcc501188774b426f150543a160566d8">CFieldsValues</a>, <a class="el" href="class_c_module_hook_up.html#a1f1138b29169d42a9be281c75dac1214">CModuleHookUp</a>, <a class="el" href="class_c_global_templates.html#a38f52d5343136eafd2080e358d22b1e4">CGlobalTemplates</a>, <a class="el" href="class_c_user.html#a642f67b6eff12859f54d061da118b7f8">CUser</a>, <a class="el" href="class_c_user_group.html#aa3c8d1f4935bda61f61cd69132b2771f">CUserGroup</a>, <a class="el" href="class_c_users_common.html#aa3c8d1f4935bda61f61cd69132b2771f">CUsersCommon</a>, <a class="el" href="class_c_base_user.html#a8542cc97e4bb2efa5e4b35f77a96a6e9">CBaseUser</a>, <a class="el" href="class_tree.html#a7a7c2f2ae86fea6b3d7a81473c90a789">Tree</a>, <a class="el" href="class_c_nav_types.html#a04e4995dba3c36bc688d486a7e3d76a4">CNavTypes</a>, <a class="el" href="class_c_nav_element.html#ae1da46430c8f36365178ae99c36aa551">CNavElement</a> и <a class="el" href="class_c_wave_posts.html#a740f67c96abe5a81f5e2310f7c7ec164">CWavePosts</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00108">108</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ab54990bcb0ebceb8909f3303b01293cf_cgraph.png" border="0" usemap="#class_c_object_ab54990bcb0ebceb8909f3303b01293cf_cgraph" alt=""/></div>
+<map name="class_c_object_ab54990bcb0ebceb8909f3303b01293cf_cgraph" id="class_c_object_ab54990bcb0ebceb8909f3303b01293cf_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a2e932b1c5285b386f7f795703ac79479" title="GetFieldsList" alt="" coords="151,5,252,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a><!-- doxytag: member="CObject::__destruct" ref="a421831a265621325e1fdd19aace0c758" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__destruct </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Деструктор класса. Не выполняет никакой определенной работы. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_module_managment.html#a421831a265621325e1fdd19aace0c758">CModuleManagment</a> и <a class="el" href="class_c_user.html#a421831a265621325e1fdd19aace0c758">CUser</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00143">143</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a5cd30b0fb664883d694689c7152d3d3f"></a><!-- doxytag: member="CObject::_GenFilterHash" ref="a5cd30b0fb664883d694689c7152d3d3f" args="($arFilter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenFilterHash </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод генерирует хэш для использования при кэшировании вывода записей </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00446">446</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_cgraph.png" border="0" usemap="#class_c_object_a5cd30b0fb664883d694689c7152d3d3f_cgraph" alt=""/></div>
+<map name="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_cgraph" id="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="175,5,268,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_icgraph.png" border="0" usemap="#class_c_object_a5cd30b0fb664883d694689c7152d3d3f_icgraph" alt=""/></div>
+<map name="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_icgraph" id="class_c_object_a5cd30b0fb664883d694689c7152d3d3f_icgraph">
+<area shape="rect" id="node3" href="class_c_fields.html#a36d856314995863577f6ef134fc9ffbf" title="CFields::GetRecord" alt="" coords="175,32,313,61"/><area shape="rect" id="node5" href="class_c_fields.html#a59113b5ecd1d155db6a4f30af34a1e80" title="CFields::Delete" alt="" coords="364,5,479,35"/><area shape="rect" id="node7" href="class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="368,59,475,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaba7390ae2f5126078b9466bc7477934"></a><!-- doxytag: member="CObject::_GenFrom" ref="aaba7390ae2f5126078b9466bc7477934" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenFrom </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод генерирует строку FROM запроса, по списку полей переданному в поля WHERE и FIELDS </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00733">733</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_aaba7390ae2f5126078b9466bc7477934_icgraph.png" border="0" usemap="#class_c_object_aaba7390ae2f5126078b9466bc7477934_icgraph" alt=""/></div>
+<map name="class_c_object_aaba7390ae2f5126078b9466bc7477934_icgraph" id="class_c_object_aaba7390ae2f5126078b9466bc7477934_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a0af6932332b9c12676735aa27f2640fb" title="Count" alt="" coords="145,639,204,668"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="141,692,208,721"/><area shape="rect" id="node7" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="332,36,481,65"/><area shape="rect" id="node9" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="309,89,504,119"/><area shape="rect" id="node13" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="313,143,500,172"/><area shape="rect" id="node15" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="315,196,499,225"/><area shape="rect" id="node17" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="315,249,499,279"/><area shape="rect" id="node19" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="331,303,483,332"/><area shape="rect" id="node21" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="625,59,857,88"/><area shape="rect" id="node23" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="279,665,535,695"/><area shape="rect" id="node25" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="320,719,493,748"/><area shape="rect" id="node27" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="304,772,509,801"/><area shape="rect" id="node29" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="283,825,531,855"/><area shape="rect" id="node31" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="273,407,540,436"/><area shape="rect" id="node34" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="623,112,860,141"/><area shape="rect" id="node36" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="256,879,557,908"/><area shape="rect" id="node38" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="308,932,505,961"/><area shape="rect" id="node40" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="344,985,469,1015"/><area shape="rect" id="node42" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="363,561,451,591"/><area shape="rect" id="node85" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="649,165,833,195"/><area shape="rect" id="node91" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="636,1275,847,1304"/><area shape="rect" id="node93" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="267,1039,547,1068"/><area shape="rect" id="node95" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="352,1092,461,1121"/><area shape="rect" id="node97" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="317,1145,496,1175"/><area shape="rect" id="node99" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="261,1199,552,1228"/><area shape="rect" id="node101" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="257,1252,556,1281"/><area shape="rect" id="node104" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="312,1305,501,1335"/><area shape="rect" id="node106" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="289,1359,524,1388"/><area shape="rect" id="node11" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="645,5,837,35"/><area shape="rect" id="node44" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="653,747,829,776"/><area shape="rect" id="node46" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="927,1089,1249,1119"/><area shape="rect" id="node48" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="677,851,805,880"/><area shape="rect" id="node50" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="659,904,824,933"/><area shape="rect" id="node52" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="667,957,816,987"/><area shape="rect" id="node54" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="705,1011,777,1040"/><area shape="rect" id="node56" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="985,747,1191,776"/><area shape="rect" id="node58" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="644,1168,839,1197"/><area shape="rect" id="node60" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="605,1221,877,1251"/><area shape="rect" id="node62" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="668,269,815,299"/><area shape="rect" id="node64" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="628,693,855,723"/><area shape="rect" id="node67" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="663,323,820,352"/><area shape="rect" id="node69" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="628,376,855,405"/><area shape="rect" id="node71" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="647,429,836,459"/><area shape="rect" id="node73" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="628,483,855,512"/><area shape="rect" id="node75" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="641,536,841,565"/><area shape="rect" id="node77" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="632,1064,851,1093"/><area shape="rect" id="node80" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="1039,615,1137,644"/><area shape="rect" id="node82" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="669,640,813,669"/><area shape="rect" id="node87" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="1019,192,1157,221"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae71f95213a907bd9059baffb4dd08b32"></a><!-- doxytag: member="CObject::_GenGroup" ref="ae71f95213a907bd9059baffb4dd08b32" args="($arOrder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenGroup </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arOrder</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод генерирует строку группировки данных запроса. Добавлена поддержка сложных массивов для группировки с поддержкой сортировки внутри массива группировки.</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arOrder</em>&nbsp;</td><td>array - массив полей по которым осуществлять группировку <code> array( '&lt;field_name&gt;'=&gt;'ASC|DESC', ) </code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>MYSQL строка упорядочивания выборки или пустая строка. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00885">885</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ae71f95213a907bd9059baffb4dd08b32_icgraph.png" border="0" usemap="#class_c_object_ae71f95213a907bd9059baffb4dd08b32_icgraph" alt=""/></div>
+<map name="class_c_object_ae71f95213a907bd9059baffb4dd08b32_icgraph" id="class_c_object_ae71f95213a907bd9059baffb4dd08b32_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a0af6932332b9c12676735aa27f2640fb" title="Count" alt="" coords="153,639,212,668"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="149,692,216,721"/><area shape="rect" id="node7" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="340,36,489,65"/><area shape="rect" id="node9" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="317,89,512,119"/><area shape="rect" id="node13" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="321,143,508,172"/><area shape="rect" id="node15" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="323,196,507,225"/><area shape="rect" id="node17" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="323,249,507,279"/><area shape="rect" id="node19" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="339,303,491,332"/><area shape="rect" id="node21" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="633,59,865,88"/><area shape="rect" id="node23" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="287,665,543,695"/><area shape="rect" id="node25" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="328,719,501,748"/><area shape="rect" id="node27" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="312,772,517,801"/><area shape="rect" id="node29" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="291,825,539,855"/><area shape="rect" id="node31" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="281,407,548,436"/><area shape="rect" id="node34" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="631,112,868,141"/><area shape="rect" id="node36" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="264,879,565,908"/><area shape="rect" id="node38" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="316,932,513,961"/><area shape="rect" id="node40" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="352,985,477,1015"/><area shape="rect" id="node42" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="371,561,459,591"/><area shape="rect" id="node85" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="657,165,841,195"/><area shape="rect" id="node91" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="644,1275,855,1304"/><area shape="rect" id="node93" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="275,1039,555,1068"/><area shape="rect" id="node95" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="360,1092,469,1121"/><area shape="rect" id="node97" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="325,1145,504,1175"/><area shape="rect" id="node99" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="269,1199,560,1228"/><area shape="rect" id="node101" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="265,1252,564,1281"/><area shape="rect" id="node104" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="320,1305,509,1335"/><area shape="rect" id="node106" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="297,1359,532,1388"/><area shape="rect" id="node11" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="653,5,845,35"/><area shape="rect" id="node44" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="661,747,837,776"/><area shape="rect" id="node46" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="935,1089,1257,1119"/><area shape="rect" id="node48" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="685,851,813,880"/><area shape="rect" id="node50" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="667,904,832,933"/><area shape="rect" id="node52" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="675,957,824,987"/><area shape="rect" id="node54" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="713,1011,785,1040"/><area shape="rect" id="node56" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="993,747,1199,776"/><area shape="rect" id="node58" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="652,1168,847,1197"/><area shape="rect" id="node60" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="613,1221,885,1251"/><area shape="rect" id="node62" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="676,269,823,299"/><area shape="rect" id="node64" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="636,693,863,723"/><area shape="rect" id="node67" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="671,323,828,352"/><area shape="rect" id="node69" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="636,376,863,405"/><area shape="rect" id="node71" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="655,429,844,459"/><area shape="rect" id="node73" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="636,483,863,512"/><area shape="rect" id="node75" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="649,536,849,565"/><area shape="rect" id="node77" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="640,1064,859,1093"/><area shape="rect" id="node80" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="1047,615,1145,644"/><area shape="rect" id="node82" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="677,640,821,669"/><area shape="rect" id="node87" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="1027,192,1165,221"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a26088e5c8cc0726a42c52dd1b49cc30a"></a><!-- doxytag: member="CObject::_GenOrder" ref="a26088e5c8cc0726a42c52dd1b49cc30a" args="($arOrder)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenOrder </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arOrder</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод генерирует порядок вывода строк для SELECT запроса. Все переданные даннные проходят проверку по списку полей, поля которые не существуют, отбрасываются.</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arOrder</em>&nbsp;</td><td>array - ассоциативный массив имеющий следующую структуру. <code> array( '&lt;field_name&gt;'=&gt;'ASC|DESC', ) </code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>MYSQL строка упорядочивания выборки или пустая строка. </dd></dl>
+<dl class="see"><dt><b>См. также:</b></dt><dd><a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject::GetList()</a>, <a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere()</a>, <a class="el" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510">CObject::_GenSelect()</a> </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>Используется начиная с версии класса 2.1 </dd>
+<dd>
+2.3 добавлена поддержка множественного выбора </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00804">804</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a26088e5c8cc0726a42c52dd1b49cc30a_icgraph.png" border="0" usemap="#class_c_object_a26088e5c8cc0726a42c52dd1b49cc30a_icgraph" alt=""/></div>
+<map name="class_c_object_a26088e5c8cc0726a42c52dd1b49cc30a_icgraph" id="class_c_object_a26088e5c8cc0726a42c52dd1b49cc30a_icgraph">
+<area shape="rect" id="node3" href="class_c_common_category.html#ac6da3d4453f3a47e40eec105087a6e6d" title="CCommonCategory::GetChildrenCount" alt="" coords="145,639,412,668"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="245,692,312,721"/><area shape="rect" id="node7" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="537,36,687,65"/><area shape="rect" id="node9" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="515,89,709,119"/><area shape="rect" id="node13" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="519,143,705,172"/><area shape="rect" id="node15" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="520,196,704,225"/><area shape="rect" id="node17" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="520,249,704,279"/><area shape="rect" id="node19" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="536,303,688,332"/><area shape="rect" id="node21" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="831,59,1063,88"/><area shape="rect" id="node23" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="484,665,740,695"/><area shape="rect" id="node25" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="525,719,699,748"/><area shape="rect" id="node27" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="509,772,715,801"/><area shape="rect" id="node29" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="488,825,736,855"/><area shape="rect" id="node31" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="479,407,745,436"/><area shape="rect" id="node34" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="828,112,1065,141"/><area shape="rect" id="node36" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="461,879,763,908"/><area shape="rect" id="node38" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="513,932,711,961"/><area shape="rect" id="node40" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="549,985,675,1015"/><area shape="rect" id="node42" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="568,561,656,591"/><area shape="rect" id="node85" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="855,165,1039,195"/><area shape="rect" id="node91" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="841,1275,1052,1304"/><area shape="rect" id="node93" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="472,1039,752,1068"/><area shape="rect" id="node95" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="557,1092,667,1121"/><area shape="rect" id="node97" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="523,1145,701,1175"/><area shape="rect" id="node99" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="467,1199,757,1228"/><area shape="rect" id="node101" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="463,1252,761,1281"/><area shape="rect" id="node104" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="517,1305,707,1335"/><area shape="rect" id="node106" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="495,1359,729,1388"/><area shape="rect" id="node11" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="851,5,1043,35"/><area shape="rect" id="node44" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="859,747,1035,776"/><area shape="rect" id="node46" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="1132,1089,1455,1119"/><area shape="rect" id="node48" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="883,851,1011,880"/><area shape="rect" id="node50" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="864,904,1029,933"/><area shape="rect" id="node52" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="872,957,1021,987"/><area shape="rect" id="node54" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="911,1011,983,1040"/><area shape="rect" id="node56" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="1191,747,1396,776"/><area shape="rect" id="node58" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="849,1168,1044,1197"/><area shape="rect" id="node60" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="811,1221,1083,1251"/><area shape="rect" id="node62" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="873,269,1020,299"/><area shape="rect" id="node64" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="833,693,1060,723"/><area shape="rect" id="node67" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="868,323,1025,352"/><area shape="rect" id="node69" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="833,376,1060,405"/><area shape="rect" id="node71" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="852,429,1041,459"/><area shape="rect" id="node73" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="833,483,1060,512"/><area shape="rect" id="node75" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="847,536,1047,565"/><area shape="rect" id="node77" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="837,1064,1056,1093"/><area shape="rect" id="node80" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="1244,615,1343,644"/><area shape="rect" id="node82" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="875,640,1019,669"/><area shape="rect" id="node87" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="1224,192,1363,221"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3ad25d1733ecf7393d40e2219b28510"></a><!-- doxytag: member="CObject::_GenSelect" ref="ae3ad25d1733ecf7393d40e2219b28510" args="($arSelect=false, $bAddCount=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenSelect </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arSelect</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>bAddCount</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод генерирует список полей для SELECT запроса. Все переданные даннные проходят проверку по списку полей, поля которые не существуют, отбрасываются. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arSelect</em>&nbsp;</td><td>array - список полей которые надо преобразовать в строку. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$bAddCount</em>&nbsp;</td><td>boolean - флаг указывающий, что надо добавлять поля count к полям выборки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>MYSQL строка со списком полей или * для обозначения того, что надо выбрать все поля. </dd></dl>
+<dl class="see"><dt><b>См. также:</b></dt><dd><a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject::GetList()</a>, <a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere()</a> </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>используется начиная с версии класса 2.1</dd></dl>
+<p>[+] 07.10.10 Добавлен параметр $bAddCount </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00959">959</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ae3ad25d1733ecf7393d40e2219b28510_icgraph.png" border="0" usemap="#class_c_object_ae3ad25d1733ecf7393d40e2219b28510_icgraph" alt=""/></div>
+<map name="class_c_object_ae3ad25d1733ecf7393d40e2219b28510_icgraph" id="class_c_object_ae3ad25d1733ecf7393d40e2219b28510_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a0af6932332b9c12676735aa27f2640fb" title="Count" alt="" coords="153,639,212,668"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="149,692,216,721"/><area shape="rect" id="node7" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="340,36,489,65"/><area shape="rect" id="node9" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="317,89,512,119"/><area shape="rect" id="node13" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="321,143,508,172"/><area shape="rect" id="node15" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="323,196,507,225"/><area shape="rect" id="node17" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="323,249,507,279"/><area shape="rect" id="node19" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="339,303,491,332"/><area shape="rect" id="node21" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="633,59,865,88"/><area shape="rect" id="node23" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="287,665,543,695"/><area shape="rect" id="node25" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="328,719,501,748"/><area shape="rect" id="node27" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="312,772,517,801"/><area shape="rect" id="node29" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="291,825,539,855"/><area shape="rect" id="node31" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="281,407,548,436"/><area shape="rect" id="node34" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="631,112,868,141"/><area shape="rect" id="node36" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="264,879,565,908"/><area shape="rect" id="node38" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="316,932,513,961"/><area shape="rect" id="node40" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="352,985,477,1015"/><area shape="rect" id="node42" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="371,561,459,591"/><area shape="rect" id="node85" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="657,165,841,195"/><area shape="rect" id="node91" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="644,1275,855,1304"/><area shape="rect" id="node93" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="275,1039,555,1068"/><area shape="rect" id="node95" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="360,1092,469,1121"/><area shape="rect" id="node97" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="325,1145,504,1175"/><area shape="rect" id="node99" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="269,1199,560,1228"/><area shape="rect" id="node101" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="265,1252,564,1281"/><area shape="rect" id="node104" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="320,1305,509,1335"/><area shape="rect" id="node106" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="297,1359,532,1388"/><area shape="rect" id="node11" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="653,5,845,35"/><area shape="rect" id="node44" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="661,747,837,776"/><area shape="rect" id="node46" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="935,1089,1257,1119"/><area shape="rect" id="node48" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="685,851,813,880"/><area shape="rect" id="node50" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="667,904,832,933"/><area shape="rect" id="node52" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="675,957,824,987"/><area shape="rect" id="node54" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="713,1011,785,1040"/><area shape="rect" id="node56" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="993,747,1199,776"/><area shape="rect" id="node58" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="652,1168,847,1197"/><area shape="rect" id="node60" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="613,1221,885,1251"/><area shape="rect" id="node62" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="676,269,823,299"/><area shape="rect" id="node64" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="636,693,863,723"/><area shape="rect" id="node67" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="671,323,828,352"/><area shape="rect" id="node69" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="636,376,863,405"/><area shape="rect" id="node71" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="655,429,844,459"/><area shape="rect" id="node73" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="636,483,863,512"/><area shape="rect" id="node75" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="649,536,849,565"/><area shape="rect" id="node77" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="640,1064,859,1093"/><area shape="rect" id="node80" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="1047,615,1145,644"/><area shape="rect" id="node82" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="677,640,821,669"/><area shape="rect" id="node87" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="1027,192,1165,221"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a19e151c88b2031d646f21b274f8fae0e"></a><!-- doxytag: member="CObject::_GenWhere" ref="a19e151c88b2031d646f21b274f8fae0e" args="($arFilter, $method='AND', $step=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GenWhere </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>'AND'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>step</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция генерирует строку WHERE для запросов в БД. В качестве названия поля может выступать строка с указанием таблицы. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arFilter</em>&nbsp;</td><td>-- массив описывающий принцип фильтрации. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$method</em>&nbsp;</td><td>- метод сравнения (AND по умолчанию) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>См. также:</b></dt><dd><a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject::GetList()</a> </dd></dl>
+<dl class="version"><dt><b>Версия:</b></dt><dd>1.3 Добавлена поддержка работы с несколькими таблицами а также сложные операции объединения таблиц префиксы для сложных сравнений - &gt;?, &lt;?, ?. Добавлена поддержка функций mysql ? - просто произодит сравнение двух полей в разделе WHERE &gt;? - выполняет правое объединение двух таблиц по указанным полям &lt;? - выполняет левое объединение двух таблиц по указанным полям </dd>
+<dd>
+2.5.3 Добавлена поддержка проверки типа переданных данных для операции IN если передан массив или число - система сама сформирает строку если строка - работаем по старинке </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_category_sub_category.html#a19e151c88b2031d646f21b274f8fae0e">CCategorySubCategory</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00469">469</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a19e151c88b2031d646f21b274f8fae0e_icgraph.png" border="0" usemap="#class_c_object_a19e151c88b2031d646f21b274f8fae0e_icgraph" alt=""/></div>
+<map name="class_c_object_a19e151c88b2031d646f21b274f8fae0e_icgraph" id="class_c_object_a19e151c88b2031d646f21b274f8fae0e_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a5cd30b0fb664883d694689c7152d3d3f" title="_GenFilterHash" alt="" coords="183,33,300,63"/><area shape="rect" id="node11" href="class_c_object.html#a0af6932332b9c12676735aa27f2640fb" title="Count" alt="" coords="212,88,271,117"/><area shape="rect" id="node13" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="435,192,629,221"/><area shape="rect" id="node19" href="class_c_object.html#a20cb5cab236d359a6513894f701936d7" title="DeleteItems" alt="" coords="192,141,291,171"/><area shape="rect" id="node25" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="456,245,608,275"/><area shape="rect" id="node27" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="208,803,275,832"/><area shape="rect" id="node100" href="class_c_modules_access.html#ad92a22dd909a1677de6d1bfdc5d59b3c" title="CModulesAccess::GetList" alt="" coords="151,856,332,885"/><area shape="rect" id="node102" href="class_c_object.html#abe38f51985100039a9291bad69727ab4" title="Update" alt="" coords="207,1515,276,1544"/><area shape="rect" id="node5" href="class_c_fields.html#a36d856314995863577f6ef134fc9ffbf" title="CFields::GetRecord" alt="" coords="463,32,601,61"/><area shape="rect" id="node7" href="class_c_fields.html#a59113b5ecd1d155db6a4f30af34a1e80" title="CFields::Delete" alt="" coords="836,5,951,35"/><area shape="rect" id="node9" href="class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="840,59,947,88"/><area shape="rect" id="node15" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="797,192,989,221"/><area shape="rect" id="node17" href="class_c_nav_element.html#a59113b5ecd1d155db6a4f30af34a1e80" title="CNavElement::Delete" alt="" coords="1105,192,1263,221"/><area shape="rect" id="node21" href="class_c_object.html#a59113b5ecd1d155db6a4f30af34a1e80" title="Delete" alt="" coords="500,85,564,115"/><area shape="rect" id="node23" href="class_c_object.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="DeleteByIds" alt="" coords="483,139,581,168"/><area shape="rect" id="node29" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="457,352,607,381"/><area shape="rect" id="node32" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="439,405,625,435"/><area shape="rect" id="node34" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="440,1408,624,1437"/><area shape="rect" id="node36" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="440,459,624,488"/><area shape="rect" id="node39" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="777,695,1009,724"/><area shape="rect" id="node41" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="404,512,660,541"/><area shape="rect" id="node43" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="445,565,619,595"/><area shape="rect" id="node45" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="429,1461,635,1491"/><area shape="rect" id="node47" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="408,619,656,648"/><area shape="rect" id="node49" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="399,776,665,805"/><area shape="rect" id="node52" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="775,761,1012,791"/><area shape="rect" id="node54" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="381,723,683,752"/><area shape="rect" id="node56" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="433,880,631,909"/><area shape="rect" id="node58" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="469,933,595,963"/><area shape="rect" id="node60" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="488,987,576,1016"/><area shape="rect" id="node78" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="801,1295,985,1324"/><area shape="rect" id="node81" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="788,1241,999,1271"/><area shape="rect" id="node83" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="392,1141,672,1171"/><area shape="rect" id="node85" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="477,1195,587,1224"/><area shape="rect" id="node87" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="443,1248,621,1277"/><area shape="rect" id="node89" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="387,1301,677,1331"/><area shape="rect" id="node91" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="383,1355,681,1384"/><area shape="rect" id="node94" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="437,1515,627,1544"/><area shape="rect" id="node96" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="415,299,649,328"/><area shape="rect" id="node62" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="805,1028,981,1057"/><area shape="rect" id="node64" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="732,1081,1055,1111"/><area shape="rect" id="node66" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="829,1135,957,1164"/><area shape="rect" id="node68" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="811,1188,976,1217"/><area shape="rect" id="node70" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="819,815,968,844"/><area shape="rect" id="node72" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="857,868,929,897"/><area shape="rect" id="node74" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="791,921,996,951"/><area shape="rect" id="node76" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="796,975,991,1004"/><area shape="rect" id="node106" href="class_c_user.html#a04319249ee2785318535b92beb1aad82" title="CUser::OnAfterLogin" alt="" coords="456,1672,608,1701"/><area shape="rect" id="node110" href="class_c_user.html#a39c631b045052241e951f7cac0bd2a2e" title="CUser::WriteUserVars" alt="" coords="453,1619,611,1648"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adc9b6bf70f31025bde56faade9aa147b"></a><!-- doxytag: member="CObject::_GetTableFields" ref="adc9b6bf70f31025bde56faade9aa147b" args="($table=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_GetTableFields </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>table</em> = <code>false</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Защишенный метод выполняющий получение списка полей для любой таблицы </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01036">1036</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_adc9b6bf70f31025bde56faade9aa147b_icgraph.png" border="0" usemap="#class_c_object_adc9b6bf70f31025bde56faade9aa147b_icgraph" alt=""/></div>
+<map name="class_c_object_adc9b6bf70f31025bde56faade9aa147b_icgraph" id="class_c_object_adc9b6bf70f31025bde56faade9aa147b_icgraph">
+<area shape="rect" id="node3" href="class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf" title="CCommonElement::GetRecord" alt="" coords="175,5,391,35"/><area shape="rect" id="node7" href="class_c_object.html#a4fa0d7986c30256de3613650c539d744" title="GetTableFields" alt="" coords="227,59,339,88"/><area shape="rect" id="node9" href="class_c_object.html#ad3fe79cedf46828ee79a230dfdce2e16" title="Save" alt="" coords="256,112,309,141"/><area shape="rect" id="node17" href="class_c_fields_object.html#ae963e93a528e72e62076ce24f35af3aa" title="CFieldsObject::Save" alt="" coords="209,165,356,195"/><area shape="rect" id="node19" href="class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="229,219,336,248"/><area shape="rect" id="node5" href="class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonElement::GetById" alt="" coords="441,5,641,35"/><area shape="rect" id="node11" href="class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="463,59,620,88"/><area shape="rect" id="node13" href="class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="452,112,631,141"/><area shape="rect" id="node15" href="class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="464,165,619,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adc9571fdc08bf3f0535d08d98217d732"></a><!-- doxytag: member="CObject::_ParseField" ref="adc9571fdc08bf3f0535d08d98217d732" args="($prefix, $key, &amp;$input, &amp;$value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_ParseField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>value</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод обрабатывает одно поле перед сохранением в базу данных </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$prefix</em>&nbsp;</td><td>- префикс имени поля в массиве данных </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$key</em>&nbsp;</td><td>- имя поля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$input</em>&nbsp;</td><td>- массив входных данных </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$value</em>&nbsp;</td><td>- массив описывающий поле </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяется в <a class="el" href="class_c_fields_object.html#adc9571fdc08bf3f0535d08d98217d732">CFieldsObject</a> и <a class="el" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732">CFilesObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00275">275</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_adc9571fdc08bf3f0535d08d98217d732_icgraph.png" border="0" usemap="#class_c_object_adc9571fdc08bf3f0535d08d98217d732_icgraph" alt=""/></div>
+<map name="class_c_object_adc9571fdc08bf3f0535d08d98217d732_icgraph" id="class_c_object_adc9571fdc08bf3f0535d08d98217d732_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#ad3fe79cedf46828ee79a230dfdce2e16" title="Save" alt="" coords="148,59,201,88"/><area shape="rect" id="node5" href="class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="261,5,419,35"/><area shape="rect" id="node7" href="class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="251,59,429,88"/><area shape="rect" id="node9" href="class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="263,112,417,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8a873499fe236f5bf466bcd4e327b72"></a><!-- doxytag: member="CObject::_ParseItem" ref="ab8a873499fe236f5bf466bcd4e327b72" args="(&amp;$item)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_ParseItem </td>
+          <td>(</td>
+          <td class="paramtype">&amp;$&nbsp;</td>
+          <td class="paramname"> <em>item</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция выполняет обработку одного элемента при создании списка элементов. Можно подменять в потомках, что позволяет получать дополнительные данные без дополнительного обхода массива </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>&amp;$item</em>&nbsp;</td><td>указатель на запись которую требуется каким либо образом изменить. возвращает true если запись добавляется в результат или false если нет. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_base_list.html#ab8a873499fe236f5bf466bcd4e327b72">CBaseList</a>.</p>
+
+<p>Переопределяется в <a class="el" href="class_c_u_g_modules.html#ab8a873499fe236f5bf466bcd4e327b72">CUGModules</a>, <a class="el" href="class_c_user.html#ab8a873499fe236f5bf466bcd4e327b72">CUser</a> и <a class="el" href="class_c_wave_posts.html#a115eede3d9039bedf6c1279032fdc159">CWavePosts</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01259">1259</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ab8a873499fe236f5bf466bcd4e327b72_icgraph.png" border="0" usemap="#class_c_object_ab8a873499fe236f5bf466bcd4e327b72_icgraph" alt=""/></div>
+<map name="class_c_object_ab8a873499fe236f5bf466bcd4e327b72_icgraph" id="class_c_object_ab8a873499fe236f5bf466bcd4e327b72_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="223,692,289,721"/><area shape="rect" id="node105" href="class_c_common_element.html#a36d856314995863577f6ef134fc9ffbf" title="CCommonElement::GetRecord" alt="" coords="148,1063,364,1092"/><area shape="rect" id="node5" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="489,165,639,195"/><area shape="rect" id="node7" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="467,219,661,248"/><area shape="rect" id="node11" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="471,272,657,301"/><area shape="rect" id="node13" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="472,325,656,355"/><area shape="rect" id="node15" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="472,379,656,408"/><area shape="rect" id="node17" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="488,432,640,461"/><area shape="rect" id="node19" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="783,109,1015,139"/><area shape="rect" id="node21" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="436,795,692,824"/><area shape="rect" id="node23" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="477,848,651,877"/><area shape="rect" id="node25" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="461,901,667,931"/><area shape="rect" id="node27" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="440,955,688,984"/><area shape="rect" id="node29" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="431,536,697,565"/><area shape="rect" id="node32" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="780,163,1017,192"/><area shape="rect" id="node34" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="413,1008,715,1037"/><area shape="rect" id="node36" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="465,1061,663,1091"/><area shape="rect" id="node38" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="501,1115,627,1144"/><area shape="rect" id="node40" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="520,640,608,669"/><area shape="rect" id="node83" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="807,1221,991,1251"/><area shape="rect" id="node86" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="793,1275,1004,1304"/><area shape="rect" id="node88" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="424,1168,704,1197"/><area shape="rect" id="node90" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="509,1221,619,1251"/><area shape="rect" id="node92" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="475,1275,653,1304"/><area shape="rect" id="node94" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="419,1328,709,1357"/><area shape="rect" id="node96" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="415,5,713,35"/><area shape="rect" id="node99" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="469,59,659,88"/><area shape="rect" id="node101" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="447,112,681,141"/><area shape="rect" id="node9" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="803,56,995,85"/><area shape="rect" id="node42" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="811,1011,987,1040"/><area shape="rect" id="node44" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="1084,1088,1407,1117"/><area shape="rect" id="node46" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="835,1168,963,1197"/><area shape="rect" id="node48" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="816,216,981,245"/><area shape="rect" id="node50" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="824,269,973,299"/><area shape="rect" id="node52" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="863,323,935,352"/><area shape="rect" id="node54" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="1143,401,1348,431"/><area shape="rect" id="node56" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="801,480,996,509"/><area shape="rect" id="node58" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="763,533,1035,563"/><area shape="rect" id="node60" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="825,587,972,616"/><area shape="rect" id="node62" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="785,427,1012,456"/><area shape="rect" id="node65" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="820,640,977,669"/><area shape="rect" id="node67" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="785,693,1012,723"/><area shape="rect" id="node69" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="804,747,993,776"/><area shape="rect" id="node71" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="785,800,1012,829"/><area shape="rect" id="node73" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="799,853,999,883"/><area shape="rect" id="node75" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="789,1115,1008,1144"/><area shape="rect" id="node78" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="1196,932,1295,961"/><area shape="rect" id="node80" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="827,957,971,987"/><area shape="rect" id="node107" href="class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonElement::GetById" alt="" coords="464,1381,664,1411"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a99fa7c04e5653e8a211bd3d11d45c884"></a><!-- doxytag: member="CObject::AddAutoField" ref="a99fa7c04e5653e8a211bd3d11d45c884" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddAutoField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>field</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00174">174</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5abc92aa74de0c90972130da8b1b6867"></a><!-- doxytag: member="CObject::AddCheckField" ref="a5abc92aa74de0c90972130da8b1b6867" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddCheckField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>field</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод добавляет поле для проверки перед сохранением элемента в базу. Если добавить несколько методов, проверка будет идти по принципу "�?" </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00162">162</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a5abc92aa74de0c90972130da8b1b6867_icgraph.png" border="0" usemap="#class_c_object_a5abc92aa74de0c90972130da8b1b6867_icgraph" alt=""/></div>
+<map name="class_c_object_a5abc92aa74de0c90972130da8b1b6867_icgraph" id="class_c_object_a5abc92aa74de0c90972130da8b1b6867_icgraph">
+<area shape="rect" id="node3" href="class_c_user.html#a05b54b97b94b4cbbaaa033347e854e4a" title="CUser::Save" alt="" coords="168,5,269,35"/><area shape="rect" id="node5" href="class_c_user.html#ace72013da14683e98f555c312b30af3e" title="CUser::Activate" alt="" coords="319,5,439,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab069ae276954d25bed2dd98e535b0b11"></a><!-- doxytag: member="CObject::AddFileField" ref="ab069ae276954d25bed2dd98e535b0b11" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AddFileField </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>field</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="class_c_files_object.html#ab069ae276954d25bed2dd98e535b0b11">CFilesObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00186">186</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0af6932332b9c12676735aa27f2640fb"></a><!-- doxytag: member="CObject::Count" ref="a0af6932332b9c12676735aa27f2640fb" args="($arFilter=false, $fGroup=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Count </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>fGroup</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет подсчет количества элементов соответствующих заданому фильтру</p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.4 </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>07.10.10 [~] Изменен алгоритм расчета количества при работе с группировками. [+] Добавлена поддержка массива в качестве группировки</dd></dl>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.3 </dd></dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>29.03.2009 Изменения: 2.3 - добавлен параметр $fGroup</dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$arFilter ассоциативный массив филтрации, также смотрите <a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere</a>. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$fGroup Используется для группировки количества элементов </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>mixed Число элементов, подходящих к фильтру, или массив с числами элементов, соответствующих различным значениям fGroup </dd></dl>
+<dl class="see"><dt><b>См. также:</b></dt><dd><a class="el" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5">CObject::GetList()</a>, <a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere()</a> </dd></dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_base_list.html#a0af6932332b9c12676735aa27f2640fb">CBaseList</a>.</p>
+
+<p>Переопределяется в <a class="el" href="class_c_element.html#a0af6932332b9c12676735aa27f2640fb">CElement</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01172">1172</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a0af6932332b9c12676735aa27f2640fb_cgraph.png" border="0" usemap="#class_c_object_a0af6932332b9c12676735aa27f2640fb_cgraph" alt=""/></div>
+<map name="class_c_object_a0af6932332b9c12676735aa27f2640fb_cgraph" id="class_c_object_a0af6932332b9c12676735aa27f2640fb_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="_GenFrom" alt="" coords="120,5,205,35"/><area shape="rect" id="node5" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="_GenGroup" alt="" coords="116,59,209,88"/><area shape="rect" id="node7" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="_GenSelect" alt="" coords="116,112,209,141"/><area shape="rect" id="node9" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="116,165,209,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a59113b5ecd1d155db6a4f30af34a1e80"></a><!-- doxytag: member="CObject::Delete" ref="a59113b5ecd1d155db6a4f30af34a1e80" args="($id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Delete </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод производит удаление записи по известному id </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>$id номер записи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>boolean - результат исполнения </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_fields.html#a59113b5ecd1d155db6a4f30af34a1e80">CFields</a>, <a class="el" href="class_c_global_templates.html#a8e2686327971c70472058b1125b4ebc7">CGlobalTemplates</a>, <a class="el" href="class_c_nav_types.html#a59113b5ecd1d155db6a4f30af34a1e80">CNavTypes</a> и <a class="el" href="class_c_nav_element.html#a59113b5ecd1d155db6a4f30af34a1e80">CNavElement</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01326">1326</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a59113b5ecd1d155db6a4f30af34a1e80_cgraph.png" border="0" usemap="#class_c_object_a59113b5ecd1d155db6a4f30af34a1e80_cgraph" alt=""/></div>
+<map name="class_c_object_a59113b5ecd1d155db6a4f30af34a1e80_cgraph" id="class_c_object_a59113b5ecd1d155db6a4f30af34a1e80_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a20cb5cab236d359a6513894f701936d7" title="DeleteItems" alt="" coords="119,5,217,35"/><area shape="rect" id="node5" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="268,5,361,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f2e44cab1ac95bccc25be08afc15b1f"></a><!-- doxytag: member="CObject::DeleteByIds" ref="a7f2e44cab1ac95bccc25be08afc15b1f" args="($ids)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeleteByIds </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>ids</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет удаление элементов по массиву переданных идентификаторов записей, является оберткой для метода <a class="el" href="class_c_object.html#a20cb5cab236d359a6513894f701936d7">CObject::DeleteItems()</a> </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$ids - массив записей которые необходимо удалить </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>boolean - результат удаления </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f">CSmile</a>, <a class="el" href="class_c_nav_types.html#a7f2e44cab1ac95bccc25be08afc15b1f">CNavTypes</a> и <a class="el" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f">CNavElement</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01358">1358</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a7f2e44cab1ac95bccc25be08afc15b1f_cgraph.png" border="0" usemap="#class_c_object_a7f2e44cab1ac95bccc25be08afc15b1f_cgraph" alt=""/></div>
+<map name="class_c_object_a7f2e44cab1ac95bccc25be08afc15b1f_cgraph" id="class_c_object_a7f2e44cab1ac95bccc25be08afc15b1f_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a20cb5cab236d359a6513894f701936d7" title="DeleteItems" alt="" coords="153,5,252,35"/><area shape="rect" id="node5" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="303,5,396,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20cb5cab236d359a6513894f701936d7"></a><!-- doxytag: member="CObject::DeleteItems" ref="a20cb5cab236d359a6513894f701936d7" args="($arFilter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeleteItems </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод производит удаление элементов из таблицы по фильтру. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arFilter</em>&nbsp;</td><td>массив фильтрации </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>См. также:</b></dt><dd><a class="el" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e">CObject::_GenWhere()</a> </dd></dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>true если удаение прошло успешно, false - если удаление не удалось </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7">CCategory</a>, <a class="el" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7">CCategorySubCategory</a>, <a class="el" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7">CCommonCategory</a>, <a class="el" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7">CSmile</a>, <a class="el" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7">CFilesObject</a>, <a class="el" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7">CRestorable</a>, <a class="el" href="class_c_user.html#a20cb5cab236d359a6513894f701936d7">CUser</a>, <a class="el" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7">CUserGroup</a> и <a class="el" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7">CNavElement</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01338">1338</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a20cb5cab236d359a6513894f701936d7_cgraph.png" border="0" usemap="#class_c_object_a20cb5cab236d359a6513894f701936d7_cgraph" alt=""/></div>
+<map name="class_c_object_a20cb5cab236d359a6513894f701936d7_cgraph" id="class_c_object_a20cb5cab236d359a6513894f701936d7_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="156,5,249,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a20cb5cab236d359a6513894f701936d7_icgraph.png" border="0" usemap="#class_c_object_a20cb5cab236d359a6513894f701936d7_icgraph" alt=""/></div>
+<map name="class_c_object_a20cb5cab236d359a6513894f701936d7_icgraph" id="class_c_object_a20cb5cab236d359a6513894f701936d7_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a59113b5ecd1d155db6a4f30af34a1e80" title="Delete" alt="" coords="172,5,236,35"/><area shape="rect" id="node5" href="class_c_object.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="DeleteByIds" alt="" coords="155,59,253,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a216d12200cf633b71f318a1dcdef1e71"></a><!-- doxytag: member="CObject::GenCheck" ref="a216d12200cf633b71f318a1dcdef1e71" args="($data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GenCheck </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00191">191</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a216d12200cf633b71f318a1dcdef1e71_icgraph.png" border="0" usemap="#class_c_object_a216d12200cf633b71f318a1dcdef1e71_icgraph" alt=""/></div>
+<map name="class_c_object_a216d12200cf633b71f318a1dcdef1e71_icgraph" id="class_c_object_a216d12200cf633b71f318a1dcdef1e71_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#ad3fe79cedf46828ee79a230dfdce2e16" title="Save" alt="" coords="188,59,241,88"/><area shape="rect" id="node11" href="class_c_fields_object.html#ae963e93a528e72e62076ce24f35af3aa" title="CFieldsObject::Save" alt="" coords="141,112,288,141"/><area shape="rect" id="node5" href="class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="347,5,504,35"/><area shape="rect" id="node7" href="class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="336,59,515,88"/><area shape="rect" id="node9" href="class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="348,112,503,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f6d5efbac7fd0e11a9f1ff695c97d88"></a><!-- doxytag: member="CObject::GetById" ref="a4f6d5efbac7fd0e11a9f1ff695c97d88" args="($id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetById </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>id</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает запись по её номеру, если есть возможность запись возвращается из кэша </p>
+
+<p>Переопределяется в <a class="el" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">CCommonCategory</a>, <a class="el" href="class_c_common_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">CCommonElement</a>, <a class="el" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">CNavTypes</a> и <a class="el" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88">CNavElement</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00415">415</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a4f6d5efbac7fd0e11a9f1ff695c97d88_cgraph.png" border="0" usemap="#class_c_object_a4f6d5efbac7fd0e11a9f1ff695c97d88_cgraph" alt=""/></div>
+<map name="class_c_object_a4f6d5efbac7fd0e11a9f1ff695c97d88_cgraph" id="class_c_object_a4f6d5efbac7fd0e11a9f1ff695c97d88_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="125,139,213,168"/><area shape="rect" id="node5" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="261,139,328,168"/><area shape="rect" id="node7" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="_GenFrom" alt="" coords="381,5,467,35"/><area shape="rect" id="node9" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="_GenGroup" alt="" coords="377,59,471,88"/><area shape="rect" id="node11" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="_GenOrder" alt="" coords="379,112,469,141"/><area shape="rect" id="node13" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="_GenSelect" alt="" coords="377,165,471,195"/><area shape="rect" id="node15" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="377,219,471,248"/><area shape="rect" id="node17" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="_ParseItem" alt="" coords="377,272,471,301"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e932b1c5285b386f7f795703ac79479"></a><!-- doxytag: member="CObject::GetFieldsList" ref="a2e932b1c5285b386f7f795703ac79479" args="($prefix=&quot;&quot;, $my_table=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetFieldsList </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>prefix</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>my_table</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод получает список полей для указанной таблицы или для таблицы стандартной для данного класса </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$prefix префикс названия полей которые надо получить, пустой по умолчанию </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$my_table название таблицы для которой надо получить список полей, если пустой то значение для текущего класса </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>array массив со списком полей, где ключи - названия полей, значения - описание поля. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00233">233</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a2e932b1c5285b386f7f795703ac79479_icgraph.png" border="0" usemap="#class_c_object_a2e932b1c5285b386f7f795703ac79479_icgraph" alt=""/></div>
+<map name="class_c_object_a2e932b1c5285b386f7f795703ac79479_icgraph" id="class_c_object_a2e932b1c5285b386f7f795703ac79479_icgraph">
+<area shape="rect" id="node3" href="class_c_object.html#ab54990bcb0ebceb8909f3303b01293cf" title="__construct" alt="" coords="193,5,289,35"/><area shape="rect" id="node5" href="class_c_fields.html#a3eb04d127cab06d44fae0adc3c3cd380" title="CFields::MoveField" alt="" coords="173,59,309,88"/><area shape="rect" id="node7" href="class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="373,137,480,167"/><area shape="rect" id="node9" href="class_c_fields.html#ab37c701826fa7631d974ea6479bd9404" title="CFields::RenameField" alt="" coords="164,163,319,192"/><area shape="rect" id="node13" href="class_c_fields.html#af3b68b057e381e512de47446f3ce740c" title="CFields::UpdateDefault" alt="" coords="159,216,324,245"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02be2b00d2f26b280978a698f61174c5"></a><!-- doxytag: member="CObject::GetList" ref="a02be2b00d2f26b280978a698f61174c5" args="($arOrder=false, $arFilter=false, $limit=false, $arSelect=false, $arGroupBy=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetList </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arOrder</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arFilter</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>limit</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arSelect</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>arGroupBy</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Функция возвращает отфильтрованный и упорядоченый список значений из базы данных. Возращаемые данные - массив строк, каждая строка - асоциатиный массив по структуре сходный либо с запросом либо с базой данных из которой осуществляется выборка. </p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.2 Добавлена обработка сложных имен полей, добавлена поддержка выборки из нескольких таблиц </dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$arOrder</em>&nbsp;</td><td>-- ассоциативный массив упорядочивания, ключ - поле для упорядочивания, значение - направление (asc|desc); </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$arFilter</em>&nbsp;</td><td>-- ассоциатвный массив фильтрации, ключ - поле, значение - значение поля (приводиться в sql безопасный вид) перед именем поля можно указывать одну из следующих операций: &gt;,&lt;,!,&gt;=,&lt;= - операции сравнения; ~ - опреация текстового сравнения LIKE %%; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$limit</em>&nbsp;</td><td>-- количество выбираемых элементов; </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$arSelect</em>&nbsp;</td><td>-- список выбираемых полей. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Переопределяет метод предка <a class="el" href="class_c_base_list.html#a02be2b00d2f26b280978a698f61174c5">CBaseList</a>.</p>
+
+<p>Переопределяется в <a class="el" href="class_c_element.html#aa474d505ec0c2d727fc30db138a3269b">CElement</a>, <a class="el" href="class_c_modules_access.html#ad92a22dd909a1677de6d1bfdc5d59b3c">CModulesAccess</a> и <a class="el" href="class_c_global_templates.html#ad92a22dd909a1677de6d1bfdc5d59b3c">CGlobalTemplates</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01086">1086</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a02be2b00d2f26b280978a698f61174c5_cgraph.png" border="0" usemap="#class_c_object_a02be2b00d2f26b280978a698f61174c5_cgraph" alt=""/></div>
+<map name="class_c_object_a02be2b00d2f26b280978a698f61174c5_cgraph" id="class_c_object_a02be2b00d2f26b280978a698f61174c5_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="_GenFrom" alt="" coords="125,5,211,35"/><area shape="rect" id="node5" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="_GenGroup" alt="" coords="121,59,215,88"/><area shape="rect" id="node7" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="_GenOrder" alt="" coords="123,112,213,141"/><area shape="rect" id="node9" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="_GenSelect" alt="" coords="121,165,215,195"/><area shape="rect" id="node11" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="121,219,215,248"/><area shape="rect" id="node13" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="_ParseItem" alt="" coords="121,272,215,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a02be2b00d2f26b280978a698f61174c5_icgraph.png" border="0" usemap="#class_c_object_a02be2b00d2f26b280978a698f61174c5_icgraph" alt=""/></div>
+<map name="class_c_object_a02be2b00d2f26b280978a698f61174c5_icgraph" id="class_c_object_a02be2b00d2f26b280978a698f61174c5_icgraph">
+<area shape="rect" id="node3" href="class_c_smile.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CSmile::DeleteByIds" alt="" coords="196,85,345,115"/><area shape="rect" id="node5" href="class_c_nav_element.html#a20cb5cab236d359a6513894f701936d7" title="CNavElement::DeleteItems" alt="" coords="173,139,368,168"/><area shape="rect" id="node9" href="class_c_user_group.html#a20cb5cab236d359a6513894f701936d7" title="CUserGroup::DeleteItems" alt="" coords="177,192,364,221"/><area shape="rect" id="node11" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="179,245,363,275"/><area shape="rect" id="node13" href="class_c_files_object.html#a20cb5cab236d359a6513894f701936d7" title="CFilesObject::DeleteItems" alt="" coords="179,299,363,328"/><area shape="rect" id="node15" href="class_c_smile.html#a20cb5cab236d359a6513894f701936d7" title="CSmile::DeleteItems" alt="" coords="195,352,347,381"/><area shape="rect" id="node17" href="class_c_common_category.html#a20cb5cab236d359a6513894f701936d7" title="CCommonCategory::DeleteItems" alt="" coords="489,59,721,88"/><area shape="rect" id="node19" href="class_c_category_sub_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategorySubCategory::DeleteItems" alt="" coords="143,715,399,744"/><area shape="rect" id="node21" href="class_c_category.html#a20cb5cab236d359a6513894f701936d7" title="CCategory::DeleteItems" alt="" coords="184,768,357,797"/><area shape="rect" id="node23" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="168,821,373,851"/><area shape="rect" id="node25" href="class_c_common_category.html#a84fbde530a3434b9772dbc8ae828d519" title="CCommonCategory::GetChildrenIds" alt="" coords="147,875,395,904"/><area shape="rect" id="node27" href="class_c_common_category.html#a8c2c376b930b07becc5d48336a438120" title="CCommonCategory::GetExpandedTree" alt="" coords="137,456,404,485"/><area shape="rect" id="node30" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="487,112,724,141"/><area shape="rect" id="node32" href="class_c_admin_module_managment.html#a0059060b36aa147ce4f5fafbdfcc18d7" title="CAdminModuleManagment::GetInstalledList" alt="" coords="120,928,421,957"/><area shape="rect" id="node34" href="class_c_nav_element.html#a3633e0a4b31ce583368bcb12e8873428" title="CNavElement::GetMenuList" alt="" coords="172,981,369,1011"/><area shape="rect" id="node36" href="class_tree.html#a188a64fd8cf9a04e25cae5097ca31b40" title="Tree::GetParents" alt="" coords="208,1035,333,1064"/><area shape="rect" id="node38" href="class_c_object.html#aaa7edf39bf09d230ec2b32b95c138a9b" title="GetRecord" alt="" coords="227,611,315,640"/><area shape="rect" id="node81" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="513,165,697,195"/><area shape="rect" id="node91" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="500,1381,711,1411"/><area shape="rect" id="node93" href="class_c_admin_module_managment.html#aef6c5d5fdbbc4f4321d545f72e30e241" title="CAdminModuleManagment::LinkModules" alt="" coords="131,1088,411,1117"/><area shape="rect" id="node95" href="class_c_smile.html#a5360181b7aa60b1ed89778f353117836" title="CSmile::Parse" alt="" coords="216,1141,325,1171"/><area shape="rect" id="node97" href="class_c_admin_text_parser.html#a5360181b7aa60b1ed89778f353117836" title="CAdminTextParser::Parse" alt="" coords="181,1195,360,1224"/><area shape="rect" id="node99" href="class_c_module_managment.html#a54b82731d01e67c6f6641682fed2bb7a" title="CModuleManagment::RecountDBStructure" alt="" coords="125,1248,416,1277"/><area shape="rect" id="node101" href="class_c_module_managment.html#a309f3d45a137d425934d40152dc84cf5" title="CModuleManagment::RecountTextStructure" alt="" coords="121,1301,420,1331"/><area shape="rect" id="node104" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="176,1355,365,1384"/><area shape="rect" id="node106" href="class_c_common_element.html#aa596260f905421f6900473a99fc77356" title="CCommonElement::RestoreItems" alt="" coords="153,1408,388,1437"/><area shape="rect" id="node7" href="class_c_nav_element.html#a7f2e44cab1ac95bccc25be08afc15b1f" title="CNavElement::DeleteByIds" alt="" coords="509,5,701,35"/><area shape="rect" id="node40" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="517,744,693,773"/><area shape="rect" id="node42" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="791,1089,1113,1119"/><area shape="rect" id="node44" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="541,851,669,880"/><area shape="rect" id="node46" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="523,904,688,933"/><area shape="rect" id="node48" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="531,957,680,987"/><area shape="rect" id="node50" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="569,1011,641,1040"/><area shape="rect" id="node52" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="849,692,1055,721"/><area shape="rect" id="node54" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="508,1168,703,1197"/><area shape="rect" id="node56" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="469,1221,741,1251"/><area shape="rect" id="node58" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="532,1275,679,1304"/><area shape="rect" id="node60" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="492,797,719,827"/><area shape="rect" id="node63" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="527,1328,684,1357"/><area shape="rect" id="node65" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="492,269,719,299"/><area shape="rect" id="node67" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="511,323,700,352"/><area shape="rect" id="node69" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="492,376,719,405"/><area shape="rect" id="node71" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="505,429,705,459"/><area shape="rect" id="node73" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="496,1064,715,1093"/><area shape="rect" id="node76" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="903,508,1001,537"/><area shape="rect" id="node78" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="533,533,677,563"/><area shape="rect" id="node83" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="883,192,1021,221"/><area shape="rect" id="node87" href="class_c_user.html#a05b54b97b94b4cbbaaa033347e854e4a" title="CUser::Save" alt="" coords="555,637,656,667"/><area shape="rect" id="node89" href="class_c_restorable.html#a02eb65f070f3b1429edd59c1331a86c4" title="CRestorable::Save" alt="" coords="536,691,675,720"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa7edf39bf09d230ec2b32b95c138a9b"></a><!-- doxytag: member="CObject::GetRecord" ref="aaa7edf39bf09d230ec2b32b95c138a9b" args="($where, $my_table=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetRecord </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>where</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>my_table</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>получает одну запись из таблицы по указанным параметрам </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$my_table</em>&nbsp;</td><td>- имя таблицы БЕЗ префикса </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$where</em>&nbsp;</td><td>- ассоциативный массив поле =&gt; значение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00400">400</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_cgraph.png" border="0" usemap="#class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_cgraph" alt=""/></div>
+<map name="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_cgraph" id="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a02be2b00d2f26b280978a698f61174c5" title="GetList" alt="" coords="141,139,208,168"/><area shape="rect" id="node5" href="class_c_object.html#aaba7390ae2f5126078b9466bc7477934" title="_GenFrom" alt="" coords="261,5,347,35"/><area shape="rect" id="node7" href="class_c_object.html#ae71f95213a907bd9059baffb4dd08b32" title="_GenGroup" alt="" coords="257,59,351,88"/><area shape="rect" id="node9" href="class_c_object.html#a26088e5c8cc0726a42c52dd1b49cc30a" title="_GenOrder" alt="" coords="259,112,349,141"/><area shape="rect" id="node11" href="class_c_object.html#ae3ad25d1733ecf7393d40e2219b28510" title="_GenSelect" alt="" coords="257,165,351,195"/><area shape="rect" id="node13" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="257,219,351,248"/><area shape="rect" id="node15" href="class_c_object.html#ab8a873499fe236f5bf466bcd4e327b72" title="_ParseItem" alt="" coords="257,272,351,301"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_icgraph.png" border="0" usemap="#class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_icgraph" alt=""/></div>
+<map name="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_icgraph" id="class_c_object_aaa7edf39bf09d230ec2b32b95c138a9b_icgraph">
+<area shape="rect" id="node3" href="class_c_files_object.html#adc9571fdc08bf3f0535d08d98217d732" title="CFilesObject::_ParseField" alt="" coords="189,139,365,168"/><area shape="rect" id="node5" href="class_c_admin_module_managment.html#aa0e34431f31a14e46a894f964cbd94d2" title="CAdminModuleManagment::AdminShowModule" alt="" coords="463,325,785,355"/><area shape="rect" id="node7" href="class_c_user.html#af26488fdaff0d80d6419df35f3be56aa" title="CUser::GenHash" alt="" coords="213,484,341,513"/><area shape="rect" id="node9" href="class_c_nav_element.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavElement::GetById" alt="" coords="195,537,360,567"/><area shape="rect" id="node11" href="class_c_nav_types.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CNavTypes::GetById" alt="" coords="203,591,352,620"/><area shape="rect" id="node13" href="class_c_object.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="GetById" alt="" coords="241,644,313,673"/><area shape="rect" id="node15" href="class_c_common_category.html#a4f6d5efbac7fd0e11a9f1ff695c97d88" title="CCommonCategory::GetById" alt="" coords="521,749,727,779"/><area shape="rect" id="node17" href="class_c_nav_types.html#a8c519e926a120169ff9c2fdbe050f325" title="CNavTypes::GetByTextIdent" alt="" coords="180,801,375,831"/><area shape="rect" id="node19" href="class_c_nav_element.html#acb184b28e00e4b4c10a66b687166b4a2" title="CNavElement::GetCurrentPageMenuIds" alt="" coords="141,855,413,884"/><area shape="rect" id="node21" href="class_c_events.html#a320b86e01ed41db0883136c1cdcddb37" title="CEvents::GetEvents" alt="" coords="204,908,351,937"/><area shape="rect" id="node25" href="class_c_common_category.html#a8ac303ba9a3168fcac9064c6f6485e4b" title="CCommonCategory::GetFullPath" alt="" coords="164,697,391,727"/><area shape="rect" id="node28" href="class_c_nav_types.html#a2cd66b7dde2affea3276f8b9cb949d15" title="CNavTypes::GetMenu" alt="" coords="199,961,356,991"/><area shape="rect" id="node30" href="class_c_common_category.html#aca7d5ec2e95d269b3cb917fbb0943aed" title="CCommonCategory::GetParents" alt="" coords="164,1015,391,1044"/><area shape="rect" id="node32" href="class_c_module_hook_up.html#aa54add408184bddb6b792eae08b49a02" title="CModuleHookUp::hook_up" alt="" coords="1137,1068,1327,1097"/><area shape="rect" id="node34" href="class_c_module_managment.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleManagment::InitModule" alt="" coords="164,192,391,221"/><area shape="rect" id="node58" href="class_c_module_hook_up.html#a2956153a176c9e8b2ed24489c3730280" title="CModuleHookUp::InitModule" alt="" coords="177,1068,377,1097"/><area shape="rect" id="node68" href="class_c_module_managment.html#a0dc66f2dcabb894440bf0b675f817389" title="CModuleManagment::IsModule" alt="" coords="168,431,387,460"/><area shape="rect" id="node87" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="575,1199,673,1228"/><area shape="rect" id="node89" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="205,1172,349,1201"/><area shape="rect" id="node92" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="185,1276,369,1305"/><area shape="rect" id="node94" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="555,1303,693,1332"/><area shape="rect" id="node96" href="class_c_common_category.html#aa596260f905421f6900473a99fc77356" title="CCommonCategory::RestoreItems" alt="" coords="159,1380,396,1409"/><area shape="rect" id="node99" href="class_c_user.html#a05b54b97b94b4cbbaaa033347e854e4a" title="CUser::Save" alt="" coords="227,1433,328,1463"/><area shape="rect" id="node103" href="class_c_restorable.html#a02eb65f070f3b1429edd59c1331a86c4" title="CRestorable::Save" alt="" coords="208,1487,347,1516"/><area shape="rect" id="node105" href="class_c_category_sub_category.html#a02eb65f070f3b1429edd59c1331a86c4" title="CCategorySubCategory::Save" alt="" coords="172,1540,383,1569"/><area shape="rect" id="node107" href="class_c_modules_access.html#a0c2f95dfeb16d0b687d2205d1d037e89" title="CModulesAccess::Set" alt="" coords="199,1593,356,1623"/><area shape="rect" id="node109" href="class_c_base_user.html#a14360964ddf146b85146d416ef49516c" title="CBaseUser::SetAllUserGroups" alt="" coords="171,1647,384,1676"/><area shape="rect" id="node23" href="class_c_events.html#ab8f6a69d7d6a5134557449e49f563d6e" title="CEvents::Activate" alt="" coords="557,908,691,937"/><area shape="rect" id="node36" href="class_c_module_managment.html#abe5c9c24de0277149206c6c4ec0bad98" title="CModuleManagment::GetAccessArray" alt="" coords="492,165,756,195"/><area shape="rect" id="node38" href="class_c_module_managment.html#aa82055fc451a5ec7867395553b7c77c8" title="CModuleManagment::GetConfigArray" alt="" coords="495,112,753,141"/><area shape="rect" id="node42" href="class_c_module_managment.html#a144b824eb172f49e723d133daacacb75" title="CModuleManagment::GetConfigVar" alt="" coords="501,59,747,88"/><area shape="rect" id="node45" href="class_c_module_managment.html#a804ee07de9de7fa041a47083106753c0" title="CModuleManagment::GetDBConfigArray" alt="" coords="485,219,763,248"/><area shape="rect" id="node47" href="class_c_module_managment.html#a0cc8e9e705c15c4b7458103cfb996004" title="CModuleManagment::GetDBVar" alt="" coords="512,5,736,35"/><area shape="rect" id="node49" href="class_c_module_managment.html#a29304d835877c00f2d7239b6dda8c8ae" title="CModuleManagment::IsActive" alt="" coords="519,272,729,301"/><area shape="rect" id="node40" href="class_c_admin_module_managment.html#a7ecb5e6fabf6ade31e40bae8faf6e1bc" title="CAdminModuleManagment::Draw" alt="" coords="844,112,1079,141"/><area shape="rect" id="node52" href="class_c_module_managment.html#a67a6e25dd3acfdc4041673ad7f130c2e" title="CModuleManagment::GetSitePath" alt="" coords="843,219,1080,248"/><area shape="rect" id="node54" href="class_c_module_managment.html#aec423bd7e0bbbdb7b9a4a700f93ad5c1" title="CModuleManagment::GetTitle" alt="" coords="856,272,1067,301"/><area shape="rect" id="node56" href="class_c_module_managment.html#ad005f82147e8dc00b930ac5fb3b39a5a" title="CModuleManagment::IncludeTreeFile" alt="" coords="835,325,1088,355"/><area shape="rect" id="node60" href="class_c_module_hook_up.html#aa10f04b0bb441fc7eed5bb92e19ae0cf" title="CModuleHookUp::AutoInit" alt="" coords="532,1068,716,1097"/><area shape="rect" id="node62" href="class_c_module_hook_up.html#a3729046d08c260692b7824af268e6fa7" title="CModuleHookUp::IncludeModule" alt="" coords="848,1015,1075,1044"/><area shape="rect" id="node65" href="class_c_module_hook_up.html#a2c94889f246d99a8917b547e48fb4d08" title="CModuleHookUp::IncludeWidget" alt="" coords="512,1015,736,1044"/><area shape="rect" id="node71" href="class_c_module_managment.html#a78e32f236574e2d1aa2f33e50b0d5410" title="CModuleManagment::CopyModuleTemplates" alt="" coords="472,696,776,725"/><area shape="rect" id="node73" href="class_c_module_managment.html#afd2f773f311568e271d84045e233ca5b" title="CModuleManagment::GetUninstalledList" alt="" coords="485,379,763,408"/><area shape="rect" id="node75" href="class_c_admin_module_managment.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CAdminModuleManagment::init" alt="" coords="513,432,735,461"/><area shape="rect" id="node77" href="class_c_module_managment.html#aa1993246c6a3f3a022ba8dce0cb2f490" title="CModuleManagment::Install" alt="" coords="525,485,723,515"/><area shape="rect" id="node79" href="class_c_module_managment.html#aa21698940394266d7b475ef5ebbaffe2" title="CModuleManagment::SelfInstall" alt="" coords="851,512,1072,541"/><area shape="rect" id="node82" href="class_c_module_managment.html#a1bc05652fce4b10caf256f5200472ac0" title="CModuleManagment::IsInstallable" alt="" coords="507,589,741,619"/><area shape="rect" id="node85" href="class_c_module_managment.html#ae85425e7d70bcfe666db3e0bd9e15b31" title="CModuleManagment::UnInstall" alt="" coords="516,643,732,672"/><area shape="rect" id="node101" href="class_c_user.html#ace72013da14683e98f555c312b30af3e" title="CUser::Activate" alt="" coords="564,1433,684,1463"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af5478d45bb4c7400c7830413a486a92b"></a><!-- doxytag: member="CObject::GetRecordFromPost" ref="af5478d45bb4c7400c7830413a486a92b" args="($prefix='', $data='')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetRecordFromPost </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>prefix</em> = <code>''</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>''</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод возвращает значения полей из массива данных</p>
+<p>Метод позволяет построить данные по правильной структуре исходя из переданных в массиве данных, также производится проверка на соответствие полей в данных и в таблице. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$prefix</em>&nbsp;</td><td>- префикс для полей в массиве данных, необязательный </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$data</em>&nbsp;</td><td>- массив данных, необязеательный если не указан используется $_POST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Ассоциативный массив данных </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_files_object.html#af5478d45bb4c7400c7830413a486a92b">CFilesObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00433">433</a></p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_af5478d45bb4c7400c7830413a486a92b_icgraph.png" border="0" usemap="#class_c_object_af5478d45bb4c7400c7830413a486a92b_icgraph" alt=""/></div>
+<map name="class_c_object_af5478d45bb4c7400c7830413a486a92b_icgraph" id="class_c_object_af5478d45bb4c7400c7830413a486a92b_icgraph">
+<area shape="rect" id="node3" href="class_c_fields.html#aa849d9017afa87ef7145193998f7fb4c" title="CFields::Save" alt="" coords="203,5,309,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fa0d7986c30256de3613650c539d744"></a><!-- doxytag: member="CObject::GetTableFields" ref="a4fa0d7986c30256de3613650c539d744" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GetTableFields </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет получение списка полей для текущей таблицы </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01067">1067</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_a4fa0d7986c30256de3613650c539d744_cgraph.png" border="0" usemap="#class_c_object_a4fa0d7986c30256de3613650c539d744_cgraph" alt=""/></div>
+<map name="class_c_object_a4fa0d7986c30256de3613650c539d744_cgraph" id="class_c_object_a4fa0d7986c30256de3613650c539d744_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#adc9b6bf70f31025bde56faade9aa147b" title="_GetTableFields" alt="" coords="167,5,284,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a75f36f5646e4513db4d265fa8f925983"></a><!-- doxytag: member="CObject::Increase" ref="a75f36f5646e4513db4d265fa8f925983" args="($field, $id, $increment=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Increase </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>increment</em> = <code>1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод позволяет увеличивать/уменьшать числовые значения полей</p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>$field Имя поля в базе, числовое значение которого нужно изменить </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>$id Идентификатор записи, значение поля $field которой нужно изменить, или массив с ключами: 'where_field' - поле, по которому идентифицировать запись; 'where_field_value' - значение этого поля </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>int</em>&nbsp;</td><td>$incremenet Приращение значения (может быть и отрицательным) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>bool </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01229">1229</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad3fe79cedf46828ee79a230dfdce2e16"></a><!-- doxytag: member="CObject::Save" ref="ad3fe79cedf46828ee79a230dfdce2e16" args="($prefix=&quot;KS_&quot;, $data=&quot;&quot;, $my_table=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Save </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>prefix</em> = <code>&quot;KS_&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>my_table</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет сохранение записи в БД</p>
+<dl class="version"><dt><b>Версия:</b></dt><dd>2.5 Изменения: 2.5 - поддержка загрузки файлов убрана в дополнительный класс BlaDe39 13.03.10 Изменен способ загрузки файлов 2.3 - добавлен тип binary BlaDe39 07.09.09 Исправлена обреза текстовых полей при работе с УТФ-8</dd></dl>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$prefix</em>&nbsp;</td><td>префикс поля в массиве данных </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$data</em>&nbsp;</td><td>массив данных если пустой, используется массив $_REQUEST </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$my_table</em>&nbsp;</td><td>таблица в которую производить сохранение если пустая используется $this-&gt;sTable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000069">Необходимо сделать:</a></b></dt><dd>Написать нормальную документацию. </dd></dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>ID сохраненного элемента или false в случае ошибки. </dd></dl>
+
+<p>Переопределяется в <a class="el" href="class_c_admin_module_managment.html#a47715c8679dc28aa2f0a7e2251faf4de">CAdminModuleManagment</a>, <a class="el" href="class_c_fields_object.html#ae963e93a528e72e62076ce24f35af3aa">CFieldsObject</a> и <a class="el" href="class_c_user.html#a05b54b97b94b4cbbaaa033347e854e4a">CUser</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00315">315</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_cgraph.png" border="0" usemap="#class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_cgraph" alt=""/></div>
+<map name="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_cgraph" id="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#adc9b6bf70f31025bde56faade9aa147b" title="_GetTableFields" alt="" coords="111,5,228,35"/><area shape="rect" id="node5" href="class_c_object.html#adc9571fdc08bf3f0535d08d98217d732" title="_ParseField" alt="" coords="124,59,215,88"/><area shape="rect" id="node7" href="class_c_object.html#a216d12200cf633b71f318a1dcdef1e71" title="GenCheck" alt="" coords="127,112,212,141"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_icgraph.png" border="0" usemap="#class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_icgraph" alt=""/></div>
+<map name="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_icgraph" id="class_c_object_ad3fe79cedf46828ee79a230dfdce2e16_icgraph">
+<area shape="rect" id="node3" href="class_c_message.html#abae230cc71fcd1ccb4d5eda6cd3c9ddd" title="CMessage::AddString" alt="" coords="120,5,277,35"/><area shape="rect" id="node5" href="class_c_message.html#abf85f788a9ceaf1eb974741b3b355f56" title="CMessage::AddTemplate" alt="" coords="109,59,288,88"/><area shape="rect" id="node7" href="class_c_email_message.html#a0ff0932f78a5048f4feb10c6570b277f" title="CEmailMessage::Run" alt="" coords="121,112,276,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7a6339e9f44657a0183cc6d1894dbae"></a><!-- doxytag: member="CObject::SetCheckMethod" ref="ab7a6339e9f44657a0183cc6d1894dbae" args="($method=&quot;AND&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SetCheckMethod </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>method</em> = <code>&quot;AND&quot;</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод устанавливает тип проверки существования записей с такимиже полями перед сохранением элемента </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$method</em>&nbsp;</td><td>метод проверки, любая допустимая MYSQL строка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Начиная с:</b></dt><dd>2.2, 22.11.2008 </dd></dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00153">153</a></p>
+
+</div>
+</div>
+<a class="anchor" id="abe38f51985100039a9291bad69727ab4"></a><!-- doxytag: member="CObject::Update" ref="abe38f51985100039a9291bad69727ab4" args="($id, $values, $bFiltered=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Update </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>bFiltered</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод выполняет обновление записи. Внимание! Опасный метод не выполняет проверок данных не использовать в качестве параметров массив $_POST </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mixed</em>&nbsp;</td><td>$id номер записи или массив номеров записей </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$values ассоциативный массив полей которые надо обновить </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>array</em>&nbsp;</td><td>$bFiltered массив номеров - это массив фильтрации </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l01271">1271</a></p>
+
+<p><div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_abe38f51985100039a9291bad69727ab4_cgraph.png" border="0" usemap="#class_c_object_abe38f51985100039a9291bad69727ab4_cgraph" alt=""/></div>
+<map name="class_c_object_abe38f51985100039a9291bad69727ab4_cgraph" id="class_c_object_abe38f51985100039a9291bad69727ab4_cgraph">
+<area shape="rect" id="node3" href="class_c_object.html#a19e151c88b2031d646f21b274f8fae0e" title="_GenWhere" alt="" coords="124,5,217,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_object_abe38f51985100039a9291bad69727ab4_icgraph.png" border="0" usemap="#class_c_object_abe38f51985100039a9291bad69727ab4_icgraph" alt=""/></div>
+<map name="class_c_object_abe38f51985100039a9291bad69727ab4_icgraph" id="class_c_object_abe38f51985100039a9291bad69727ab4_icgraph">
+<area shape="rect" id="node3" href="class_c_restorable.html#a20cb5cab236d359a6513894f701936d7" title="CRestorable::DeleteItems" alt="" coords="133,5,317,35"/><area shape="rect" id="node5" href="class_c_restorable.html#aa7587656e8704c15d139f786a73ce4f4" title="CRestorable::DeleteToBasket" alt="" coords="123,59,328,88"/><area shape="rect" id="node7" href="class_c_user.html#a04319249ee2785318535b92beb1aad82" title="CUser::OnAfterLogin" alt="" coords="149,112,301,141"/><area shape="rect" id="node15" href="class_c_wave_posts.html#a05b327846a8d67e0599b631fa6ae4449" title="CWavePosts::RecountTree" alt="" coords="133,165,317,195"/><area shape="rect" id="node19" href="class_c_restorable.html#aa596260f905421f6900473a99fc77356" title="CRestorable::RestoreItems" alt="" coords="131,219,320,248"/><area shape="rect" id="node21" href="class_c_user.html#a39c631b045052241e951f7cac0bd2a2e" title="CUser::WriteUserVars" alt="" coords="147,272,304,301"/><area shape="rect" id="node9" href="class_c_user.html#a642f67b6eff12859f54d061da118b7f8" title="CUser::__construct" alt="" coords="379,59,520,88"/><area shape="rect" id="node11" href="class_c_user.html#acd6fae84e4b1150b0ad56dc73fe39130" title="CUser::LoginByTitle" alt="" coords="377,112,521,141"/><area shape="rect" id="node13" href="class_c_user.html#aa311da27ba5706f5710cea7706c8eae1" title="CUser::login" alt="" coords="571,112,669,141"/><area shape="rect" id="node17" href="class_c_wave_posts.html#a02eb65f070f3b1429edd59c1331a86c4" title="CWavePosts::Save" alt="" coords="380,165,519,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/><h2>Поля</h2>
+<a class="anchor" id="abce37e6268ad8fa4251d7bb984d8c031"></a><!-- doxytag: member="CObject::$arCache" ref="abce37e6268ad8fa4251d7bb984d8c031" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arCache<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9e975d50baf04b10642096e2889ef287"></a><!-- doxytag: member="CObject::$arFilter" ref="a9e975d50baf04b10642096e2889ef287" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arFilter<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>список полей для доп фильтрации </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00099">99</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acaf02986361f86c1431c91c56cd6dd6e"></a><!-- doxytag: member="CObject::$arJoinTables" ref="acaf02986361f86c1431c91c56cd6dd6e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arJoinTables<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>массив таблиц участвующих в объединении типа join. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a06872fc847b4ba143198c5f962fc6a83"></a><!-- doxytag: member="CObject::$arTables" ref="a06872fc847b4ba143198c5f962fc6a83" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$arTables<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>список таблиц участвующих в следующем запросе. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a19e5523b5bfa848ff048976073b0f72b"></a><!-- doxytag: member="CObject::$auto_fields" ref="a19e5523b5bfa848ff048976073b0f72b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$auto_fields<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>поля заполняемые автоматчески (без взятия данных из параметров). </p>
+
+<p>Переопределяется в <a class="el" href="class_c_category_sub_category.html#a19e5523b5bfa848ff048976073b0f72b">CCategorySubCategory</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00085">85</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab61883dcd0807a6b56433e9f31d50bed"></a><!-- doxytag: member="CObject::$bDistinctMode" ref="ab61883dcd0807a6b56433e9f31d50bed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$bDistinctMode<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae4ecc4fc9e5f1e17da78f225690309ee"></a><!-- doxytag: member="CObject::$check_fields" ref="ae4ecc4fc9e5f1e17da78f225690309ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$check_fields<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>поля требующие уникального значения. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_category_sub_category.html#ae4ecc4fc9e5f1e17da78f225690309ee">CCategorySubCategory</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00084">84</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa5e2bccea53625700446546ecdc78fb6"></a><!-- doxytag: member="CObject::$checkMethod" ref="aa5e2bccea53625700446546ecdc78fb6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$checkMethod<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Метод проверки для нескольких полей. </p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00097">97</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adb6be40a69c2325af5dd1e235ac76e75"></a><!-- doxytag: member="CObject::$dbStructure" ref="adb6be40a69c2325af5dd1e235ac76e75" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$dbStructure<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00102">102</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0cf8bfb72dea43a6b3de28d5d2cd0024"></a><!-- doxytag: member="CObject::$obDB" ref="a0cf8bfb72dea43a6b3de28d5d2cd0024" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$obDB<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00092">92</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a878d989791a56fc8695e648281410e05"></a><!-- doxytag: member="CObject::$sFieldsModule" ref="a878d989791a56fc8695e648281410e05" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sFieldsModule<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Название модуля из которого брать значения доп полей </p>
+
+<p>Переопределяется в <a class="el" href="class_c_users_common.html#a878d989791a56fc8695e648281410e05">CUsersCommon</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00098">98</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6b7d3b9c752a0c977de5ddae78b522a9"></a><!-- doxytag: member="CObject::$sTable" ref="a6b7d3b9c752a0c977de5ddae78b522a9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sTable</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>таблица с которой работает данный класс. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_fields_values.html#a6b7d3b9c752a0c977de5ddae78b522a9">CFieldsValues</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00086">86</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a50b51f899e77f8e2df10908bad1bab91"></a><!-- doxytag: member="CObject::$sUploadPath" ref="a50b51f899e77f8e2df10908bad1bab91" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sUploadPath</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000068">Необходимо сделать:</a></b></dt><dd>Сделать скрытым </dd></dl>
+<p>Путь для загрузки файлов через функцию save. </p>
+
+<p>Переопределяется в <a class="el" href="class_c_files_object.html#a50b51f899e77f8e2df10908bad1bab91">CFilesObject</a>.</p>
+
+<p>См. определение в файле <a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a> строка <a class="el" href="class_8_c_main_8php_source.html#l00096">96</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>modules/main/libs/<a class="el" href="class_8_c_main_8php_source.html">class.CMain.php</a></li>
+</ul>
+</div>
+<hr class="footer"/><address class="footer"><small>Документация по KS-CMS. Последние изменения: Wed Mar 2 2011 17:46:26. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>
